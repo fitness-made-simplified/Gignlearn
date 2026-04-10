@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABC Tap & Play – Learn Alphabets with Gigloo! 🐯</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange:#FF6B35; --yellow:#FFD93D; --green:#6BCB77; --blue:#4D96FF;
+  --purple:#C77DFF; --pink:#FF85A1; --cream:#FFF9F0; --dark:#2D2D2D;
+  --radius:20px; --shadow:0 8px 30px rgba(0,0,0,0.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+nav{background:#fff;box-shadow:0 4px 20px rgba(0,0,0,0.08);position:sticky;top:0;z-index:1000;padding:0 24px;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:70px;}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Fredoka One',cursive;font-size:1.6rem;color:var(--orange);}
+.tiger-emoji{font-size:2rem;animation:tigerWiggle 3s ease-in-out infinite;}
+@keyframes tigerWiggle{0%,100%{transform:rotate(-5deg);}50%{transform:rotate(5deg);}}
+.nav-links{display:flex;gap:6px;list-style:none;}
+.nav-links a{font-weight:700;font-size:0.9rem;padding:8px 14px;border-radius:50px;transition:all 0.2s;color:var(--dark);}
+.nav-links a:hover,.nav-links a.active{background:var(--orange);color:white;transform:translateY(-2px);}
+.hamburger{display:none;font-size:1.8rem;cursor:pointer;background:none;border:none;}
+.mobile-menu{display:none;flex-direction:column;background:white;padding:16px;gap:8px;border-top:2px solid var(--cream);}
+.mobile-menu a{font-weight:700;padding:10px 16px;border-radius:14px;display:block;}
+.mobile-menu a:hover{background:var(--cream);}
+.mobile-menu.open{display:flex;}
+
+/* HERO BANNER */
+.page-hero{background:linear-gradient(135deg,#FF6B35,#FFD93D,#6BCB77);padding:48px 24px 56px;text-align:center;clip-path:ellipse(100% 88% at 50% 12%);}
+.page-hero h1{font-family:'Fredoka One',cursive;font-size:clamp(2rem,5vw,3.2rem);color:white;text-shadow:0 4px 15px rgba(0,0,0,0.2);margin-bottom:10px;}
+.page-hero p{color:rgba(255,255,255,0.92);font-weight:700;font-size:1.05rem;max-width:500px;margin:0 auto;}
+
+/* MAIN GAME CONTAINER */
+.game-wrap{max-width:1000px;margin:0 auto;padding:32px 20px 60px;}
+
+/* SCORE BAR */
+.score-bar{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;}
+.score-chip{background:white;border-radius:50px;padding:10px 22px;font-family:'Fredoka One',cursive;font-size:1.1rem;box-shadow:var(--shadow);display:flex;align-items:center;gap:8px;}
+.score-chip.orange{border-left:5px solid var(--orange);}
+.score-chip.blue{border-left:5px solid var(--blue);}
+.score-chip.green{border-left:5px solid var(--green);}
+
+/* BIG LETTER DISPLAY */
+.letter-display{text-align:center;margin-bottom:32px;}
+.big-letter-box{
+  width:200px;height:200px;margin:0 auto 16px;
+  border-radius:32px;display:flex;align-items:center;justify-content:center;
+  font-family:'Fredoka One',cursive;font-size:8rem;
+  background:linear-gradient(135deg,#FF6B35,#FF9B6B);
+  color:white;box-shadow:0 16px 50px rgba(255,107,53,0.4);
+  transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  cursor:default;user-select:none;
+  position:relative;overflow:hidden;
+}
+.big-letter-box::before{
+  content:'';position:absolute;top:-30%;right:-20%;
+  width:120px;height:120px;border-radius:50%;
+  background:rgba(255,255,255,0.15);
+}
+.big-letter-box.pop{animation:popBounce 0.4s cubic-bezier(0.34,1.56,0.64,1);}
+@keyframes popBounce{0%{transform:scale(1);}50%{transform:scale(1.25) rotate(-5deg);}100%{transform:scale(1);}}
+.letter-word{font-family:'Fredoka One',cursive;font-size:1.8rem;color:var(--dark);margin-bottom:4px;}
+.letter-emoji-display{font-size:2.2rem;}
+
+/* ALPHABET GRID */
+.abc-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(68px,1fr));
+  gap:12px;
+  margin-bottom:36px;
+}
+.letter-btn{
+  aspect-ratio:1;border:none;border-radius:18px;
+  font-family:'Fredoka One',cursive;font-size:1.6rem;
+  cursor:pointer;transition:all 0.2s cubic-bezier(0.34,1.56,0.64,1);
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.12);
+}
+.letter-btn:hover{transform:translateY(-5px) scale(1.08);box-shadow:0 12px 30px rgba(0,0,0,0.18);}
+.letter-btn:active{transform:scale(0.93);}
+.letter-btn.learned{
+  position:relative;
+}
+.letter-btn.learned::after{
+  content:'✓';position:absolute;top:4px;right:6px;
+  font-size:0.7rem;color:rgba(255,255,255,0.9);
+  font-family:'Nunito',sans-serif;font-weight:800;
+}
+/* 26 vibrant colors cycling */
+.letter-btn:nth-child(6n+1){background:linear-gradient(135deg,#FF6B35,#FF9B6B);color:white;}
+.letter-btn:nth-child(6n+2){background:linear-gradient(135deg,#4D96FF,#85B8FF);color:white;}
+.letter-btn:nth-child(6n+3){background:linear-gradient(135deg,#6BCB77,#A0E8A8);color:white;}
+.letter-btn:nth-child(6n+4){background:linear-gradient(135deg,#C77DFF,#DBA8FF);color:white;}
+.letter-btn:nth-child(6n+5){background:linear-gradient(135deg,#FF85A1,#FFB3C4);color:white;}
+.letter-btn:nth-child(6n+6){background:linear-gradient(135deg,#FFD93D,#FFE87A);color:#2D2D2D;}
+
+/* QUIZ MODE */
+.quiz-section{background:white;border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);margin-bottom:28px;}
+.quiz-section h2{font-family:'Fredoka One',cursive;font-size:1.6rem;text-align:center;margin-bottom:8px;color:var(--dark);}
+.quiz-question{font-size:1.1rem;text-align:center;font-weight:700;color:#666;margin-bottom:24px;}
+.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:400px;margin:0 auto 20px;}
+.quiz-opt{
+  padding:18px 12px;border:3px solid #eee;border-radius:18px;
+  font-family:'Fredoka One',cursive;font-size:1.8rem;
+  cursor:pointer;text-align:center;transition:all 0.2s;
+  background:white;
+}
+.quiz-opt:hover{border-color:var(--blue);transform:scale(1.03);}
+.quiz-opt.correct{border-color:var(--green);background:#EAFBEE;animation:correctPop 0.4s ease;}
+.quiz-opt.wrong{border-color:var(--pink);background:#FFF0F3;animation:shake 0.3s ease;}
+@keyframes correctPop{0%,100%{transform:scale(1);}50%{transform:scale(1.12);}}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-8px);}75%{transform:translateX(8px);}}
+.quiz-result{text-align:center;font-family:'Fredoka One',cursive;font-size:1.4rem;min-height:40px;}
+.quiz-result.correct{color:var(--green);}
+.quiz-result.wrong{color:var(--pink);}
+
+/* MODE TOGGLE */
+.mode-tabs{display:flex;gap:10px;justify-content:center;margin-bottom:28px;flex-wrap:wrap;}
+.mode-tab{padding:10px 22px;border-radius:50px;border:2px solid #ddd;font-family:'Fredoka One',cursive;font-size:1rem;cursor:pointer;transition:all 0.2s;background:white;}
+.mode-tab.active{background:var(--orange);color:white;border-color:var(--orange);transform:translateY(-2px);}
+.mode-tab:hover{border-color:var(--orange);}
+
+/* PROGRESS BAR */
+.progress-wrap{margin-bottom:32px;}
+.progress-label{font-weight:700;font-size:0.9rem;color:#888;margin-bottom:8px;text-align:center;}
+.progress-bar{height:14px;background:#eee;border-radius:50px;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--orange),var(--yellow));border-radius:50px;transition:width 0.5s ease;}
+
+/* CONFETTI */
+.confetti-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;}
+.confetti-piece{position:absolute;width:10px;height:10px;border-radius:2px;animation:confettiFall 1.5s ease-in forwards;}
+@keyframes confettiFall{
+  0%{transform:translateY(-20px) rotate(0deg);opacity:1;}
+  100%{transform:translateY(100vh) rotate(720deg);opacity:0;}
+}
+
+/* INFO CARDS */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:40px;}
+.info-card{background:white;border-radius:var(--radius);padding:24px;text-align:center;box-shadow:var(--shadow);}
+.info-card .icon{font-size:2.5rem;margin-bottom:10px;display:block;}
+.info-card h3{font-family:'Fredoka One',cursive;font-size:1.1rem;margin-bottom:6px;}
+.info-card p{font-size:0.88rem;color:#777;font-weight:600;line-height:1.5;}
+
+/* RESET BTN */
+.btn-reset{display:block;margin:24px auto 0;padding:12px 28px;background:var(--cream);border:2px solid #ddd;border-radius:50px;font-family:'Fredoka One',cursive;font-size:1rem;cursor:pointer;transition:all 0.2s;color:var(--dark);}
+.btn-reset:hover{background:var(--orange);color:white;border-color:var(--orange);}
+
+/* FOOTER */
+footer{background:var(--dark);color:white;padding:32px 24px;text-align:center;}
+footer .footer-logo{font-family:'Fredoka One',cursive;font-size:1.4rem;color:var(--orange);margin-bottom:12px;}
+footer p{color:rgba(255,255,255,0.5);font-size:0.85rem;font-weight:600;}
+footer a{color:var(--yellow);transition:color 0.2s;}
+footer a:hover{color:white;}
+.footer-links{display:flex;gap:20px;justify-content:center;margin:12px 0;flex-wrap:wrap;}
+
+@media(max-width:768px){
+  .nav-links{display:none;} .hamburger{display:block;}
+  .abc-grid{grid-template-columns:repeat(auto-fill,minmax(56px,1fr));gap:8px;}
+  .letter-btn{font-size:1.3rem;border-radius:14px;}
+  .big-letter-box{width:160px;height:160px;font-size:6rem;}
+  .quiz-options{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:400px){
+  .abc-grid{grid-template-columns:repeat(6,1fr);gap:6px;}
+  .letter-btn{font-size:1.1rem;border-radius:12px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="tiger-emoji">🐯</span><span>GigNLearn</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="abc-game.html" class="active">ABC Game</a></li>
+      <li><a href="math-maze.html">Math Maze</a></li>
+      <li><a href="name-labels.html">Labels</a></li>
+      <li><a href="printables.html">Printables</a></li>
+      <li><a href="rhymes.html">Rhymes</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.getElementById('mm').classList.toggle('open')">☰</button>
+  </div>
+  <div class="mobile-menu" id="mm">
+    <a href="index.html">🏠 Home</a>
+    <a href="abc-game.html">🔤 ABC Game</a>
+    <a href="math-maze.html">🔢 Math Maze</a>
+    <a href="name-labels.html">🏷️ Labels</a>
+    <a href="printables.html">🖨️ Printables</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <h1>🔤 ABC Tap & Play</h1>
+  <p>Tap every letter, learn its sound & word, and earn stars! Can you learn all 26? 🌟</p>
+</div>
+
+<div class="game-wrap">
+
+  <!-- SCORE BAR -->
+  <div class="score-bar">
+    <div class="score-chip orange">⭐ Score: <span id="scoreVal">0</span></div>
+    <div class="score-chip blue">🔤 Learned: <span id="learnedVal">0</span>/26</div>
+    <div class="score-chip green">🏆 Best: <span id="bestVal">0</span></div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap">
+    <p class="progress-label" id="progressLabel">Tap letters to start! 🚀</p>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+  </div>
+
+  <!-- MODE TABS -->
+  <div class="mode-tabs">
+    <button class="mode-tab active" onclick="setMode('learn')">📖 Learn Mode</button>
+    <button class="mode-tab" onclick="setMode('quiz')">🎯 Quiz Mode</button>
+  </div>
+
+  <!-- BIG LETTER DISPLAY -->
+  <div class="letter-display" id="learnMode">
+    <div class="big-letter-box" id="bigLetterBox">🐯</div>
+    <div class="letter-word" id="letterWord">Tap a letter below!</div>
+    <div class="letter-emoji-display" id="letterEmoji"></div>
+  </div>
+
+  <!-- QUIZ MODE -->
+  <div class="quiz-section" id="quizMode" style="display:none;">
+    <h2>🎯 Which letter is this?</h2>
+    <p class="quiz-question" id="quizQuestion">Get ready...</p>
+    <div style="font-size:4rem;text-align:center;margin-bottom:16px;" id="quizEmoji">🐯</div>
+    <div class="quiz-options" id="quizOptions"></div>
+    <div class="quiz-result" id="quizResult"></div>
+  </div>
+
+  <!-- ALPHABET GRID -->
+  <div class="abc-grid" id="abcGrid"></div>
+
+  <button class="btn-reset" onclick="resetGame()">🔄 Reset Progress</button>
+
+  <!-- INFO CARDS -->
+  <div class="info-grid">
+    <div class="info-card">
+      <span class="icon">🎯</span>
+      <h3>Learn Mode</h3>
+      <p>Tap each letter to see its word and emoji friend. Hear it clearly in your mind!</p>
+    </div>
+    <div class="info-card">
+      <span class="icon">🧠</span>
+      <h3>Quiz Mode</h3>
+      <p>See an emoji — guess the right letter! Great for testing what you've learned.</p>
+    </div>
+    <div class="info-card">
+      <span class="icon">⭐</span>
+      <h3>Earn Stars</h3>
+      <p>Get points for every correct answer. Can you get a perfect score of 260?</p>
+    </div>
+    <div class="info-card">
+      <span class="icon">📈</span>
+      <h3>Track Progress</h3>
+      <p>See the progress bar fill up as you learn all 26 letters. You're a star!</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="confetti-container" id="confettiBox"></div>
+
+<footer>
+  <div class="footer-logo">🐯 GigNLearn</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="math-maze.html">Math Maze</a>
+    <a href="name-labels.html">Labels</a>
+    <a href="printables.html">Printables</a>
+  </div>
+  <p>© 2026 GigNLearn · Made with ♥ for little learners</p>
+</footer>
+
+<script>
+const LETTERS = [
+  {l:'A',word:'Apple',emoji:'🍎'},   {l:'B',word:'Ball',emoji:'⚽'},
+  {l:'C',word:'Cat',emoji:'🐱'},     {l:'D',word:'Dog',emoji:'🐶'},
+  {l:'E',word:'Elephant',emoji:'🐘'},{l:'F',word:'Fish',emoji:'🐟'},
+  {l:'G',word:'Grapes',emoji:'🍇'},  {l:'H',word:'Hat',emoji:'🎩'},
+  {l:'I',word:'Ice Cream',emoji:'🍦'},{l:'J',word:'Juice',emoji:'🧃'},
+  {l:'K',word:'Kite',emoji:'🪁'},    {l:'L',word:'Lion',emoji:'🦁'},
+  {l:'M',word:'Moon',emoji:'🌙'},    {l:'N',word:'Nest',emoji:'🪹'},
+  {l:'O',word:'Orange',emoji:'🍊'},  {l:'P',word:'Penguin',emoji:'🐧'},
+  {l:'Q',word:'Queen',emoji:'👑'},   {l:'R',word:'Rainbow',emoji:'🌈'},
+  {l:'S',word:'Sun',emoji:'☀️'},     {l:'T',word:'Tiger',emoji:'🐯'},
+  {l:'U',word:'Umbrella',emoji:'☂️'},{l:'V',word:'Violin',emoji:'🎻'},
+  {l:'W',word:'Whale',emoji:'🐳'},   {l:'X',word:'Xylophone',emoji:'🎶'},
+  {l:'Y',word:'Yo-yo',emoji:'🪀'},   {l:'Z',word:'Zebra',emoji:'🦓'}
+];
+
+let score = 0;
+let learned = new Set();
+let best = parseInt(localStorage.getItem('abcBest')||'0');
+let currentMode = 'learn';
+let quizActive = false;
+let correctQuizLetter = null;
+
+const BOX_COLORS = [
+  'linear-gradient(135deg,#FF6B35,#FF9B6B)',
+  'linear-gradient(135deg,#4D96FF,#85B8FF)',
+  'linear-gradient(135deg,#6BCB77,#A0E8A8)',
+  'linear-gradient(135deg,#C77DFF,#DBA8FF)',
+  'linear-gradient(135deg,#FF85A1,#FFB3C4)',
+  'linear-gradient(135deg,#FFD93D,#FFE87A)',
+];
+
+document.getElementById('bestVal').textContent = best;
+
+// Build grid
+const grid = document.getElementById('abcGrid');
+LETTERS.forEach((item, i) => {
+  const btn = document.createElement('button');
+  btn.className = 'letter-btn';
+  btn.textContent = item.l;
+  btn.id = 'btn-'+item.l;
+  btn.title = item.word;
+  btn.onclick = () => handleLetterClick(item, btn, i);
+  grid.appendChild(btn);
+});
+
+function handleLetterClick(item, btn, i) {
+  if (currentMode === 'quiz') return;
+  // Show big letter
+  const box = document.getElementById('bigLetterBox');
+  box.textContent = item.l;
+  box.style.background = BOX_COLORS[i % BOX_COLORS.length];
+  box.classList.remove('pop');
+  void box.offsetWidth;
+  box.classList.add('pop');
+
+  document.getElementById('letterWord').textContent = `${item.emoji} ${item.word}`;
+  document.getElementById('letterEmoji').textContent = '';
+
+  // Mark learned
+  if (!learned.has(item.l)) {
+    learned.add(item.l);
+    score += 10;
+    btn.classList.add('learned');
+    updateUI();
+    if (learned.size === 26) celebrate('🎉 WOW! You learned ALL 26 letters! You\'re a superstar! 🌟');
+  }
+  speakLetter(item);
+}
+
+function speakLetter(item) {
+  if ('speechSynthesis' in window) {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(`${item.l} is for ${item.word}`);
+    u.rate = 0.85; u.pitch = 1.2; u.volume = 1;
+    speechSynthesis.speak(u);
+  }
+}
+
+function updateUI() {
+  document.getElementById('scoreVal').textContent = score;
+  document.getElementById('learnedVal').textContent = learned.size;
+  const pct = (learned.size / 26) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+  if (learned.size === 0) document.getElementById('progressLabel').textContent = 'Tap letters to start! 🚀';
+  else if (learned.size < 13) document.getElementById('progressLabel').textContent = `Great start! ${26 - learned.size} more to go! 💪`;
+  else if (learned.size < 26) document.getElementById('progressLabel').textContent = `Almost there! Just ${26 - learned.size} letters left! 🔥`;
+  else document.getElementById('progressLabel').textContent = 'You learned ALL 26 letters! AMAZING! 🏆';
+  if (score > best) { best = score; localStorage.setItem('abcBest', best); document.getElementById('bestVal').textContent = best; }
+}
+
+function setMode(mode) {
+  currentMode = mode;
+  document.querySelectorAll('.mode-tab').forEach((t,i) => t.classList.toggle('active', (i===0&&mode==='learn')||(i===1&&mode==='quiz')));
+  document.getElementById('learnMode').style.display = mode === 'learn' ? 'block' : 'none';
+  document.getElementById('quizMode').style.display = mode === 'quiz' ? 'block' : 'none';
+  if (mode === 'quiz') startQuiz();
+}
+
+function startQuiz() {
+  quizActive = true;
+  document.getElementById('quizResult').textContent = '';
+  const correct = LETTERS[Math.floor(Math.random() * 26)];
+  correctQuizLetter = correct;
+  document.getElementById('quizEmoji').textContent = correct.emoji;
+  document.getElementById('quizQuestion').textContent = `Which letter starts "${correct.word}"?`;
+
+  // 4 options
+  const options = [correct];
+  while (options.length < 4) {
+    const r = LETTERS[Math.floor(Math.random() * 26)];
+    if (!options.find(o => o.l === r.l)) options.push(r);
+  }
+  options.sort(() => Math.random() - 0.5);
+
+  const container = document.getElementById('quizOptions');
+  container.innerHTML = '';
+  options.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-opt';
+    btn.textContent = opt.l;
+    btn.onclick = () => handleQuizAnswer(opt.l, btn);
+    container.appendChild(btn);
+  });
+}
+
+function handleQuizAnswer(chosen, btn) {
+  if (!quizActive) return;
+  quizActive = false;
+  const res = document.getElementById('quizResult');
+  if (chosen === correctQuizLetter.l) {
+    btn.classList.add('correct');
+    res.className = 'quiz-result correct';
+    res.textContent = '✅ CORRECT! Amazing job! 🌟';
+    score += 20;
+    updateUI();
+    launchConfetti(10);
+    setTimeout(startQuiz, 1800);
+  } else {
+    btn.classList.add('wrong');
+    res.className = 'quiz-result wrong';
+    res.textContent = `❌ Oops! It was "${correctQuizLetter.l}" for ${correctQuizLetter.word} ${correctQuizLetter.emoji}`;
+    setTimeout(startQuiz, 2000);
+  }
+  quizActive = false;
+}
+
+function celebrate(msg) {
+  launchConfetti(60);
+  setTimeout(() => alert(msg), 200);
+}
+
+function launchConfetti(count) {
+  const box = document.getElementById('confettiBox');
+  const colors = ['#FF6B35','#FFD93D','#6BCB77','#4D96FF','#C77DFF','#FF85A1'];
+  for (let i = 0; i < count; i++) {
+    const c = document.createElement('div');
+    c.className = 'confetti-piece';
+    c.style.cssText = `
+      left:${Math.random()*100}%;
+      top:${Math.random()*20}%;
+      background:${colors[Math.floor(Math.random()*colors.length)]};
+      width:${6+Math.random()*10}px;height:${6+Math.random()*10}px;
+      animation-delay:${Math.random()*0.6}s;
+      animation-duration:${1+Math.random()*1}s;
+      border-radius:${Math.random()>0.5?'50%':'2px'};
+    `;
+    box.appendChild(c);
+    setTimeout(() => c.remove(), 2500);
+  }
+}
+
+function resetGame() {
+  if (!confirm('Reset your progress? Your best score will be kept!')) return;
+  learned.clear(); score = 0;
+  document.querySelectorAll('.letter-btn').forEach(b => b.classList.remove('learned'));
+  document.getElementById('bigLetterBox').textContent = '🐯';
+  document.getElementById('bigLetterBox').style.background = 'linear-gradient(135deg,#FF6B35,#FF9B6B)';
+  document.getElementById('letterWord').textContent = 'Tap a letter below!';
+  updateUI();
+  document.getElementById('progressLabel').textContent = 'Tap letters to start! 🚀';
+}
+</script>
+</body>
+</html>
