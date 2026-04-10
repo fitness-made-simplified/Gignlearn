@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Drive Printables Setup Guide – GigNLearn</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#FF6B35;--yellow:#FFD93D;--green:#6BCB77;--blue:#4D96FF;--purple:#C77DFF;--cream:#FFF9F0;--dark:#2D2D2D;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);}
+.hero{background:linear-gradient(135deg,#4D96FF,#C77DFF);padding:56px 24px;text-align:center;clip-path:ellipse(100% 85% at 50% 15%);}
+.hero h1{font-family:'Fredoka One',cursive;font-size:2.4rem;color:white;margin-bottom:10px;}
+.hero p{color:rgba(255,255,255,0.9);font-weight:700;font-size:1.05rem;max-width:600px;margin:0 auto;}
+.wrap{max-width:900px;margin:0 auto;padding:48px 24px;}
+
+.phase{background:white;border-radius:20px;padding:32px;margin-bottom:28px;box-shadow:0 8px 30px rgba(0,0,0,0.1);}
+.phase-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;}
+.phase-num{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fredoka One',cursive;font-size:1.3rem;color:white;flex-shrink:0;}
+.phase-num.p1{background:var(--orange);}
+.phase-num.p2{background:var(--blue);}
+.phase-num.p3{background:var(--green);}
+.phase-num.p4{background:var(--purple);}
+.phase-num.p5{background:var(--yellow);color:var(--dark);}
+.phase h2{font-family:'Fredoka One',cursive;font-size:1.4rem;}
+.phase p,.phase li{font-size:0.95rem;font-weight:600;line-height:1.7;color:#555;}
+.phase ul,.phase ol{padding-left:20px;margin-top:8px;}
+.phase li{margin-bottom:6px;}
+
+.code-block{background:#1e1e2e;color:#cdd6f4;border-radius:14px;padding:20px;margin:16px 0;font-family:'Courier New',monospace;font-size:0.88rem;line-height:1.7;overflow-x:auto;}
+.code-block .kw{color:#cba6f7;}
+.code-block .str{color:#a6e3a1;}
+.code-block .cm{color:#6c7086;}
+.code-block .fn{color:#89b4fa;}
+
+.tip{background:#FFF9E6;border-left:4px solid var(--yellow);border-radius:0 14px 14px 0;padding:16px;margin:16px 0;font-size:0.9rem;font-weight:700;}
+.tip::before{content:'💡 TIP: ';}
+.warn{background:#FFF0EA;border-left:4px solid var(--orange);border-radius:0 14px 14px 0;padding:16px;margin:16px 0;font-size:0.9rem;font-weight:700;}
+.warn::before{content:'⚠️ NOTE: ';}
+
+.arch-diagram{background:#f8f8ff;border-radius:14px;padding:24px;margin:20px 0;text-align:center;}
+.arch-row{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:8px 0;}
+.arch-box{background:white;border-radius:12px;padding:10px 18px;font-weight:800;font-size:0.9rem;box-shadow:0 3px 12px rgba(0,0,0,0.1);}
+.arch-arrow{font-size:1.4rem;color:#888;}
+
+.sheet-example{background:#f0f9ff;border-radius:14px;padding:20px;margin:16px 0;}
+.sheet-table{width:100%;border-collapse:collapse;font-size:0.88rem;}
+.sheet-table th{background:var(--blue);color:white;padding:8px 12px;text-align:left;font-family:'Fredoka One',cursive;}
+.sheet-table td{padding:8px 12px;border-bottom:1px solid #e0e0e0;font-weight:600;}
+.sheet-table tr:nth-child(even) td{background:#f5fbff;}
+
+.cost-box{background:linear-gradient(135deg,var(--green),#A0E8A8);border-radius:16px;padding:20px;text-align:center;color:white;}
+.cost-box h3{font-family:'Fredoka One',cursive;font-size:1.4rem;margin-bottom:6px;}
+</style>
+</head>
+<body>
+<div class="hero">
+  <h1>📁 Google Drive → Printables Automation</h1>
+  <p>How to connect your Google Drive worksheets to GigNLearn so kids can preview & download instantly — for FREE!</p>
+</div>
+
+<div class="wrap">
+
+  <!-- ARCHITECTURE -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num p1">🗺️</div>
+      <h2>How the System Works</h2>
+    </div>
+    <div class="arch-diagram">
+      <div class="arch-row">
+        <div class="arch-box">📁 Your Google Drive<br><small>PDFs & Images stored here</small></div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-box">📊 Google Sheet<br><small>Catalogue of all files</small></div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-box">🌐 printables.html<br><small>Your GitHub website</small></div>
+      </div>
+      <div class="arch-row">
+        <div class="arch-arrow">↓</div>
+      </div>
+      <div class="arch-row">
+        <div class="arch-box">👶 Kids/Parents<br><small>Visit your site</small></div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-box">👁️ Preview in browser<br><small>See the worksheet</small></div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-box">⬇️ Download PDF<br><small>One click, instant!</small></div>
+      </div>
+    </div>
+    <p><strong>Best part:</strong> You NEVER need to write code to add new worksheets. Just upload to Drive → add one row in Google Sheet → it appears on your website automatically! ✨</p>
+  </div>
+
+  <!-- STEP 1: GOOGLE SHEET SETUP -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num p1">1</div>
+      <h2>Step 1 — Set Up Your Google Sheet Catalogue</h2>
+    </div>
+    <p>This sheet is your "database". Each row = one printable on your website.</p>
+    <ol>
+      <li>Go to <strong>sheets.google.com</strong> → Create New Sheet</li>
+      <li>Name it: <strong>GigNLearn Printables</strong></li>
+      <li>Create these exact columns in Row 1:</li>
+    </ol>
+    <div class="sheet-example">
+      <table class="sheet-table">
+        <thead>
+          <tr><th>A: title</th><th>B: category</th><th>C: emoji</th><th>D: drive_id</th><th>E: preview_id</th><th>F: age</th><th>G: tags</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ABC Tracing Sheet</td><td>Alphabets</td><td>🔤</td>
+            <td>1abc...XYZ</td><td>1img...ABC</td><td>3-5</td><td>abc,tracing,letters</td>
+          </tr>
+          <tr>
+            <td>Numbers 1-10</td><td>Numbers</td><td>🔢</td>
+            <td>1def...PQR</td><td>1jkl...DEF</td><td>3-6</td><td>numbers,math,tracing</td>
+          </tr>
+          <tr>
+            <td>Vowels Worksheet</td><td>Alphabets</td><td>📝</td>
+            <td>1ghi...MNO</td><td>1mno...GHI</td><td>4-6</td><td>vowels,abc,writing</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip">The <strong>drive_id</strong> is the long code in your Google Drive file's share link. e.g. https://drive.google.com/file/d/<strong>1abc...XYZ</strong>/view</div>
+  </div>
+
+  <!-- STEP 2: MAKE DRIVE FILES PUBLIC -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num p2">2</div>
+      <h2>Step 2 — Make Drive Files Viewable</h2>
+    </div>
+    <p>For each PDF/image in your Drive:</p>
+    <ol>
+      <li>Right-click the file → <strong>Share</strong></li>
+      <li>Click "Anyone with the link"</li>
+      <li>Set permission to <strong>Viewer</strong></li>
+      <li>Click Copy Link — extract the ID from the URL</li>
+    </ol>
+    <div class="warn">Do this for both the PDF file AND a thumbnail/preview image (PNG/JPG) for each worksheet.</div>
+    <p><strong>Two useful Drive URL formats:</strong></p>
+    <div class="code-block">
+<span class="cm">// Direct PDF download link:</span>
+https://drive.google.com/uc?export=download&id=<span class="str">FILE_ID</span>
+
+<span class="cm">// Inline preview (embed in browser):</span>
+https://drive.google.com/file/d/<span class="str">FILE_ID</span>/preview
+
+<span class="cm">// Thumbnail image:</span>
+https://drive.google.com/thumbnail?id=<span class="str">FILE_ID</span>&sz=w400
+    </div>
+  </div>
+
+  <!-- STEP 3: PUBLISH GOOGLE SHEET AS JSON -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num p3">3</div>
+      <h2>Step 3 — Publish Sheet as JSON API (FREE!)</h2>
+    </div>
+    <p>Google Sheets has a built-in way to serve your data as JSON — no backend needed!</p>
+    <ol>
+      <li>In your Google Sheet → click <strong>File → Share → Publish to web</strong></li>
+      <li>Select Sheet 1 → Choose <strong>Comma-separated values (.csv)</strong></li>
+      <li>Click <strong>Publish</strong></li>
+      <li>Copy the URL — it looks like:<br>
+      <code style="background:#f0f0f0;padding:4px 8px;border-radius:6px;font-size:0.85rem;">
+      https://docs.google.com/spreadsheets/d/SHEET_ID/pub?output=csv
+      </code></li>
+    </ol>
+    <div class="tip">Your printables.html will fetch this CSV every time someone visits, so adding a new row to your sheet INSTANTLY adds a new printable to your website! No code changes needed.</div>
+  </div>
+
+  <!-- STEP 4: THE PRINTABLES PAGE CODE -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num p4">4</div>
+      <h2>Step 4 — Your printables.html Code</h2>
+    </div>
+    <p>This is the code for your printables page. <strong>Replace YOUR_SHEET_ID</strong> with your actual Google Sheet ID:</p>
+    <div class="code-block">
+<span class="kw">const</span> SHEET_URL = <span class="str">'https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/pub?output=csv'</span>;
+
+<span class="cm">// Fetch printables from Google Sheet</span>
+<span class="kw">async function</span> <span class="fn">loadPrintables</span>() {
+  <span class="kw">const</span> res = <span class="kw">await</span> fetch(SHEET_URL);
+  <span class="kw">const</span> csv = <span class="kw">await</span> res.text();
+  <span class="kw">const</span> rows = parseCSV(csv); <span class="cm">// skip header row</span>
+
+  rows.forEach(row => {
+    <span class="kw">const</span> { title, category, emoji, drive_id, preview_id, age, tags } = row;
+    <span class="fn">createCard</span>({ title, category, emoji, drive_id, preview_id, age, tags });
+  });
+}
+
+<span class="cm">// Create a printable card with preview + download</span>
+<span class="kw">function</span> <span class="fn">createCard</span>(item) {
+  <span class="kw">const</span> previewURL = <span class="str">`https://drive.google.com/thumbnail?id=${item.preview_id}&sz=w400`</span>;
+  <span class="kw">const</span> downloadURL = <span class="str">`https://drive.google.com/uc?export=download&id=${item.drive_id}`</span>;
+  <span class="kw">const</span> embedURL   = <span class="str">`https://drive.google.com/file/d/${item.drive_id}/preview`</span>;
+
+  <span class="cm">// Card HTML — preview image + modal + download button</span>
+  card.innerHTML = <span class="str">`
+    &lt;img src="${previewURL}" alt="${item.title}"&gt;
+    &lt;h3&gt;${item.emoji} ${item.title}&lt;/h3&gt;
+    &lt;button onclick="openPreview('${embedURL}')"&gt;👁 Preview&lt;/button&gt;
+    &lt;a href="${downloadURL}" download&gt;⬇ Download PDF&lt;/a&gt;
+  `</span>;
+}
+    </div>
+    <p>The page features:</p>
+    <ul>
+      <li>🔍 Search by title or tag</li>
+      <li>📂 Filter by category (Alphabets, Numbers, Colors, Animals...)</li>
+      <li>👁️ Preview worksheet in a popup modal before downloading</li>
+      <li>⬇️ One-click download directly from Google Drive</li>
+      <li>📱 Mobile friendly grid layout</li>
+    </ul>
+  </div>
+
+  <!-- STEP 5: WORKFLOW -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num p5">5</div>
+      <h2>Step 5 — Your Daily Workflow (Super Easy!)</h2>
+    </div>
+    <p>Once set up, adding new printables takes <strong>under 2 minutes</strong>:</p>
+    <ol>
+      <li>📁 Upload new PDF to Google Drive → make it public → copy the file ID</li>
+      <li>🖼️ Upload a thumbnail image for it → copy that file ID too</li>
+      <li>📊 Open your Google Sheet → add ONE new row with the details</li>
+      <li>🌐 Visit your website → new printable appears automatically! 🎉</li>
+    </ol>
+    <div class="tip">You can batch-add 10 new printables in one session by just filling 10 rows in the sheet. The website updates instantly.</div>
+
+    <div class="cost-box" style="margin-top:20px;">
+      <h3>💚 Total Cost = ₹0 / $0</h3>
+      <p style="color:rgba(255,255,255,0.9);font-weight:700;">Google Drive (free 15GB) + Google Sheets (free) + GitHub Pages (free) = 100% FREE system! 🎉</p>
+    </div>
+  </div>
+
+  <!-- WHEN TO BUILD -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num p1">📋</div>
+      <h2>Build Sequence</h2>
+    </div>
+    <p>Here's the recommended order:</p>
+    <ol>
+      <li>✅ <strong>Done:</strong> index.html, abc-game.html, math-maze.html, name-labels.html</li>
+      <li>⬜ <strong>Next:</strong> Set up Google Sheet with your existing worksheets</li>
+      <li>⬜ <strong>Then:</strong> Build printables.html with live Google Sheet integration</li>
+      <li>⬜ <strong>Then:</strong> rhymes.html, poems.html, stories.html, parents-hub.html</li>
+      <li>⬜ <strong>Finally:</strong> GitHub setup + domain connection (gignlearn.fun → GitHub)</li>
+    </ol>
+    <p style="margin-top:12px;">💬 Just say <strong>"Build printables.html"</strong> and I'll build the full page with Google Sheet integration, search, filters, modal preview and download buttons!</p>
+  </div>
+
+</div>
+</body>
+</html>
