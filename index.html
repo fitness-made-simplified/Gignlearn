@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GigNLearn – Learn, Play & Grow with Gigloo! 🐯</title>
+<meta name="description" content="Free kids learning games, printable worksheets, nursery rhymes, poems and stories. Learn ABC, Math, and more with Gigloo the Tiger!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #FF6B35;
+    --yellow: #FFD93D;
+    --green: #6BCB77;
+    --blue: #4D96FF;
+    --purple: #C77DFF;
+    --pink: #FF85A1;
+    --cream: #FFF9F0;
+    --dark: #2D2D2D;
+    --white: #FFFFFF;
+    --shadow: 0 8px 30px rgba(0,0,0,0.12);
+    --shadow-lg: 0 16px 50px rgba(0,0,0,0.18);
+    --radius: 24px;
+    --radius-sm: 14px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito', sans-serif; background-color: var(--cream); color: var(--dark); overflow-x: hidden; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; }
+
+  /* BG SHAPES */
+  .bg-shapes { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+  .bg-shape { position: absolute; border-radius: 50%; opacity: 0.06; animation: floatShape 12s ease-in-out infinite; }
+  .bg-shape:nth-child(1) { width: 400px; height: 400px; background: var(--orange); top: -100px; left: -100px; }
+  .bg-shape:nth-child(2) { width: 300px; height: 300px; background: var(--blue); top: 40%; right: -80px; animation-delay: 3s; }
+  .bg-shape:nth-child(3) { width: 250px; height: 250px; background: var(--green); bottom: 10%; left: 10%; animation-delay: 6s; }
+  .bg-shape:nth-child(4) { width: 200px; height: 200px; background: var(--purple); top: 20%; left: 40%; animation-delay: 9s; }
+  @keyframes floatShape { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-30px) rotate(10deg); } }
+
+  .page-content { position: relative; z-index: 1; }
+
+  /* NAV */
+  nav { background: var(--white); box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; padding: 0 24px; }
+  .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; font-family: 'Fredoka One', cursive; font-size: 1.6rem; color: var(--orange); }
+  .nav-logo .tiger-emoji { font-size: 2rem; animation: tigerWiggle 3s ease-in-out infinite; }
+  @keyframes tigerWiggle { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
+  .nav-links { display: flex; gap: 6px; list-style: none; flex-wrap: wrap; }
+  .nav-links a { font-weight: 700; font-size: 0.9rem; padding: 8px 14px; border-radius: 50px; transition: all 0.2s; color: var(--dark); }
+  .nav-links a:hover, .nav-links a.active { background: var(--orange); color: white; transform: translateY(-2px); }
+  .hamburger { display: none; font-size: 1.8rem; cursor: pointer; background: none; border: none; }
+  .mobile-menu { display: none; flex-direction: column; background: white; padding: 16px; gap: 8px; border-top: 2px solid var(--cream); }
+  .mobile-menu a { font-weight: 700; font-size: 1rem; padding: 10px 16px; border-radius: var(--radius-sm); display: block; transition: background 0.2s; }
+  .mobile-menu a:hover { background: var(--cream); }
+  .mobile-menu.open { display: flex; }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, #FF6B35 0%, #FFD93D 50%, #6BCB77 100%); padding: 80px 24px 110px; text-align: center; clip-path: ellipse(100% 90% at 50% 10%); position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/svg%3E"); pointer-events: none; }
+  .star { position: absolute; font-size: 1.8rem; animation: starFloat 4s ease-in-out infinite; pointer-events: none; }
+  .star:nth-child(1) { top: 15%; left: 8%; animation-delay: 0s; }
+  .star:nth-child(2) { top: 25%; right: 10%; animation-delay: 1s; }
+  .star:nth-child(3) { bottom: 30%; left: 5%; animation-delay: 2s; }
+  .star:nth-child(4) { bottom: 20%; right: 6%; animation-delay: 3s; }
+  .star:nth-child(5) { top: 60%; left: 15%; animation-delay: 1.5s; }
+  @keyframes starFloat { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-12px) rotate(15deg); } }
+  .hero-gigloo { font-size: 6rem; display: block; animation: giglooBounce 2s ease-in-out infinite; margin-bottom: 12px; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2)); }
+  @keyframes giglooBounce { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-18px) scale(1.06); } }
+  .hero h1 { font-family: 'Fredoka One', cursive; font-size: clamp(2.8rem, 7vw, 5rem); color: white; text-shadow: 0 4px 20px rgba(0,0,0,0.2); line-height: 1.1; margin-bottom: 14px; }
+  .hero h1 span { color: #2D2D2D; }
+  .hero p { font-size: clamp(1.05rem, 2.5vw, 1.35rem); color: rgba(255,255,255,0.93); font-weight: 700; max-width: 580px; margin: 0 auto 36px; }
+  .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 50px; font-family: 'Fredoka One', cursive; font-size: 1.1rem; transition: all 0.25s; cursor: pointer; border: none; }
+  .btn-white { background: white; color: var(--orange); box-shadow: 0 6px 25px rgba(0,0,0,0.15); }
+  .btn-white:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 14px 40px rgba(0,0,0,0.2); }
+  .btn-dark { background: var(--dark); color: white; box-shadow: 0 6px 25px rgba(0,0,0,0.25); }
+  .btn-dark:hover { transform: translateY(-4px) scale(1.03); }
+
+  /* SECTIONS */
+  section { padding: 70px 24px; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-title { font-family: 'Fredoka One', cursive; font-size: clamp(1.8rem, 4vw, 2.6rem); text-align: center; margin-bottom: 10px; }
+  .section-sub { text-align: center; font-size: 1.05rem; font-weight: 600; color: #666; margin-bottom: 48px; }
+  .pill { display: inline-block; padding: 6px 18px; border-radius: 50px; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 10px; }
+
+  /* GAMES */
+  .games-section { background: var(--white); }
+  .games-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+  .game-card { border-radius: var(--radius); padding: 32px 24px; text-align: center; position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; display: block; }
+  .game-card:hover { transform: translateY(-10px) rotate(-1deg); box-shadow: var(--shadow-lg); }
+  .game-card::before { content: ''; position: absolute; top: -40px; right: -40px; width: 120px; height: 120px; border-radius: 50%; background: rgba(255,255,255,0.15); pointer-events: none; }
+  .game-card.orange { background: linear-gradient(135deg, #FF6B35, #FF9B6B); color: white; }
+  .game-card.blue   { background: linear-gradient(135deg, #4D96FF, #85B8FF); color: white; }
+  .game-card.green  { background: linear-gradient(135deg, #6BCB77, #A0E8A8); color: white; }
+  .game-card.purple { background: linear-gradient(135deg, #C77DFF, #DBA8FF); color: white; }
+  .game-card.pink   { background: linear-gradient(135deg, #FF85A1, #FFB3C4); color: white; }
+  .game-emoji { font-size: 3.5rem; display: block; margin-bottom: 14px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2)); }
+  .game-card h3 { font-family: 'Fredoka One', cursive; font-size: 1.35rem; margin-bottom: 8px; }
+  .game-card p { font-size: 0.9rem; opacity: 0.9; font-weight: 600; line-height: 1.4; }
+  .game-badge { display: inline-block; background: rgba(255,255,255,0.3); border-radius: 50px; padding: 4px 14px; font-size: 0.75rem; font-weight: 800; margin-top: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* POSTS */
+  .posts-section { background: var(--cream); }
+  .posts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 40px; }
+  .post-card { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s, box-shadow 0.3s; display: block; }
+  .post-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .post-img { width: 100%; height: 160px; display: flex; align-items: center; justify-content: center; font-size: 4rem; background: linear-gradient(135deg, #fff0ea, #ffd0ba); }
+  .post-body { padding: 18px; }
+  .post-tag { display: inline-block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--orange); background: #FFF0EA; border-radius: 50px; padding: 3px 12px; margin-bottom: 8px; }
+  .post-body h3 { font-family: 'Fredoka One', cursive; font-size: 1.1rem; line-height: 1.3; color: var(--dark); }
+
+  /* CATEGORIES */
+  .categories-section { background: white; }
+  .cat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; }
+  .cat-card { border-radius: var(--radius); padding: 28px 16px; text-align: center; transition: transform 0.25s, box-shadow 0.25s; display: block; border: 3px solid transparent; }
+  .cat-card:hover { transform: translateY(-5px) scale(1.03); box-shadow: var(--shadow); }
+  .cat-card.c1 { background: #FFF0EA; border-color: #FFD0BA; }
+  .cat-card.c2 { background: #EAF5FF; border-color: #BADDFF; }
+  .cat-card.c3 { background: #EAFBEE; border-color: #B4ECC0; }
+  .cat-card.c4 { background: #F5EAFF; border-color: #DEC0FF; }
+  .cat-card.c5 { background: #FFFAEA; border-color: #FFE8A0; }
+  .cat-emoji { font-size: 2.8rem; display: block; margin-bottom: 10px; }
+  .cat-card h3 { font-family: 'Fredoka One', cursive; font-size: 1.1rem; color: var(--dark); margin-bottom: 4px; }
+  .cat-card p { font-size: 0.82rem; color: #777; font-weight: 600; }
+
+  /* PRINTABLES */
+  .printables-section { background: linear-gradient(135deg, #4D96FF 0%, #C77DFF 100%); padding: 80px 24px; }
+  .printables-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; max-width: 1100px; margin: 0 auto; }
+  .printables-text .pill { background: rgba(255,255,255,0.2); color: white; }
+  .printables-text .section-title { text-align: left; color: white; margin-top: 10px; }
+  .printables-text .section-sub { text-align: left; color: rgba(255,255,255,0.85); margin-bottom: 24px; }
+  .printable-items { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+  .printable-items li { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1rem; color: white; }
+  .printable-items li::before { content: '✓'; width: 28px; height: 28px; background: rgba(255,255,255,0.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
+  .printables-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .print-sheet { background: white; border-radius: var(--radius-sm); padding: 20px 16px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.2); transition: transform 0.25s; }
+  .print-sheet:nth-child(1) { transform: rotate(-2deg); }
+  .print-sheet:nth-child(2) { transform: rotate(2deg); }
+  .print-sheet:nth-child(3) { transform: rotate(1deg); }
+  .print-sheet:nth-child(4) { transform: rotate(-1deg); }
+  .print-sheet:hover { transform: rotate(0deg) scale(1.06); }
+  .sheet-emoji { font-size: 2.5rem; display: block; margin-bottom: 8px; }
+  .print-sheet p { font-size: 0.85rem; font-weight: 800; color: var(--dark); }
+  .btn-download { background: var(--yellow); color: var(--dark); font-family: 'Fredoka One', cursive; font-size: 1.1rem; padding: 14px 28px; border-radius: 50px; display: inline-flex; align-items: center; gap: 8px; transition: all 0.25s; border: none; cursor: pointer; }
+  .btn-download:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
+
+  /* RHYMES */
+  .rhymes-section { background: var(--cream); }
+  .rhymes-banner { background: linear-gradient(135deg, var(--orange) 0%, var(--pink) 100%); border-radius: var(--radius); padding: 48px 40px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+  .rhymes-banner h2 { font-family: 'Fredoka One', cursive; font-size: clamp(1.8rem, 4vw, 2.4rem); color: white; margin-bottom: 10px; }
+  .rhymes-banner p { color: rgba(255,255,255,0.9); font-weight: 700; font-size: 1rem; max-width: 420px; }
+  .rhymes-emojis { font-size: 3rem; display: flex; gap: 12px; animation: wiggle 2s ease-in-out infinite; }
+  @keyframes wiggle { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+
+  /* PARENTS */
+  .parents-section { background: white; }
+  .parents-card { background: linear-gradient(135deg, #2D2D2D 0%, #444 100%); border-radius: var(--radius); padding: 48px 40px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+  .parents-text h2 { font-family: 'Fredoka One', cursive; font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--yellow); margin-bottom: 12px; }
+  .parents-text p { color: rgba(255,255,255,0.85); font-weight: 600; font-size: 1rem; max-width: 480px; margin-bottom: 24px; }
+  .parents-stats { display: flex; gap: 32px; flex-wrap: wrap; }
+  .stat-box { text-align: center; }
+  .stat-num { font-family: 'Fredoka One', cursive; font-size: 2.2rem; color: var(--yellow); display: block; }
+  .stat-label { font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* SOCIAL */
+  .social-section { background: var(--cream); }
+  .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
+  .social-card { border-radius: var(--radius); padding: 28px 20px; text-align: center; transition: transform 0.25s, box-shadow 0.25s; display: block; }
+  .social-card:hover { transform: translateY(-6px) scale(1.03); box-shadow: var(--shadow); }
+  .social-card.fb { background: #1877F2; color: white; }
+  .social-card.ig { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
+  .social-card.yt { background: #FF0000; color: white; }
+  .social-card.pin { background: #E60023; color: white; }
+  .social-icon { font-size: 2.5rem; display: block; margin-bottom: 10px; }
+  .social-card h3 { font-family: 'Fredoka One', cursive; font-size: 1.15rem; margin-bottom: 4px; }
+  .social-card p { font-size: 0.82rem; opacity: 0.9; font-weight: 600; }
+
+  /* FOOTER */
+  footer { background: var(--dark); color: white; padding: 56px 24px 24px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .footer-brand .logo { font-family: 'Fredoka One', cursive; font-size: 1.8rem; color: var(--orange); margin-bottom: 12px; display: block; }
+  .footer-brand p { color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.7; font-weight: 600; max-width: 280px; }
+  .footer-col h4 { font-family: 'Fredoka One', cursive; font-size: 1.1rem; color: var(--yellow); margin-bottom: 14px; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .footer-col ul li a { color: rgba(255,255,255,0.6); font-size: 0.9rem; font-weight: 600; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: white; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-bottom p { color: rgba(255,255,255,0.4); font-size: 0.85rem; font-weight: 600; }
+  .footer-heart { color: var(--pink); }
+
+  /* SCROLL TOP */
+  #scrollTop { position: fixed; bottom: 24px; right: 24px; width: 52px; height: 52px; background: var(--orange); color: white; border: none; border-radius: 50%; font-size: 1.2rem; cursor: pointer; box-shadow: var(--shadow); display: none; align-items: center; justify-content: center; z-index: 999; transition: all 0.25s; }
+  #scrollTop:hover { background: var(--dark); transform: translateY(-4px); }
+  #scrollTop.visible { display: flex; }
+
+  /* FADE IN */
+  .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: block; }
+    .hero { padding: 60px 24px 90px; clip-path: ellipse(120% 90% at 50% 10%); }
+    .printables-inner { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .rhymes-banner, .parents-card { flex-direction: column; text-align: center; }
+    .rhymes-emojis { justify-content: center; }
+  }
+  @media (max-width: 480px) {
+    .footer-top { grid-template-columns: 1fr; }
+    .parents-stats { justify-content: center; }
+    .games-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+    .game-card { padding: 20px 10px; }
+    .game-emoji { font-size: 2.4rem; }
+    .cat-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-shapes">
+  <div class="bg-shape"></div>
+  <div class="bg-shape"></div>
+  <div class="bg-shape"></div>
+  <div class="bg-shape"></div>
+</div>
+
+<div class="page-content">
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="tiger-emoji">🐯</span>
+      <span>GigNLearn</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="abc-game.html">ABC Game</a></li>
+      <li><a href="math-maze.html">Math Maze</a></li>
+      <li><a href="name-labels.html">Labels</a></li>
+      <li><a href="printables.html">Printables</a></li>
+      <li><a href="rhymes.html">Rhymes</a></li>
+      <li><a href="parents-hub.html">Parents</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">🏠 Home</a>
+    <a href="abc-game.html">🔤 ABC Game</a>
+    <a href="math-maze.html">🔢 Math Maze</a>
+    <a href="name-labels.html">🏷️ Name Labels</a>
+    <a href="printables.html">🖨️ Printables</a>
+    <a href="rhymes.html">🎵 Nursery Rhymes</a>
+    <a href="poems.html">📝 Poems</a>
+    <a href="stories.html">📚 Stories</a>
+    <a href="parents-hub.html">👨‍👩‍👧 Parents Hub</a>
+    <a href="about.html">💛 About Us</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="star">⭐</span>
+  <span class="star">🌟</span>
+  <span class="star">✨</span>
+  <span class="star">💫</span>
+  <span class="star">⭐</span>
+
+  <span class="hero-gigloo">🐯</span>
+  <h1>Learn, Play &<br><span>Grow</span> with Gigloo!</h1>
+  <p>Free games, worksheets, nursery rhymes & stories — all in one magical place for kids aged 2–8! 🌈</p>
+  <div class="hero-buttons">
+    <a href="abc-game.html" class="btn btn-white">🔤 Start ABC Game</a>
+    <a href="printables.html" class="btn btn-dark">🖨️ Free Printables</a>
+  </div>
+</section>
+
+<!-- GAMES & TOOLS -->
+<section class="games-section">
+  <div class="section-inner">
+    <div class="pill" style="background:#FFF0EA; color:var(--orange);">🎮 Games & Tools</div>
+    <h2 class="section-title">Play & Learn Together!</h2>
+    <p class="section-sub">Tap any card to start a fun learning adventure with Gigloo 🐯</p>
+    <div class="games-grid">
+      <a href="abc-game.html" class="game-card orange fade-in">
+        <span class="game-emoji">🔤</span>
+        <h3>ABC Tap & Play</h3>
+        <p>Tap each letter to hear its name and see it light up!</p>
+        <span class="game-badge">Ages 2–5 · Free</span>
+      </a>
+      <a href="math-maze.html" class="game-card blue fade-in">
+        <span class="game-emoji">🔢</span>
+        <h3>Math Maze</h3>
+        <p>Help Gigloo reach his den by solving fun math puzzles!</p>
+        <span class="game-badge">3 Levels · Free</span>
+      </a>
+      <a href="name-labels.html" class="game-card green fade-in">
+        <span class="game-emoji">🏷️</span>
+        <h3>Name Label Maker</h3>
+        <p>Make cute custom name labels for school & home!</p>
+        <span class="game-badge">Print Ready · Free</span>
+      </a>
+      <a href="printables.html" class="game-card purple fade-in">
+        <span class="game-emoji">📄</span>
+        <h3>Printable Sheets</h3>
+        <p>Download worksheets, coloring pages & more!</p>
+        <span class="game-badge">PDF Download</span>
+      </a>
+      <a href="rhymes.html" class="game-card pink fade-in">
+        <span class="game-emoji">🎵</span>
+        <h3>Nursery Rhymes</h3>
+        <p>Watch learning videos and sing-along rhymes with Gigloo!</p>
+        <span class="game-badge">Videos · Free</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST POSTS -->
+<section class="posts-section">
+  <div class="section-inner">
+    <div class="pill" style="background:#EAF5FF; color:var(--blue);">📰 Latest</div>
+    <h2 class="section-title">Fresh from Gigloo's World!</h2>
+    <p class="section-sub">New poems, stories and activity sheets every week 🎉</p>
+    <div class="posts-grid">
+      <a href="https://www.gignlearn.fun/2026/02/magic-words-poem-by-gig-n-learn.html" target="_blank" class="post-card fade-in">
+        <div class="post-img">✨</div>
+        <div class="post-body">
+          <span class="post-tag">🎵 Poem</span>
+          <h3>Magic Words Poem</h3>
+        </div>
+      </a>
+      <a href="https://www.gignlearn.fun/2026/02/one-red-apple-learn-number-and-shapes.html" target="_blank" class="post-card fade-in">
+        <div class="post-img">🍎</div>
+        <div class="post-body">
+          <span class="post-tag">📚 Learn</span>
+          <h3>One Red Apple: Numbers & Shapes</h3>
+        </div>
+      </a>
+      <a href="https://www.gignlearn.fun/2026/02/vowels-worksheet-for-kids.html" target="_blank" class="post-card fade-in">
+        <div class="post-img">📝</div>
+        <div class="post-body">
+          <span class="post-tag">📄 Worksheet</span>
+          <h3>Vowels Worksheet for Kids</h3>
+        </div>
+      </a>
+      <a href="https://www.gignlearn.fun/2026/02/manners-and-magic-words-poem-by-gig-n.html" target="_blank" class="post-card fade-in">
+        <div class="post-img">💛</div>
+        <div class="post-body">
+          <span class="post-tag">🎵 Poem</span>
+          <h3>Manners & Magic Words Poem</h3>
+        </div>
+      </a>
+      <a href="https://www.gignlearn.fun/2026/02/animals-poem-domestic-and-wild-animals.html" target="_blank" class="post-card fade-in">
+        <div class="post-img">🦁</div>
+        <div class="post-body">
+          <span class="post-tag">🎵 Poem</span>
+          <h3>Animals Poem: Domestic & Wild</h3>
+        </div>
+      </a>
+      <a href="https://www.gignlearn.fun/2026/02/the-lighthouse-parent-manifesto-raising.html" target="_blank" class="post-card fade-in">
+        <div class="post-img">🏡</div>
+        <div class="post-body">
+          <span class="post-tag">👨‍👩‍👧 Parents</span>
+          <h3>The Lighthouse Parent Manifesto</h3>
+        </div>
+      </a>
+    </div>
+    <div style="text-align:center; margin-top:16px;">
+      <a href="https://www.gignlearn.fun" target="_blank" class="btn btn-white" style="color:var(--dark); border: 3px solid var(--orange);">📖 See All Posts →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories-section">
+  <div class="section-inner">
+    <div class="pill" style="background:#EAFBEE; color:var(--green);">📂 Categories</div>
+    <h2 class="section-title">What Would You Like Today?</h2>
+    <p class="section-sub">Pick your favourite — Gigloo has something for everyone!</p>
+    <div class="cat-grid">
+      <a href="poems.html" class="cat-card c1 fade-in">
+        <span class="cat-emoji">🎵</span>
+        <h3>Poems</h3>
+        <p>Fun rhymes for little ones</p>
+      </a>
+      <a href="stories.html" class="cat-card c2 fade-in">
+        <span class="cat-emoji">📚</span>
+        <h3>Stories</h3>
+        <p>Adventure & bedtime tales</p>
+      </a>
+      <a href="printables.html" class="cat-card c3 fade-in">
+        <span class="cat-emoji">🖨️</span>
+        <h3>Printables</h3>
+        <p>Worksheets & coloring pages</p>
+      </a>
+      <a href="parents-hub.html" class="cat-card c4 fade-in">
+        <span class="cat-emoji">👨‍👩‍👧</span>
+        <h3>Parents Hub</h3>
+        <p>Tips, guides & resources</p>
+      </a>
+      <a href="rhymes.html" class="cat-card c5 fade-in">
+        <span class="cat-emoji">🎬</span>
+        <h3>Rhyme Videos</h3>
+        <p>Watch & sing along!</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRINTABLES PROMO -->
+<section class="printables-section">
+  <div class="printables-inner">
+    <div class="printables-text">
+      <div class="pill">🖨️ Free Printables</div>
+      <h2 class="section-title">Download & Print<br>Ready Worksheets!</h2>
+      <p class="section-sub">No signup needed. Click, print, and learn today!</p>
+      <ul class="printable-items">
+        <li>ABC Tracing Worksheet</li>
+        <li>Number 1–10 Practice Sheet</li>
+        <li>Vowels A E I O U Activity</li>
+        <li>Animals Coloring Page</li>
+        <li>Magic Words Poster</li>
+      </ul>
+      <a href="printables.html" class="btn-download">🖨️ Get Free Printables</a>
+    </div>
+    <div class="printables-visual">
+      <div class="print-sheet fade-in">
+        <span class="sheet-emoji">🔤</span>
+        <p>ABC Tracing Sheet</p>
+      </div>
+      <div class="print-sheet fade-in">
+        <span class="sheet-emoji">🔢</span>
+        <p>Numbers 1–10</p>
+      </div>
+      <div class="print-sheet fade-in">
+        <span class="sheet-emoji">🖍️</span>
+        <p>Coloring Page</p>
+      </div>
+      <div class="print-sheet fade-in">
+        <span class="sheet-emoji">📝</span>
+        <p>Vowels Sheet</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RHYMES BANNER -->
+<section class="rhymes-section">
+  <div class="section-inner">
+    <div class="rhymes-banner fade-in">
+      <div>
+        <h2>🎵 Watch & Sing Along!</h2>
+        <p>Fun nursery rhymes and learning videos on our YouTube channel. New videos every week with Gigloo the Tiger!</p>
+        <br>
+        <a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank" class="btn btn-white" style="color:var(--orange); margin-top: 8px;">▶ Watch on YouTube</a>
+      </div>
+      <div class="rhymes-emojis">🎵 🎶 🐯 🎤</div>
+    </div>
+  </div>
+</section>
+
+<!-- PARENTS HUB -->
+<section class="parents-section">
+  <div class="section-inner">
+    <div class="parents-card fade-in">
+      <div class="parents-text">
+        <h2>👨‍👩‍👧 Parents Hub</h2>
+        <p>Expert tips, activity ideas & guides to support your child's learning journey. Written with love by educators and parents just like you.</p>
+        <a href="parents-hub.html" class="btn" style="background:var(--yellow); color:var(--dark);">📖 Explore Parents Hub →</a>
+      </div>
+      <div class="parents-stats">
+        <div class="stat-box">
+          <span class="stat-num">5+</span>
+          <span class="stat-label">Free Games</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">50+</span>
+          <span class="stat-label">Posts & Poems</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Child Safe</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="social-section">
+  <div class="section-inner">
+    <div class="pill" style="background:#F5EAFF; color:var(--purple);">🌐 Follow Gigloo</div>
+    <h2 class="section-title">Join Our Learning Community!</h2>
+    <p class="section-sub">Stay updated with new games, worksheets & activities every week</p>
+    <div class="social-grid">
+      <a href="https://www.facebook.com/share/1S3EP51djD/" target="_blank" class="social-card fb fade-in">
+        <span class="social-icon">📘</span>
+        <h3>Facebook</h3>
+        <p>Updates & community</p>
+      </a>
+      <a href="https://www.instagram.com/gignlearn" target="_blank" class="social-card ig fade-in">
+        <span class="social-icon">📸</span>
+        <h3>Instagram</h3>
+        <p>Fun reels & ideas</p>
+      </a>
+      <a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank" class="social-card yt fade-in">
+        <span class="social-icon">▶️</span>
+        <h3>YouTube</h3>
+        <p>Rhymes & videos</p>
+      </a>
+      <a href="https://pin.it/7hxmrmCe2" target="_blank" class="social-card pin fade-in">
+        <span class="social-icon">📌</span>
+        <h3>Pinterest</h3>
+        <p>Printables & ideas</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo">🐯 GigNLearn</span>
+        <p>A free, safe and child-friendly learning space for kids aged 2–8. Made with love by educators and parents.</p>
+      </div>
+      <div class="footer-col">
+        <h4>🎮 Games</h4>
+        <ul>
+          <li><a href="abc-game.html">ABC Tap & Play</a></li>
+          <li><a href="math-maze.html">Math Maze</a></li>
+          <li><a href="name-labels.html">Name Label Maker</a></li>
+          <li><a href="printables.html">Free Printables</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>📚 Explore</h4>
+        <ul>
+          <li><a href="poems.html">Kids Poems</a></li>
+          <li><a href="stories.html">Kids Stories</a></li>
+          <li><a href="rhymes.html">Nursery Rhymes</a></li>
+          <li><a href="parents-hub.html">Parents Hub</a></li>
+          <li><a href="about.html">About Gigloo</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 GigNLearn. Made with <span class="footer-heart">♥</span> for little learners everywhere.</p>
+      <p>🐯 Gigloo says: Keep learning every day!</p>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">▲</button>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  const scrollBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  const faders = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  faders.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
