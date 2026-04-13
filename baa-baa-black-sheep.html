@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baa Baa Black Sheep – What If? | GigNLearn Originals 🐯</title>
+<meta name="description" content="A fun new twist on Baa Baa Black Sheep! GigNLearn Originals — What If the sheep had more adventures? Watch the video, read along and download the free PDF!">
+<meta property="og:title" content="Baa Baa Black Sheep – What If? | GigNLearn Originals 🐑">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wool:#2D2D2D; --grass:#6BCB77; --sky:#4D96FF;
+  --yellow:#FFD93D; --orange:#FF6B35; --pink:#FF85A1;
+  --purple:#C77DFF; --cream:#FFF9F0; --white:#fff;
+  --shadow:0 8px 30px rgba(0,0,0,0.11);
+  --shadow-lg:0 16px 50px rgba(0,0,0,0.16);
+  --radius:22px; --radius-sm:14px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--wool);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+nav{background:#fff;box-shadow:0 4px 20px rgba(0,0,0,0.08);position:sticky;top:0;z-index:1000;padding:0 24px;}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Fredoka One',cursive;font-size:1.55rem;color:var(--orange);}
+.nav-logo .t{font-size:1.9rem;animation:wiggle 3s ease-in-out infinite;}
+@keyframes wiggle{0%,100%{transform:rotate(-5deg);}50%{transform:rotate(5deg);}}
+.nav-links{display:flex;gap:4px;list-style:none;}
+.nav-links a{font-weight:700;font-size:0.88rem;padding:7px 13px;border-radius:50px;transition:all 0.2s;color:var(--wool);}
+.nav-links a:hover,.nav-links a.active{background:var(--orange);color:#fff;transform:translateY(-2px);}
+.hamburger{display:none;font-size:1.8rem;cursor:pointer;background:none;border:none;}
+.mob-menu{display:none;flex-direction:column;background:#fff;padding:16px;gap:8px;border-top:2px solid var(--cream);}
+.mob-menu a{font-weight:700;padding:10px 16px;border-radius:var(--radius-sm);display:block;}
+.mob-menu a:hover{background:var(--cream);}
+.mob-menu.open{display:flex;}
+
+/* HERO — night sky + stars theme for "what if" imagination */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(180deg,#1a1a4e 0%,#2d3561 40%,#6BCB77 100%);
+  padding:0 24px 80px;
+  clip-path:ellipse(100% 88% at 50% 12%);
+}
+/* Stars */
+.hero-stars{position:absolute;inset:0;pointer-events:none;}
+.star-dot{position:absolute;background:#fff;border-radius:50%;animation:twinkle 3s ease-in-out infinite;}
+@keyframes twinkle{0%,100%{opacity:0.3;transform:scale(1);}50%{opacity:1;transform:scale(1.3);}}
+/* Fluffy clouds bottom */
+.hero::after{content:'☁️☁️☁️☁️☁️';position:absolute;bottom:-10px;left:0;width:100%;font-size:3rem;letter-spacing:20px;opacity:0.3;pointer-events:none;}
+
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:32px;align-items:center;padding-top:52px;position:relative;z-index:1;}
+.hero-text{color:#fff;}
+.hero-breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+.hero-breadcrumb a{color:rgba(255,255,255,0.65);font-weight:700;font-size:0.85rem;}
+.hero-breadcrumb a:hover{color:#fff;}
+.hero-breadcrumb span{color:rgba(255,255,255,0.4);}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+.badge{padding:5px 14px;border-radius:50px;font-size:0.78rem;font-weight:800;letter-spacing:0.4px;text-transform:uppercase;}
+.badge-original{background:var(--yellow);color:var(--wool);}
+.badge-classic{background:rgba(255,255,255,0.2);color:#fff;}
+.badge-free{background:var(--grass);color:#fff;}
+.hero h1{font-family:'Fredoka One',cursive;font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.05;margin-bottom:14px;text-shadow:0 4px 20px rgba(0,0,0,0.3);}
+.hero h1 em{font-style:normal;color:var(--yellow);}
+.hero-desc{font-size:1.05rem;font-weight:700;color:rgba(255,255,255,0.9);max-width:460px;line-height:1.6;margin-bottom:26px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:1.05rem;cursor:pointer;border:none;transition:all 0.25s;}
+.btn-yellow{background:var(--yellow);color:var(--wool);box-shadow:0 6px 20px rgba(0,0,0,0.2);}
+.btn-yellow:hover{transform:translateY(-3px) scale(1.02);}
+.btn-dark{background:rgba(255,255,255,0.2);color:#fff;border:2px solid rgba(255,255,255,0.4);}
+.btn-dark:hover{background:rgba(255,255,255,0.3);transform:translateY(-3px);}
+.hero-image-wrap{position:relative;z-index:1;}
+.hero-cover{width:100%;border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,0.4);animation:floatImg 4s ease-in-out infinite;}
+@keyframes floatImg{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+.floating-emoji{position:absolute;font-size:2rem;animation:emojiFloat 3s ease-in-out infinite;}
+.fe1{top:-10px;left:-15px;animation-delay:0s;}
+.fe2{top:20px;right:-18px;animation-delay:0.8s;}
+.fe3{bottom:40px;left:-18px;animation-delay:1.6s;}
+.fe4{bottom:5px;right:5px;animation-delay:2.4s;}
+@keyframes emojiFloat{0%,100%{transform:scale(1) rotate(0deg);}50%{transform:scale(1.3) rotate(12deg);}}
+
+/* WHAT IF BANNER */
+.whatif-banner{background:linear-gradient(135deg,var(--yellow),#FFE87A);padding:20px 24px;}
+.whatif-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;}
+.whatif-inner p{font-family:'Fredoka One',cursive;font-size:1.1rem;color:var(--wool);text-align:center;}
+.whatif-bubbles{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+.wb{background:rgba(0,0,0,0.1);border-radius:50px;padding:6px 16px;font-weight:800;font-size:0.88rem;color:var(--wool);}
+
+/* SECTIONS */
+section{padding:64px 24px;}
+.sec-inner{max-width:1100px;margin:0 auto;}
+.sec-label{display:inline-block;padding:5px 16px;border-radius:50px;font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;}
+.sec-title{font-family:'Fredoka One',cursive;font-size:clamp(1.7rem,3.5vw,2.3rem);margin-bottom:8px;}
+.sec-sub{font-size:0.98rem;font-weight:600;color:#666;margin-bottom:36px;}
+
+/* VIDEO */
+.video-section{background:#fff;}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius);box-shadow:var(--shadow-lg);}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.video-meta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+.vmeta-chip{background:var(--cream);border-radius:50px;padding:7px 16px;font-weight:700;font-size:0.88rem;display:flex;align-items:center;gap:6px;}
+
+/* LYRICS */
+.lyrics-section{background:var(--cream);}
+.lyrics-card{background:#fff;border-radius:var(--radius);padding:36px;box-shadow:var(--shadow);position:relative;overflow:hidden;}
+.lyrics-card::before{content:'🐑';position:absolute;top:-10px;right:20px;font-size:8rem;opacity:0.05;line-height:1;}
+
+/* Classic vs New version split */
+.version-tabs{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap;}
+.vtab{padding:10px 22px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:1rem;cursor:pointer;border:2px solid #ddd;background:#fff;transition:all 0.2s;}
+.vtab.classic.active{background:var(--wool);color:#fff;border-color:var(--wool);}
+.vtab.newversion.active{background:var(--yellow);color:var(--wool);border-color:var(--yellow);}
+.vtab:hover{transform:translateY(-2px);}
+.version-panel{display:none;}
+.version-panel.active{display:block;}
+
+.read-aloud-btn{display:flex;align-items:center;gap:8px;padding:10px 22px;background:linear-gradient(135deg,var(--wool),#444);color:#fff;border:none;border-radius:50px;font-family:'Fredoka One',cursive;font-size:1rem;cursor:pointer;transition:all 0.25s;margin-bottom:24px;}
+.read-aloud-btn:hover{transform:translateY(-2px);}
+.read-aloud-btn.reading{background:linear-gradient(135deg,var(--grass),#A0E8A8);}
+.classic-badge{background:var(--wool);color:#fff;border-radius:50px;padding:4px 14px;font-size:0.78rem;font-weight:800;display:inline-block;margin-bottom:16px;}
+.new-badge{background:var(--yellow);color:var(--wool);border-radius:50px;padding:4px 14px;font-size:0.78rem;font-weight:800;display:inline-block;margin-bottom:16px;}
+
+.stanzas{display:flex;flex-direction:column;gap:16px;}
+.stanza{border-radius:var(--radius-sm);padding:20px 24px 20px 30px;position:relative;transition:all 0.3s;}
+.stanza:hover{transform:translateX(6px);}
+.stanza-num{position:absolute;left:-14px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;box-shadow:0 3px 10px rgba(0,0,0,0.15);}
+
+/* Classic stanzas */
+.c1{background:#F5F5F5;border-left:4px solid var(--wool);}
+.c1 .stanza-num{background:var(--wool);}
+.c2{background:#F0F0F0;border-left:4px solid #666;}
+.c2 .stanza-num{background:#666;}
+
+/* New version stanzas */
+.n1{background:linear-gradient(135deg,#FFFCEA,#FFF3C0);border-left:4px solid var(--yellow);}
+.n1 .stanza-num{background:var(--yellow);color:var(--wool);}
+.n2{background:linear-gradient(135deg,#EAFBEE,#D4F5DC);border-left:4px solid var(--grass);}
+.n2 .stanza-num{background:var(--grass);}
+.n3{background:linear-gradient(135deg,#EAF5FF,#D4EEFF);border-left:4px solid var(--sky);}
+.n3 .stanza-num{background:var(--sky);}
+.n4{background:linear-gradient(135deg,#F5EAFF,#EDD4FF);border-left:4px solid var(--purple);}
+.n4 .stanza-num{background:var(--purple);}
+.n5{background:linear-gradient(135deg,#FFF0EA,#FFE5D4);border-left:4px solid var(--orange);}
+.n5 .stanza-num{background:var(--orange);}
+.n6{background:linear-gradient(135deg,#FFF0F5,#FFD4E5);border-left:4px solid var(--pink);}
+.n6 .stanza-num{background:var(--pink);}
+.n7{background:linear-gradient(135deg,#1a1a4e,#2d3561);border-left:4px solid var(--yellow);}
+.n7 .stanza-num{background:var(--yellow);color:var(--wool);}
+
+.stanza-line{font-family:'Baloo 2',cursive;font-size:clamp(1rem,2.5vw,1.15rem);font-weight:700;line-height:1.75;color:var(--wool);}
+.n7 .stanza-line{color:#fff;}
+.key-word{font-weight:800;font-size:1.05em;}
+.kw-classic{color:var(--wool);}
+.kw-new{color:var(--orange);}
+.kw-star{color:var(--yellow);}
+.stanza.active-stanza{box-shadow:0 0 0 3px var(--yellow);transform:translateX(10px) scale(1.01);}
+
+/* COMPARISON CARD */
+.compare-card{background:linear-gradient(135deg,#1a1a4e,#2d3561);border-radius:var(--radius);padding:28px;margin-top:24px;}
+.compare-card h3{font-family:'Fredoka One',cursive;font-size:1.2rem;color:var(--yellow);margin-bottom:16px;text-align:center;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.compare-col{background:rgba(255,255,255,0.08);border-radius:var(--radius-sm);padding:16px;}
+.compare-col h4{font-family:'Fredoka One',cursive;font-size:1rem;color:var(--yellow);margin-bottom:10px;}
+.compare-col p{font-size:0.88rem;font-weight:700;color:rgba(255,255,255,0.8);line-height:1.6;}
+
+/* PDF */
+.pdf-section{background:#fff;}
+.pdf-card{border-radius:var(--radius);padding:40px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;box-shadow:var(--shadow-lg);background:linear-gradient(135deg,#1a1a4e,#2d3561,#6BCB77);}
+.pdf-text h2{font-family:'Fredoka One',cursive;font-size:1.8rem;color:var(--yellow);margin-bottom:10px;}
+.pdf-text p{color:rgba(255,255,255,0.9);font-weight:700;font-size:0.98rem;line-height:1.6;margin-bottom:20px;}
+.pdf-features{display:flex;flex-direction:column;gap:8px;margin-bottom:24px;}
+.pdf-feat{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:0.92rem;}
+.pdf-feat::before{content:'✓';width:22px;height:22px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;flex-shrink:0;}
+.btn-download{display:inline-flex;align-items:center;gap:10px;padding:15px 32px;background:var(--yellow);color:var(--wool);border:none;border-radius:50px;font-family:'Fredoka One',cursive;font-size:1.15rem;cursor:pointer;transition:all 0.25s;box-shadow:0 6px 20px rgba(0,0,0,0.3);}
+.btn-download:hover{transform:translateY(-4px) scale(1.03);}
+.pdf-preview{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.pdf-thumb{background:rgba(255,255,255,0.15);border-radius:var(--radius-sm);padding:16px;text-align:center;color:#fff;font-weight:800;font-size:0.82rem;}
+.pdf-thumb-icon{font-size:2rem;display:block;margin-bottom:6px;}
+.pdf-thumb:nth-child(odd){transform:rotate(-2deg);}
+.pdf-thumb:nth-child(even){transform:rotate(1.5deg);}
+
+/* PARENTS */
+.parents-section{background:var(--cream);}
+.parents-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.pcard{background:#fff;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);}
+.pcard-icon{font-size:2.2rem;margin-bottom:12px;display:block;}
+.pcard h3{font-family:'Fredoka One',cursive;font-size:1.15rem;margin-bottom:10px;}
+.pcard ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.pcard ul li{font-size:0.9rem;font-weight:700;color:#555;display:flex;align-items:flex-start;gap:8px;}
+.pcard ul li::before{content:'→';color:var(--orange);font-weight:800;flex-shrink:0;}
+.activity-box{background:linear-gradient(135deg,#1a1a4e,#4D96FF);border-radius:var(--radius);padding:24px;grid-column:span 2;color:#fff;}
+.activity-box h3{font-family:'Fredoka One',cursive;font-size:1.2rem;margin-bottom:8px;}
+.activity-box p{font-weight:700;font-size:0.95rem;opacity:0.93;line-height:1.6;}
+
+/* MORE */
+.more-section{background:#fff;}
+.more-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+.more-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform 0.25s,box-shadow 0.25s;display:block;}
+.more-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+.more-thumb{height:140px;display:flex;align-items:center;justify-content:center;font-size:4rem;}
+.more-body{background:#fff;padding:16px;}
+.more-tag{display:inline-block;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;padding:3px 10px;border-radius:50px;margin-bottom:6px;}
+.more-body h3{font-family:'Fredoka One',cursive;font-size:1.05rem;color:var(--wool);line-height:1.3;}
+
+/* GAMES CTA */
+.games-cta{background:linear-gradient(135deg,var(--grass),var(--sky));padding:56px 24px;}
+.games-cta-inner{max-width:1100px;margin:0 auto;text-align:center;}
+.games-cta h2{font-family:'Fredoka One',cursive;font-size:clamp(1.8rem,4vw,2.4rem);color:#fff;margin-bottom:10px;}
+.games-cta p{color:rgba(255,255,255,0.9);font-weight:700;margin-bottom:28px;}
+.cta-grid{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.cta-btn{padding:13px 24px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:1rem;transition:all 0.2s;border:none;cursor:pointer;}
+.cta-btn.white{background:#fff;color:var(--grass);}
+.cta-btn.dark{background:var(--wool);color:#fff;}
+.cta-btn:hover{transform:translateY(-3px) scale(1.03);}
+
+/* SHARE */
+.share-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px;}
+.share-btn{padding:10px 20px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:0.92rem;border:none;cursor:pointer;transition:all 0.2s;}
+.share-btn:hover{transform:translateY(-2px);}
+.share-wa{background:#25D366;color:#fff;}
+.share-fb{background:#1877F2;color:#fff;}
+.share-copy{background:var(--wool);color:#fff;}
+
+/* FOOTER */
+footer{background:var(--wool);color:#fff;padding:40px 24px 24px;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:32px;}
+.footer-logo{font-family:'Fredoka One',cursive;font-size:1.7rem;color:var(--orange);margin-bottom:10px;display:block;}
+.footer-brand p{color:rgba(255,255,255,0.55);font-size:0.88rem;font-weight:600;line-height:1.7;max-width:260px;}
+.footer-col h4{font-family:'Fredoka One',cursive;font-size:1.05rem;color:var(--yellow);margin-bottom:12px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.footer-col ul li a{color:rgba(255,255,255,0.55);font-size:0.88rem;font-weight:600;transition:color 0.2s;}
+.footer-col ul li a:hover{color:#fff;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.footer-bottom p{color:rgba(255,255,255,0.35);font-size:0.82rem;font-weight:600;}
+
+#scrollTop{position:fixed;bottom:24px;right:24px;width:50px;height:50px;background:var(--orange);color:#fff;border:none;border-radius:50%;font-size:1.2rem;cursor:pointer;box-shadow:var(--shadow);display:none;align-items:center;justify-content:center;z-index:999;transition:all 0.2s;}
+#scrollTop.visible{display:flex;}
+#scrollTop:hover{background:var(--wool);transform:translateY(-3px);}
+.toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:var(--wool);color:#fff;padding:12px 26px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:1rem;z-index:9999;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap;}
+.toast.show{opacity:1;}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-image-wrap{display:none;}
+  .pdf-card{grid-template-columns:1fr;}
+  .pdf-preview{display:none;}
+  .parents-grid{grid-template-columns:1fr;}
+  .activity-box{grid-column:span 1;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .compare-grid{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  .nav-links{display:none;}.hamburger{display:block;}
+  .hero{clip-path:ellipse(120% 90% at 50% 10%);padding-bottom:50px;}
+}
+@media(max-width:500px){
+  .footer-top{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <span class="t">🐯</span><span>GigNLearn</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../abc-game.html">ABC Game</a></li>
+      <li><a href="../math-maze.html">Math Maze</a></li>
+      <li><a href="index.html" class="active">Poems</a></li>
+      <li><a href="../name-labels.html">Labels</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.getElementById('mm').classList.toggle('open')">☰</button>
+  </div>
+  <div class="mob-menu" id="mm">
+    <a href="../index.html">🏠 Home</a>
+    <a href="../abc-game.html">🔤 ABC Game</a>
+    <a href="../math-maze.html">🔢 Math Maze</a>
+    <a href="index.html">📝 All Poems</a>
+    <a href="../name-labels.html">🏷️ Name Labels</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <!-- Stars -->
+  <div class="hero-stars" id="heroStars"></div>
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>›</span>
+        <a href="index.html">Poems</a>
+        <span>›</span>
+        <span style="color:rgba(255,255,255,0.9);">Baa Baa Black Sheep</span>
+      </div>
+      <div class="hero-badges">
+        <span class="badge badge-original">⭐ GigNLearn Original</span>
+        <span class="badge badge-classic">🐑 Classic Nursery Rhyme</span>
+        <span class="badge badge-free">🆓 Free</span>
+      </div>
+      <h1>Baa Baa<br>Black Sheep —<br><em>What If? 🌟</em></h1>
+      <p class="hero-desc">Your favourite classic nursery rhyme gets a fun, imaginative new twist! What if the sheep could do SO much more? Let your imagination run wild with Gigloo! 🐑💫</p>
+      <div class="hero-actions">
+        <a href="#watch" class="btn btn-yellow">▶ Watch Video</a>
+        <a href="https://drive.google.com/uc?export=download&id=11u1hktpYe-8yj0-WtDtEX7xpCYn60YrV" class="btn btn-dark" download>⬇ Free PDF</a>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <span class="floating-emoji fe1">🐑</span>
+      <span class="floating-emoji fe2">⭐</span>
+      <span class="floating-emoji fe3">🌙</span>
+      <span class="floating-emoji fe4">💫</span>
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjiAYX25phDD4C2tGlH_8UD9KdrF6T4flljvD_FzKuWU-Ic9BDMJimTvFsMYvLbohOjZNLQfPac4ygoQZPrD98umDgwidmQ7ywIiaKnTen_j-fhyphenhyphenf2W0uHUCLx0BVt0dknhEmBYbisBmCGZcVo1pw9efvjDcf46fdcze28gAeDzFtAYEp7bb1jRtD_SN32D/s1500/1000384399.jpg"
+        alt="Baa Baa Black Sheep What If – GigNLearn"
+        class="hero-cover"
+      >
+    </div>
+  </div>
+</div>
+
+<!-- WHAT IF BANNER -->
+<div class="whatif-banner">
+  <div class="whatif-inner">
+    <p>🌟 What if the sheep could...</p>
+    <div class="whatif-bubbles">
+      <div class="wb">✈️ Fly?</div>
+      <div class="wb">🏫 Go to School?</div>
+      <div class="wb">🌍 Travel the World?</div>
+      <div class="wb">🎵 Sing a Song?</div>
+      <div class="wb">🌈 Make Friends?</div>
+    </div>
+  </div>
+</div>
+
+<!-- VIDEO -->
+<section class="video-section" id="watch">
+  <div class="sec-inner">
+    <div class="fade-in">
+      <span class="sec-label" style="background:#FFFCEA;color:#b08000;">▶ Watch & Sing Along</span>
+      <h2 class="sec-title">Watch the What If Video! 🎬</h2>
+      <p class="sec-sub">Sing the classic AND the new version with Gigloo — safely on GigNLearn! 🐯🐑</p>
+    </div>
+    <div class="video-wrap fade-in">
+      <iframe
+        src="https://www.youtube.com/embed/tAH6_mHbdFA?rel=0&modestbranding=1&color=white"
+        title="Baa Baa Black Sheep What If – GigNLearn Originals"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+    <div class="video-meta fade-in">
+      <div class="vmeta-chip">🐯 GigNLearn Originals</div>
+      <div class="vmeta-chip">🐑 Classic + New Version</div>
+      <div class="vmeta-chip">💡 Creative Thinking</div>
+      <div class="vmeta-chip">📱 Safe · No Ads</div>
+    </div>
+  </div>
+</section>
+
+<!-- LYRICS -->
+<section class="lyrics-section" id="lyrics">
+  <div class="sec-inner">
+    <div class="fade-in">
+      <span class="sec-label" style="background:#EAF5FF;color:var(--sky);">📖 Read Along</span>
+      <h2 class="sec-title">The Classic + The New Version! 🐑</h2>
+      <p class="sec-sub">First sing the classic you know — then discover the fun new "What If" version by Gigloo!</p>
+    </div>
+
+    <div class="lyrics-card fade-in">
+      <button class="read-aloud-btn" id="readBtn" onclick="toggleReadAloud()">
+        🔊 Read Aloud — Gigloo Will Sing!
+      </button>
+
+      <!-- VERSION TABS -->
+      <div class="version-tabs">
+        <button class="vtab classic active" onclick="showVersion('classic',this)">🐑 Classic Version</button>
+        <button class="vtab newversion" onclick="showVersion('new',this)">🌟 What If? Version</button>
+      </div>
+
+      <!-- CLASSIC VERSION -->
+      <div class="version-panel active" id="panel-classic">
+        <span class="classic-badge">🐑 The Classic You Know!</span>
+        <div class="stanzas">
+          <div class="stanza c1" id="stanza-c0">
+            <span class="stanza-num">🐑</span>
+            <div class="stanza-line"><span class="key-word kw-classic">Baa baa black sheep,</span> have you any wool?</div>
+            <div class="stanza-line">Yes sir, yes sir, three bags full!</div>
+          </div>
+          <div class="stanza c2" id="stanza-c1">
+            <span class="stanza-num">👨‍🌾</span>
+            <div class="stanza-line">One for the master,</div>
+            <div class="stanza-line">One for the dame,</div>
+            <div class="stanza-line">And one for the little boy</div>
+            <div class="stanza-line">Who lives down the lane! 🏡</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW VERSION -->
+      <div class="version-panel" id="panel-new">
+        <span class="new-badge">🌟 GigNLearn Original — What If? Version!</span>
+        <div class="stanzas">
+          <div class="stanza n1" id="stanza-n0">
+            <span class="stanza-num">🐑</span>
+            <div class="stanza-line"><span class="key-word kw-new">Baa baa black sheep,</span> have you any wool?</div>
+            <div class="stanza-line">Yes sir, yes sir, my bag is full!</div>
+            <div class="stanza-line">But if you want more,</div>
+            <div class="stanza-line">Come with me today,</div>
+            <div class="stanza-line">I've got lots of adventures along the way! 🌟</div>
+          </div>
+          <div class="stanza n2" id="stanza-n1">
+            <span class="stanza-num">✈️</span>
+            <div class="stanza-line"><span class="key-word" style="color:var(--grass);">What if</span> this sheep could fly up high?</div>
+            <div class="stanza-line">Soaring clouds in the bright blue sky!</div>
+            <div class="stanza-line">Wool delivery by air, hurray!</div>
+            <div class="stanza-line">The fastest sheep of the day! ✈️</div>
+          </div>
+          <div class="stanza n3" id="stanza-n2">
+            <span class="stanza-num">🏫</span>
+            <div class="stanza-line"><span class="key-word" style="color:var(--sky);">What if</span> the sheep went to school?</div>
+            <div class="stanza-line">Learning letters — that'd be cool!</div>
+            <div class="stanza-line">Reading books and doing sums,</div>
+            <div class="stanza-line">The smartest sheep when morning comes! 📚</div>
+          </div>
+          <div class="stanza n4" id="stanza-n3">
+            <span class="stanza-num">🌍</span>
+            <div class="stanza-line"><span class="key-word" style="color:var(--purple);">What if</span> the sheep could travel far?</div>
+            <div class="stanza-line">Driving around in a little car!</div>
+            <div class="stanza-line">Paris, London, Tokyo too,</div>
+            <div class="stanza-line">Sharing wool in every view! 🗺️</div>
+          </div>
+          <div class="stanza n5" id="stanza-n4">
+            <span class="stanza-num">🎵</span>
+            <div class="stanza-line"><span class="key-word" style="color:var(--orange);">What if</span> the sheep could sing a song?</div>
+            <div class="stanza-line">Everyone would sing along!</div>
+            <div class="stanza-line">"Baa baa baa" in perfect tune,</div>
+            <div class="stanza-line">Performing shows under the moon! 🌙</div>
+          </div>
+          <div class="stanza n6" id="stanza-n5">
+            <span class="stanza-num">🌈</span>
+            <div class="stanza-line"><span class="key-word" style="color:var(--pink);">What if</span> the wool came in every hue?</div>
+            <div class="stanza-line">Red and yellow, green and blue!</div>
+            <div class="stanza-line">Rainbow sweaters for everyone,</div>
+            <div class="stanza-line">The most colourful sheep under the sun! 🌈</div>
+          </div>
+          <div class="stanza n7" id="stanza-n6">
+            <span class="stanza-num">⭐</span>
+            <div class="stanza-line">So <span class="key-word kw-star">baa baa black sheep,</span> dream big today!</div>
+            <div class="stanza-line">There are no limits along your way!</div>
+            <div class="stanza-line">Whether flying, singing, near or far,</div>
+            <div class="stanza-line">You are a superstar! ⭐🐑</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPARE -->
+      <div class="compare-card">
+        <h3>🤔 Classic vs What If? — Can You Spot the Difference?</h3>
+        <div class="compare-grid">
+          <div class="compare-col">
+            <h4>🐑 Classic Version</h4>
+            <p>The sheep has 3 bags of wool for the master, the dame, and the little boy down the lane.</p>
+          </div>
+          <div class="compare-col">
+            <h4>🌟 What If Version</h4>
+            <p>The same sheep imagines flying, going to school, travelling the world, singing songs and sharing rainbow wool!</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PDF DOWNLOAD -->
+<section class="pdf-section" id="download">
+  <div class="sec-inner">
+    <div class="fade-in">
+      <span class="sec-label" style="background:#EAFBEE;color:var(--grass);">🖨️ Free Activity Sheet</span>
+      <h2 class="sec-title">Download the Free PDF! 📄</h2>
+      <p class="sec-sub">Classic + What If version + creative activities — all in one free printable!</p>
+    </div>
+    <div class="pdf-card fade-in">
+      <div class="pdf-text">
+        <h2>🐑 Baa Baa Black Sheep — What If? Activity Book</h2>
+        <p>Both versions of the poem + activities to spark your child's imagination and creativity! Print at home, completely free.</p>
+        <div class="pdf-features">
+          <div class="pdf-feat">Classic Baa Baa Black Sheep lyrics</div>
+          <div class="pdf-feat">Full "What If?" new version by GigNLearn</div>
+          <div class="pdf-feat">"What if YOU were the sheep?" drawing activity</div>
+          <div class="pdf-feat">Fill in the blanks creative writing</div>
+          <div class="pdf-feat">Colour the sheep worksheet</div>
+          <div class="pdf-feat">100% Free — no sign-up needed!</div>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=11u1hktpYe-8yj0-WtDtEX7xpCYn60YrV" class="btn-download" download>
+          ⬇️ Download Free PDF
+        </a>
+      </div>
+      <div class="pdf-preview">
+        <div class="pdf-thumb"><span class="pdf-thumb-icon">🐑</span>Classic Poem</div>
+        <div class="pdf-thumb"><span class="pdf-thumb-icon">🌟</span>What If? Version</div>
+        <div class="pdf-thumb"><span class="pdf-thumb-icon">🎨</span>Drawing Activity</div>
+        <div class="pdf-thumb"><span class="pdf-thumb-icon">✏️</span>Creative Writing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARENTS -->
+<section class="parents-section">
+  <div class="sec-inner">
+    <div class="fade-in">
+      <span class="sec-label" style="background:#F5EAFF;color:var(--purple);">👨‍👩‍👧 For Parents</span>
+      <h2 class="sec-title">What Your Child Learns</h2>
+      <p class="sec-sub">A beloved classic + a creative twist = double the learning value!</p>
+    </div>
+    <div class="parents-grid fade-in">
+      <div class="pcard">
+        <span class="pcard-icon">🐑</span>
+        <h3>Classic Literacy</h3>
+        <ul>
+          <li>Phonics — rhyming patterns (wool/full, dame/lane)</li>
+          <li>Memorisation & recall skills</li>
+          <li>Traditional nursery rhyme knowledge</li>
+          <li>Early reading readiness</li>
+        </ul>
+      </div>
+      <div class="pcard">
+        <span class="pcard-icon">💡</span>
+        <h3>Creative Thinking</h3>
+        <ul>
+          <li>"What If" = imagination & hypothetical thinking</li>
+          <li>Vocabulary: flying, travelling, performing</li>
+          <li>Expanding possibilities mindset</li>
+          <li>Emotional expression through creative play</li>
+        </ul>
+      </div>
+      <div class="pcard">
+        <span class="pcard-icon">🎯</span>
+        <h3>Curriculum Fit</h3>
+        <ul>
+          <li>English — Nursery Rhymes & Poetry</li>
+          <li>Creative Writing — "What If?" stories</li>
+          <li>Art — Draw your own "What If" scene</li>
+          <li>Ideal for Preschool to Grade 2</li>
+        </ul>
+      </div>
+      <div class="pcard">
+        <span class="pcard-icon">⏱️</span>
+        <h3>Usage Guide</h3>
+        <ul>
+          <li>Read time: ~5 minutes</li>
+          <li>Activity time: ~20 minutes</li>
+          <li>Best for: Ages 2–8 years</li>
+          <li>Great for bedtime storytelling!</li>
+        </ul>
+      </div>
+      <div class="activity-box">
+        <h3>💡 "What If YOU Were the Sheep?" Activity!</h3>
+        <p>After reading, ask your child: <strong>"What would YOU do if you were the sheep?"</strong> Let them make up their own "What If" stanza! For example: "What if the sheep could bake a cake? / The yummiest treat in the world to make!" This simple prompt builds storytelling, rhyming skills and imagination all at once. 🎭✨</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MORE POEMS -->
+<section class="more-section">
+  <div class="sec-inner">
+    <div class="fade-in">
+      <span class="sec-label" style="background:#FFFAEA;color:#b08000;">📚 More Poems</span>
+      <h2 class="sec-title">Keep Reading with Gigloo! 🐯</h2>
+      <p class="sec-sub">Each poem has a free PDF and video — explore them all!</p>
+    </div>
+    <div class="more-grid">
+      <a href="magic-words.html" class="more-card fade-in">
+        <div class="more-thumb" style="background:linear-gradient(135deg,#FF6B35,#FFD93D);">✨</div>
+        <div class="more-body">
+          <span class="more-tag" style="background:#FFF0EA;color:var(--orange);">Manners</span>
+          <h3>Magic Words Poem</h3>
+        </div>
+      </a>
+      <a href="rainbow-snack-parade.html" class="more-card fade-in">
+        <div class="more-thumb" style="background:linear-gradient(135deg,#FF4757,#C77DFF);">🌈</div>
+        <div class="more-body">
+          <span class="more-tag" style="background:#F5EAFF;color:var(--purple);">Colours</span>
+          <h3>Rainbow Snack Parade</h3>
+        </div>
+      </a>
+      <a href="transport.html" class="more-card fade-in">
+        <div class="more-thumb" style="background:linear-gradient(135deg,#FF6B35,#4D96FF);">🚗</div>
+        <div class="more-body">
+          <span class="more-tag" style="background:#EAF5FF;color:var(--sky);">Transport</span>
+          <h3>Transport Poem: Land, Air & Water</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- GAMES CTA -->
+<div class="games-cta">
+  <div class="games-cta-inner">
+    <h2>🎮 Imagine, Play & Learn!</h2>
+    <p>After all that imagining — put your skills to the test with Gigloo's games!</p>
+    <div class="cta-grid">
+      <a href="../abc-game.html" class="cta-btn white">🔤 ABC Tap & Play</a>
+      <a href="../math-maze.html" class="cta-btn white">🔢 Math Maze</a>
+      <a href="index.html" class="cta-btn dark">📝 All Poems</a>
+    </div>
+  </div>
+</div>
+
+<!-- SHARE -->
+<section style="background:#fff;padding:40px 24px;">
+  <div class="sec-inner" style="text-align:center;">
+    <h2 class="sec-title fade-in">❤️ Share with Other Parents!</h2>
+    <p class="sec-sub fade-in">Did your child enjoy the What If? version? Share the imagination!</p>
+    <div class="share-row fade-in">
+      <button class="share-btn share-wa" onclick="shareWA()">💬 Share on WhatsApp</button>
+      <button class="share-btn share-fb" onclick="shareFB()">📘 Share on Facebook</button>
+      <button class="share-btn share-copy" onclick="copyLink()">🔗 Copy Link</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo">🐯 GigNLearn</span>
+        <p>Free, safe and ad-light learning for kids aged 2–8. Made with love by educators and parents.</p>
+      </div>
+      <div class="footer-col">
+        <h4>🎮 Games</h4>
+        <ul>
+          <li><a href="../abc-game.html">ABC Tap & Play</a></li>
+          <li><a href="../math-maze.html">Math Maze</a></li>
+          <li><a href="../name-labels.html">Name Labels</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>📝 Poems</h4>
+        <ul>
+          <li><a href="magic-words.html">✨ Magic Words</a></li>
+          <li><a href="one-red-apple.html">🍎 One Red Apple</a></li>
+          <li><a href="rainbow-snack-parade.html">🌈 Rainbow Snacks</a></li>
+          <li><a href="transport.html">🚗 Transport</a></li>
+          <li><a href="baa-baa-black-sheep.html">🐑 Baa Baa Black Sheep</a></li>
+          <li><a href="index.html">📚 All Poems →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 GigNLearn. Made with ♥ for little learners everywhere.</p>
+      <p>🐯 Gigloo says: Keep learning every day!</p>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
+<div class="toast" id="toast"></div>
+
+<script>
+// STAR GENERATOR
+const starsContainer = document.getElementById('heroStars');
+for(let i=0;i<40;i++){
+  const s=document.createElement('div');
+  s.className='star-dot';
+  const size=1+Math.random()*3;
+  s.style.cssText=`width:${size}px;height:${size}px;left:${Math.random()*100}%;top:${Math.random()*70}%;animation-delay:${Math.random()*4}s;animation-duration:${2+Math.random()*3}s;`;
+  starsContainer.appendChild(s);
+}
+
+// SCROLL TOP
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400);
+});
+
+// FADE IN
+document.querySelectorAll('.fade-in').forEach(el=>{
+  new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:0.1}).observe(el);
+});
+
+// VERSION TABS
+function showVersion(v, btn){
+  document.querySelectorAll('.vtab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.version-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('panel-'+v).classList.add('active');
+  // reset read aloud
+  if(speaking){ speechSynthesis.cancel(); speaking=false; clearHighlights();
+    document.getElementById('readBtn').className='read-aloud-btn';
+    document.getElementById('readBtn').textContent='🔊 Read Aloud — Gigloo Will Sing!';
+  }
+  activeVersion = v;
+}
+
+let speaking=false;
+let activeVersion='classic';
+
+const CLASSIC=[
+  "Baa baa black sheep, have you any wool? Yes sir, yes sir, three bags full!",
+  "One for the master. One for the dame. And one for the little boy who lives down the lane!"
+];
+const NEWVERSION=[
+  "Baa baa black sheep, have you any wool? Yes sir, yes sir, my bag is full! But if you want more, come with me today, I've got lots of adventures along the way!",
+  "What if this sheep could fly up high? Soaring clouds in the bright blue sky! Wool delivery by air, hurray! The fastest sheep of the day!",
+  "What if the sheep went to school? Learning letters, that'd be cool! Reading books and doing sums, the smartest sheep when morning comes!",
+  "What if the sheep could travel far? Driving around in a little car! Paris, London, Tokyo too, sharing wool in every view!",
+  "What if the sheep could sing a song? Everyone would sing along! Baa baa baa in perfect tune, performing shows under the moon!",
+  "What if the wool came in every hue? Red and yellow, green and blue! Rainbow sweaters for everyone, the most colourful sheep under the sun!",
+  "So baa baa black sheep, dream big today! There are no limits along your way! Whether flying, singing, near or far, you are a superstar!"
+];
+
+function toggleReadAloud(){
+  if(speaking){
+    speechSynthesis.cancel();speaking=false;clearHighlights();
+    document.getElementById('readBtn').className='read-aloud-btn';
+    document.getElementById('readBtn').textContent='🔊 Read Aloud — Gigloo Will Sing!';
+    return;
+  }
+  speaking=true;
+  document.getElementById('readBtn').className='read-aloud-btn reading';
+  document.getElementById('readBtn').textContent='⏹ Stop Reading';
+  const stanzas = activeVersion==='classic' ? CLASSIC : NEWVERSION;
+  const prefix = activeVersion==='classic' ? 'stanza-c' : 'stanza-n';
+  readStanza(0, stanzas, prefix);
+}
+
+function readStanza(idx, stanzas, prefix){
+  if(idx>=stanzas.length||!speaking){
+    speaking=false;clearHighlights();
+    document.getElementById('readBtn').className='read-aloud-btn';
+    document.getElementById('readBtn').textContent='🔊 Read Aloud — Gigloo Will Sing!';
+    return;
+  }
+  clearHighlights();
+  const el=document.getElementById(prefix+idx);
+  if(el){el.classList.add('active-stanza');el.scrollIntoView({behavior:'smooth',block:'center'});}
+  if('speechSynthesis' in window){
+    const u=new SpeechSynthesisUtterance(stanzas[idx]);
+    u.rate=0.82;u.pitch=1.15;u.volume=1;
+    u.onend=()=>{if(speaking)readStanza(idx+1,stanzas,prefix);};
+    speechSynthesis.speak(u);
+  } else {setTimeout(()=>readStanza(idx+1,stanzas,prefix),2500);}
+}
+
+function clearHighlights(){
+  document.querySelectorAll('.stanza').forEach(s=>s.classList.remove('active-stanza'));
+}
+
+function shareWA(){
+  window.open('https://wa.me/?text='+encodeURIComponent('🐑 Baa Baa Black Sheep — What If? A fun new twist on the classic nursery rhyme by GigNLearn! Free PDF + video 🎵 ')+encodeURIComponent(window.location.href),'_blank');
+}
+function shareFB(){
+  window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href),'_blank');
+}
+function copyLink(){
+  navigator.clipboard.writeText(window.location.href).then(()=>showToast('✅ Link copied!'));
+}
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2200);
+}
+</script>
+</body>
+</html>
