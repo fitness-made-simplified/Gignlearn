@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Days of the Week Song 🎃 Halloween Theme | GigNLearn</title>
+<meta name="description" content="Learn the 7 days of the week with a fun Halloween-themed song! Sunday to Saturday with Gigloo. Watch the video, sing along and download the free PDF activity sheet.">
+<meta property="og:title" content="Days of the Week Song – Halloween Theme 🎃 | GigNLearn">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pumpkin:#FF6B35; --ghost:#E8E8FF; --purple:#7B2FBE;
+  --dark-purple:#3D0066; --yellow:#FFD93D; --green:#4CAF50;
+  --pink:#FF85A1; --blue:#4D96FF; --cream:#FFF9F0; --dark:#1a0a2e;
+  --shadow:0 8px 30px rgba(0,0,0,0.2);
+  --shadow-lg:0 16px 50px rgba(0,0,0,0.3);
+  --radius:22px; --radius-sm:14px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:#0d0d1a;color:#fff;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+nav{background:#1a0a2e;box-shadow:0 4px 20px rgba(0,0,0,0.4);position:sticky;top:0;z-index:1000;padding:0 24px;border-bottom:2px solid rgba(123,47,190,0.3);}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Fredoka One',cursive;font-size:1.55rem;color:var(--pumpkin);}
+.nav-logo .t{font-size:1.9rem;animation:wiggle 3s ease-in-out infinite;}
+@keyframes wiggle{0%,100%{transform:rotate(-5deg);}50%{transform:rotate(5deg);}}
+.nav-links{display:flex;gap:4px;list-style:none;}
+.nav-links a{font-weight:700;font-size:0.88rem;padding:7px 13px;border-radius:50px;transition:all 0.2s;color:rgba(255,255,255,0.8);}
+.nav-links a:hover,.nav-links a.active{background:var(--pumpkin);color:#fff;transform:translateY(-2px);}
+.hamburger{display:none;font-size:1.8rem;cursor:pointer;background:none;border:none;color:#fff;}
+.mob-menu{display:none;flex-direction:column;background:#1a0a2e;padding:16px;gap:8px;border-top:1px solid rgba(123,47,190,0.3);}
+.mob-menu a{font-weight:700;padding:10px 16px;border-radius:var(--radius-sm);display:block;color:rgba(255,255,255,0.8);}
+.mob-menu a:hover{background:rgba(123,47,190,0.3);}
+.mob-menu.open{display:flex;}
+
+/* HERO — spooky night sky */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(180deg,#0d0d1a 0%,#1a0a2e 30%,#3D0066 70%,#7B2FBE 100%);
+  padding:0 24px 80px;
+  clip-path:ellipse(100% 88% at 50% 12%);
+  min-height:500px;
+}
+/* Floating ghosts */
+.ghost{position:absolute;font-size:2rem;animation:ghostFloat 6s ease-in-out infinite;pointer-events:none;opacity:0.6;}
+@keyframes ghostFloat{0%,100%{transform:translateY(0) rotate(-5deg);}50%{transform:translateY(-20px) rotate(5deg);}}
+/* Stars */
+.hero-star{position:absolute;background:#fff;border-radius:50%;animation:twinkle 2s ease-in-out infinite;}
+@keyframes twinkle{0%,100%{opacity:0.2;}50%{opacity:1;}}
+/* Moon */
+.moon{position:absolute;top:20px;right:80px;font-size:4rem;animation:moonGlow 4s ease-in-out infinite;filter:drop-shadow(0 0 20px rgba(255,217,61,0.6));}
+@keyframes moonGlow{0%,100%{filter:drop-shadow(0 0 20px rgba(255,217,61,0.6));}50%{filter:drop-shadow(0 0 40px rgba(255,217,61,0.9));}}
+
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:32px;align-items:center;padding-top:60px;position:relative;z-index:1;}
+.hero-text{color:#fff;}
+.hero-breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+.hero-breadcrumb a{color:rgba(255,255,255,0.55);font-weight:700;font-size:0.85rem;}
+.hero-breadcrumb a:hover{color:#fff;}
+.hero-breadcrumb span{color:rgba(255,255,255,0.35);}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+.badge{padding:5px 14px;border-radius:50px;font-size:0.78rem;font-weight:800;letter-spacing:0.4px;text-transform:uppercase;}
+.badge-halloween{background:var(--pumpkin);color:#fff;}
+.badge-age{background:rgba(255,255,255,0.15);color:#fff;}
+.badge-free{background:var(--green);color:#fff;}
+.hero h1{font-family:'Fredoka One',cursive;font-size:clamp(2rem,5.5vw,3.5rem);line-height:1.05;margin-bottom:14px;text-shadow:0 4px 20px rgba(123,47,190,0.5);}
+.hero h1 em{font-style:normal;color:var(--yellow);}
+.hero-desc{font-size:1.05rem;font-weight:700;color:rgba(255,255,255,0.88);max-width:460px;line-height:1.6;margin-bottom:26px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:1.05rem;cursor:pointer;border:none;transition:all 0.25s;}
+.btn-orange{background:var(--pumpkin);color:#fff;box-shadow:0 6px 20px rgba(255,107,53,0.4);}
+.btn-orange:hover{transform:translateY(-3px) scale(1.02);}
+.btn-ghost{background:rgba(255,255,255,0.15);color:#fff;border:2px solid rgba(255,255,255,0.3);}
+.btn-ghost:hover{background:rgba(255,255,255,0.25);transform:translateY(-3px);}
+.hero-image-wrap{position:relative;}
+.hero-cover{width:100%;border-radius:24px;box-shadow:0 20px 60px rgba(123,47,190,0.4);animation:floatImg 4s ease-in-out infinite;}
+@keyframes floatImg{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+.floating-emoji{position:absolute;font-size:2rem;animation:emojiFloat 3s ease-in-out infinite;}
+.fe1{top:-10px;left:-15px;animation-delay:0s;}
+.fe2{top:20px;right:-18px;animation-delay:0.8s;}
+.fe3{bottom:40px;left:-18px;animation-delay:1.6s;}
+.fe4{bottom:5px;right:5px;animation-delay:2.4s;}
+@keyframes emojiFloat{0%,100%{transform:scale(1) rotate(0deg);}50%{transform:scale(1.3) rotate(12deg);}}
+
+/* DAYS PILL ROW */
+.days-strip{background:#1a0a2e;padding:20px 24px;border-bottom:1px solid rgba(123,47,190,0.3);}
+.days-inner{max-width:1100px;margin:0 auto;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+.day-pill{padding:10px 18px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:0.92rem;transition:transform 0.2s;cursor:default;display:flex;align-items:center;gap:6px;}
+.day-pill:hover{transform:translateY(-4px) scale(1.05);}
+.dp0{background:linear-gradient(135deg,#FF6B35,#FF9B6B);color:#fff;}
+.dp1{background:linear-gradient(135deg,#7B2FBE,#9B4FDE);color:#fff;}
+.dp2{background:linear-gradient(135deg,#FF4757,#FF8C94);color:#fff;}
+.dp3{background:linear-gradient(135deg,#4D96FF,#85B8FF);color:#fff;}
+.dp4{background:linear-gradient(135deg,#6BCB77,#A0E8A8);color:#fff;}
+.dp5{background:linear-gradient(135deg,#FFD93D,#FFE87A);color:#1a0a2e;}
+.dp6{background:linear-gradient(135deg,#FF85A1,#FFB3C4);color:#fff;}
+
+/* SECTIONS */
+section{padding:64px 24px;}
+.sec-inner{max-width:1100px;margin:0 auto;}
+.sec-label{display:inline-block;padding:5px 16px;border-radius:50px;font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;}
+.sec-title{font-family:'Fredoka One',cursive;font-size:clamp(1.7rem,3.5vw,2.3rem);margin-bottom:8px;}
+.sec-sub{font-size:0.98rem;font-weight:600;color:rgba(255,255,255,0.65);margin-bottom:36px;}
+
+/* VIDEO */
+.video-section{background:#1a0a2e;}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius);box-shadow:0 0 40px rgba(123,47,190,0.4);}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.video-meta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+.vmeta-chip{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:50px;padding:7px 16px;font-weight:700;font-size:0.88rem;color:rgba(255,255,255,0.8);display:flex;align-items:center;gap:6px;}
+
+/* LYRICS */
+.lyrics-section{background:#0d0d1a;}
+.lyrics-card{background:#1a0a2e;border-radius:var(--radius);padding:36px;box-shadow:0 0 40px rgba(123,47,190,0.2);border:1px solid rgba(123,47,190,0.2);position:relative;overflow:hidden;}
+.lyrics-card::before{content:'🎃';position:absolute;top:-10px;right:20px;font-size:8rem;opacity:0.05;line-height:1;}
+.read-aloud-btn{display:flex;align-items:center;gap:8px;padding:10px 22px;background:linear-gradient(135deg,var(--pumpkin),var(--purple));color:#fff;border:none;border-radius:50px;font-family:'Fredoka One',cursive;font-size:1rem;cursor:pointer;transition:all 0.25s;margin-bottom:28px;}
+.read-aloud-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(123,47,190,0.4);}
+.read-aloud-btn.reading{background:linear-gradient(135deg,#4CAF50,#8BC34A);}
+.stanzas{display:flex;flex-direction:column;gap:14px;}
+
+/* Each day gets its own spooky card */
+.day-stanza{border-radius:var(--radius-sm);padding:18px 20px 18px 28px;position:relative;transition:all 0.3s;border-left:4px solid transparent;}
+.day-stanza:hover{transform:translateX(6px);}
+.day-num{position:absolute;left:-18px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 4px 12px rgba(0,0,0,0.3);}
+.ds0{background:rgba(255,107,53,0.15);border-color:var(--pumpkin);}
+.ds0 .day-num{background:var(--pumpkin);}
+.ds1{background:rgba(123,47,190,0.15);border-color:var(--purple);}
+.ds1 .day-num{background:var(--purple);}
+.ds2{background:rgba(255,71,87,0.12);border-color:#FF4757;}
+.ds2 .day-num{background:#FF4757;}
+.ds3{background:rgba(77,150,255,0.12);border-color:var(--blue);}
+.ds3 .day-num{background:var(--blue);}
+.ds4{background:rgba(76,175,80,0.12);border-color:var(--green);}
+.ds4 .day-num{background:var(--green);}
+.ds5{background:rgba(255,217,61,0.12);border-color:var(--yellow);}
+.ds5 .day-num{background:var(--yellow);color:var(--dark);}
+.ds6{background:rgba(255,133,161,0.12);border-color:var(--pink);}
+.ds6 .day-num{background:var(--pink);}
+.day-label{font-family:'Fredoka One',cursive;font-size:1.1rem;margin-bottom:4px;}
+.ds0 .day-label{color:var(--pumpkin);}
+.ds1 .day-label{color:#C77DFF;}
+.ds2 .day-label{color:#FF8C94;}
+.ds3 .day-label{color:#85B8FF;}
+.ds4 .day-label{color:#8BE08F;}
+.ds5 .day-label{color:var(--yellow);}
+.ds6 .day-label{color:var(--pink);}
+.stanza-line{font-family:'Baloo 2',cursive;font-size:clamp(0.95rem,2.3vw,1.1rem);font-weight:700;line-height:1.75;color:rgba(255,255,255,0.9);}
+.day-stanza.active-stanza{box-shadow:0 0 0 2px var(--yellow);transform:translateX(10px) scale(1.01);}
+
+/* FULL SONG CARD */
+.full-song{background:linear-gradient(135deg,#1a0a2e,#3D0066);border-radius:var(--radius);padding:28px;margin-top:20px;border:1px solid rgba(255,217,61,0.2);}
+.full-song h3{font-family:'Fredoka One',cursive;font-size:1.2rem;color:var(--yellow);margin-bottom:16px;text-align:center;}
+.full-song-text{font-family:'Baloo 2',cursive;font-size:1rem;font-weight:700;color:rgba(255,255,255,0.85);line-height:2;text-align:center;}
+.full-song-text .day-highlight{color:var(--yellow);}
+
+/* DAYS CHART */
+.days-chart{background:rgba(255,255,255,0.05);border-radius:var(--radius);padding:24px;margin-top:20px;border:1px solid rgba(123,47,190,0.3);}
+.days-chart h3{font-family:'Fredoka One',cursive;font-size:1.2rem;color:var(--yellow);margin-bottom:18px;text-align:center;}
+.days-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;}
+.day-box{border-radius:var(--radius-sm);padding:12px 6px;text-align:center;transition:transform 0.2s;}
+.day-box:hover{transform:scale(1.08);}
+.db0{background:var(--pumpkin);}
+.db1{background:var(--purple);}
+.db2{background:#FF4757;}
+.db3{background:var(--blue);}
+.db4{background:var(--green);}
+.db5{background:var(--yellow);}
+.db6{background:var(--pink);}
+.day-box-emoji{font-size:1.5rem;display:block;margin-bottom:4px;}
+.day-box-name{font-family:'Fredoka One',cursive;font-size:0.72rem;color:#fff;display:block;}
+.db5 .day-box-name{color:var(--dark);}
+
+/* PDF */
+.pdf-section{background:#1a0a2e;}
+.pdf-card{border-radius:var(--radius);padding:40px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;box-shadow:var(--shadow-lg);background:linear-gradient(135deg,#3D0066,#7B2FBE,var(--pumpkin));border:1px solid rgba(255,217,61,0.2);}
+.pdf-text h2{font-family:'Fredoka One',cursive;font-size:1.8rem;color:var(--yellow);margin-bottom:10px;}
+.pdf-text p{color:rgba(255,255,255,0.9);font-weight:700;font-size:0.98rem;line-height:1.6;margin-bottom:20px;}
+.pdf-features{display:flex;flex-direction:column;gap:8px;margin-bottom:24px;}
+.pdf-feat{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:0.92rem;}
+.pdf-feat::before{content:'✓';width:22px;height:22px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;flex-shrink:0;}
+.btn-download{display:inline-flex;align-items:center;gap:10px;padding:15px 32px;background:var(--yellow);color:var(--dark);border:none;border-radius:50px;font-family:'Fredoka One',cursive;font-size:1.15rem;cursor:pointer;transition:all 0.25s;box-shadow:0 6px 20px rgba(0,0,0,0.3);}
+.btn-download:hover{transform:translateY(-4px) scale(1.03);}
+.pdf-preview{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.pdf-thumb{background:rgba(255,255,255,0.15);border-radius:var(--radius-sm);padding:16px;text-align:center;color:#fff;font-weight:800;font-size:0.82rem;}
+.pdf-thumb-icon{font-size:2rem;display:block;margin-bottom:6px;}
+.pdf-thumb:nth-child(odd){transform:rotate(-2deg);}
+.pdf-thumb:nth-child(even){transform:rotate(1.5deg);}
+
+/* PARENTS */
+.parents-section{background:#0d0d1a;}
+.parents-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.pcard{background:#1a0a2e;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);border:1px solid rgba(123,47,190,0.2);}
+.pcard-icon{font-size:2.2rem;margin-bottom:12px;display:block;}
+.pcard h3{font-family:'Fredoka One',cursive;font-size:1.15rem;margin-bottom:10px;color:#fff;}
+.pcard ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.pcard ul li{font-size:0.9rem;font-weight:700;color:rgba(255,255,255,0.7);display:flex;align-items:flex-start;gap:8px;}
+.pcard ul li::before{content:'→';color:var(--pumpkin);font-weight:800;flex-shrink:0;}
+.activity-box{background:linear-gradient(135deg,#3D0066,var(--pumpkin));border-radius:var(--radius);padding:24px;grid-column:span 2;}
+.activity-box h3{font-family:'Fredoka One',cursive;font-size:1.2rem;color:var(--yellow);margin-bottom:8px;}
+.activity-box p{font-weight:700;font-size:0.95rem;color:rgba(255,255,255,0.9);line-height:1.6;}
+
+/* MORE */
+.more-section{background:#1a0a2e;}
+.more-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+.more-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform 0.25s,box-shadow 0.25s;display:block;border:1px solid rgba(123,47,190,0.2);}
+.more-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+.more-thumb{height:140px;display:flex;align-items:center;justify-content:center;font-size:4rem;}
+.more-body{background:#1a0a2e;padding:16px;}
+.more-tag{display:inline-block;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;padding:3px 10px;border-radius:50px;margin-bottom:6px;}
+.more-body h3{font-family:'Fredoka One',cursive;font-size:1.05rem;color:#fff;line-height:1.3;}
+
+/* GAMES CTA */
+.games-cta{background:linear-gradient(135deg,#3D0066,#7B2FBE);padding:56px 24px;}
+.games-cta-inner{max-width:1100px;margin:0 auto;text-align:center;}
+.games-cta h2{font-family:'Fredoka One',cursive;font-size:clamp(1.8rem,4vw,2.4rem);color:var(--yellow);margin-bottom:10px;}
+.games-cta p{color:rgba(255,255,255,0.85);font-weight:700;margin-bottom:28px;}
+.cta-grid{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.cta-btn{padding:13px 24px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:1rem;transition:all 0.2s;border:none;cursor:pointer;}
+.cta-btn.orange{background:var(--pumpkin);color:#fff;}
+.cta-btn.dark{background:rgba(255,255,255,0.1);color:#fff;border:2px solid rgba(255,255,255,0.3);}
+.cta-btn:hover{transform:translateY(-3px) scale(1.03);}
+
+/* SHARE */
+.share-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px;}
+.share-btn{padding:10px 20px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:0.92rem;border:none;cursor:pointer;transition:all 0.2s;}
+.share-btn:hover{transform:translateY(-2px);}
+.share-wa{background:#25D366;color:#fff;}
+.share-fb{background:#1877F2;color:#fff;}
+.share-copy{background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2);}
+
+/* FOOTER */
+footer{background:#0d0d1a;color:#fff;padding:40px 24px 24px;border-top:1px solid rgba(123,47,190,0.3);}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:32px;}
+.footer-logo{font-family:'Fredoka One',cursive;font-size:1.7rem;color:var(--pumpkin);margin-bottom:10px;display:block;}
+.footer-brand p{color:rgba(255,255,255,0.45);font-size:0.88rem;font-weight:600;line-height:1.7;max-width:260px;}
+.footer-col h4{font-family:'Fredoka One',cursive;font-size:1.05rem;color:var(--yellow);margin-bottom:12px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.footer-col ul li a{color:rgba(255,255,255,0.45);font-size:0.88rem;font-weight:600;transition:color 0.2s;}
+.footer-col ul li a:hover{color:#fff;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.footer-bottom p{color:rgba(255,255,255,0.3);font-size:0.82rem;font-weight:600;}
+
+#scrollTop{position:fixed;bottom:24px;right:24px;width:50px;height:50px;background:var(--pumpkin);color:#fff;border:none;border-radius:50%;font-size:1.2rem;cursor:pointer;box-shadow:var(--shadow);display:none;align-items:center;justify-content:center;z-index:999;transition:all 0.2s;}
+#scrollTop.visible{display:flex;}
+#scrollTop:hover{background:var(--purple);transform:translateY(-3px);}
+.toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#1a0a2e;color:#fff;border:1px solid rgba(255,217,61,0.3);padding:12px 26px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:1rem;z-index:9999;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap;}
+.toast.show{opacity:1;}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-image-wrap{display:none;}
+  .pdf-card{grid-template-columns:1fr;}
+  .pdf-preview{display:none;}
+  .parents-grid{grid-template-columns:1fr;}
+  .activity-box{grid-column:span 1;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .days-grid{grid-template-columns:repeat(4,1fr);}
+}
+@media(max-width:768px){
+  .nav-links{display:none;}.hamburger{display:block;}
+  .hero{clip-path:ellipse(120% 90% at 50% 10%);padding-bottom:50px;}
+  .days-grid{grid-template-columns:repeat(4,1fr);}
+}
+@media(max-width:500px){
+  .footer-top{grid-template-columns:1fr;}
+  .days-grid{grid-template-columns:repeat(4,1fr);gap:6px;}
+  .day-box{padding:8px 4px;}
+  .day-box-emoji{font-size:1.2rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <span class="t">🐯</span><span>GigNLearn</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../abc-game.html">ABC Game</a></li>
+      <li><a href="../math-maze.html">Math Maze</a></li>
+      <li><a href="index.html" class="active">Poems</a></li>
+      <li><a href="../name-labels.html">Labels</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.getElementById('mm').classList.toggle('open')">☰</button>
+  </div>
+  <div class="mob-menu" id="mm">
+    <a href="../index.html">🏠 Home</a>
+    <a href="../abc-game.html">🔤 ABC Game</a>
+    <a href="../math-maze.html">🔢 Math Maze</a>
+    <a href="index.html">📝 All Poems</a>
+    <a href="../name-labels.html">🏷️ Name Labels</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="moon">🌕</div>
+  <div id="heroElements"></div>
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>›</span>
+        <a href="index.html">Poems</a>
+        <span>›</span>
+        <span style="color:rgba(255,255,255,0.9);">Days of the Week</span>
+      </div>
+      <div class="hero-badges">
+        <span class="badge badge-halloween">🎃 Halloween Theme</span>
+        <span class="badge badge-age">👶 Ages 3–8</span>
+        <span class="badge badge-free">🆓 Free</span>
+      </div>
+      <h1>Days of the<br><em>Week Song! 📅</em></h1>
+      <p class="hero-desc">Sunday, Monday, here we go! 🎃 Learn all 7 days of the week with a spooky, fun Halloween-themed song by Gigloo! Perfect for school! 🐯</p>
+      <div class="hero-actions">
+        <a href="#watch" class="btn btn-orange">▶ Watch Video</a>
+        <a href="https://drive.google.com/uc?export=download&id=1bDMsCoy2NEbEejzUR4MdeXmE9z-xQAy1" class="btn btn-ghost" download>⬇ Free PDF</a>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <span class="floating-emoji fe1">🎃</span>
+      <span class="floating-emoji fe2">👻</span>
+      <span class="floating-emoji fe3">⭐</span>
+      <span class="floating-emoji fe4">🦇</span>
+      <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxY_xCOJd8TPGoDJxYBrsctrQ25Nc8MR5pXYBSs4KSJaIEUVZU09QL-nx3ThLFNRAYhQ5EbpX2d7F0GnZFCA5NSqX3M1sWONiO1ypvg5WfLs_MflpPrQAld7I_mUvoJpr_rmtMGWxW5eyjpxmvoVJ8aSeDz9BmXUY5NXiOixdnth9uaMPdgRzyzHV1CVhB/s1248/1000380923.jpg"
+        alt="Days of the Week Halloween Song – GigNLearn"
+        class="hero-cover"
+      >
+    </div>
+  </div>
+</div>
+
+<!-- DAYS STRIP -->
+<div class="days-strip">
+  <div class="days-inner">
+    <div class="day-pill dp0">🌞 Sunday</div>
+    <div class="day-pill dp1">🌙 Monday</div>
+    <div class="day-pill dp2">🔥 Tuesday</div>
+    <div class="day-pill dp3">💧 Wednesday</div>
+    <div class="day-pill dp4">⚡ Thursday</div>
+    <div class="day-pill dp5">✨ Friday</div>
+    <div class="day-pill dp6">🎉 Saturday</div>
+  </div>
+</div>
+
+<!-- VIDEO -->
+<section class="video-section" id="watch">
+  <div class="sec-inner">
+    <div class="fade-in">
+      <span class="sec-label" style="background:rgba(255,107,53,0.2);color:var(--pumpkin);">▶ Watch & Sing Along</span>
+      <h2 class="sec-title">Watch the Days of the Week Song! 🎬</h2>
+      <p class="sec-sub">Sing all 7 days with Gigloo — safely on GigNLearn! 🐯🎃</p>
+    </div>
+    <div class="video-wrap fade-in">
+      <iframe
+        src="https://www.youtube.com/embed/3iaRxGMiDWE?rel=0&modestbranding=1&color=white"
+        title="Days of the Week Halloween Song | GigNLearn with Gigloo"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+    <div class="video-meta fade-in">
+      <div class="vmeta-chip">🐯 GigNLearn with Gigloo</div>
+      <div class="vmeta-chip">📅 7 Days of the Week</div>
+      <div class="vmeta-chip">🎃 Halloween Theme</div>
+      <div class="vmeta-chip">📱 Safe · No Ads</div>
+    </div>
+  </div>
+</section>
+
+<!-- LYRICS -->
+<section class="lyrics-section" id="lyrics">
+  <div class="sec-inner">
+    <div class="fade-in">
+      <span class="sec-label" style="background:rgba(255,107,53,0.2);color:var(--pumpkin);">📖 Read Along</span>
+      <h2 class="sec-title">Song Lyrics 📅🎃</h2>
+      <p class="sec-sub">Sing each day — press Read Aloud and Gigloo will guide you through all 7 days!</p>
+    </div>
+
+    <div class="lyrics-card fade-in">
+      <button class="read-aloud-btn" id="readBtn" onclick="toggleReadAloud()">
+        🔊 Sing Along — All 7 Days with Gigloo!
+      </button>
+
+      <div class="stanzas" id="stanzas">
+
+        <div class="day-stanza ds0" id="stanza-0">
+          <div class="day-num">🌞</div>
+          <div class="day-label">Sunday</div>
+          <div class="stanza-line"><strong>Sunday</strong>, Monday, here we go,</div>
+          <div class="stanza-line">Sunday is for rest and a family show!</div>
+        </div>
+
+        <div class="day-stanza ds1" id="stanza-1">
+          <div class="day-num">🌙</div>
+          <div class="day-label">Monday</div>
+          <div class="stanza-line"><strong>Monday</strong>'s here, the week begins,</div>
+          <div class="stanza-line">Grab your bag and let's start with grins!</div>
+        </div>
+
+        <div class="day-stanza ds2" id="stanza-2">
+          <div class="day-num">🔥</div>
+          <div class="day-label">Tuesday</div>
+          <div class="stanza-line"><strong>Tuesday</strong>, Wednesday, nice and slow,</div>
+          <div class="stanza-line">Learning, playing, watch us grow!</div>
+        </div>
+
+        <div class="day-stanza ds3" id="stanza-3">
+          <div class="day-num">💧</div>
+          <div class="day-label">Wednesday</div>
+          <div class="stanza-line"><strong>Wednesday</strong>'s here, the middle day,</div>
+          <div class="stanza-line">Halfway through — hip hip hooray!</div>
+        </div>
+
+        <div class="day-stanza ds4" id="stanza-4">
+          <div class="day-num">⚡</div>
+          <div class="day-label">Thursday</div>
+          <div class="stanza-line"><strong>Thursday</strong>, Friday, getting bright,</div>
+          <div class="stanza-line">Almost weekend, feels just right!</div>
+        </div>
+
+        <div class="day-stanza ds5" id="stanza-5">
+          <div class="day-num">✨</div>
+          <div class="day-label">Friday</div>
+          <div class="stanza-line"><strong>Friday</strong>'s here, let's shout hooray!</div>
+          <div class="stanza-line">Weekend's coming — it's a great day!</div>
+        </div>
+
+        <div class="day-stanza ds6" id="stanza-6">
+          <div class="day-num">🎉</div>
+          <div class="day-label">Saturday</div>
+          <div class="stanza-line"><strong>Saturday</strong>'s here, feels just right,</div>
+          <div class="stanza-line">Play all day and sleep at night! 🎃</div>
+        </div>
+
+      </div>
+
+      <!-- FULL SONG -->
+      <div class="full-song">
+        <h3>🎵 Sing the Full Song!</h3>
+        <div class="full-song-text">
+          <span class="day-highlight">Sunday</span>, <span class="day-highlight">Monday</span>, here we go,<br>
+          <span class="day-highlight">Tuesday</span>, <span class="day-highlight">Wednesday</span>, nice and slow,<br>
+          <span class="day-highlight">Thursday</span>, <span class="day-highlight">Friday</span>, getting bright,<br>
+          <span class="day-highlight">Saturday</span>'s here, feels just right! 🎃
+        </div>
+      </div>
+
+      <!-- DAYS CHART -->
+      <div class="days-chart">
+        <h3>📅 7 Days of the Week!</h3>
+        <div class="days-grid">
+          <div class="day-box db0"><span class="day-box-emoji">🌞</span><span class="day-box-name">Sun</span></div>
+          <div class="day-box db1"><span class="day-box-emoji">🌙</span><span class="day-box-name">Mon</span></div>
+          <div class="day-box db2"><span class="day-box-emoji">🔥</span><span class="day-box-name">Tue</span></div>
+          <div class="day-box db3"><span class="day-box-emoji">💧</span><span class="day-box-name">Wed</span></div>
+          <div class="day-box db4"><span class="day-box-emoji">⚡</span><span class="day-box-name">Thu</span></div>
+          <div class="day-box db5"><span class="day-box-emoji">✨</span><span class="day-box-name">Fri</span></div>
+          <div class="day-box db6"><span class="day-box-emoji">🎉</span><span class="day-box-name">Sat</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PDF -->
+<section class="pdf-section" id="download">
+  <div class="sec-inner">
+    <div class="fade-in">
+      <span class="sec-label" style="background:rgba(76,175,80,0.2);color:#8BE08F;">🖨️ Free Activity Sheet</span>
+      <h2 class="sec-title">Download the Free PDF! 📄</h2>
+      <p class="sec-sub">All 7 days + Halloween activities — print and learn!</p>
+    </div>
+    <div class="pdf-card fade-in">
+      <div class="pdf-text">
+        <h2>📅 Days of the Week Activity Book</h2>
+        <p>Full song lyrics + activities to learn the order of the 7 days, spell them correctly and use them in sentences! Halloween-themed throughout!</p>
+        <div class="pdf-features">
+          <div class="pdf-feat">Full song — all 7 days</div>
+          <div class="pdf-feat">Write the days in order activity</div>
+          <div class="pdf-feat">Match day to activity worksheet</div>
+          <div class="pdf-feat">Fill in the missing day</div>
+          <div class="pdf-feat">Halloween colouring page</div>
+          <div class="pdf-feat">100% Free — no sign-up needed!</div>
+        </div>
+        <a href="https://drive.google.com/uc?export=download&id=1bDMsCoy2NEbEejzUR4MdeXmE9z-xQAy1" class="btn-download" download>
+          ⬇️ Download Free PDF
+        </a>
+      </div>
+      <div class="pdf-preview">
+        <div class="pdf-thumb"><span class="pdf-thumb-icon">📅</span>Full Song</div>
+        <div class="pdf-thumb"><span class="pdf-thumb-icon">✏️</span>Write Days</div>
+        <div class="pdf-thumb"><span class="pdf-thumb-icon">🔗</span>Match Activity</div>
+        <div class="pdf-thumb"><span class="pdf-thumb-icon">🎃</span>Colouring</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARENTS -->
+<section class="parents-section">
+  <div class="sec-inner">
+    <div class="fade-in">
+      <span class="sec-label" style="background:rgba(123,47,190,0.3);color:#C77DFF;">👨‍👩‍👧 For Parents</span>
+      <h2 class="sec-title">What Your Child Learns</h2>
+      <p class="sec-sub">7 days + a spooky theme = maximum engagement!</p>
+    </div>
+    <div class="parents-grid fade-in">
+      <div class="pcard">
+        <span class="pcard-icon">📅</span>
+        <h3>Days Learned</h3>
+        <ul>
+          <li>All 7 days in correct order</li>
+          <li>Spelling of each day name</li>
+          <li>Weekend vs Weekday concept</li>
+          <li>Monday = start, Sunday = rest</li>
+        </ul>
+      </div>
+      <div class="pcard">
+        <span class="pcard-icon">🎃</span>
+        <h3>Why Halloween Theme?</h3>
+        <ul>
+          <li>Fun theme = better memory retention</li>
+          <li>Kids are more engaged with exciting visuals</li>
+          <li>Seasonal celebration awareness</li>
+          <li>Creative learning environment</li>
+        </ul>
+      </div>
+      <div class="pcard">
+        <span class="pcard-icon">🧠</span>
+        <h3>Skills Developed</h3>
+        <ul>
+          <li>Sequential memory — day order</li>
+          <li>Rhythmic learning through song</li>
+          <li>Time & calendar awareness</li>
+          <li>Vocabulary — day names</li>
+        </ul>
+      </div>
+      <div class="pcard">
+        <span class="pcard-icon">⏱️</span>
+        <h3>Usage Guide</h3>
+        <ul>
+          <li>Sing every morning at breakfast</li>
+          <li>Ask "What day is today?" daily</li>
+          <li>Best for: Ages 3–8 years</li>
+          <li>Great for LKG, UKG, Grade 1</li>
+        </ul>
+      </div>
+      <div class="activity-box">
+        <h3>💡 Daily Calendar Activity!</h3>
+        <p>Every morning, ask your child to sing the days song and stop at today's day. Then ask: <strong>"What was yesterday? What will tomorrow be?"</strong> Print a weekly calendar from the PDF and let them colour each day as it passes. By the end of the week they'll know the order perfectly — and look forward to doing it again next Monday! 📅🎃</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MORE POEMS -->
+<section class="more-section">
+  <div class="sec-inner">
+    <div class="fade-in">
+      <span class="sec-label" style="background:rgba(255,107,53,0.2);color:var(--pumpkin);">📚 More Poems</span>
+      <h2 class="sec-title">Keep Reading with Gigloo! 🐯</h2>
+      <p class="sec-sub">Each poem has a free PDF and video!</p>
+    </div>
+    <div class="more-grid">
+      <a href="good-morning-sun.html" class="more-card fade-in">
+        <div class="more-thumb" style="background:linear-gradient(135deg,#FF6B35,#FFD93D);">☀️</div>
+        <div class="more-body">
+          <span class="more-tag" style="background:rgba(255,107,53,0.2);color:var(--pumpkin);">Morning</span>
+          <h3>Good Morning Sun</h3>
+        </div>
+      </a>
+      <a href="magic-words.html" class="more-card fade-in">
+        <div class="more-thumb" style="background:linear-gradient(135deg,#FF6B35,#FFD93D);">✨</div>
+        <div class="more-body">
+          <span class="more-tag" style="background:rgba(255,107,53,0.2);color:var(--pumpkin);">Manners</span>
+          <h3>Magic Words Poem</h3>
+        </div>
+      </a>
+      <a href="transport.html" class="more-card fade-in">
+        <div class="more-thumb" style="background:linear-gradient(135deg,#FF6B35,#4D96FF);">🚗</div>
+        <div class="more-body">
+          <span class="more-tag" style="background:rgba(77,150,255,0.2);color:var(--blue);">Transport</span>
+          <h3>Transport Poem</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- GAMES CTA -->
+<div class="games-cta">
+  <div class="games-cta-inner">
+    <h2>🎮 What Day Is It? Time to Play!</h2>
+    <p>After learning the days — let's test your skills with Gigloo's games!</p>
+    <div class="cta-grid">
+      <a href="../abc-game.html" class="cta-btn orange">🔤 ABC Tap & Play</a>
+      <a href="../math-maze.html" class="cta-btn orange">🔢 Math Maze</a>
+      <a href="index.html" class="cta-btn dark">📝 All Poems</a>
+    </div>
+  </div>
+</div>
+
+<!-- SHARE -->
+<section style="background:#1a0a2e;padding:40px 24px;border-top:1px solid rgba(123,47,190,0.2);">
+  <div class="sec-inner" style="text-align:center;">
+    <h2 class="sec-title fade-in">❤️ Share with Other Parents!</h2>
+    <p class="sec-sub fade-in">Share in school WhatsApp groups — teachers love it too!</p>
+    <div class="share-row fade-in">
+      <button class="share-btn share-wa" onclick="shareWA()">💬 Share on WhatsApp</button>
+      <button class="share-btn share-fb" onclick="shareFB()">📘 Share on Facebook</button>
+      <button class="share-btn share-copy" onclick="copyLink()">🔗 Copy Link</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo">🐯 GigNLearn</span>
+        <p>Free, safe and ad-light learning for kids aged 2–8. Made with love by educators and parents.</p>
+      </div>
+      <div class="footer-col">
+        <h4>🎮 Games</h4>
+        <ul>
+          <li><a href="../abc-game.html">ABC Tap & Play</a></li>
+          <li><a href="../math-maze.html">Math Maze</a></li>
+          <li><a href="../name-labels.html">Name Labels</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>📝 Poems</h4>
+        <ul>
+          <li><a href="days-of-the-week.html">📅 Days of the Week</a></li>
+          <li><a href="good-morning-sun.html">☀️ Good Morning Sun</a></li>
+          <li><a href="magic-words.html">✨ Magic Words</a></li>
+          <li><a href="transport.html">🚗 Transport</a></li>
+          <li><a href="baa-baa-black-sheep.html">🐑 Baa Baa Black Sheep</a></li>
+          <li><a href="index.html">📚 All Poems →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 GigNLearn. Made with ♥ for little learners everywhere.</p>
+      <p>🐯 🎃 What day is it today?</p>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
+<div class="toast" id="toast"></div>
+
+<script>
+// GENERATE STARS + GHOSTS + BATS
+const heroEl = document.getElementById('heroElements');
+const ghosts=['👻','🎃','🦇','⭐','🌙'];
+for(let i=0;i<8;i++){
+  const g=document.createElement('div');
+  g.className='ghost';
+  g.textContent=ghosts[i%ghosts.length];
+  g.style.cssText=`left:${5+Math.random()*85}%;top:${10+Math.random()*70}%;font-size:${1.5+Math.random()*1.5}rem;animation-delay:${Math.random()*4}s;animation-duration:${4+Math.random()*4}s;`;
+  heroEl.appendChild(g);
+}
+for(let i=0;i<25;i++){
+  const s=document.createElement('div');
+  s.className='hero-star';
+  const size=1+Math.random()*2.5;
+  s.style.cssText=`width:${size}px;height:${size}px;left:${Math.random()*100}%;top:${Math.random()*80}%;animation-delay:${Math.random()*3}s;animation-duration:${1.5+Math.random()*2}s;`;
+  heroEl.appendChild(s);
+}
+
+// SCROLL TOP
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400);
+});
+
+// FADE IN
+document.querySelectorAll('.fade-in').forEach(el=>{
+  new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:0.1}).observe(el);
+});
+
+// READ ALOUD
+const STANZAS=[
+  "Sunday, Monday, here we go. Sunday is for rest and a family show!",
+  "Monday's here, the week begins. Grab your bag and let's start with grins!",
+  "Tuesday, Wednesday, nice and slow. Learning, playing, watch us grow!",
+  "Wednesday's here, the middle day. Halfway through, hip hip hooray!",
+  "Thursday, Friday, getting bright. Almost weekend, feels just right!",
+  "Friday's here, let's shout hooray! Weekend's coming, it's a great day!",
+  "Saturday's here, feels just right. Play all day and sleep at night!"
+];
+let speaking=false;
+
+function toggleReadAloud(){
+  if(speaking){
+    speechSynthesis.cancel();speaking=false;clearHighlights();
+    document.getElementById('readBtn').className='read-aloud-btn';
+    document.getElementById('readBtn').textContent='🔊 Sing Along — All 7 Days with Gigloo!';
+    return;
+  }
+  speaking=true;
+  document.getElementById('readBtn').className='read-aloud-btn reading';
+  document.getElementById('readBtn').textContent='⏹ Stop Singing';
+  readStanza(0);
+}
+function readStanza(idx){
+  if(idx>=STANZAS.length||!speaking){
+    speaking=false;clearHighlights();
+    document.getElementById('readBtn').className='read-aloud-btn';
+    document.getElementById('readBtn').textContent='🔊 Sing Along — All 7 Days with Gigloo!';
+    return;
+  }
+  clearHighlights();
+  const el=document.getElementById('stanza-'+idx);
+  if(el){el.classList.add('active-stanza');el.scrollIntoView({behavior:'smooth',block:'center'});}
+  if('speechSynthesis' in window){
+    const u=new SpeechSynthesisUtterance(STANZAS[idx]);
+    u.rate=0.82;u.pitch=1.15;u.volume=1;
+    u.onend=()=>{if(speaking)readStanza(idx+1);};
+    speechSynthesis.speak(u);
+  } else {setTimeout(()=>readStanza(idx+1),2500);}
+}
+function clearHighlights(){
+  document.querySelectorAll('.day-stanza').forEach(s=>s.classList.remove('active-stanza'));
+}
+
+function shareWA(){
+  window.open('https://wa.me/?text='+encodeURIComponent('📅🎃 Days of the Week Halloween Song for kids on GigNLearn! Learn all 7 days with Gigloo — free PDF + video 🐯 ')+encodeURIComponent(window.location.href),'_blank');
+}
+function shareFB(){
+  window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href),'_blank');
+}
+function copyLink(){
+  navigator.clipboard.writeText(window.location.href).then(()=>showToast('✅ Link copied!'));
+}
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2200);
+}
+</script>
+</body>
+</html>
