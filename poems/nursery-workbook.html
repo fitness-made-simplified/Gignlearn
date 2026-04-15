@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Nursery Workbook – Free Printable Activity Book | GigNLearn 🐯</title>
+<meta name="description" content="Free nursery workbook for early learners! Download, print and play. Greetings, Alphabet, Shapes, Colours and more — by GigNLearn with Gigloo. 100% Free PDF!">
+<meta property="og:title" content="My Nursery Workbook – Free Printable | GigNLearn 🐯">
+<meta property="og:description" content="Free nursery activity workbook — Greetings, Alphabet A-Z, Shapes, Colours and fun activities. Download, print and play with Gigloo!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#FF6B35; --yellow:#FFD93D; --green:#6BCB77;
+  --blue:#4D96FF; --purple:#C77DFF; --pink:#FF85A1;
+  --red:#FF4757; --teal:#00C2CB; --cream:#FFF9F0; --dark:#2D2D2D;
+  --shadow:0 8px 30px rgba(0,0,0,0.11);
+  --shadow-lg:0 16px 50px rgba(0,0,0,0.16);
+  --radius:22px; --radius-sm:14px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+nav{background:#fff;box-shadow:0 4px 20px rgba(0,0,0,0.08);position:sticky;top:0;z-index:1000;padding:0 24px;}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Fredoka One',cursive;font-size:1.55rem;color:var(--orange);}
+.nav-logo .t{font-size:1.9rem;animation:wiggle 3s ease-in-out infinite;}
+@keyframes wiggle{0%,100%{transform:rotate(-5deg);}50%{transform:rotate(5deg);}}
+.nav-links{display:flex;gap:4px;list-style:none;}
+.nav-links a{font-weight:700;font-size:0.88rem;padding:7px 13px;border-radius:50px;transition:all 0.2s;color:var(--dark);}
+.nav-links a:hover,.nav-links a.active{background:var(--orange);color:#fff;transform:translateY(-2px);}
+.hamburger{display:none;font-size:1.8rem;cursor:pointer;background:none;border:none;}
+.mob-menu{display:none;flex-direction:column;background:#fff;padding:16px;gap:8px;border-top:2px solid var(--cream);}
+.mob-menu a{font-weight:700;padding:10px 16px;border-radius:var(--radius-sm);display:block;}
+.mob-menu a:hover{background:var(--cream);}
+.mob-menu.open{display:flex;}
+
+/* HERO */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#FF6B35 0%,#FFD93D 35%,#6BCB77 65%,#4D96FF 100%);
+  padding:56px 24px 100px;
+  clip-path:ellipse(100% 88% at 50% 12%);
+  text-align:center;
+}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.07'%3E%3Ccircle cx='20' cy='20' r='3'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none;}
+.hero-content{position:relative;z-index:1;max-width:800px;margin:0 auto;}
+.hero-gigloo{font-size:5rem;display:block;animation:bounce 2s ease-in-out infinite;margin-bottom:12px;}
+@keyframes bounce{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-14px) scale(1.05);}}
+.hero-badge-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;}
+.hbadge{padding:5px 16px;border-radius:50px;font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;}
+.hb1{background:rgba(255,255,255,0.3);color:#fff;}
+.hb2{background:var(--dark);color:var(--yellow);}
+.hb3{background:#fff;color:var(--orange);}
+.hero h1{font-family:'Fredoka One',cursive;font-size:clamp(2.4rem,6vw,4rem);color:#fff;text-shadow:0 4px 20px rgba(0,0,0,0.2);margin-bottom:12px;line-height:1.1;}
+.hero h1 em{font-style:normal;color:var(--dark);}
+.hero p{color:rgba(255,255,255,0.93);font-weight:700;font-size:1.05rem;max-width:560px;margin:0 auto 28px;line-height:1.6;}
+.hero-download-big{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:18px 40px;background:#fff;color:var(--orange);
+  border-radius:50px;font-family:'Fredoka One',cursive;font-size:1.3rem;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);transition:all 0.3s;
+  border:none;cursor:pointer;text-decoration:none;
+  animation:ctaPulse 2s ease-in-out infinite;
+}
+@keyframes ctaPulse{0%,100%{box-shadow:0 10px 30px rgba(0,0,0,0.2);}50%{box-shadow:0 16px 50px rgba(0,0,0,0.3);transform:translateY(-3px) scale(1.02);}}
+.hero-download-big:hover{transform:translateY(-4px) scale(1.03);}
+.hero-stats{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:28px;}
+.hstat{background:rgba(255,255,255,0.22);border-radius:50px;padding:8px 20px;color:#fff;font-family:'Fredoka One',cursive;font-size:0.95rem;}
+
+/* WHAT'S INSIDE — preview cards */
+.inside-section{background:#fff;padding:64px 24px;}
+.sec-inner{max-width:1100px;margin:0 auto;}
+.sec-label{display:inline-block;padding:5px 16px;border-radius:50px;font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;}
+.sec-title{font-family:'Fredoka One',cursive;font-size:clamp(1.7rem,3.5vw,2.3rem);margin-bottom:8px;}
+.sec-sub{font-size:0.98rem;font-weight:600;color:#666;margin-bottom:36px;}
+
+.inside-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+.inside-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform 0.3s,box-shadow 0.3s;}
+.inside-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+.ic-thumb{height:160px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.ic-thumb-emoji{font-size:5rem;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.15));animation:thumbFloat 3s ease-in-out infinite;}
+@keyframes thumbFloat{0%,100%{transform:scale(1);}50%{transform:scale(1.1);}}
+.ic-page-num{position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.3);color:#fff;border-radius:50px;padding:4px 12px;font-family:'Fredoka One',cursive;font-size:0.82rem;}
+.ic-body{background:#fff;padding:18px 20px;}
+.ic-tag{display:inline-block;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;padding:3px 10px;border-radius:50px;margin-bottom:8px;}
+.ic-body h3{font-family:'Fredoka One',cursive;font-size:1.15rem;color:var(--dark);margin-bottom:6px;}
+.ic-body p{font-size:0.88rem;font-weight:600;color:#777;line-height:1.5;margin-bottom:10px;}
+.ic-topics{display:flex;gap:6px;flex-wrap:wrap;}
+.ic-topic{background:var(--cream);border-radius:50px;padding:3px 10px;font-size:0.75rem;font-weight:800;color:#888;}
+
+/* PAGE COLOURS */
+.ic1 .ic-thumb{background:linear-gradient(135deg,#FF6B35,#FFD93D);}
+.ic2 .ic-thumb{background:linear-gradient(135deg,#4D96FF,#85B8FF);}
+.ic3 .ic-thumb{background:linear-gradient(135deg,#FF4757,#FF6B35);}
+.ic4 .ic-thumb{background:linear-gradient(135deg,#6BCB77,#A0E8A8);}
+.ic5 .ic-thumb{background:linear-gradient(135deg,#C77DFF,#E0A8FF);}
+.ic6 .ic-thumb{background:linear-gradient(135deg,#FFD93D,#FFE87A);}
+.ic7 .ic-thumb{background:linear-gradient(135deg,#00C2CB,#5EEAF0);}
+.ic8 .ic-thumb{background:linear-gradient(135deg,#FF85A1,#FFB3C4);}
+
+/* PREVIEW FROM SCREENSHOT */
+.preview-section{background:var(--cream);padding:64px 24px;}
+.preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:12px;}
+.preview-page{background:#fff;border-radius:var(--radius-sm);padding:20px 16px;box-shadow:var(--shadow);text-align:center;transition:transform 0.2s;}
+.preview-page:hover{transform:scale(1.04);}
+.pp-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fredoka One',cursive;font-size:0.9rem;color:#fff;margin:0 auto 10px;}
+.pp-title{font-family:'Fredoka One',cursive;font-size:0.95rem;color:var(--dark);margin-bottom:6px;}
+.pp-desc{font-size:0.78rem;font-weight:700;color:#888;line-height:1.4;}
+.pp-emoji{font-size:1.8rem;display:block;margin-bottom:8px;}
+
+/* INTERACTIVE PREVIEW — shapes + colours */
+.interactive-section{background:#fff;padding:64px 24px;}
+.tabs-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;}
+.tab-btn{padding:10px 20px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:0.95rem;cursor:pointer;border:2px solid #ddd;background:#fff;transition:all 0.2s;color:var(--dark);}
+.tab-btn.active{color:#fff;border-color:transparent;}
+.tab-btn.t1.active{background:var(--blue);}
+.tab-btn.t2.active{background:var(--green);}
+.tab-btn.t3.active{background:var(--orange);}
+.tab-btn.t4.active{background:var(--purple);}
+.tab-btn:hover{transform:translateY(-2px);}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
+/* Greetings panel */
+.greetings-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.greeting-card{border-radius:var(--radius-sm);padding:20px;display:flex;align-items:center;gap:14px;transition:transform 0.2s;cursor:pointer;}
+.greeting-card:hover{transform:translateX(6px);}
+.gc-emoji{font-size:2.5rem;flex-shrink:0;}
+.gc-word{font-family:'Fredoka One',cursive;font-size:1.2rem;}
+.gc-use{font-size:0.85rem;font-weight:700;color:#888;margin-top:4px;}
+.gc1{background:linear-gradient(135deg,#EAF5FF,#D4EEFF);}
+.gc2{background:linear-gradient(135deg,#EAFBEE,#D4F5DC);}
+.gc3{background:linear-gradient(135deg,#FFF0EA,#FFE5D4);}
+.gc4{background:linear-gradient(135deg,#F5EAFF,#EDD4FF);}
+
+/* Shapes panel */
+.shapes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.shape-card{border-radius:var(--radius-sm);padding:20px 12px;text-align:center;transition:transform 0.2s;cursor:pointer;}
+.shape-card:hover{transform:scale(1.08);}
+.shape-svg{width:60px;height:60px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;}
+.shape-name{font-family:'Fredoka One',cursive;font-size:1rem;display:block;margin-bottom:4px;}
+.shape-fact{font-size:0.75rem;font-weight:700;color:#888;}
+.sh1{background:#FFF0F1;} .sh2{background:#EAF5FF;}
+.sh3{background:#EAFBEE;} .sh4{background:#F5EAFF;}
+
+/* Colours panel */
+.colours-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.colour-card{border-radius:var(--radius-sm);padding:20px 12px;text-align:center;transition:transform 0.2s;cursor:pointer;}
+.colour-card:hover{transform:scale(1.08);}
+.colour-swatch{width:60px;height:60px;border-radius:12px;margin:0 auto 10px;box-shadow:0 4px 12px rgba(0,0,0,0.15);}
+.colour-name{font-family:'Fredoka One',cursive;font-size:1rem;display:block;margin-bottom:4px;}
+.colour-example{font-size:0.78rem;font-weight:700;color:#888;}
+
+/* Alphabet panel */
+.alpha-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;}
+.alpha-box{border-radius:10px;padding:10px 4px;text-align:center;font-family:'Fredoka One',cursive;font-size:1.3rem;transition:transform 0.2s;cursor:pointer;}
+.alpha-box:hover{transform:scale(1.15);}
+
+/* VIDEO */
+.video-section{background:var(--cream);padding:64px 24px;}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius);box-shadow:var(--shadow-lg);}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.video-meta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+.vmeta-chip{background:#fff;border-radius:50px;padding:7px 16px;font-weight:700;font-size:0.88rem;display:flex;align-items:center;gap:6px;}
+
+/* PDF BIG DOWNLOAD */
+.pdf-section{background:#fff;padding:64px 24px;}
+.pdf-hero{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);}
+.pdf-top{background:linear-gradient(135deg,#FF6B35,#FFD93D,#6BCB77,#4D96FF);padding:48px 40px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;}
+.pdf-top-text h2{font-family:'Fredoka One',cursive;font-size:2rem;color:#fff;margin-bottom:10px;text-shadow:0 3px 12px rgba(0,0,0,0.15);}
+.pdf-top-text p{color:rgba(255,255,255,0.92);font-weight:700;font-size:1rem;line-height:1.6;margin-bottom:20px;}
+.pdf-checklist{display:flex;flex-direction:column;gap:10px;margin-bottom:24px;}
+.pdf-check{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:0.95rem;}
+.pdf-check-icon{width:26px;height:26px;background:rgba(255,255,255,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0;}
+.btn-download-big{display:inline-flex;align-items:center;gap:12px;padding:18px 36px;background:#fff;color:var(--orange);border:none;border-radius:50px;font-family:'Fredoka One',cursive;font-size:1.25rem;cursor:pointer;transition:all 0.3s;box-shadow:0 8px 24px rgba(0,0,0,0.2);}
+.btn-download-big:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 16px 40px rgba(0,0,0,0.3);}
+.pdf-cover-preview{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;}
+.pdf-cover-img{width:180px;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,0.3);transform:rotate(3deg);transition:transform 0.3s;}
+.pdf-cover-img:hover{transform:rotate(0deg) scale(1.05);}
+.pdf-cover-label{color:#fff;font-family:'Fredoka One',cursive;font-size:0.9rem;opacity:0.85;}
+.pdf-bottom{background:var(--cream);padding:28px 40px;}
+.pdf-features-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
+.pdf-feature{display:flex;align-items:center;gap:8px;font-weight:800;font-size:0.9rem;color:#666;}
+.pdf-feature-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+
+/* PARENTS */
+.parents-section{background:var(--cream);padding:64px 24px;}
+.parents-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.pcard{background:#fff;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);}
+.pcard-icon{font-size:2.2rem;margin-bottom:12px;display:block;}
+.pcard h3{font-family:'Fredoka One',cursive;font-size:1.15rem;margin-bottom:10px;}
+.pcard ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.pcard ul li{font-size:0.9rem;font-weight:700;color:#555;display:flex;align-items:flex-start;gap:8px;}
+.pcard ul li::before{content:'→';color:var(--orange);font-weight:800;flex-shrink:0;}
+.activity-box{background:linear-gradient(135deg,var(--orange),var(--yellow));border-radius:var(--radius);padding:24px;grid-column:span 2;}
+.activity-box h3{font-family:'Fredoka One',cursive;font-size:1.2rem;color:var(--dark);margin-bottom:8px;}
+.activity-box p{font-weight:700;font-size:0.95rem;color:var(--dark);opacity:0.85;line-height:1.6;}
+
+/* MORE */
+.more-section{background:#fff;padding:64px 24px;}
+.more-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+.more-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform 0.25s,box-shadow 0.25s;display:block;}
+.more-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+.more-thumb{height:140px;display:flex;align-items:center;justify-content:center;font-size:4rem;}
+.more-body{background:#fff;padding:16px;}
+.more-tag{display:inline-block;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;padding:3px 10px;border-radius:50px;margin-bottom:6px;}
+.more-body h3{font-family:'Fredoka One',cursive;font-size:1.05rem;color:var(--dark);line-height:1.3;}
+
+/* GAMES CTA */
+.games-cta{background:linear-gradient(135deg,var(--orange),var(--pink));padding:56px 24px;}
+.games-cta-inner{max-width:1100px;margin:0 auto;text-align:center;}
+.games-cta h2{font-family:'Fredoka One',cursive;font-size:clamp(1.8rem,4vw,2.4rem);color:#fff;margin-bottom:10px;}
+.games-cta p{color:rgba(255,255,255,0.9);font-weight:700;margin-bottom:28px;}
+.cta-grid{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.cta-btn{padding:13px 24px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:1rem;transition:all 0.2s;border:none;cursor:pointer;}
+.cta-btn.white{background:#fff;color:var(--orange);}
+.cta-btn.dark{background:var(--dark);color:#fff;}
+.cta-btn:hover{transform:translateY(-3px) scale(1.03);}
+
+/* SHARE */
+.share-section{background:var(--cream);padding:40px 24px;}
+.share-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px;}
+.share-btn{padding:10px 20px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:0.92rem;border:none;cursor:pointer;transition:all 0.2s;}
+.share-btn:hover{transform:translateY(-2px);}
+.share-wa{background:#25D366;color:#fff;}
+.share-fb{background:#1877F2;color:#fff;}
+.share-copy{background:var(--dark);color:#fff;}
+
+/* FOOTER */
+footer{background:var(--dark);color:#fff;padding:40px 24px 24px;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:32px;}
+.footer-logo{font-family:'Fredoka One',cursive;font-size:1.7rem;color:var(--orange);margin-bottom:10px;display:block;}
+.footer-brand p{color:rgba(255,255,255,0.55);font-size:0.88rem;font-weight:600;line-height:1.7;max-width:260px;}
+.footer-col h4{font-family:'Fredoka One',cursive;font-size:1.05rem;color:var(--yellow);margin-bottom:12px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.footer-col ul li a{color:rgba(255,255,255,0.55);font-size:0.88rem;font-weight:600;transition:color 0.2s;}
+.footer-col ul li a:hover{color:#fff;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.footer-bottom p{color:rgba(255,255,255,0.35);font-size:0.82rem;font-weight:600;}
+
+#scrollTop{position:fixed;bottom:24px;right:24px;width:50px;height:50px;background:var(--orange);color:#fff;border:none;border-radius:50%;font-size:1.2rem;cursor:pointer;box-shadow:var(--shadow);display:none;align-items:center;justify-content:center;z-index:999;transition:all 0.2s;}
+#scrollTop.visible{display:flex;}
+#scrollTop:hover{background:var(--dark);transform:translateY(-3px);}
+.toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:var(--dark);color:#fff;padding:12px 26px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:1rem;z-index:9999;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap;}
+.toast.show{opacity:1;}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){
+  .pdf-top{grid-template-columns:1fr;}
+  .pdf-cover-preview{display:none;}
+  .parents-grid{grid-template-columns:1fr;}
+  .activity-box{grid-column:span 1;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .shapes-grid,.colours-grid{grid-template-columns:repeat(2,1fr);}
+  .alpha-grid{grid-template-columns:repeat(5,1fr);}
+  .preview-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:768px){
+  .nav-links{display:none;}.hamburger{display:block;}
+  .hero{clip-path:ellipse(120% 90% at 50% 10%);}
+  .greetings-grid{grid-template-columns:1fr;}
+  .preview-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:500px){
+  .footer-top{grid-template-columns:1fr;}
+  .alpha-grid{grid-template-columns:repeat(4,1fr);}
+  .shapes-grid,.colours-grid{grid-template-columns:repeat(2,1fr);}
+  .preview-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <span class="t">🐯</span><span>GigNLearn</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../abc-game.html">ABC Game</a></li>
+      <li><a href="../math-maze.html">Math Maze</a></li>
+      <li><a href="index.html">Poems</a></li>
+      <li><a href="../name-labels.html">Labels</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.getElementById('mm').classList.toggle('open')">☰</button>
+  </div>
+  <div class="mob-menu" id="mm">
+    <a href="../index.html">🏠 Home</a>
+    <a href="../abc-game.html">🔤 ABC Game</a>
+    <a href="../math-maze.html">🔢 Math Maze</a>
+    <a href="index.html">📝 All Poems</a>
+    <a href="../name-labels.html">🏷️ Name Labels</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <span class="hero-gigloo">🐯</span>
+    <div class="hero-badge-row">
+      <span class="hbadge hb1">📚 Nursery Workbook</span>
+      <span class="hbadge hb2">👶 Ages 3–6</span>
+      <span class="hbadge hb3">🆓 100% Free</span>
+    </div>
+    <h1>My Nursery<br><em>Workbook!</em> 📖</h1>
+    <p>Download, Print & Play! A complete early learning workbook with Greetings, Alphabet, Shapes, Colours and fun activities — all in one beautiful PDF! 🌟</p>
+    <a href="https://drive.google.com/uc?export=download&id=1xOJt2dgk1qSoqiDYrmP6uG6SVwSDR57V" class="hero-download-big" download>
+      ⬇️ Download Free Workbook PDF
+    </a>
+    <div class="hero-stats">
+      <div class="hstat">📄 Multi-page Workbook</div>
+      <div class="hstat">🖨️ Print Ready</div>
+      <div class="hstat">✂️ Cut & Play</div>
+      <div class="hstat">🎨 Fun Colouring</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT'S INSIDE -->
+<section class="inside-section">
+  <div class="sec-inner">
+    <div class="fade-in">
+      <span class="sec-label" style="background:#FFF0EA;color:var(--orange);">📖 What's Inside</span>
+      <h2 class="sec-title">Everything Your Child Needs! 🌟</h2>
+      <p class="sec-sub">One workbook — multiple topics. Designed for nursery & preschool early learners!</p>
+    </div>
+    <div class="inside-grid">
+
+      <div class="inside-card ic1 fade-in">
+        <div class="ic-thumb">
+          <div class="ic-page-num">Page 2</div>
+          <div class="ic-thumb-emoji">👋</div>
+        </div>
+        <div class="ic-body">
+          <span class="ic-tag" style="background:#FFF0EA;color:var(--orange);">Greetings</span>
+          <h3>1. Greetings & Social Skills</h3>
+          <p>Learn the magic words we use every day — Hello, Please, Thank You and I am Sorry!</p>
+          <div class="ic-topics">
+            <span class="ic-topic">Hello</span>
+            <span class="ic-topic">Please</span>
+            <span class="ic-topic">Thank You</span>
+            <span class="ic-topic">Sorry</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="inside-card ic2 fade-in">
+        <div class="ic-thumb">
+          <div class="ic-page-num">Page 3</div>
+          <div class="ic-thumb-emoji">🔤</div>
+        </div>
+        <div class="ic-body">
+          <span class="ic-tag" style="background:#EAF5FF;color:var(--blue);">Alphabet</span>
+          <h3>2. Alphabet Recognition A–Z</h3>
+          <p>Say each letter aloud clearly and confidently — all 26 letters from A to Z!</p>
+          <div class="ic-topics">
+            <span class="ic-topic">A–Z Letters</span>
+            <span class="ic-topic">Uppercase</span>
+            <span class="ic-topic">Lowercase</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="inside-card ic3 fade-in">
+        <div class="ic-thumb">
+          <div class="ic-page-num">Pages 4–5</div>
+          <div class="ic-thumb-emoji">⬛</div>
+        </div>
+        <div class="ic-body">
+          <span class="ic-tag" style="background:#EAFBEE;color:var(--green);">Shapes</span>
+          <h3>3. Shapes — 4 Basic Shapes</h3>
+          <p>Learn Square, Rectangle, Triangle and Circle with coloured shape cards!</p>
+          <div class="ic-topics">
+            <span class="ic-topic">Square</span>
+            <span class="ic-topic">Rectangle</span>
+            <span class="ic-topic">Triangle</span>
+            <span class="ic-topic">Circle</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="inside-card ic4 fade-in">
+        <div class="ic-thumb">
+          <div class="ic-page-num">Page 6</div>
+          <div class="ic-thumb-emoji">🎨</div>
+        </div>
+        <div class="ic-body">
+          <span class="ic-tag" style="background:#F5EAFF;color:var(--purple);">Colours</span>
+          <h3>4. Colours — 6 Basic Colours</h3>
+          <p>Identify and name Blue, Red, Green and more with coloured swatches!</p>
+          <div class="ic-topics">
+            <span class="ic-topic">Blue</span>
+            <span class="ic-topic">Red</span>
+            <span class="ic-topic">Green</span>
+            <span class="ic-topic">+More</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="inside-card ic5 fade-in">
+        <div class="ic-thumb">
+          <div class="ic-page-num">Activity</div>
+          <div class="ic-thumb-emoji">😊</div>
+        </div>
+        <div class="ic-body">
+          <span class="ic-tag" style="background:#FFF0F1;color:var(--red);">Activity</span>
+          <h3>Draw a Smiley Face Activity</h3>
+          <p>Draw a smiley face each time you use a kind word today — builds positive habits!</p>
+          <div class="ic-topics">
+            <span class="ic-topic">Creative</span>
+            <span class="ic-topic">SEL</span>
+            <span class="ic-topic">Drawing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="inside-card ic6 fade-in">
+        <div class="ic-thumb">
+          <div class="ic-page-num">Bonus</div>
+          <div class="ic-thumb-emoji">🖍️</div>
+        </div>
+        <div class="ic-body">
+          <span class="ic-tag" style="background:#FFFAEA;color:#b08000;">Colouring</span>
+          <h3>Fun Colouring Activity Pages</h3>
+          <p>Beautiful colouring pages featuring Gigloo and friends — creative fun for kids!</p>
+          <div class="ic-topics">
+            <span class="ic-topic">Gigloo</span>
+            <span class="ic-topic">Colouring</span>
+            <span class="ic-topic">Fun</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PAGE PREVIEW FROM SCREENSHOT -->
+<section class="preview-section">
+  <div class="sec-inner">
+    <div class="fade-in">
+      <span class="sec-label" style="background:#EAF5FF;color:var(--blue);">👁️ Page Preview</span>
+      <h2 class="sec-title">Inside the Workbook 📄</h2>
+      <p class="sec-sub">Here's what each page looks like — colourful, clear and child-friendly!</p>
+    </div>
+    <div class="preview-grid fade-in">
+      <div class="preview-page">
+        <div class="pp-num" style="background:var(--orange);">1</div>
+        <span class="pp-emoji">🐯</span>
+        <div class="pp-title">Cover Page</div>
+        <div class="pp-desc">Gig n Learn with Gigloo — Name space for your child!</div>
+      </div>
+      <div class="preview-page">
+        <div class="pp-num" style="background:var(--blue);">2</div>
+        <span class="pp-emoji">👋</span>
+        <div class="pp-title">Greetings</div>
+        <div class="pp-desc">Hello, Please, Thank You, Sorry — with activity!</div>
+      </div>
+      <div class="preview-page">
+        <div class="pp-num" style="background:var(--red);">3</div>
+        <span class="pp-emoji">🔤</span>
+        <div class="pp-title">Alphabet A–Z</div>
+        <div class="pp-desc">All 26 letters — say each one aloud!</div>
+      </div>
+      <div class="preview-page">
+        <div class="pp-num" style="background:var(--green);">4</div>
+        <span class="pp-emoji">🟥</span>
+        <div class="pp-title">Shapes Part 1</div>
+        <div class="pp-desc">Square — 4 equal sides · Rectangle — 4 sides</div>
+      </div>
+      <div class="preview-page">
+        <div class="pp-num" style="background:var(--purple);">5</div>
+        <span class="pp-emoji">🔺</span>
+        <div class="pp-title">Shapes Part 2</div>
+        <div class="pp-desc">Triangle — 3 sides · Circle — no sides!</div>
+      </div>
+      <div class="preview-page">
+        <div class="pp-num" style="background:var(--yellow);">6</div>
+        <span class="pp-emoji">🎨</span>
+        <div class="pp-title">Colours</div>
+        <div class="pp-desc">Blue, Red, Green + more basic colours!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE PREVIEW -->
+<section class="interactive-section">
+  <div class="sec-inner">
+    <div class="fade-in">
+      <span class="sec-label" style="background:#F5EAFF;color:var(--purple);">🎮 Try It Here!</span>
+      <h2 class="sec-title">Preview the Learning Topics! 🌟</h2>
+      <p class="sec-sub">Explore what's in the workbook — tap the buttons and try each topic online!</p>
+    </div>
+    <div class="tabs-row fade-in">
+      <button class="tab-btn t1 active" onclick="showTab('greetings',this)">👋 Greetings</button>
+      <button class="tab-btn t2" onclick="showTab('shapes',this)">⬛ Shapes</button>
+      <button class="tab-btn t3" onclick="showTab('colours',this)">🎨 Colours</button>
+      <button class="tab-btn t4" onclick="showTab('alphabet',this)">🔤 Alphabet</button>
+    </div>
+
+    <!-- GREETINGS TAB -->
+    <div class="tab-panel active" id="tab-greetings">
+      <div class="greetings-grid">
+        <div class="greeting-card gc1" onclick="speakWord('Hello!')">
+          <div class="gc-emoji">👋</div>
+          <div><div class="gc-word">Hello!</div><div class="gc-use">When you meet someone 🔊</div></div>
+        </div>
+        <div class="greeting-card gc2" onclick="speakWord('Please!')">
+          <div class="gc-emoji">🙏</div>
+          <div><div class="gc-word">Please!</div><div class="gc-use">When you want something 🔊</div></div>
+        </div>
+        <div class="greeting-card gc3" onclick="speakWord('Thank You!')">
+          <div class="gc-emoji">💛</div>
+          <div><div class="gc-word">Thank You!</div><div class="gc-use">When someone helps you 🔊</div></div>
+        </div>
+        <div class="greeting-card gc4" onclick="speakWord('I am Sorry!')">
+          <div class="gc-emoji">😔</div>
+          <div><div class="gc-word">I am Sorry!</div><div class="gc-use">When you make a mistake 🔊</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHAPES TAB -->
+    <div class="tab-panel" id="tab-shapes">
+      <div class="shapes-grid">
+        <div class="shape-card sh1" onclick="speakWord('Square! A square has 4 equal sides!')">
+          <div class="shape-svg">
+            <svg viewBox="0 0 60 60"><rect x="5" y="5" width="50" height="50" rx="4" fill="#FF4757"/></svg>
+          </div>
+          <span class="shape-name">Square</span>
+          <span class="shape-fact">4 equal sides 🔊</span>
+        </div>
+        <div class="shape-card sh2" onclick="speakWord('Rectangle! A rectangle has 4 sides. Opposite sides are equal!')">
+          <div class="shape-svg">
+            <svg viewBox="0 0 60 60"><rect x="2" y="12" width="56" height="36" rx="4" fill="#4D96FF"/></svg>
+          </div>
+          <span class="shape-name">Rectangle</span>
+          <span class="shape-fact">4 sides 🔊</span>
+        </div>
+        <div class="shape-card sh3" onclick="speakWord('Triangle! A triangle has 3 sides and 3 corners!')">
+          <div class="shape-svg">
+            <svg viewBox="0 0 60 60"><polygon points="30,5 55,55 5,55" fill="#6BCB77"/></svg>
+          </div>
+          <span class="shape-name">Triangle</span>
+          <span class="shape-fact">3 sides 🔊</span>
+        </div>
+        <div class="shape-card sh4" onclick="speakWord('Circle! A circle has no sides and no corners!')">
+          <div class="shape-svg">
+            <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="26" fill="#C77DFF"/></svg>
+          </div>
+          <span class="shape-name">Circle</span>
+          <span class="shape-fact">No sides 🔊</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLOURS TAB -->
+    <div class="tab-panel" id="tab-colours">
+      <div class="colours-grid">
+        <div class="colour-card" onclick="speakWord('Blue! The sky is blue!')">
+          <div class="colour-swatch" style="background:#2196F3;"></div>
+          <span class="colour-name" style="color:#2196F3;">Blue</span>
+          <span class="colour-example">Sky, Ocean 🔊</span>
+        </div>
+        <div class="colour-card" onclick="speakWord('Red! Apples are red!')">
+          <div class="colour-swatch" style="background:#F44336;"></div>
+          <span class="colour-name" style="color:#F44336;">Red</span>
+          <span class="colour-example">Apple, Rose 🔊</span>
+        </div>
+        <div class="colour-card" onclick="speakWord('Green! Grass is green!')">
+          <div class="colour-swatch" style="background:#4CAF50;"></div>
+          <span class="colour-name" style="color:#4CAF50;">Green</span>
+          <span class="colour-example">Grass, Frog 🔊</span>
+        </div>
+        <div class="colour-card" onclick="speakWord('Yellow! Bananas are yellow!')">
+          <div class="colour-swatch" style="background:#FFC107;"></div>
+          <span class="colour-name" style="color:#b08000;">Yellow</span>
+          <span class="colour-example">Banana, Sun 🔊</span>
+        </div>
+        <div class="colour-card" onclick="speakWord('Orange! Oranges are orange!')">
+          <div class="colour-swatch" style="background:#FF6B35;"></div>
+          <span class="colour-name" style="color:#FF6B35;">Orange</span>
+          <span class="colour-example">Orange, Carrot 🔊</span>
+        </div>
+        <div class="colour-card" onclick="speakWord('Purple! Grapes are purple!')">
+          <div class="colour-swatch" style="background:#9C27B0;"></div>
+          <span class="colour-name" style="color:#9C27B0;">Purple</span>
+          <span class="colour-example">Grapes, Violet 🔊</span>
+        </div>
+        <div class="colour-card" onclick="speakWord('Pink! Flowers can be pink!')">
+          <div class="colour-swatch" style="background:#FF85A1;"></div>
+          <span class="colour-name" style="color:#FF85A1;">Pink</span>
+          <span class="colour-example">Flower, Flamingo 🔊</span>
+        </div>
+        <div class="colour-card" onclick="speakWord('White! Snow is white!')">
+          <div class="colour-swatch" style="background:#E0E0E0;"></div>
+          <span class="colour-name" style="color:#888;">White</span>
+          <span class="colour-example">Snow, Cloud 🔊</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALPHABET TAB -->
+    <div class="tab-panel" id="tab-alphabet">
+      <div class="alpha-grid" id="alphaGrid"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="video-section" id="watch">
+  <div class="sec-inner">
+    <div class="fade-in">
+      <span class="sec-label" style="background:#FFF0EA;color:var(--orange);">▶ Watch & Learn</span>
+      <h2 class="sec-title">Watch the GigNLearn Video! 🎬</h2>
+      <p class="sec-sub">Fun kids learning video by GigNLearn with Gigloo — safely on our site! 🐯</p>
+    </div>
+    <div class="video-wrap fade-in">
+      <iframe
+        src="https://www.youtube.com/embed/ZWst3bv1oMk?rel=0&modestbranding=1&color=white"
+        title="My Nursery Workbook – GigNLearn with Gigloo"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+    <div class="video-meta fade-in">
+      <div class="vmeta-chip">🐯 GigNLearn with Gigloo</div>
+      <div class="vmeta-chip">📚 Early Learning</div>
+      <div class="vmeta-chip">🎨 Fun & Colourful</div>
+      <div class="vmeta-chip">📱 Safe · No Ads</div>
+    </div>
+  </div>
+</section>
+
+<!-- PDF BIG DOWNLOAD -->
+<section class="pdf-section" id="download">
+  <div class="sec-inner">
+    <div class="fade-in">
+      <span class="sec-label" style="background:#EAFBEE;color:var(--green);">⬇️ Free Download</span>
+      <h2 class="sec-title">Get the Full Workbook PDF! 📥</h2>
+      <p class="sec-sub">Download, print at home and start learning today — completely free!</p>
+    </div>
+    <div class="pdf-hero fade-in">
+      <div class="pdf-top">
+        <div class="pdf-top-text">
+          <h2>📖 My Nursery Workbook</h2>
+          <p>A complete early learning workbook designed for nursery and preschool children. Beautiful, colourful and child-friendly — print at home in minutes!</p>
+          <div class="pdf-checklist">
+            <div class="pdf-check"><div class="pdf-check-icon">✓</div> Greetings & Social Skills</div>
+            <div class="pdf-check"><div class="pdf-check-icon">✓</div> Alphabet Recognition A–Z</div>
+            <div class="pdf-check"><div class="pdf-check-icon">✓</div> 4 Basic Shapes with colour</div>
+            <div class="pdf-check"><div class="pdf-check-icon">✓</div> 6+ Colours with swatches</div>
+            <div class="pdf-check"><div class="pdf-check-icon">✓</div> Fun activity & colouring pages</div>
+            <div class="pdf-check"><div class="pdf-check-icon">✓</div> 100% Free — no sign-up!</div>
+          </div>
+          <a href="https://drive.google.com/uc?export=download&id=1xOJt2dgk1qSoqiDYrmP6uG6SVwSDR57V" class="btn-download-big" download>
+            ⬇️ Download Free PDF
+          </a>
+        </div>
+        <div class="pdf-cover-preview">
+          <img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhoP80lHDZ6V3EYasFl8z1jnIqQ_ZTMgf-UPijOpg6f9_dQiGyE8UDPjWaBAAxgfrKroWNSM-amywOGvUxnH-iKeaBgwy77_zwhddjaNv_m0uQKGIvEi7G1iagQP2fNHFt-sOG0ovwML9WgUn35V79EBaD7pA8fd0ZWEzrGtPZfOqXgoCctTj9POpD3szSS/s2880/1000389503.png"
+            alt="My Nursery Workbook Cover"
+            class="pdf-cover-img"
+          >
+          <span class="pdf-cover-label">🐯 Workbook Cover</span>
+        </div>
+      </div>
+      <div class="pdf-bottom">
+        <div class="pdf-features-row">
+          <div class="pdf-feature"><div class="pdf-feature-icon" style="background:#FFF0EA;">⬇️</div> Download Free</div>
+          <div class="pdf-feature"><div class="pdf-feature-icon" style="background:#EAF5FF;">🖨️</div> Print at Home</div>
+          <div class="pdf-feature"><div class="pdf-feature-icon" style="background:#EAFBEE;">✂️</div> Cut & Play</div>
+          <div class="pdf-feature"><div class="pdf-feature-icon" style="background:#F5EAFF;">🎨</div> Colour the Pages</div>
+          <div class="pdf-feature"><div class="pdf-feature-icon" style="background:#FFFAEA;">📝</div> Write & Trace</div>
+          <div class="pdf-feature"><div class="pdf-feature-icon" style="background:#FFF0F1;">🔁</div> Use Again & Again</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARENTS -->
+<section class="parents-section">
+  <div class="sec-inner">
+    <div class="fade-in">
+      <span class="sec-label" style="background:#F5EAFF;color:var(--purple);">👨‍👩‍👧 For Parents</span>
+      <h2 class="sec-title">Why This Workbook?</h2>
+      <p class="sec-sub">Everything a nursery child needs — in one beautiful book!</p>
+    </div>
+    <div class="parents-grid fade-in">
+      <div class="pcard">
+        <span class="pcard-icon">📚</span>
+        <h3>Topics Covered</h3>
+        <ul>
+          <li>Greetings — Hello, Please, Thank You, Sorry</li>
+          <li>Alphabet — A to Z recognition</li>
+          <li>Shapes — Square, Rectangle, Triangle, Circle</li>
+          <li>Colours — Blue, Red, Green, Yellow & more</li>
+          <li>Fun activities & colouring pages</li>
+        </ul>
+      </div>
+      <div class="pcard">
+        <span class="pcard-icon">🧠</span>
+        <h3>Skills Developed</h3>
+        <ul>
+          <li>Social-emotional learning (greetings)</li>
+          <li>Letter recognition — phonics readiness</li>
+          <li>Shape recognition — early geometry</li>
+          <li>Colour identification & naming</li>
+          <li>Fine motor skills — colouring & writing</li>
+        </ul>
+      </div>
+      <div class="pcard">
+        <span class="pcard-icon">🎯</span>
+        <h3>Perfect For</h3>
+        <ul>
+          <li>Nursery & Preschool children</li>
+          <li>Ages 3–6 years</li>
+          <li>Home learning & school homework</li>
+          <li>Summer learning activity</li>
+          <li>Classroom resource for teachers</li>
+        </ul>
+      </div>
+      <div class="pcard">
+        <span class="pcard-icon">🖨️</span>
+        <h3>How to Use</h3>
+        <ul>
+          <li>Download the PDF — free, one click</li>
+          <li>Print on A4 paper (colour or B&W)</li>
+          <li>Sit with your child — do one page a day</li>
+          <li>Laminate for reuse!</li>
+          <li>Great as a daily activity book</li>
+        </ul>
+      </div>
+      <div class="activity-box">
+        <h3>💡 Make It a Daily Learning Time!</h3>
+        <p>Set aside 15–20 minutes each morning as "Workbook Time" with your child. Do one section per day — Greetings on Monday, Alphabet on Tuesday, Shapes on Wednesday, Colours on Thursday, and colouring on Friday! By the end of the week your child will have covered everything in the book. Print a new copy next week and watch how much faster they go! 📅🐯</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MORE -->
+<section class="more-section">
+  <div class="sec-inner">
+    <div class="fade-in">
+      <span class="sec-label" style="background:#FFFAEA;color:#b08000;">📚 More to Explore</span>
+      <h2 class="sec-title">More Free Resources! 🐯</h2>
+      <p class="sec-sub">Games, poems and worksheets — all free on GigNLearn!</p>
+    </div>
+    <div class="more-grid">
+      <a href="../abc-game.html" class="more-card fade-in">
+        <div class="more-thumb" style="background:linear-gradient(135deg,#FF6B35,#FFD93D);">🔤</div>
+        <div class="more-body">
+          <span class="more-tag" style="background:#FFF0EA;color:var(--orange);">Game</span>
+          <h3>ABC Tap & Play Game</h3>
+        </div>
+      </a>
+      <a href="vowels-worksheet.html" class="more-card fade-in">
+        <div class="more-thumb" style="background:linear-gradient(135deg,#FF4757,#4D96FF);">🅐</div>
+        <div class="more-body">
+          <span class="more-tag" style="background:#EAF5FF;color:var(--blue);">Worksheet</span>
+          <h3>Vowels A E I O U Worksheet</h3>
+        </div>
+      </a>
+      <a href="magic-words.html" class="more-card fade-in">
+        <div class="more-thumb" style="background:linear-gradient(135deg,#FF6B35,#FFD93D);">✨</div>
+        <div class="more-body">
+          <span class="more-tag" style="background:#FFF0EA;color:var(--orange);">Poem</span>
+          <h3>Magic Words Poem</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- GAMES CTA -->
+<div class="games-cta">
+  <div class="games-cta-inner">
+    <h2>🎮 Keep the Learning Going!</h2>
+    <p>After the workbook — play and learn even more with Gigloo!</p>
+    <div class="cta-grid">
+      <a href="../abc-game.html" class="cta-btn white">🔤 ABC Game</a>
+      <a href="../math-maze.html" class="cta-btn white">🔢 Math Maze</a>
+      <a href="index.html" class="cta-btn dark">📝 All Poems</a>
+    </div>
+  </div>
+</div>
+
+<!-- SHARE -->
+<section class="share-section">
+  <div class="sec-inner" style="text-align:center;">
+    <h2 class="sec-title fade-in" style="color:var(--dark);">❤️ Share with Other Parents!</h2>
+    <p style="font-weight:600;color:#666;margin-bottom:0;" class="fade-in">Free nursery workbook — share with parents, teachers & school groups!</p>
+    <div class="share-row fade-in">
+      <button class="share-btn share-wa" onclick="shareWA()">💬 Share on WhatsApp</button>
+      <button class="share-btn share-fb" onclick="shareFB()">📘 Share on Facebook</button>
+      <button class="share-btn share-copy" onclick="copyLink()">🔗 Copy Link</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo">🐯 GigNLearn</span>
+        <p>Free, safe and ad-light learning for kids aged 2–8. Made with love by educators and parents.</p>
+      </div>
+      <div class="footer-col">
+        <h4>🎮 Games</h4>
+        <ul>
+          <li><a href="../abc-game.html">ABC Tap & Play</a></li>
+          <li><a href="../math-maze.html">Math Maze</a></li>
+          <li><a href="../name-labels.html">Name Labels</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>📝 Resources</h4>
+        <ul>
+          <li><a href="vowels-worksheet.html">🅐 Vowels Worksheet</a></li>
+          <li><a href="magic-words.html">✨ Magic Words</a></li>
+          <li><a href="one-red-apple.html">🍎 One Red Apple</a></li>
+          <li><a href="days-of-the-week.html">📅 Days of Week</a></li>
+          <li><a href="index.html">📚 All Poems →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 GigNLearn. Made with ♥ for little learners everywhere.</p>
+      <p>🐯 Gigloo says: Download, Print & Play!</p>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
+<div class="toast" id="toast"></div>
+
+<script>
+// SCROLL TOP
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400);
+});
+
+// FADE IN
+document.querySelectorAll('.fade-in').forEach(el=>{
+  new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:0.1}).observe(el);
+});
+
+// TABS
+function showTab(id, btn){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// BUILD ALPHABET GRID
+const alphaGrid = document.getElementById('alphaGrid');
+const alphaColors = ['#FF4757','#FF6B35','#FFD93D','#6BCB77','#4D96FF','#C77DFF','#FF85A1','#00C2CB'];
+const alphaWords = {
+  A:'Apple',B:'Ball',C:'Cat',D:'Dog',E:'Egg',F:'Fish',G:'Goat',
+  H:'Hat',I:'Igloo',J:'Jam',K:'Kite',L:'Lion',M:'Moon',N:'Nest',
+  O:'Orange',P:'Pen',Q:'Queen',R:'Rain',S:'Sun',T:'Tree',
+  U:'Umbrella',V:'Van',W:'Water',X:'X-ray',Y:'Yarn',Z:'Zebra'
+};
+'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach((l,i)=>{
+  const div=document.createElement('div');
+  div.className='alpha-box';
+  div.style.cssText=`background:${alphaColors[i%alphaColors.length]}22;color:${alphaColors[i%alphaColors.length]};`;
+  div.textContent=l;
+  div.title=alphaWords[l]||l;
+  div.onclick=()=>{
+    speakWord(l+' for '+alphaWords[l]+'!');
+    div.style.transform='scale(1.3)';
+    setTimeout(()=>div.style.transform='',300);
+  };
+  alphaGrid.appendChild(div);
+});
+
+// SPEAK
+function speakWord(text){
+  if('speechSynthesis' in window){
+    speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(text);
+    u.rate=0.78;u.pitch=1.25;u.volume=1;
+    speechSynthesis.speak(u);
+  }
+  showToast('🔊 '+text.substring(0,30));
+}
+
+// SHARE
+function shareWA(){
+  window.open('https://wa.me/?text='+encodeURIComponent('📖 Free Nursery Workbook for kids by GigNLearn! Greetings, Alphabet, Shapes & Colours — Download, Print & Play! 🐯 ')+encodeURIComponent(window.location.href),'_blank');
+}
+function shareFB(){
+  window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href),'_blank');
+}
+function copyLink(){
+  navigator.clipboard.writeText(window.location.href).then(()=>showToast('✅ Link copied!'));
+}
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2200);
+}
+</script>
+</body>
+</html>
