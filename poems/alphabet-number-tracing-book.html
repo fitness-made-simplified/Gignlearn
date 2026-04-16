@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My First Alphabet & Number Tracing Book – Free PDF | Gig N Learn</title>
+<meta name="description" content="Free printable alphabet and number tracing book for kids ages 2-5. Trace A-Z capitals, small letters, numbers 1-10 and color fun pictures. Download free PDF!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange:#FF6B35; --yellow:#FFD93D; --green:#6BCB77;
+    --blue:#4D96FF; --purple:#C77DFF; --pink:#FF85A1;
+    --red:#FF4757; --teal:#00C2CB; --cream:#FFF9F0;
+    --dark:#2D2D2D;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+
+  /* ===== NAV ===== */
+  nav{
+    position:sticky;top:0;z-index:100;
+    background:#fff;
+    box-shadow:0 3px 15px rgba(0,0,0,.12);
+    padding:0 20px;
+    display:flex;align-items:center;justify-content:space-between;
+    height:60px;
+  }
+  .nav-logo{
+    font-family:'Fredoka One',cursive;
+    font-size:1.4rem;color:var(--orange);
+    text-decoration:none;white-space:nowrap;
+  }
+  .nav-logo span{color:var(--blue)}
+  .nav-links{display:flex;gap:6px;list-style:none;align-items:center;flex-wrap:wrap}
+  .nav-links a{
+    font-family:'Nunito',sans-serif;font-weight:700;font-size:.82rem;
+    color:var(--dark);text-decoration:none;
+    padding:5px 10px;border-radius:20px;
+    transition:background .2s,color .2s;
+  }
+  .nav-links a:hover{background:var(--yellow);color:var(--dark)}
+  .nav-links a.active{background:var(--orange);color:#fff}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px}
+  .hamburger span{width:24px;height:3px;background:var(--dark);border-radius:2px;transition:.3s}
+  .mobile-menu{
+    display:none;position:fixed;top:60px;left:0;right:0;bottom:0;
+    background:rgba(255,255,255,.98);z-index:99;
+    flex-direction:column;align-items:center;justify-content:center;gap:20px;
+  }
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{
+    font-family:'Fredoka One',cursive;font-size:1.4rem;
+    color:var(--dark);text-decoration:none;
+    padding:10px 30px;border-radius:30px;
+    transition:background .2s;
+  }
+  .mobile-menu a:hover{background:var(--yellow)}
+  @media(max-width:700px){
+    .nav-links{display:none}
+    .hamburger{display:flex}
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    background:linear-gradient(135deg,#FFD93D 0%,#FF6B35 30%,#FF85A1 55%,#C77DFF 75%,#4D96FF 100%);
+    padding:50px 20px 40px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'✏️ 🔡 🔢 ✏️ 🔡 🔢 ✏️ 🔡 🔢 ✏️ 🔡 🔢 ✏️';
+    position:absolute;top:8px;left:0;right:0;
+    font-size:1.1rem;opacity:.25;
+    letter-spacing:8px;white-space:nowrap;
+  }
+  .hero-badge{
+    display:inline-block;
+    background:rgba(255,255,255,.25);
+    border:2px solid rgba(255,255,255,.5);
+    color:#fff;
+    font-family:'Fredoka One',cursive;
+    font-size:.9rem;
+    padding:5px 18px;border-radius:30px;
+    margin-bottom:16px;letter-spacing:1px;
+    backdrop-filter:blur(4px);
+  }
+  .hero h1{
+    font-family:'Fredoka One',cursive;
+    font-size:clamp(2rem,6vw,3.4rem);
+    color:#fff;
+    text-shadow:3px 3px 0 rgba(0,0,0,.15);
+    line-height:1.15;
+    margin-bottom:10px;
+  }
+  .hero-sub{
+    font-size:1.1rem;font-weight:700;
+    color:rgba(255,255,255,.92);
+    margin-bottom:24px;
+  }
+  .hero-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:32px}
+  .pill{
+    background:rgba(255,255,255,.25);
+    border:2px solid rgba(255,255,255,.5);
+    color:#fff;font-weight:800;font-size:.85rem;
+    padding:6px 16px;border-radius:30px;
+    backdrop-filter:blur(4px);
+  }
+  .hero-abc{
+    display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:28px;
+  }
+  .abc-block{
+    width:52px;height:52px;
+    border-radius:14px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fredoka One',cursive;font-size:1.6rem;
+    color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,.2);
+    box-shadow:0 5px 0 rgba(0,0,0,.2);
+    animation:bounce 2s infinite;
+  }
+  .abc-block:nth-child(1){background:var(--red);animation-delay:.0s}
+  .abc-block:nth-child(2){background:var(--orange);animation-delay:.1s}
+  .abc-block:nth-child(3){background:var(--yellow);color:var(--dark);animation-delay:.2s}
+  .abc-block:nth-child(4){background:var(--green);animation-delay:.3s}
+  .abc-block:nth-child(5){background:var(--blue);animation-delay:.4s}
+  .abc-block:nth-child(6){background:var(--purple);animation-delay:.5s}
+  @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+  .btn-download-hero{
+    display:inline-flex;align-items:center;gap:10px;
+    background:#fff;color:var(--orange);
+    font-family:'Fredoka One',cursive;font-size:1.2rem;
+    padding:14px 34px;border-radius:50px;
+    text-decoration:none;
+    box-shadow:0 6px 0 rgba(0,0,0,.15);
+    transition:transform .15s,box-shadow .15s;
+  }
+  .btn-download-hero:hover{transform:translateY(-3px);box-shadow:0 9px 0 rgba(0,0,0,.15)}
+  .btn-download-hero:active{transform:translateY(2px);box-shadow:0 3px 0 rgba(0,0,0,.15)}
+
+  /* ===== SECTIONS ===== */
+  .section{padding:50px 20px}
+  .container{max-width:880px;margin:0 auto}
+  .section-title{
+    font-family:'Fredoka One',cursive;
+    font-size:clamp(1.5rem,4vw,2.2rem);
+    text-align:center;margin-bottom:30px;
+  }
+
+  /* ===== WHAT'S INSIDE ===== */
+  .inside-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}
+  .inside-card{
+    background:#fff;border-radius:20px;
+    padding:24px 18px;text-align:center;
+    box-shadow:0 4px 16px rgba(0,0,0,.08);
+    transition:transform .2s;
+    border-top:5px solid var(--border-c,var(--orange));
+  }
+  .inside-card:hover{transform:translateY(-5px)}
+  .inside-card .icon{font-size:2.4rem;margin-bottom:10px}
+  .inside-card h3{font-family:'Fredoka One',cursive;font-size:1.1rem;margin-bottom:6px}
+  .inside-card p{font-size:.85rem;color:#666;font-weight:600}
+
+  /* ===== VIDEO ===== */
+  .video-wrap{
+    background:#fff;border-radius:24px;
+    box-shadow:0 6px 24px rgba(0,0,0,.1);
+    overflow:hidden;
+  }
+  .video-container{position:relative;padding-bottom:56.25%;height:0}
+  .video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+  .video-caption{
+    padding:16px 20px;
+    font-family:'Fredoka One',cursive;
+    font-size:1rem;color:var(--dark);
+    text-align:center;
+    background:linear-gradient(135deg,#FFD93D22,#FF6B3522);
+  }
+
+  /* ===== PREVIEW PAGES ===== */
+  .preview-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px}
+  .preview-card{
+    background:#fff;border-radius:16px;
+    padding:18px 12px;text-align:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    border:3px solid transparent;
+    transition:border-color .2s,transform .2s;
+  }
+  .preview-card:hover{transform:translateY(-4px);border-color:var(--yellow)}
+  .preview-letter{
+    font-family:'Fredoka One',cursive;
+    font-size:2.4rem;line-height:1;
+    margin-bottom:4px;
+  }
+  .preview-word{font-weight:800;font-size:.85rem;margin-bottom:6px}
+  .trace-lines{display:flex;flex-direction:column;gap:5px;margin-top:6px}
+  .trace-line{height:2px;background:#ddd;border-radius:2px}
+  .preview-emoji{font-size:1.6rem;margin-top:6px}
+
+  /* ===== PDF DOWNLOAD ===== */
+  .pdf-card{
+    background:linear-gradient(135deg,#FF6B35,#FFD93D);
+    border-radius:28px;padding:36px 28px;text-align:center;
+    box-shadow:0 8px 30px rgba(255,107,53,.35);
+    position:relative;overflow:hidden;
+  }
+  .pdf-card::before{
+    content:'📄';position:absolute;right:-10px;top:-10px;
+    font-size:8rem;opacity:.1;
+  }
+  .pdf-card h2{
+    font-family:'Fredoka One',cursive;
+    font-size:1.8rem;color:#fff;
+    text-shadow:2px 2px 0 rgba(0,0,0,.1);
+    margin-bottom:10px;
+  }
+  .pdf-card p{color:rgba(255,255,255,.9);font-weight:700;margin-bottom:24px;font-size:1rem}
+  .pdf-features{
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:28px;
+  }
+  .pdf-feat{
+    background:rgba(255,255,255,.25);border:2px solid rgba(255,255,255,.4);
+    color:#fff;font-weight:800;font-size:.85rem;
+    padding:6px 16px;border-radius:20px;
+    backdrop-filter:blur(4px);
+  }
+  .btn-download-pdf{
+    display:inline-flex;align-items:center;gap:12px;
+    background:#fff;color:var(--orange);
+    font-family:'Fredoka One',cursive;font-size:1.3rem;
+    padding:16px 40px;border-radius:50px;
+    text-decoration:none;
+    box-shadow:0 6px 0 rgba(0,0,0,.15);
+    transition:transform .15s,box-shadow .15s;
+  }
+  .btn-download-pdf:hover{transform:translateY(-3px);box-shadow:0 9px 0 rgba(0,0,0,.15)}
+  .btn-download-pdf:active{transform:translateY(2px);box-shadow:0 3px 0 rgba(0,0,0,.15)}
+  .free-badge{
+    display:inline-block;
+    background:var(--green);color:#fff;
+    font-family:'Fredoka One',cursive;font-size:.8rem;
+    padding:3px 12px;border-radius:20px;
+    margin-top:16px;
+  }
+
+  /* ===== PARENTS SECTION ===== */
+  .parents-section{background:#fff;border-radius:28px;padding:36px 28px;box-shadow:0 4px 20px rgba(0,0,0,.07)}
+  .parents-section h2{font-family:'Fredoka One',cursive;font-size:1.8rem;margin-bottom:6px}
+  .parents-section .subtitle{color:#666;font-weight:600;margin-bottom:28px}
+  .parents-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+  .parent-card{
+    background:var(--cream);border-radius:18px;
+    padding:20px;
+    border-left:5px solid var(--bc,var(--orange));
+  }
+  .parent-card h3{font-family:'Fredoka One',cursive;font-size:1.1rem;margin-bottom:10px}
+  .parent-card ul{list-style:none;padding:0}
+  .parent-card ul li{
+    font-size:.9rem;font-weight:600;
+    padding:4px 0;
+    padding-left:20px;position:relative;
+  }
+  .parent-card ul li::before{content:'✅';position:absolute;left:0;font-size:.75rem}
+
+  /* ===== HOW TO USE ===== */
+  .steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}
+  .step-card{
+    background:#fff;border-radius:20px;
+    padding:22px 16px;text-align:center;
+    box-shadow:0 4px 16px rgba(0,0,0,.07);
+  }
+  .step-num{
+    width:44px;height:44px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fredoka One',cursive;font-size:1.3rem;color:#fff;
+    margin:0 auto 12px;
+  }
+  .step-card h3{font-family:'Fredoka One',cursive;font-size:1rem;margin-bottom:6px}
+  .step-card p{font-size:.82rem;color:#666;font-weight:600}
+
+  /* ===== MORE WORKSHEETS ===== */
+  .more-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+  .more-card{
+    background:#fff;border-radius:22px;overflow:hidden;
+    box-shadow:0 4px 16px rgba(0,0,0,.08);
+    text-decoration:none;color:var(--dark);
+    transition:transform .2s,box-shadow .2s;
+    display:block;
+  }
+  .more-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,.12)}
+  .more-card-header{
+    height:100px;display:flex;align-items:center;justify-content:center;
+    font-size:2.5rem;
+  }
+  .more-card-body{padding:16px}
+  .more-card-body h3{font-family:'Fredoka One',cursive;font-size:1.05rem;margin-bottom:4px}
+  .more-card-body p{font-size:.82rem;color:#666;font-weight:600}
+  .more-card-tag{
+    display:inline-block;
+    font-size:.75rem;font-weight:800;
+    padding:3px 10px;border-radius:10px;
+    margin-top:8px;
+  }
+
+  /* ===== GAMES CTA ===== */
+  .games-cta{
+    background:linear-gradient(135deg,#4D96FF,#C77DFF);
+    border-radius:28px;padding:36px 28px;text-align:center;
+    box-shadow:0 8px 30px rgba(77,150,255,.3);
+  }
+  .games-cta h2{font-family:'Fredoka One',cursive;font-size:1.8rem;color:#fff;margin-bottom:10px}
+  .games-cta p{color:rgba(255,255,255,.9);font-weight:700;margin-bottom:24px}
+  .games-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+  .game-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fff;
+    font-family:'Fredoka One',cursive;font-size:1rem;
+    padding:12px 24px;border-radius:40px;
+    text-decoration:none;
+    box-shadow:0 5px 0 rgba(0,0,0,.15);
+    transition:transform .15s,box-shadow .15s;
+  }
+  .game-btn:hover{transform:translateY(-2px);box-shadow:0 7px 0 rgba(0,0,0,.15)}
+  .game-btn.abc{color:var(--orange)}
+  .game-btn.math{color:var(--purple)}
+  .game-btn.labels{color:var(--teal)}
+
+  /* ===== SHARE ===== */
+  .share-wrap{text-align:center}
+  .share-title{font-family:'Fredoka One',cursive;font-size:1.4rem;margin-bottom:16px}
+  .share-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .share-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Fredoka One',cursive;font-size:1rem;
+    padding:11px 22px;border-radius:40px;
+    border:none;cursor:pointer;
+    box-shadow:0 4px 0 rgba(0,0,0,.12);
+    transition:transform .15s,box-shadow .15s;
+    text-decoration:none;
+  }
+  .share-btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 rgba(0,0,0,.12)}
+  .share-btn.wa{background:#25D366;color:#fff}
+  .share-btn.fb{background:#1877F2;color:#fff}
+  .share-btn.copy{background:var(--dark);color:#fff}
+  .copy-toast{
+    display:none;position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+    background:var(--dark);color:#fff;
+    font-family:'Fredoka One',cursive;font-size:1rem;
+    padding:12px 28px;border-radius:30px;z-index:999;
+    box-shadow:0 4px 20px rgba(0,0,0,.2);
+  }
+  .copy-toast.show{display:block;animation:fadeInUp .3s ease}
+  @keyframes fadeInUp{from{opacity:0;transform:translate(-50%,20px)}to{opacity:1;transform:translate(-50%,0)}}
+
+  /* ===== FOOTER ===== */
+  footer{
+    background:var(--dark);color:#fff;
+    padding:36px 20px;text-align:center;
+  }
+  footer .f-logo{
+    font-family:'Fredoka One',cursive;font-size:1.5rem;
+    color:var(--yellow);margin-bottom:16px;
+  }
+  footer .f-links{
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:20px;
+  }
+  footer .f-links a{
+    color:rgba(255,255,255,.75);text-decoration:none;font-weight:700;font-size:.85rem;
+    padding:5px 12px;border-radius:20px;transition:background .2s;
+  }
+  footer .f-links a:hover{background:rgba(255,255,255,.1)}
+  footer .f-copy{color:rgba(255,255,255,.5);font-size:.8rem}
+
+  /* ===== SCROLL TO TOP ===== */
+  #scrollTop{
+    position:fixed;bottom:24px;right:24px;z-index:99;
+    background:var(--orange);color:#fff;
+    width:46px;height:46px;border-radius:50%;border:none;
+    font-size:1.3rem;cursor:pointer;
+    box-shadow:0 4px 15px rgba(255,107,53,.4);
+    display:none;align-items:center;justify-content:center;
+    transition:transform .2s;
+  }
+  #scrollTop:hover{transform:translateY(-3px)}
+  #scrollTop.visible{display:flex}
+
+  /* ===== FADE IN ===== */
+  .fade-in{opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s}
+  .fade-in.visible{opacity:1;transform:translateY(0)}
+
+  /* ===== AGE STRIP ===== */
+  .age-strip{
+    background:linear-gradient(90deg,var(--red),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));
+    padding:12px 20px;text-align:center;
+    font-family:'Fredoka One',cursive;font-size:1rem;color:#fff;
+    letter-spacing:1px;text-shadow:1px 1px 0 rgba(0,0,0,.15);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-logo">Gig N <span>Learn</span> 🐯</a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../abc-game.html">ABC Game</a></li>
+    <li><a href="../math-maze.html">Math Maze</a></li>
+    <li><a href="index.html" class="active">Poems & Books</a></li>
+    <li><a href="../name-labels.html">Labels</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" onclick="closeMenu()">🏠 Home</a>
+  <a href="../abc-game.html" onclick="closeMenu()">🔤 ABC Game</a>
+  <a href="../math-maze.html" onclick="closeMenu()">🔢 Math Maze</a>
+  <a href="index.html" onclick="closeMenu()">📚 Poems & Books</a>
+  <a href="../name-labels.html" onclick="closeMenu()">🏷️ Labels</a>
+</div>
+
+<!-- AGE STRIP -->
+<div class="age-strip">✏️ For Ages 2–5 &nbsp;•&nbsp; Trace – Learn – Write – Count &nbsp;•&nbsp; 100% Free Download ✏️</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">📖 FREE PRINTABLE WORKBOOK</div>
+  <h1>My First Alphabet<br>&amp; Number Book</h1>
+  <p class="hero-sub">Trace · Learn · Write · Count — All in One!</p>
+  <div class="hero-pills">
+    <span class="pill">✏️ A–Z Capital Letters</span>
+    <span class="pill">🔡 a–z Small Letters</span>
+    <span class="pill">🔢 Numbers 1–10</span>
+    <span class="pill">🎨 Coloring Pages</span>
+  </div>
+  <div class="hero-abc">
+    <div class="abc-block">A</div>
+    <div class="abc-block">B</div>
+    <div class="abc-block">C</div>
+    <div class="abc-block">1</div>
+    <div class="abc-block">2</div>
+    <div class="abc-block">3</div>
+  </div>
+  <a href="https://drive.google.com/uc?export=download&id=1KNLlgCw98_1Br6ZPxGA19opezL3DNZ-E"
+     class="btn-download-hero" download>
+    ⬇️ Download Free PDF
+  </a>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="section" style="background:#fff">
+  <div class="container">
+    <h2 class="section-title" style="color:var(--orange)">📦 What's Inside?</h2>
+    <div class="inside-grid">
+      <div class="inside-card" style="--border-c:var(--red)">
+        <div class="icon">🔤</div>
+        <h3>Capital Letters</h3>
+        <p>Trace A to Z in big bold uppercase letters</p>
+      </div>
+      <div class="inside-card" style="--border-c:var(--blue)">
+        <div class="icon">🔡</div>
+        <h3>Small Letters</h3>
+        <p>Practice a to z in neat lowercase writing</p>
+      </div>
+      <div class="inside-card" style="--border-c:var(--green)">
+        <div class="icon">🔢</div>
+        <h3>Numbers 1–10</h3>
+        <p>Trace and count numbers with fun objects</p>
+      </div>
+      <div class="inside-card" style="--border-c:var(--purple)">
+        <div class="icon">🎨</div>
+        <h3>Color Pages</h3>
+        <p>Color the apple, ball & more cute pictures</p>
+      </div>
+      <div class="inside-card" style="--border-c:var(--orange)">
+        <div class="icon">🐯</div>
+        <h3>Gigloo Says!</h3>
+        <p>Fun word for each letter with picture</p>
+      </div>
+      <div class="inside-card" style="--border-c:var(--teal)">
+        <div class="icon">📄</div>
+        <h3>Print Ready</h3>
+        <p>Clean PDF pages, print at home easily</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREVIEW -->
+<section class="section fade-in">
+  <div class="container">
+    <h2 class="section-title" style="color:var(--blue)">👀 Peek Inside the Book</h2>
+    <div class="preview-grid">
+      <div class="preview-card">
+        <div class="preview-letter" style="color:var(--red)">A a</div>
+        <div class="preview-word">Apple 🍎</div>
+        <div class="trace-lines"><div class="trace-line"></div><div class="trace-line"></div><div class="trace-line"></div></div>
+      </div>
+      <div class="preview-card">
+        <div class="preview-letter" style="color:var(--orange)">B b</div>
+        <div class="preview-word">Ball ⚽</div>
+        <div class="trace-lines"><div class="trace-line"></div><div class="trace-line"></div><div class="trace-line"></div></div>
+      </div>
+      <div class="preview-card">
+        <div class="preview-letter" style="color:var(--yellow);-webkit-text-stroke:1px #ccc">C c</div>
+        <div class="preview-word">Cat 🐱</div>
+        <div class="trace-lines"><div class="trace-line"></div><div class="trace-line"></div><div class="trace-line"></div></div>
+      </div>
+      <div class="preview-card">
+        <div class="preview-letter" style="color:var(--green)">D d</div>
+        <div class="preview-word">Dog 🐶</div>
+        <div class="trace-lines"><div class="trace-line"></div><div class="trace-line"></div><div class="trace-line"></div></div>
+      </div>
+      <div class="preview-card">
+        <div class="preview-letter" style="color:var(--blue)">1</div>
+        <div class="preview-word">One 🌟</div>
+        <div class="trace-lines"><div class="trace-line"></div><div class="trace-line"></div><div class="trace-line"></div></div>
+      </div>
+      <div class="preview-card">
+        <div class="preview-letter" style="color:var(--purple)">2</div>
+        <div class="preview-word">Two 🎈</div>
+        <div class="trace-lines"><div class="trace-line"></div><div class="trace-line"></div><div class="trace-line"></div></div>
+      </div>
+      <div class="preview-card">
+        <div class="preview-letter" style="color:var(--pink)">3</div>
+        <div class="preview-word">Three 🌸</div>
+        <div class="trace-lines"><div class="trace-line"></div><div class="trace-line"></div><div class="trace-line"></div></div>
+      </div>
+      <div class="preview-card">
+        <div class="preview-letter" style="color:var(--teal)">🎨</div>
+        <div class="preview-word">Color It!</div>
+        <div class="trace-lines"><div class="trace-line" style="background:var(--red);opacity:.3"></div><div class="trace-line" style="background:var(--blue);opacity:.3"></div><div class="trace-line" style="background:var(--green);opacity:.3"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALPHABET SONG VIDEO -->
+<section class="section fade-in" style="background:#fff">
+  <div class="container">
+    <h2 class="section-title" style="color:var(--green)">🎵 Watch the Alphabet Song</h2>
+    <div class="video-wrap">
+      <div class="video-container">
+        <!-- ✅ Replace YOUR_YOUTUBE_ID_HERE with the actual YouTube video ID -->
+        <iframe
+          src="https://www.youtube.com/embed/YOUR_YOUTUBE_ID_HERE?rel=0&modestbranding=1"
+          title="My First Alphabet Song – Gig N Learn"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-caption">🎵 Sing along while you trace! Learn A–Z with Gigloo 🐯</div>
+    </div>
+    <p style="text-align:center;font-size:.85rem;color:#999;margin-top:12px;font-weight:600">
+      ⚠️ Bhai — replace <code>YOUR_YOUTUBE_ID_HERE</code> with your Alphabet Song YouTube ID!
+    </p>
+  </div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="section fade-in">
+  <div class="container">
+    <h2 class="section-title" style="color:var(--purple)">✏️ How to Use This Book</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num" style="background:var(--orange)">1</div>
+        <h3>Trace with Finger</h3>
+        <p>First trace letters & numbers with your finger</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num" style="background:var(--blue)">2</div>
+        <h3>Use Pencil / Crayon</h3>
+        <p>Then trace using a pencil or crayon</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num" style="background:var(--green)">3</div>
+        <h3>Say It Aloud</h3>
+        <p>Speak each letter and number out loud</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num" style="background:var(--purple)">4</div>
+        <h3>Count Together</h3>
+        <p>Count the objects on each number page</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num" style="background:var(--red)">5</div>
+        <h3>Color the Page</h3>
+        <p>Use crayons to color the fun pictures!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PDF DOWNLOAD -->
+<section class="section fade-in">
+  <div class="container">
+    <div class="pdf-card">
+      <h2>⬇️ Download Your FREE Copy!</h2>
+      <p>Print it at home — no signup, no cost, just learning fun! 🐯</p>
+      <div class="pdf-features">
+        <span class="pdf-feat">📝 26 Capital Letter Pages</span>
+        <span class="pdf-feat">🔡 26 Small Letter Pages</span>
+        <span class="pdf-feat">🔢 10 Number Pages</span>
+        <span class="pdf-feat">🎨 Coloring Activities</span>
+        <span class="pdf-feat">🖨️ Print Ready A4</span>
+      </div>
+      <a href="https://drive.google.com/uc?export=download&id=1KNLlgCw98_1Br6ZPxGA19opezL3DNZ-E"
+         class="btn-download-pdf" download>
+        📥 Download Free PDF
+      </a>
+      <div><span class="free-badge">✅ 100% FREE — No Signup Needed!</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARENTS SECTION -->
+<section class="section fade-in" style="background:#fff">
+  <div class="container">
+    <div class="parents-section">
+      <h2>👨‍👩‍👧 Parents' Corner</h2>
+      <p class="subtitle">Why this workbook is great for your child</p>
+      <div class="parents-grid">
+        <div class="parent-card" style="--bc:var(--orange)">
+          <h3>🧠 Skills Developed</h3>
+          <ul>
+            <li>Fine motor control</li>
+            <li>Pen / pencil grip</li>
+            <li>Letter recognition</li>
+            <li>Number sense & counting</li>
+            <li>Hand-eye coordination</li>
+          </ul>
+        </div>
+        <div class="parent-card" style="--bc:var(--blue)">
+          <h3>📚 Learning Outcomes</h3>
+          <ul>
+            <li>Recognise A–Z uppercase & lowercase</li>
+            <li>Write letters independently</li>
+            <li>Count and write numbers 1–10</li>
+            <li>Associate letters with words</li>
+            <li>Enjoy learning through colour</li>
+          </ul>
+        </div>
+        <div class="parent-card" style="--bc:var(--green)">
+          <h3>💡 Activity Tips</h3>
+          <ul>
+            <li>Start with just 2–3 pages per day</li>
+            <li>Praise effort, not just neatness</li>
+            <li>Sing the alphabet while tracing</li>
+            <li>Point out letters in everyday life</li>
+            <li>Make it fun — no pressure!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MORE RESOURCES -->
+<section class="section fade-in">
+  <div class="container">
+    <h2 class="section-title" style="color:var(--teal)">📚 More Learning Fun</h2>
+    <div class="more-grid">
+      <a href="nursery-workbook.html" class="more-card">
+        <div class="more-card-header" style="background:linear-gradient(135deg,#FF6B35,#FFD93D)">📖</div>
+        <div class="more-card-body">
+          <h3>Nursery Workbook</h3>
+          <p>Complete nursery learning activity bundle</p>
+          <span class="more-card-tag" style="background:#FF6B3522;color:var(--orange)">📚 Workbook</span>
+        </div>
+      </a>
+      <a href="vowels-worksheet.html" class="more-card">
+        <div class="more-card-header" style="background:linear-gradient(135deg,#4D96FF,#C77DFF)">🅐</div>
+        <div class="more-card-body">
+          <h3>Vowels Worksheet</h3>
+          <p>A E I O U — learn vowels with Gigloo!</p>
+          <span class="more-card-tag" style="background:#4D96FF22;color:var(--blue)">🔤 Worksheet</span>
+        </div>
+      </a>
+      <a href="one-red-apple.html" class="more-card">
+        <div class="more-card-header" style="background:linear-gradient(135deg,#FF4757,#FFD93D)">🍎</div>
+        <div class="more-card-body">
+          <h3>One Red Apple</h3>
+          <p>Count fruits with this fun number rhyme!</p>
+          <span class="more-card-tag" style="background:#FF475722;color:var(--red)">🔢 Counting</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- GAMES CTA -->
+<section class="section fade-in">
+  <div class="container">
+    <div class="games-cta">
+      <h2>🎮 Play & Learn More!</h2>
+      <p>Practice what you traced — with fun interactive games!</p>
+      <div class="games-btns">
+        <a href="../abc-game.html" class="game-btn abc">🔤 ABC Tap Game</a>
+        <a href="../math-maze.html" class="game-btn math">🔢 Math Maze</a>
+        <a href="../name-labels.html" class="game-btn labels">🏷️ Name Labels</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHARE -->
+<section class="section fade-in" style="background:#fff">
+  <div class="container">
+    <div class="share-wrap">
+      <p class="share-title">💛 Share with other parents!</p>
+      <div class="share-btns">
+        <a class="share-btn wa"
+           href="https://wa.me/?text=Free%20Alphabet%20%26%20Number%20Tracing%20Book%20for%20kids!%20Download%20here%3A%20https%3A%2F%2Ffitness-made-simplified.github.io%2FGignlearn%2Fpoems%2Falphabet-number-tracing-book.html"
+           target="_blank">
+          📱 Share on WhatsApp
+        </a>
+        <a class="share-btn fb"
+           href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffitness-made-simplified.github.io%2FGignlearn%2Fpoems%2Falphabet-number-tracing-book.html"
+           target="_blank">
+          👍 Share on Facebook
+        </a>
+        <button class="share-btn copy" onclick="copyLink()">🔗 Copy Link</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logo">🐯 Gig N Learn</div>
+  <div class="f-links">
+    <a href="../index.html">Home</a>
+    <a href="magic-words.html">Magic Words</a>
+    <a href="one-red-apple.html">One Red Apple</a>
+    <a href="rainbow-snack-parade.html">Rainbow Snack</a>
+    <a href="transport.html">Transport</a>
+    <a href="baa-baa-black-sheep.html">Baa Baa</a>
+    <a href="good-morning-sun.html">Good Morning</a>
+    <a href="days-of-the-week.html">Days of Week</a>
+    <a href="busy-hen.html">Busy Hen</a>
+    <a href="vowels-worksheet.html">Vowels</a>
+    <a href="nursery-workbook.html">Workbook</a>
+    <a href="alphabet-number-tracing-book.html">Tracing Book</a>
+  </div>
+  <p class="f-copy">© 2026 Gig N Learn | Free kids learning resources by Gigloo 🐯</p>
+</footer>
+
+<!-- SCROLL TOP -->
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+<div class="copy-toast" id="copyToast">✅ Link copied!</div>
+
+<script>
+  // Mobile menu
+  function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+  function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
+
+  // Scroll to top
+  window.addEventListener('scroll',()=>{
+    document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300)
+  })
+
+  // Copy link
+  function copyLink(){
+    navigator.clipboard.writeText(window.location.href).then(()=>{
+      const t=document.getElementById('copyToast')
+      t.classList.add('show')
+      setTimeout(()=>t.classList.remove('show'),2500)
+    })
+  }
+
+  // Fade in on scroll
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})
+  },{threshold:.12})
+  document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el))
+</script>
+</body>
+</html>
