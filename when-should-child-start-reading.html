@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>When Should a Child Start Reading? The Perfect Age Guide | GigNLearn</title>
+<meta name="description" content="Gigloo guides parents through the perfect reading age milestones — from babies to school-starters. Fun tips, myth-busting, and activities inside!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange:#FF6B35; --yellow:#FFD93D; --green:#6BCB77;
+    --blue:#4D96FF;   --purple:#C77DFF; --pink:#FF85A1;
+    --red:#FF4757;    --teal:#00C2CB;   --cream:#FFF9F0;
+    --dark:#2D2D2D;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 999;
+    background: #fff;
+    box-shadow: 0 2px 16px rgba(0,0,0,.10);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 24px; height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem; color: var(--orange);
+    text-decoration: none; display: flex; align-items: center; gap: 8px;
+  }
+  .nav-logo span { font-size: 1.6rem; }
+  .nav-links { display: flex; gap: 6px; list-style: none; }
+  .nav-links a {
+    font-family: 'Fredoka One', cursive; font-size: .95rem;
+    color: var(--dark); text-decoration: none;
+    padding: 6px 12px; border-radius: 20px;
+    transition: background .2s, color .2s;
+  }
+  .nav-links a:hover { background: var(--yellow); color: var(--dark); }
+  .hamburger { display:none; font-size:1.6rem; background:none; border:none; cursor:pointer; }
+  .mobile-menu {
+    display:none; flex-direction:column; gap:4px;
+    position:absolute; top:64px; left:0; right:0;
+    background:#fff; padding:12px 20px;
+    box-shadow:0 4px 16px rgba(0,0,0,.12); z-index:998;
+  }
+  .mobile-menu a {
+    font-family:'Fredoka One',cursive; font-size:1.1rem;
+    color:var(--dark); text-decoration:none;
+    padding:10px 16px; border-radius:12px;
+  }
+  .mobile-menu a:hover { background:var(--yellow); }
+  .mobile-menu.open { display:flex; }
+  @media(max-width:768px){
+    .nav-links { display:none; }
+    .hamburger { display:block; }
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg,#4D96FF,#C77DFF,#FF85A1,#FFD93D);
+    background-size: 300% 300%;
+    animation: gradShift 8s ease infinite;
+    min-height: 380px;
+    display: flex; flex-direction:column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 60px 20px 40px;
+    position: relative; overflow: hidden;
+  }
+  @keyframes gradShift {
+    0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%}
+  }
+  .hero::before {
+    content:''; position:absolute; inset:0;
+    background: radial-gradient(circle at 20% 80%, rgba(255,255,255,.18) 0%, transparent 60%),
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,.18) 0%, transparent 60%);
+  }
+  .hero-badge {
+    background: rgba(255,255,255,.9);
+    color: var(--purple); font-family:'Fredoka One',cursive;
+    font-size:.9rem; padding:6px 18px; border-radius:20px;
+    margin-bottom: 18px; display:inline-block; position:relative; z-index:1;
+  }
+  .hero h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(2rem,6vw,3.2rem);
+    color: #fff;
+    text-shadow: 2px 4px 12px rgba(0,0,0,.22);
+    line-height: 1.2; max-width: 700px;
+    position:relative; z-index:1;
+  }
+  .hero-sub {
+    color: rgba(255,255,255,.93); font-size:1.1rem; font-weight:700;
+    margin-top:14px; max-width:540px; position:relative; z-index:1;
+  }
+  .hero-mascot {
+    font-size: 4rem; margin-top:20px; position:relative; z-index:1;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+
+  /* ── TOPIC STRIP ── */
+  .topic-strip {
+    display:flex; gap:10px; flex-wrap:wrap; justify-content:center;
+    padding:20px; background:#fff; border-bottom:3px solid var(--yellow);
+  }
+  .pill {
+    font-family:'Fredoka One',cursive; font-size:.88rem;
+    padding:6px 16px; border-radius:20px; color:#fff;
+  }
+
+  /* ── MAIN LAYOUT ── */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+
+  /* ── INTRO BOX ── */
+  .intro-box {
+    background: linear-gradient(135deg,#fff,#f0f7ff);
+    border-left: 6px solid var(--blue);
+    border-radius: 16px; padding: 28px 32px; margin: 40px 0;
+    box-shadow: 0 4px 20px rgba(77,150,255,.12);
+    display:flex; gap:20px; align-items:flex-start;
+  }
+  .intro-box .gigloo-say { font-size:3rem; flex-shrink:0; }
+  .intro-box p { font-size:1.1rem; font-weight:600; line-height:1.7; color:#444; }
+  .intro-box strong { color:var(--blue); }
+
+  /* ── AGE TIMELINE ── */
+  .section-title {
+    font-family:'Fredoka One',cursive;
+    font-size:1.9rem; color:var(--dark);
+    text-align:center; margin:48px 0 6px;
+    position:relative;
+  }
+  .section-title::after {
+    content:''; display:block; width:80px; height:5px;
+    background:var(--yellow); border-radius:4px;
+    margin:8px auto 0;
+  }
+  .section-sub {
+    text-align:center; color:#777; font-size:1rem;
+    margin-bottom:36px; font-weight:600;
+  }
+
+  .timeline { display:flex; flex-direction:column; gap:0; position:relative; margin-bottom:50px; }
+  .timeline::before {
+    content:''; position:absolute; left:50px; top:0; bottom:0;
+    width:4px; background:linear-gradient(to bottom,var(--blue),var(--purple),var(--pink),var(--orange));
+    border-radius:4px;
+  }
+  @media(max-width:600px){
+    .timeline::before { left:28px; }
+  }
+
+  .age-card {
+    display:flex; align-items:flex-start; gap:20px;
+    padding:20px 0; position:relative;
+    opacity:0; transform:translateX(-30px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .age-card.visible { opacity:1; transform:translateX(0); }
+
+  .age-bubble {
+    flex-shrink:0; width:100px; text-align:center;
+    background:#fff; border-radius:50px;
+    padding:10px 4px;
+    box-shadow:0 4px 16px rgba(0,0,0,.12);
+    border:3px solid var(--yellow);
+    font-family:'Fredoka One',cursive; font-size:.85rem;
+    color:var(--dark); line-height:1.3;
+  }
+  .age-bubble .age-icon { font-size:1.8rem; display:block; }
+  .age-bubble .age-label { font-size:.75rem; color:#888; }
+
+  .age-content {
+    flex:1; background:#fff; border-radius:16px;
+    padding:20px 24px; box-shadow:0 4px 20px rgba(0,0,0,.08);
+    margin-left:10px;
+  }
+  .age-content h3 {
+    font-family:'Fredoka One',cursive; font-size:1.3rem;
+    margin-bottom:10px;
+  }
+  .age-content ul { list-style:none; display:flex; flex-direction:column; gap:6px; }
+  .age-content ul li {
+    padding-left:24px; position:relative;
+    font-size:.97rem; line-height:1.5; color:#555; font-weight:600;
+  }
+  .age-content ul li::before {
+    content:'✓'; position:absolute; left:0;
+    color:var(--green); font-weight:900;
+  }
+  .age-badge {
+    display:inline-block; font-family:'Fredoka One',cursive;
+    font-size:.78rem; padding:3px 12px; border-radius:12px;
+    color:#fff; margin-bottom:10px;
+  }
+  @media(max-width:600px){
+    .age-bubble { width:70px; font-size:.78rem; }
+    .age-card { gap:10px; }
+  }
+
+  /* ── MYTH BUSTER ── */
+  .myths-section { background:linear-gradient(135deg,#1a0a2e,#3D0066); padding:50px 20px; margin:60px 0; }
+  .myths-section .section-title { color:#fff; }
+  .myths-section .section-title::after { background:var(--pink); }
+  .myths-section .section-sub { color:rgba(255,255,255,.7); }
+  .myths-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:860px; margin:0 auto; }
+  @media(max-width:640px){ .myths-grid { grid-template-columns:1fr; } }
+
+  .myth-card {
+    background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15);
+    border-radius:16px; padding:24px; backdrop-filter:blur(8px);
+    opacity:0; transform:translateY(20px);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .myth-card.visible { opacity:1; transform:translateY(0); }
+  .myth-label {
+    font-family:'Fredoka One',cursive; font-size:.8rem;
+    padding:4px 12px; border-radius:10px; display:inline-block; margin-bottom:8px;
+  }
+  .myth-label.myth { background:var(--red); color:#fff; }
+  .myth-label.truth { background:var(--green); color:#fff; }
+  .myth-card h4 { font-family:'Fredoka One',cursive; font-size:1.05rem; color:#fff; margin-bottom:6px; }
+  .myth-card p { font-size:.92rem; color:rgba(255,255,255,.8); line-height:1.5; font-weight:600; }
+  .myth-arrow { text-align:center; font-size:1.8rem; margin:8px 0; }
+
+  /* ── TIPS SECTION ── */
+  .tips-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:18px; margin:30px 0 50px; }
+  .tip-card {
+    background:#fff; border-radius:18px; padding:24px 18px;
+    text-align:center; box-shadow:0 4px 20px rgba(0,0,0,.08);
+    border-top:5px solid var(--yellow);
+    opacity:0; transform:translateY(20px);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .tip-card.visible { opacity:1; transform:translateY(0); }
+  .tip-card:nth-child(1){border-color:var(--orange);}
+  .tip-card:nth-child(2){border-color:var(--blue);}
+  .tip-card:nth-child(3){border-color:var(--green);}
+  .tip-card:nth-child(4){border-color:var(--purple);}
+  .tip-icon { font-size:2.5rem; margin-bottom:10px; }
+  .tip-card h4 { font-family:'Fredoka One',cursive; font-size:1rem; margin-bottom:6px; color:var(--dark); }
+  .tip-card p { font-size:.87rem; color:#666; font-weight:600; line-height:1.4; }
+
+  /* ── ACTIVITIES ── */
+  .activities-section {
+    background:linear-gradient(135deg,#e8f5ff,#fff9e8);
+    border-radius:24px; padding:40px 32px; margin:50px 0;
+  }
+  .activities-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:24px; }
+  @media(max-width:640px){ .activities-grid { grid-template-columns:1fr; } }
+  .activity-chip {
+    background:#fff; border-radius:14px; padding:18px;
+    text-align:center; box-shadow:0 3px 14px rgba(0,0,0,.07);
+    font-family:'Fredoka One',cursive;
+  }
+  .activity-chip .act-icon { font-size:2.2rem; margin-bottom:8px; }
+  .activity-chip h5 { font-size:1rem; color:var(--dark); margin-bottom:4px; }
+  .activity-chip p { font-size:.82rem; color:#777; font-weight:600; }
+
+  /* ── TOYS SECTION ── */
+  .toys-section { background:#fff; border-radius:24px; padding:36px 32px; margin:40px 0; box-shadow:0 4px 24px rgba(0,0,0,.07); }
+  .toys-grid { display:flex; gap:14px; flex-wrap:wrap; margin-top:20px; }
+  .toy-btn {
+    flex:1; min-width:150px;
+    display:flex; align-items:center; gap:10px;
+    background:linear-gradient(135deg,#f8f8f8,#fff);
+    border:2px solid var(--yellow); border-radius:14px;
+    padding:14px 18px; text-decoration:none; color:var(--dark);
+    font-family:'Fredoka One',cursive; font-size:.95rem;
+    transition:transform .2s, box-shadow .2s, border-color .2s;
+  }
+  .toy-btn:hover { transform:translateY(-3px); box-shadow:0 6px 20px rgba(0,0,0,.12); border-color:var(--orange); }
+  .toy-btn .toy-icon { font-size:1.6rem; }
+
+  /* ── STAT BAR ── */
+  .stat-section { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; margin:50px 0; }
+  .stat-card {
+    background:#fff; border-radius:18px; padding:24px 14px;
+    text-align:center; box-shadow:0 4px 20px rgba(0,0,0,.07);
+  }
+  .stat-num { font-family:'Fredoka One',cursive; font-size:2.4rem; }
+  .stat-label { font-size:.88rem; color:#777; font-weight:700; margin-top:4px; }
+
+  /* ── CTA SECTION ── */
+  .cta-section {
+    background:linear-gradient(135deg,var(--orange),var(--yellow));
+    border-radius:24px; padding:40px 30px;
+    text-align:center; margin:50px 0;
+  }
+  .cta-section h2 {
+    font-family:'Fredoka One',cursive; font-size:2rem; color:#fff;
+    text-shadow:0 2px 8px rgba(0,0,0,.15); margin-bottom:18px;
+  }
+  .cta-buttons { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; }
+  .cta-btn {
+    font-family:'Fredoka One',cursive; font-size:1rem;
+    padding:14px 26px; border-radius:50px; text-decoration:none;
+    transition:transform .2s, box-shadow .2s;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .cta-btn:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,.2); }
+  .cta-btn.primary { background:#fff; color:var(--orange); }
+  .cta-btn.secondary { background:var(--dark); color:#fff; }
+
+  /* ── SHARE ── */
+  .share-section { text-align:center; margin:50px 0; }
+  .share-section h3 { font-family:'Fredoka One',cursive; font-size:1.4rem; margin-bottom:16px; }
+  .share-buttons { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  .share-btn {
+    font-family:'Fredoka One',cursive; font-size:.95rem;
+    padding:12px 22px; border-radius:50px; border:none; cursor:pointer;
+    display:inline-flex; align-items:center; gap:8px;
+    text-decoration:none; transition:transform .2s, box-shadow .2s;
+  }
+  .share-btn:hover { transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,.15); }
+  .share-btn.whatsapp { background:#25D366; color:#fff; }
+  .share-btn.facebook { background:#1877F2; color:#fff; }
+  .share-btn.copy { background:var(--dark); color:#fff; }
+
+  /* ── FOOTER ── */
+  footer {
+    background:var(--dark); color:#fff; padding:40px 20px;
+    text-align:center;
+  }
+  .footer-logo { font-family:'Fredoka One',cursive; font-size:1.6rem; color:var(--yellow); margin-bottom:16px; }
+  .footer-links { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-bottom:18px; }
+  .footer-links a {
+    color:rgba(255,255,255,.75); text-decoration:none;
+    font-family:'Fredoka One',cursive; font-size:.9rem;
+    padding:6px 14px; border-radius:20px;
+    transition:background .2s;
+  }
+  .footer-links a:hover { background:rgba(255,255,255,.15); }
+  .footer-copy { font-size:.82rem; color:rgba(255,255,255,.4); margin-top:14px; }
+
+  /* ── SCROLL TOP ── */
+  #scrollTop {
+    position:fixed; bottom:28px; right:24px;
+    background:var(--orange); color:#fff; border:none;
+    width:48px; height:48px; border-radius:50%; font-size:1.3rem;
+    cursor:pointer; box-shadow:0 4px 16px rgba(0,0,0,.25);
+    display:none; align-items:center; justify-content:center;
+    transition:transform .2s;
+    z-index:900;
+  }
+  #scrollTop:hover { transform:scale(1.1); }
+  #scrollTop.visible { display:flex; }
+
+  /* ── READING PROGRESS BAR ── */
+  #progress-bar {
+    position:fixed; top:0; left:0; height:4px; z-index:9999;
+    background:linear-gradient(90deg,var(--orange),var(--yellow),var(--green));
+    width:0%; transition:width .1s;
+  }
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-logo"><span>🐯</span> GigNLearn</a>
+  <ul class="nav-links">
+    <li><a href="../index.html">🏠 Home</a></li>
+    <li><a href="../abc-game.html">🔤 ABC Game</a></li>
+    <li><a href="../math-maze.html">🔢 Math Maze</a></li>
+    <li><a href="index.html">📖 Poems</a></li>
+    <li><a href="../name-labels.html">🏷️ Labels</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">☰</button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">🏠 Home</a>
+  <a href="../abc-game.html">🔤 ABC Game</a>
+  <a href="../math-maze.html">🔢 Math Maze</a>
+  <a href="index.html">📖 Poems</a>
+  <a href="../name-labels.html">🏷️ Labels</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">📚 Parent's Hub by GigNLearn</div>
+  <h1>When Should a Child Start Reading?</h1>
+  <p class="hero-sub">The Perfect Age Guide — from Babies to School-Starters 🌟</p>
+  <div class="hero-mascot">🐯</div>
+</section>
+
+<!-- TOPIC PILLS -->
+<div class="topic-strip">
+  <span class="pill" style="background:var(--blue)">📖 Early Reading</span>
+  <span class="pill" style="background:var(--green)">🌱 Child Development</span>
+  <span class="pill" style="background:var(--purple)">🧠 Brain Growth</span>
+  <span class="pill" style="background:var(--orange)">👨‍👩‍👧 Parenting Tips</span>
+  <span class="pill" style="background:var(--pink)">🎯 Age Milestones</span>
+  <span class="pill" style="background:var(--teal)">🎉 No-Pressure Learning</span>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="container">
+
+  <!-- INTRO BOX -->
+  <div class="intro-box">
+    <span class="gigloo-say">🐯</span>
+    <p>Hi, I'm <strong>Gigloo</strong> from the Gig and Learn team! Reading isn't just school stuff — it's an <strong>adventure</strong>! Every child's reading journey is unique. Let me walk you through the milestones, the magic, and the myths — so you can guide your little one with confidence and joy. 🌟</p>
+  </div>
+
+  <!-- STATS -->
+  <div class="stat-section">
+    <div class="stat-card">
+      <div class="stat-num" style="color:var(--blue)">0</div>
+      <div class="stat-label">Perfect starting age — begin reading aloud from birth! 🍼</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" style="color:var(--green)">4</div>
+      <div class="stat-label">Months — when books actively boost language skills 📚</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" style="color:var(--orange)">5</div>
+      <div class="stat-label">Age when most kids start blending sounds together 🔤</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" style="color:var(--purple)">7</div>
+      <div class="stat-label">Age most children read fluently (Finland waits till 7!) 🌍</div>
+    </div>
+  </div>
+
+  <!-- AGE TIMELINE -->
+  <h2 class="section-title">📅 Reading Milestones by Age</h2>
+  <p class="section-sub">Every stage is magical — don't rush, enjoy the journey!</p>
+
+  <div class="timeline">
+
+    <div class="age-card">
+      <div class="age-bubble">
+        <span class="age-icon">🍼</span>
+        <strong>0–12 m</strong>
+        <div class="age-label">Newborn</div>
+      </div>
+      <div class="age-content">
+        <span class="age-badge" style="background:var(--blue)">The Listener Stage</span>
+        <h3 style="color:var(--blue)">Baby Steps — 0 to 12 Months</h3>
+        <ul>
+          <li>Babies hear voices in the womb — stories begin before birth!</li>
+          <li>Newborns love rhythm and patterns — nursery rhymes work perfectly</li>
+          <li>By 4 months, reading aloud actively boosts language development</li>
+          <li>At 6 months, babies start pointing at pictures in board books</li>
+          <li>By 12 months, they mimic sounds they've heard repeatedly</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="age-card">
+      <div class="age-bubble">
+        <span class="age-icon">🚶</span>
+        <strong>1–3 yrs</strong>
+        <div class="age-label">Toddler</div>
+      </div>
+      <div class="age-content">
+        <span class="age-badge" style="background:var(--green)">The Explorer Stage</span>
+        <h3 style="color:var(--green)">Curious Toddlers — Ages 1 to 3</h3>
+        <ul>
+          <li>Start recognizing letters they see around them (like on signs!)</li>
+          <li>Absolutely love rhymes — repetition builds memory beautifully</li>
+          <li>Point to pictures and name things they know</li>
+          <li>Board books with textures and flaps are fantastic at this stage</li>
+          <li>Keep it playful! No pressure — just exploration and fun</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="age-card">
+      <div class="age-bubble">
+        <span class="age-icon">🌟</span>
+        <strong>3–5 yrs</strong>
+        <div class="age-label">Preschool</div>
+      </div>
+      <div class="age-content">
+        <span class="age-badge" style="background:var(--yellow); color:var(--dark)">Pre-Reading Magic!</span>
+        <h3 style="color:var(--orange)">Preschool Power — Ages 3 to 5</h3>
+        <ul>
+          <li>This is when the real pre-reading magic begins! ✨</li>
+          <li>Children learn letters, their sounds (phonics), and simple CVC words</li>
+          <li>Reading daily builds a rich vocabulary naturally</li>
+          <li>Some gifted children read full words at age 4 — that's normal too!</li>
+          <li>Most begin blending sounds together around age 5</li>
+          <li>Picture books with simple sentences are perfect here</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="age-card">
+      <div class="age-bubble">
+        <span class="age-icon">🏫</span>
+        <strong>5–7 yrs</strong>
+        <div class="age-label">School Age</div>
+      </div>
+      <div class="age-content">
+        <span class="age-badge" style="background:var(--purple)">The Reader Stage</span>
+        <h3 style="color:var(--purple)">School Start — Ages 5 to 7</h3>
+        <ul>
+          <li>Kindergarten (age 5–6) is when most children read simple sentences</li>
+          <li>By age 7, most children read fluently and confidently</li>
+          <li>Countries like Finland intentionally wait till age 7 — and kids thrive!</li>
+          <li>Focus on reading for joy, not just accuracy at this stage</li>
+          <li>Let them pick their own books — interest drives progress</li>
+        </ul>
+      </div>
+    </div>
+
+  </div><!-- /timeline -->
+
+</main><!-- /container -->
+
+<!-- MYTH BUSTER -->
+<section class="myths-section">
+  <h2 class="section-title">🚫 Myths Busted by Gigloo!</h2>
+  <p class="section-sub">Don't let these common myths stress you out</p>
+  <div class="myths-grid container">
+
+    <div class="myth-card">
+      <span class="myth-label myth">❌ Myth</span>
+      <h4>Every child must be reading by age 4</h4>
+      <p>This puts unnecessary pressure on both parent and child. Reading readiness varies widely.</p>
+      <div class="myth-arrow">⬇️</div>
+      <span class="myth-label truth">✅ Truth</span>
+      <p>Reading timelines vary greatly between children. There's no single "right" age — what matters is consistent, loving exposure to books and language.</p>
+    </div>
+
+    <div class="myth-card">
+      <span class="myth-label myth">❌ Myth</span>
+      <h4>Pushing early reading gives kids a head start</h4>
+      <p>Drilling letters and reading drills on very young children can actually cause stress and reading anxiety.</p>
+      <div class="myth-arrow">⬇️</div>
+      <span class="myth-label truth">✅ Truth</span>
+      <p>Play-based, pressure-free learning is the most effective approach. Children who learn through games and stories develop stronger reading skills long-term.</p>
+    </div>
+
+    <div class="myth-card">
+      <span class="myth-label myth">❌ Myth</span>
+      <h4>If they're not reading by 6, something is wrong</h4>
+      <p>This myth causes unnecessary panic in parents and shame in children.</p>
+      <div class="myth-arrow">⬇️</div>
+      <span class="myth-label truth">✅ Truth</span>
+      <p>Many children start reading fluently at 6, 7, or even 8. Late starters often catch up quickly once they're developmentally ready.</p>
+    </div>
+
+    <div class="myth-card">
+      <span class="myth-label myth">❌ Myth</span>
+      <h4>Screen time replaces reading books</h4>
+      <p>Passive screen time and interactive reading are very different experiences for a developing brain.</p>
+      <div class="myth-arrow">⬇️</div>
+      <span class="myth-label truth">✅ Truth</span>
+      <p>Physical books and read-alouds build deeper comprehension, vocabulary, and bonding. Educational videos (like our poems!) work best when paired with real books.</p>
+    </div>
+
+  </div>
+</section>
+
+<main class="container">
+
+  <!-- TIPS SECTION -->
+  <h2 class="section-title">💡 Gigloo's Top Tips for Fun Reading</h2>
+  <p class="section-sub">Simple habits that make a HUGE difference</p>
+
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">📅</div>
+      <h4>Read Together Daily</h4>
+      <p>Even just 10–15 minutes before bedtime builds a lifelong reading habit and strengthens your bond.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🎮</div>
+      <h4>Use Phonics Games</h4>
+      <p>Letter games, sound matching, and ABC apps turn learning into play. Try our ABC Tap & Play game!</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">❤️</div>
+      <h4>Let Them Choose</h4>
+      <p>Pick books about topics your child loves — dinosaurs, trucks, fairies. Interest drives reading naturally.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🙌</div>
+      <h4>Praise Every Effort</h4>
+      <p>Celebrate attempts, not just success. "I love how you tried that word!" builds confidence.</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITIES SECTION -->
+  <section class="activities-section">
+    <h2 class="section-title" style="margin-top:0">🎨 Fun Activities to Try at Home</h2>
+    <p class="section-sub">Hands-on activities that make reading magical</p>
+    <div class="activities-grid">
+      <div class="activity-chip">
+        <div class="act-icon">🎨</div>
+        <h5>Draw Story Pictures</h5>
+        <p>After reading, ask your child to draw their favourite moment from the story</p>
+      </div>
+      <div class="activity-chip">
+        <div class="act-icon">🎭</div>
+        <h5>Act Out Tales</h5>
+        <p>Use toys or dress up and act out the story together — kids remember what they experience!</p>
+      </div>
+      <div class="activity-chip">
+        <div class="act-icon">📚</div>
+        <h5>Visit a Library</h5>
+        <p>Let your child pick their own books — ownership builds a reading identity</p>
+      </div>
+      <div class="activity-chip">
+        <div class="act-icon">🔤</div>
+        <h5>Letter Treasure Hunt</h5>
+        <p>Hide letter cards around the house and hunt for them — makes the alphabet exciting!</p>
+      </div>
+      <div class="activity-chip">
+        <div class="act-icon">🎵</div>
+        <h5>Sing Nursery Rhymes</h5>
+        <p>Rhymes build phonemic awareness — the single most important pre-reading skill!</p>
+      </div>
+      <div class="activity-chip">
+        <div class="act-icon">✍️</div>
+        <h5>Make a Word Wall</h5>
+        <p>Stick sight words on a wall with sticky notes and practice them casually every day</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOY RECOMMENDATIONS -->
+  <section class="toys-section">
+    <h2 class="section-title" style="margin-top:0">🧸 Gigloo's Safe Toy Picks for Reading-Ready Kids</h2>
+    <p class="section-sub">Toys that build thinking, patience & problem-solving skills</p>
+    <div class="toys-grid">
+      <a href="https://amzn.to/4aGl0q2" target="_blank" rel="noopener" class="toy-btn">
+        <span class="toy-icon">🧩</span> Rubik's Cube
+      </a>
+      <a href="https://amzn.to/4ag6O5C" target="_blank" rel="noopener" class="toy-btn">
+        <span class="toy-icon">🔲</span> Kanoodle Puzzle
+      </a>
+      <a href="https://amzn.to/4rb4DI5" target="_blank" rel="noopener" class="toy-btn">
+        <span class="toy-icon">🦕</span> Wooden Dino Puzzle
+      </a>
+    </div>
+    <p style="margin-top:14px; font-size:.83rem; color:#aaa; font-weight:600;">
+      * These are affiliate links. We only recommend toys we believe are safe and beneficial for kids.
+    </p>
+  </section>
+
+  <!-- GAMES CTA -->
+  <section class="cta-section">
+    <h2>Ready to Learn with Gigloo? 🐯</h2>
+    <p style="color:rgba(255,255,255,.9); font-weight:700; margin-bottom:22px; font-size:1.05rem;">
+      Start your child's reading journey with our free interactive games!
+    </p>
+    <div class="cta-buttons">
+      <a href="../abc-game.html" class="cta-btn primary">🔤 ABC Tap &amp; Play</a>
+      <a href="../math-maze.html" class="cta-btn secondary">🔢 Math Maze</a>
+      <a href="index.html" class="cta-btn primary">📖 Kids Poems</a>
+      <a href="../name-labels.html" class="cta-btn secondary">🏷️ Name Labels</a>
+    </div>
+  </section>
+
+  <!-- SHARE -->
+  <section class="share-section">
+    <h3>📲 Share with Other Parents!</h3>
+    <p style="color:#777; font-weight:600; margin-bottom:16px;">Help other parents discover this guide</p>
+    <div class="share-buttons">
+      <a class="share-btn whatsapp" href="#" onclick="shareWhatsApp(); return false;">
+        💬 WhatsApp
+      </a>
+      <a class="share-btn facebook" href="#" onclick="shareFacebook(); return false;">
+        📘 Facebook
+      </a>
+      <button class="share-btn copy" onclick="copyLink()">
+        🔗 Copy Link
+      </button>
+    </div>
+    <p id="copy-msg" style="color:var(--green); font-weight:700; margin-top:10px; display:none;">✅ Link copied!</p>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">🐯 Gig N Learn with Gigloo</div>
+  <div class="footer-links">
+    <a href="../index.html">🏠 Home</a>
+    <a href="magic-words.html">✨ Magic Words</a>
+    <a href="one-red-apple.html">🍎 One Red Apple</a>
+    <a href="rainbow-snack-parade.html">🌈 Rainbow Snacks</a>
+    <a href="transport.html">🚗 Transport</a>
+    <a href="baa-baa-black-sheep.html">🐑 Baa Baa</a>
+    <a href="good-morning-sun.html">☀️ Good Morning Sun</a>
+    <a href="days-of-the-week.html">📅 Days of Week</a>
+    <a href="busy-hen.html">🐔 Busy Hen</a>
+    <a href="vowels-worksheet.html">🅐 Vowels</a>
+    <a href="nursery-workbook.html">📖 Workbook</a>
+  </div>
+  <div class="footer-copy">© 2026 GigNLearn · Made with 💛 for kids everywhere</div>
+</footer>
+
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">⬆</button>
+
+<script>
+  // Mobile menu
+  function toggleMenu(){
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  document.addEventListener('click', e=>{
+    if(!e.target.closest('nav') && !e.target.closest('#mobileMenu')){
+      document.getElementById('mobileMenu').classList.remove('open');
+    }
+  });
+
+  // Reading progress bar
+  window.addEventListener('scroll', ()=>{
+    const d = document.documentElement;
+    const pct = (d.scrollTop / (d.scrollHeight - d.clientHeight)) * 100;
+    document.getElementById('progress-bar').style.width = pct + '%';
+
+    // Scroll to top button
+    const btn = document.getElementById('scrollTop');
+    if(window.scrollY > 400){ btn.classList.add('visible'); }
+    else { btn.classList.remove('visible'); }
+  });
+
+  // Intersection Observer — fade in cards
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.age-card, .myth-card, .tip-card').forEach(el=> observer.observe(el));
+
+  // Share functions
+  function shareWhatsApp(){
+    const url = encodeURIComponent(window.location.href);
+    const msg = encodeURIComponent("📚 When should kids start reading? Great guide by GigNLearn! 🐯 ");
+    window.open('https://wa.me/?text=' + msg + url, '_blank');
+  }
+  function shareFacebook(){
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank');
+  }
+  function copyLink(){
+    navigator.clipboard.writeText(window.location.href).then(()=>{
+      const msg = document.getElementById('copy-msg');
+      msg.style.display = 'block';
+      setTimeout(()=> msg.style.display='none', 2500);
+    });
+  }
+</script>
+</body>
+</html>
