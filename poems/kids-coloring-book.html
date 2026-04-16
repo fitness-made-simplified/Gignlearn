@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Kids Coloring Book – Download, Print & Play! | GigNLearn 🎨</title>
+<meta name="description" content="Download Gigloo's FREE kids coloring & activity book! Print and play fun coloring pages for early learners. Perfect for ages 2–8. Instant PDF download!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange:#FF6B35; --yellow:#FFD93D; --green:#6BCB77;
+  --blue:#4D96FF;   --purple:#C77DFF; --pink:#FF85A1;
+  --red:#FF4757;    --teal:#00C2CB;   --cream:#FFF9F0;
+  --dark:#2D2D2D;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;}
+
+/* ── CONFETTI CANVAS ── */
+#confetti-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.45;}
+
+/* ── PROGRESS ── */
+#prog{position:fixed;top:0;left:0;height:5px;z-index:9999;background:linear-gradient(90deg,var(--red),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));width:0;transition:width .1s;}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:999;background:#fff;box-shadow:0 2px 16px rgba(0,0,0,.10);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px;}
+.nav-logo{font-family:'Fredoka One',cursive;font-size:1.5rem;color:var(--orange);text-decoration:none;display:flex;align-items:center;gap:8px;}
+.nav-links{display:flex;gap:6px;list-style:none;}
+.nav-links a{font-family:'Fredoka One',cursive;font-size:.92rem;color:var(--dark);text-decoration:none;padding:6px 12px;border-radius:20px;transition:background .2s;}
+.nav-links a:hover{background:var(--yellow);}
+.hamburger{display:none;font-size:1.6rem;background:none;border:none;cursor:pointer;}
+.mobile-menu{display:none;flex-direction:column;gap:4px;position:absolute;top:64px;left:0;right:0;background:#fff;padding:12px 20px;box-shadow:0 4px 16px rgba(0,0,0,.12);z-index:998;}
+.mobile-menu a{font-family:'Fredoka One',cursive;font-size:1.1rem;color:var(--dark);text-decoration:none;padding:10px 16px;border-radius:12px;}
+.mobile-menu a:hover{background:var(--yellow);}
+.mobile-menu.open{display:flex;}
+@media(max-width:768px){.nav-links{display:none;}.hamburger{display:block;}}
+
+/* ── HERO ── */
+.hero{
+  position:relative;z-index:1;
+  background:linear-gradient(135deg,#FF4757,#FF6B35,#FFD93D,#6BCB77,#4D96FF,#C77DFF,#FF85A1);
+  background-size:400% 400%;animation:rainbow 10s ease infinite;
+  min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:70px 20px 50px;overflow:hidden;
+}
+@keyframes rainbow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.12);}
+.hero-badge{background:rgba(255,255,255,.95);color:var(--orange);font-family:'Fredoka One',cursive;font-size:.92rem;padding:7px 20px;border-radius:20px;margin-bottom:16px;display:inline-block;position:relative;z-index:1;box-shadow:0 4px 14px rgba(0,0,0,.12);}
+.hero h1{font-family:'Fredoka One',cursive;font-size:clamp(2.2rem,7vw,3.8rem);color:#fff;text-shadow:3px 5px 0px rgba(0,0,0,.15);line-height:1.15;max-width:700px;position:relative;z-index:1;}
+.hero-sub{color:rgba(255,255,255,.95);font-size:1.1rem;font-weight:800;margin-top:14px;max-width:520px;position:relative;z-index:1;text-shadow:1px 2px 4px rgba(0,0,0,.2);}
+.hero-mascot{font-size:5rem;margin-top:16px;position:relative;z-index:1;animation:wiggle 1.8s ease-in-out infinite;}
+@keyframes wiggle{0%,100%{transform:rotate(-6deg) scale(1)}50%{transform:rotate(6deg) scale(1.08)}}
+/* big floating crayons */
+.crayon{position:absolute;font-size:3rem;opacity:.55;animation:floatC ease-in-out infinite;z-index:0;}
+@keyframes floatC{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-18px) rotate(12deg)}}
+
+/* ── TOPIC STRIP ── */
+.topic-strip{position:relative;z-index:1;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding:18px 20px;background:#fff;border-bottom:4px solid var(--yellow);box-shadow:0 2px 10px rgba(0,0,0,.05);}
+.pill{font-family:'Fredoka One',cursive;font-size:.88rem;padding:7px 18px;border-radius:20px;color:#fff;}
+
+/* ── CONTAINER ── */
+.container{max-width:920px;margin:0 auto;padding:0 20px;position:relative;z-index:1;}
+
+/* ── SECTION TITLES ── */
+.section-title{font-family:'Fredoka One',cursive;font-size:2rem;color:var(--dark);text-align:center;margin:54px 0 6px;}
+.section-title::after{content:'';display:block;width:90px;height:5px;background:linear-gradient(90deg,var(--orange),var(--yellow));border-radius:4px;margin:8px auto 0;}
+.section-sub{text-align:center;color:#888;font-size:1rem;margin-bottom:34px;font-weight:600;}
+
+/* ── BIG DOWNLOAD CARD ── */
+.download-hero{position:relative;z-index:1;background:linear-gradient(135deg,#FF6B35,#FFD93D);border-radius:32px;padding:50px 30px;text-align:center;margin:40px 20px;box-shadow:0 12px 50px rgba(255,107,53,.35);overflow:hidden;}
+.download-hero::before{content:'🎨';font-size:10rem;position:absolute;right:-20px;bottom:-20px;opacity:.12;line-height:1;}
+.download-hero h2{font-family:'Fredoka One',cursive;font-size:clamp(1.8rem,5vw,2.8rem);color:#fff;text-shadow:2px 3px 0 rgba(0,0,0,.15);margin-bottom:12px;}
+.download-hero p{color:rgba(255,255,255,.95);font-size:1.08rem;font-weight:700;margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto;}
+.badges-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:30px;}
+.badge-chip{background:rgba(255,255,255,.9);border-radius:50px;padding:8px 18px;font-family:'Fredoka One',cursive;font-size:.9rem;color:var(--orange);display:flex;align-items:center;gap:6px;box-shadow:0 3px 10px rgba(0,0,0,.1);}
+.dl-btn{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--orange);font-family:'Fredoka One',cursive;font-size:1.4rem;padding:18px 42px;border-radius:60px;text-decoration:none;box-shadow:0 8px 30px rgba(0,0,0,.2);transition:transform .25s,box-shadow .25s;position:relative;z-index:1;}
+.dl-btn:hover{transform:translateY(-5px) scale(1.03);box-shadow:0 16px 40px rgba(0,0,0,.25);}
+.dl-btn .dl-icon{font-size:1.8rem;animation:bounce .9s ease-in-out infinite;}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.dl-note{color:rgba(255,255,255,.85);font-size:.85rem;font-weight:700;margin-top:16px;}
+
+/* ── INTERACTIVE COLOR MIXER ── */
+.mixer-section{background:#fff;border-radius:28px;padding:44px 28px;margin:50px 0;box-shadow:0 6px 30px rgba(0,0,0,.08);}
+.mixer-section .section-title{margin-top:0;}
+.color-stage{display:flex;flex-direction:column;align-items:center;gap:24px;}
+.crayon-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.crayon-pick{width:56px;height:100px;border-radius:8px 8px 50% 50%;cursor:pointer;border:4px solid transparent;transition:transform .2s,border-color .2s,box-shadow .2s;position:relative;box-shadow:0 4px 12px rgba(0,0,0,.15);}
+.crayon-pick::after{content:'';position:absolute;top:8px;left:50%;transform:translateX(-50%);width:6px;height:6px;background:rgba(255,255,255,.5);border-radius:50%;}
+.crayon-pick:hover{transform:translateY(-8px) rotate(-3deg);box-shadow:0 10px 24px rgba(0,0,0,.2);}
+.crayon-pick.selected{border-color:var(--dark);transform:translateY(-10px) scale(1.08);}
+.coloring-canvas-wrap{position:relative;}
+#coloringCanvas{border-radius:20px;border:4px solid #eee;cursor:crosshair;touch-action:none;max-width:100%;box-shadow:0 4px 24px rgba(0,0,0,.1);}
+.canvas-controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:center;}
+.ctrl-btn{font-family:'Fredoka One',cursive;font-size:.9rem;padding:10px 20px;border-radius:50px;border:2.5px solid #eee;background:#fff;cursor:pointer;transition:all .2s;color:var(--dark);}
+.ctrl-btn:hover{background:var(--yellow);border-color:var(--yellow);}
+.ctrl-btn.danger:hover{background:var(--red);border-color:var(--red);color:#fff;}
+.brush-size{display:flex;align-items:center;gap:10px;font-family:'Fredoka One',cursive;font-size:.88rem;color:#888;}
+.brush-size input{width:80px;}
+.current-color-show{width:44px;height:44px;border-radius:12px;border:3px solid #eee;box-shadow:0 3px 10px rgba(0,0,0,.12);}
+
+/* ── WHAT'S INSIDE ── */
+.inside-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;margin-bottom:50px;}
+.inside-card{background:#fff;border-radius:20px;padding:28px 18px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.07);border-top:5px solid var(--yellow);transition:transform .2s,box-shadow .2s;opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;}
+.inside-card.visible{opacity:1;transform:translateY(0);}
+.inside-card:nth-child(1){border-color:var(--red);}
+.inside-card:nth-child(2){border-color:var(--orange);}
+.inside-card:nth-child(3){border-color:var(--yellow);}
+.inside-card:nth-child(4){border-color:var(--green);}
+.inside-card:nth-child(5){border-color:var(--blue);}
+.inside-card:nth-child(6){border-color:var(--purple);}
+.inside-icon{font-size:2.8rem;margin-bottom:12px;}
+.inside-card h4{font-family:'Fredoka One',cursive;font-size:1.05rem;color:var(--dark);margin-bottom:6px;}
+.inside-card p{font-size:.84rem;color:#777;font-weight:600;line-height:1.4;}
+
+/* ── WHY COLORING MATTERS ── */
+.why-section{background:linear-gradient(135deg,#e8f5ff,#fff5e8);border-radius:28px;padding:44px 28px;margin:50px 0;}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:28px;}
+.why-card{background:#fff;border-radius:18px;padding:22px 16px;box-shadow:0 3px 16px rgba(0,0,0,.07);opacity:0;transform:scale(.95);transition:opacity .5s ease,transform .5s ease;}
+.why-card.visible{opacity:1;transform:scale(1);}
+.why-num{font-family:'Fredoka One',cursive;font-size:2rem;margin-bottom:6px;}
+.why-card h4{font-family:'Fredoka One',cursive;font-size:.98rem;color:var(--dark);margin-bottom:6px;}
+.why-card p{font-size:.83rem;color:#777;font-weight:600;line-height:1.4;}
+
+/* ── TIPS FOR PARENTS ── */
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:50px;}
+@media(max-width:560px){.tips-grid{grid-template-columns:1fr;}}
+.tip-row{display:flex;gap:14px;align-items:flex-start;background:#fff;border-radius:16px;padding:18px;box-shadow:0 3px 14px rgba(0,0,0,.06);opacity:0;transform:translateX(-16px);transition:opacity .5s ease,transform .5s ease;}
+.tip-row.visible{opacity:1;transform:translateX(0);}
+.tip-emoji{font-size:2rem;flex-shrink:0;}
+.tip-row h4{font-family:'Fredoka One',cursive;font-size:.98rem;color:var(--dark);margin-bottom:4px;}
+.tip-row p{font-size:.84rem;color:#777;font-weight:600;line-height:1.4;}
+
+/* ── AGE GUIDE ── */
+.age-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:50px;}
+.age-card{border-radius:18px;padding:22px 16px;text-align:center;color:#fff;opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease;}
+.age-card.visible{opacity:1;transform:translateY(0);}
+.age-card h4{font-family:'Fredoka One',cursive;font-size:1rem;margin-bottom:8px;}
+.age-card p{font-size:.83rem;font-weight:700;opacity:.9;line-height:1.4;}
+
+/* ── SECOND DOWNLOAD CTA ── */
+.dl-cta-section{background:linear-gradient(135deg,var(--purple),var(--blue),var(--teal));border-radius:28px;padding:50px 30px;text-align:center;margin:50px 0;position:relative;overflow:hidden;}
+.dl-cta-section::before{content:'🖍️';font-size:8rem;position:absolute;left:-20px;top:-10px;opacity:.1;}
+.dl-cta-section::after{content:'✏️';font-size:8rem;position:absolute;right:-20px;bottom:-10px;opacity:.1;}
+.dl-cta-section h2{font-family:'Fredoka One',cursive;font-size:2.2rem;color:#fff;margin-bottom:12px;text-shadow:2px 3px 0 rgba(0,0,0,.15);}
+.dl-cta-section p{color:rgba(255,255,255,.9);font-weight:700;font-size:1.05rem;margin-bottom:28px;max-width:460px;margin-left:auto;margin-right:auto;}
+.dl-cta-btn{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--purple);font-family:'Fredoka One',cursive;font-size:1.3rem;padding:16px 40px;border-radius:60px;text-decoration:none;box-shadow:0 8px 28px rgba(0,0,0,.2);transition:transform .25s,box-shadow .25s;}
+.dl-cta-btn:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.25);}
+
+/* ── MORE ACTIVITIES ── */
+.more-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:60px;}
+.more-card{background:#fff;border-radius:18px;padding:22px 16px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.07);text-decoration:none;color:var(--dark);transition:transform .2s,box-shadow .2s;display:block;}
+.more-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,.13);}
+.more-card .mc-icon{font-size:2.5rem;margin-bottom:10px;}
+.more-card h4{font-family:'Fredoka One',cursive;font-size:1rem;margin-bottom:4px;}
+.more-card p{font-size:.82rem;color:#888;font-weight:600;}
+
+/* ── SHARE ── */
+.share-section{text-align:center;margin:50px 0;}
+.share-section h3{font-family:'Fredoka One',cursive;font-size:1.4rem;margin-bottom:14px;}
+.share-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.share-btn{font-family:'Fredoka One',cursive;font-size:.95rem;padding:12px 22px;border-radius:50px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:transform .2s,box-shadow .2s;}
+.share-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.15);}
+.share-btn.wa{background:#25D366;color:#fff;}
+.share-btn.fb{background:#1877F2;color:#fff;}
+.share-btn.cp{background:var(--dark);color:#fff;}
+
+/* ── FOOTER ── */
+footer{background:var(--dark);color:#fff;padding:40px 20px;text-align:center;position:relative;z-index:1;}
+.footer-logo{font-family:'Fredoka One',cursive;font-size:1.6rem;color:var(--yellow);margin-bottom:16px;}
+.footer-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:18px;}
+.footer-links a{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Fredoka One',cursive;font-size:.9rem;padding:6px 14px;border-radius:20px;transition:background .2s;}
+.footer-links a:hover{background:rgba(255,255,255,.12);}
+.footer-copy{font-size:.82rem;color:rgba(255,255,255,.35);margin-top:12px;}
+
+/* ── SCROLL TOP ── */
+#scrollTop{position:fixed;bottom:28px;right:24px;background:var(--orange);color:#fff;border:none;width:50px;height:50px;border-radius:50%;font-size:1.3rem;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.22);display:none;align-items:center;justify-content:center;transition:transform .2s;z-index:900;font-weight:900;}
+#scrollTop:hover{transform:scale(1.1);}
+#scrollTop.visible{display:flex;}
+
+/* ── FADE IN ── */
+.fi{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+.fi.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<canvas id="confetti-canvas"></canvas>
+<div id="prog"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-logo">🐯 GigNLearn</a>
+  <ul class="nav-links">
+    <li><a href="../index.html">🏠 Home</a></li>
+    <li><a href="../abc-game.html">🔤 ABC Game</a></li>
+    <li><a href="../math-maze.html">🔢 Math Maze</a></li>
+    <li><a href="index.html">📖 Poems</a></li>
+    <li><a href="../name-labels.html">🏷️ Labels</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">🏠 Home</a>
+  <a href="../abc-game.html">🔤 ABC Game</a>
+  <a href="../math-maze.html">🔢 Math Maze</a>
+  <a href="index.html">📖 Poems</a>
+  <a href="../name-labels.html">🏷️ Labels</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="heroSection">
+  <!-- floating crayons injected by JS -->
+  <div class="hero-badge">🖍️ Free Download · GigNLearn Activity Book</div>
+  <h1>🎨 Kids Coloring Book!</h1>
+  <p class="hero-sub">Download · Print · Color · Play — It's 100% FREE! 🌈</p>
+  <div class="hero-mascot">🐯</div>
+</section>
+
+<!-- TOPIC PILLS -->
+<div class="topic-strip">
+  <span class="pill" style="background:var(--red)">🎨 Coloring Pages</span>
+  <span class="pill" style="background:var(--orange)">📥 Free Download</span>
+  <span class="pill" style="background:var(--green)">🖨️ Print & Play</span>
+  <span class="pill" style="background:var(--blue)">✏️ Activity Book</span>
+  <span class="pill" style="background:var(--purple)">🧒 Ages 2–8</span>
+  <span class="pill" style="background:var(--teal)">🆓 100% Free</span>
+</div>
+
+<!-- BIG DOWNLOAD HERO CARD -->
+<div class="download-hero fi" style="position:relative;z-index:1;">
+  <h2>⬇️ Gigloo's Free Coloring &amp; Activity Book</h2>
+  <p>Packed with fun coloring pages, activities, and early learning fun — made with love by Gigloo the Tiger! 🐯</p>
+  <div class="badges-row">
+    <div class="badge-chip">✔️ Download Free</div>
+    <div class="badge-chip">🖨️ Print at Home</div>
+    <div class="badge-chip">🎨 Color &amp; Play</div>
+    <div class="badge-chip">🧒 Early Learners</div>
+  </div>
+  <a class="dl-btn" href="https://drive.google.com/uc?export=download&id=1Uqt7Py8HiZ7a0T9u4Jc2-yLne7MFxW0t" target="_blank" rel="noopener">
+    <span class="dl-icon">⬇️</span> Download FREE PDF Now!
+  </a>
+  <p class="dl-note">No sign-up needed · Instant download · Completely free!</p>
+</div>
+
+<main class="container">
+
+  <!-- WHAT'S INSIDE -->
+  <h2 class="section-title">📖 What's Inside the Book?</h2>
+  <p class="section-sub">A full activity book — not just coloring pages!</p>
+  <div class="inside-grid">
+    <div class="inside-card">
+      <div class="inside-icon">🦁</div>
+      <h4>Fun Animal Pages</h4>
+      <p>Lovable animal illustrations kids will love to bring to life with color!</p>
+    </div>
+    <div class="inside-card">
+      <div class="inside-icon">🔤</div>
+      <h4>Alphabet Activities</h4>
+      <p>Color while learning A–Z — each letter paired with a fun picture</p>
+    </div>
+    <div class="inside-card">
+      <div class="inside-icon">🔢</div>
+      <h4>Number Pages</h4>
+      <p>Trace and color the numbers 1–10 — math + art in one!</p>
+    </div>
+    <div class="inside-card">
+      <div class="inside-icon">🌈</div>
+      <h4>Color Recognition</h4>
+      <p>Pages that teach color names while children practice filling them in</p>
+    </div>
+    <div class="inside-card">
+      <div class="inside-icon">✏️</div>
+      <h4>Tracing Practice</h4>
+      <p>Fine motor skill builders — great for pencil grip and hand control</p>
+    </div>
+    <div class="inside-card">
+      <div class="inside-icon">🎉</div>
+      <h4>Activity Pages</h4>
+      <p>Mazes, dot-to-dot, and matching games tucked inside!</p>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE COLORING TOY -->
+  <h2 class="section-title">🖍️ Try Gigloo's Digital Coloring Corner!</h2>
+  <p class="section-sub">Pick a crayon color and draw right here — just for fun while the PDF downloads! 🎨</p>
+
+  <section class="mixer-section fi">
+    <div class="color-stage">
+      <div class="crayon-row" id="crayonRow"></div>
+      <div class="canvas-controls">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div class="current-color-show" id="colorShow"></div>
+          <span style="font-family:'Fredoka One',cursive;font-size:.9rem;color:#aaa;">Active Color</span>
+        </div>
+        <div class="brush-size">
+          🖌️ Size: <input type="range" id="brushSize" min="4" max="40" value="14">
+        </div>
+        <button class="ctrl-btn" onclick="setEraser()">⬜ Eraser</button>
+        <button class="ctrl-btn danger" onclick="clearCanvas()">🗑️ Clear All</button>
+        <button class="ctrl-btn" onclick="saveDrawing()">💾 Save Image</button>
+      </div>
+      <div class="coloring-canvas-wrap">
+        <canvas id="coloringCanvas" width="680" height="380"></canvas>
+      </div>
+      <p style="font-size:.82rem;color:#bbb;font-weight:600;text-align:center;">👆 Tap or click &amp; drag to draw! Works on mobile too 🐯</p>
+    </div>
+  </section>
+
+  <!-- WHY COLORING MATTERS -->
+  <section class="why-section fi">
+    <h2 class="section-title" style="margin-top:0">🧠 Why Coloring is SO Good for Kids</h2>
+    <p class="section-sub">It's not just fun — it's supercharging their brains!</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-num">✋</div>
+        <h4>Fine Motor Skills</h4>
+        <p>Holding crayons and staying inside lines builds hand strength and pencil grip for writing</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">🎨</div>
+        <h4>Creativity Boost</h4>
+        <p>Choosing colors and making it their own sparks imagination and original thinking</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">🧘</div>
+        <h4>Calm & Focus</h4>
+        <p>Coloring is a natural mindfulness activity — it reduces anxiety and builds concentration span</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">🌈</div>
+        <h4>Color Recognition</h4>
+        <p>Learning color names, mixing, and matching is an important early cognitive skill</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">🏆</div>
+        <h4>Confidence Builder</h4>
+        <p>Completing a page and showing it off gives children real pride in their own work</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">❤️</div>
+        <h4>Parent Bonding</h4>
+        <p>Coloring together — even just 10 minutes — is quality connection time that kids remember</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGE GUIDE -->
+  <h2 class="section-title">🎂 Perfect For Which Age?</h2>
+  <p class="section-sub">Every age group gets something different from coloring!</p>
+  <div class="age-row">
+    <div class="age-card" style="background:linear-gradient(135deg,var(--pink),var(--red))">
+      <div style="font-size:2.5rem;margin-bottom:8px;">👶</div>
+      <h4>Ages 2–3</h4>
+      <p>Bold outlines, scribbling freely — it's all about fun and exploration!</p>
+    </div>
+    <div class="age-card" style="background:linear-gradient(135deg,var(--orange),var(--yellow))">
+      <div style="font-size:2.5rem;margin-bottom:8px;">🌼</div>
+      <h4>Ages 3–5</h4>
+      <p>Staying inside the lines begins — great for fine motor and focus</p>
+    </div>
+    <div class="age-card" style="background:linear-gradient(135deg,var(--green),var(--teal))">
+      <div style="font-size:2.5rem;margin-bottom:8px;">🏫</div>
+      <h4>Ages 5–7</h4>
+      <p>Detailed coloring + tracing + activity pages — all three working together</p>
+    </div>
+    <div class="age-card" style="background:linear-gradient(135deg,var(--blue),var(--purple))">
+      <div style="font-size:2.5rem;margin-bottom:8px;">🧩</div>
+      <h4>Ages 7–8</h4>
+      <p>Mazes, dot-to-dot, and complex pages challenge and engage older kids</p>
+    </div>
+  </div>
+
+  <!-- TIPS FOR PARENTS -->
+  <h2 class="section-title">💡 Tips to Make Coloring Even More Fun</h2>
+  <p class="section-sub">Little tweaks that turn coloring time into big learning moments</p>
+  <div class="tips-grid">
+    <div class="tip-row">
+      <div class="tip-emoji">🎵</div>
+      <div><h4>Play Music While Coloring</h4><p>Put on our GigNLearn nursery rhymes in the background — kids focus longer and associate learning with joy!</p></div>
+    </div>
+    <div class="tip-row">
+      <div class="tip-emoji">💬</div>
+      <div><h4>Talk About What They're Drawing</h4><p>"What color is that?" "What sound does E make?" — turn coloring into a full learning conversation</p></div>
+    </div>
+    <div class="tip-row">
+      <div class="tip-emoji">🖼️</div>
+      <div><h4>Display Their Finished Work</h4><p>Put completed pages on the fridge or wall — it tells children "your work matters and we're proud of you"</p></div>
+    </div>
+    <div class="tip-row">
+      <div class="tip-emoji">🖨️</div>
+      <div><h4>Print Multiple Copies</h4><p>Print the same page several times — kids love doing it again differently, and it builds progression confidence</p></div>
+    </div>
+    <div class="tip-row">
+      <div class="tip-emoji">👨‍👩‍👧</div>
+      <div><h4>Color Together</h4><p>Sit beside them and color your own version of the same page — they love watching parents be creative too!</p></div>
+    </div>
+    <div class="tip-row">
+      <div class="tip-emoji">⏱️</div>
+      <div><h4>No Rush Rule</h4><p>Resist the urge to "fix" or hurry them. Slow, careful coloring outside the lines is perfectly perfect! 🌟</p></div>
+    </div>
+  </div>
+
+  <!-- SECOND DOWNLOAD CTA -->
+  <section class="dl-cta-section fi">
+    <h2>Ready to Print &amp; Play? 🖨️</h2>
+    <p>One click — free forever — no email needed. Gigloo's gift to your little artist! 🐯🎨</p>
+    <a class="dl-cta-btn" href="https://drive.google.com/uc?export=download&id=1Uqt7Py8HiZ7a0T9u4Jc2-yLne7MFxW0t" target="_blank" rel="noopener">
+      ⬇️ Download FREE Coloring Book PDF
+    </a>
+    <p style="color:rgba(255,255,255,.7);font-size:.85rem;font-weight:600;margin-top:16px;">💡 Tip: Print on A4 paper · Set to "Fit to Page" for best results</p>
+  </section>
+
+  <!-- MORE ACTIVITIES -->
+  <h2 class="section-title">🎮 More Fun from Gigloo!</h2>
+  <p class="section-sub">Keep the learning going with our free games and poems</p>
+  <div class="more-grid">
+    <a class="more-card" href="../abc-game.html">
+      <div class="mc-icon">🔤</div>
+      <h4>ABC Tap &amp; Play</h4>
+      <p>Learn the alphabet with Gigloo's fun tap game!</p>
+    </a>
+    <a class="more-card" href="../math-maze.html">
+      <div class="mc-icon">🔢</div>
+      <h4>Math Maze</h4>
+      <p>Navigate numbers through a fun maze adventure</p>
+    </a>
+    <a class="more-card" href="index.html">
+      <div class="mc-icon">📖</div>
+      <h4>Kids Poems</h4>
+      <p>Sing along with Gigloo's karaoke nursery rhymes!</p>
+    </a>
+    <a class="more-card" href="../name-labels.html">
+      <div class="mc-icon">🏷️</div>
+      <h4>Name Label Maker</h4>
+      <p>Make cute custom name labels for school!</p>
+    </a>
+    <a class="more-card" href="when-should-child-start-reading.html">
+      <div class="mc-icon">📚</div>
+      <h4>Reading Age Guide</h4>
+      <p>When should your child start reading? Gigloo explains!</p>
+    </a>
+    <a class="more-card" href="building-self-esteem-in-children.html">
+      <div class="mc-icon">💛</div>
+      <h4>Self-Esteem Tips</h4>
+      <p>10 strategies to build your child's confidence</p>
+    </a>
+  </div>
+
+  <!-- SHARE -->
+  <section class="share-section">
+    <h3>🎨 Share with Parents &amp; Teachers!</h3>
+    <p style="color:#999;font-weight:600;margin-bottom:16px;">Know a family who'd love a free coloring book? Share it!</p>
+    <div class="share-buttons">
+      <a class="share-btn wa" href="#" onclick="shareWA();return false;">💬 WhatsApp</a>
+      <a class="share-btn fb" href="#" onclick="shareFB();return false;">📘 Facebook</a>
+      <button class="share-btn cp" onclick="copyLink()">🔗 Copy Link</button>
+    </div>
+    <p id="copy-msg" style="color:var(--green);font-weight:700;margin-top:10px;display:none;">✅ Link copied!</p>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">🐯 Gig N Learn with Gigloo</div>
+  <div class="footer-links">
+    <a href="../index.html">🏠 Home</a>
+    <a href="magic-words.html">✨ Magic Words</a>
+    <a href="one-red-apple.html">🍎 One Red Apple</a>
+    <a href="rainbow-snack-parade.html">🌈 Rainbow Snacks</a>
+    <a href="transport.html">🚗 Transport</a>
+    <a href="baa-baa-black-sheep.html">🐑 Baa Baa</a>
+    <a href="good-morning-sun.html">☀️ Good Morning Sun</a>
+    <a href="days-of-the-week.html">📅 Days of Week</a>
+    <a href="busy-hen.html">🐔 Busy Hen</a>
+    <a href="vowels-worksheet.html">🅐 Vowels</a>
+    <a href="nursery-workbook.html">📖 Workbook</a>
+  </div>
+  <div class="footer-copy">© 2026 GigNLearn · Made with 💛 for little artists everywhere</div>
+</footer>
+
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆</button>
+
+<script>
+/* ─────────────────────────────────────────
+   FLOATING CRAYONS IN HERO
+───────────────────────────────────────── */
+const crayonEmojis=['🖍️','✏️','🖌️','🎨','🖊️','🖍️'];
+const hero=document.getElementById('heroSection');
+crayonEmojis.forEach((e,i)=>{
+  const el=document.createElement('div');
+  el.className='crayon'; el.textContent=e;
+  el.style.cssText=`left:${5+i*16}%;top:${10+Math.random()*60}%;animation-duration:${3+i*.6}s;animation-delay:${i*.3}s;`;
+  hero.appendChild(el);
+});
+
+/* ─────────────────────────────────────────
+   CONFETTI CANVAS (gentle background)
+───────────────────────────────────────── */
+(function(){
+  const c=document.getElementById('confetti-canvas');
+  const ctx=c.getContext('2d');
+  const cols=['#FF6B35','#FFD93D','#6BCB77','#4D96FF','#C77DFF','#FF85A1','#FF4757','#00C2CB'];
+  let pieces=[];
+  function resize(){c.width=window.innerWidth;c.height=window.innerHeight;}
+  function init(){
+    pieces=[];
+    for(let i=0;i<55;i++){
+      pieces.push({
+        x:Math.random()*c.width, y:Math.random()*c.height,
+        w:8+Math.random()*10, h:4+Math.random()*6,
+        col:cols[Math.floor(Math.random()*cols.length)],
+        r:Math.random()*Math.PI, dr:(.002+Math.random()*.004)*(Math.random()>.5?1:-1),
+        dy:.4+Math.random()*.8, dx:(Math.random()-.5)*.4, opacity:.5+Math.random()*.4
+      });
+    }
+  }
+  function draw(){
+    ctx.clearRect(0,0,c.width,c.height);
+    pieces.forEach(p=>{
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r);
+      ctx.fillStyle=p.col; ctx.globalAlpha=p.opacity;
+      ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
+      ctx.restore();
+      p.y+=p.dy; p.x+=p.dx; p.r+=p.dr;
+      if(p.y>c.height+20){p.y=-20;p.x=Math.random()*c.width;}
+    });
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize',()=>{resize();init();});
+  resize();init();draw();
+})();
+
+/* ─────────────────────────────────────────
+   DIGITAL COLORING CANVAS
+───────────────────────────────────────── */
+const colors=[
+  {hex:'#FF4757',name:'Red'},
+  {hex:'#FF6B35',name:'Orange'},
+  {hex:'#FFD93D',name:'Yellow'},
+  {hex:'#6BCB77',name:'Green'},
+  {hex:'#4D96FF',name:'Blue'},
+  {hex:'#C77DFF',name:'Purple'},
+  {hex:'#FF85A1',name:'Pink'},
+  {hex:'#00C2CB',name:'Teal'},
+  {hex:'#8B4513',name:'Brown'},
+  {hex:'#2D2D2D',name:'Black'},
+];
+
+let currentColor='#FF4757';
+let isEraser=false;
+let brushRadius=14;
+let isDrawing=false;
+let lastX=0,lastY=0;
+
+// Build crayon pickers
+const cr=document.getElementById('crayonRow');
+const cs=document.getElementById('colorShow');
+colors.forEach((col,i)=>{
+  const btn=document.createElement('div');
+  btn.className='crayon-pick'+(i===0?' selected':'');
+  btn.style.background=col.hex;
+  btn.title=col.name;
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.crayon-pick').forEach(b=>b.classList.remove('selected'));
+    btn.classList.add('selected');
+    currentColor=col.hex; isEraser=false;
+    cs.style.background=col.hex;
+  });
+  cr.appendChild(btn);
+});
+cs.style.background=currentColor;
+
+const canvas=document.getElementById('coloringCanvas');
+const ctx=canvas.getContext('2d');
+// Draw a fun background
+(function initBg(){
+  ctx.fillStyle='#fff9f0';
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  // Draw some starter outlines for kids to color
+  ctx.strokeStyle='#ddd';
+  ctx.lineWidth=1;
+  // Simple grid dots
+  for(let x=30;x<canvas.width;x+=30){
+    for(let y=30;y<canvas.height;y+=30){
+      ctx.beginPath();
+      ctx.arc(x,y,1.5,0,Math.PI*2);
+      ctx.fillStyle='#eedecc';
+      ctx.fill();
+    }
+  }
+  // "Draw here!" text
+  ctx.font='bold 22px Fredoka One, cursive';
+  ctx.fillStyle='#f0e0d0';
+  ctx.textAlign='center';
+  ctx.fillText('🎨 Your canvas! Pick a color and draw!',canvas.width/2,canvas.height/2-10);
+  ctx.font='16px Nunito, sans-serif';
+  ctx.fillStyle='#e8d8c8';
+  ctx.fillText('Gigloo believes in YOUR creativity! 🐯',canvas.width/2,canvas.height/2+24);
+})();
+
+function getPos(e){
+  const rect=canvas.getBoundingClientRect();
+  const scaleX=canvas.width/rect.width;
+  const scaleY=canvas.height/rect.height;
+  if(e.touches){
+    return{ x:(e.touches[0].clientX-rect.left)*scaleX, y:(e.touches[0].clientY-rect.top)*scaleY };
+  }
+  return{ x:(e.clientX-rect.left)*scaleX, y:(e.clientY-rect.top)*scaleY };
+}
+
+function startDraw(e){e.preventDefault();isDrawing=true;const p=getPos(e);lastX=p.x;lastY=p.y;}
+function draw(e){
+  if(!isDrawing)return;e.preventDefault();
+  const p=getPos(e);
+  ctx.beginPath();
+  ctx.moveTo(lastX,lastY);
+  ctx.lineTo(p.x,p.y);
+  ctx.strokeStyle=isEraser?'#fff9f0':currentColor;
+  ctx.lineWidth=brushRadius*2;
+  ctx.lineCap='round';
+  ctx.lineJoin='round';
+  ctx.stroke();
+  lastX=p.x;lastY=p.y;
+}
+function stopDraw(){isDrawing=false;}
+
+canvas.addEventListener('mousedown',startDraw);
+canvas.addEventListener('mousemove',draw);
+canvas.addEventListener('mouseup',stopDraw);
+canvas.addEventListener('mouseleave',stopDraw);
+canvas.addEventListener('touchstart',startDraw,{passive:false});
+canvas.addEventListener('touchmove',draw,{passive:false});
+canvas.addEventListener('touchend',stopDraw);
+
+document.getElementById('brushSize').addEventListener('input',e=>{ brushRadius=e.target.value; });
+
+function setEraser(){isEraser=true;document.querySelectorAll('.crayon-pick').forEach(b=>b.classList.remove('selected'));}
+function clearCanvas(){
+  ctx.fillStyle='#fff9f0';ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.font='bold 22px Fredoka One, cursive';ctx.fillStyle='#f0e0d0';ctx.textAlign='center';
+  ctx.fillText('🎨 Your canvas! Pick a color and draw!',canvas.width/2,canvas.height/2-10);
+  ctx.font='16px Nunito, sans-serif';ctx.fillStyle='#e8d8c8';
+  ctx.fillText('Gigloo believes in YOUR creativity! 🐯',canvas.width/2,canvas.height/2+24);
+}
+function saveDrawing(){
+  const link=document.createElement('a');
+  link.download='gigloo-my-drawing.png';
+  link.href=canvas.toDataURL();
+  link.click();
+}
+
+/* ─────────────────────────────────────────
+   NAV
+───────────────────────────────────────── */
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+document.addEventListener('click',e=>{if(!e.target.closest('nav')&&!e.target.closest('#mobileMenu'))document.getElementById('mobileMenu').classList.remove('open');});
+
+/* ─────────────────────────────────────────
+   PROGRESS + SCROLL TOP
+───────────────────────────────────────── */
+window.addEventListener('scroll',()=>{
+  const d=document.documentElement;
+  document.getElementById('prog').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%';
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400);
+});
+
+/* ─────────────────────────────────────────
+   INTERSECTION OBSERVER
+───────────────────────────────────────── */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0.1});
+document.querySelectorAll('.fi,.inside-card,.why-card,.age-card,.tip-row').forEach(el=>obs.observe(el));
+
+/* ─────────────────────────────────────────
+   SHARE
+───────────────────────────────────────── */
+function shareWA(){window.open('https://wa.me/?text='+encodeURIComponent('🎨 Free Kids Coloring Book by GigNLearn! Download, print & play — 100% FREE! 🐯 ')+encodeURIComponent(location.href),'_blank');}
+function shareFB(){window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank');}
+function copyLink(){navigator.clipboard.writeText(location.href).then(()=>{const m=document.getElementById('copy-msg');m.style.display='block';setTimeout(()=>m.style.display='none',2500);});}
+</script>
+</body>
+</html>
