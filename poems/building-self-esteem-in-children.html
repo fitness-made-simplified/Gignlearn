@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building Self-Esteem in Children: Key Strategies for Parents | GigNLearn</title>
+<meta name="description" content="Gigloo shares 10 powerful strategies to build your child's self-esteem — with interactive checklists, daily affirmations for kids, and practical parent tips!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange:#FF6B35; --yellow:#FFD93D; --green:#6BCB77;
+    --blue:#4D96FF;   --purple:#C77DFF; --pink:#FF85A1;
+    --red:#FF4757;    --teal:#00C2CB;   --cream:#FFF9F0;
+    --dark:#2D2D2D;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Nunito',sans-serif; background:var(--cream); color:var(--dark); overflow-x:hidden; }
+
+  /* ── PROGRESS BAR ── */
+  #progress-bar { position:fixed; top:0; left:0; height:5px; z-index:9999; background:linear-gradient(90deg,var(--pink),var(--purple),var(--blue)); width:0; transition:width .1s; }
+
+  /* ── NAV ── */
+  nav { position:sticky; top:0; z-index:999; background:#fff; box-shadow:0 2px 16px rgba(0,0,0,.10); display:flex; align-items:center; justify-content:space-between; padding:0 24px; height:64px; }
+  .nav-logo { font-family:'Fredoka One',cursive; font-size:1.5rem; color:var(--orange); text-decoration:none; display:flex; align-items:center; gap:8px; }
+  .nav-links { display:flex; gap:6px; list-style:none; }
+  .nav-links a { font-family:'Fredoka One',cursive; font-size:.95rem; color:var(--dark); text-decoration:none; padding:6px 12px; border-radius:20px; transition:background .2s; }
+  .nav-links a:hover { background:var(--yellow); }
+  .hamburger { display:none; font-size:1.6rem; background:none; border:none; cursor:pointer; }
+  .mobile-menu { display:none; flex-direction:column; gap:4px; position:absolute; top:64px; left:0; right:0; background:#fff; padding:12px 20px; box-shadow:0 4px 16px rgba(0,0,0,.12); z-index:998; }
+  .mobile-menu a { font-family:'Fredoka One',cursive; font-size:1.1rem; color:var(--dark); text-decoration:none; padding:10px 16px; border-radius:12px; }
+  .mobile-menu a:hover { background:var(--yellow); }
+  .mobile-menu.open { display:flex; }
+  @media(max-width:768px){ .nav-links{display:none;} .hamburger{display:block;} }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg,#FF85A1 0%,#C77DFF 30%,#4D96FF 60%,#6BCB77 100%);
+    background-size:300% 300%; animation:gradShift 9s ease infinite;
+    min-height:400px; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:70px 20px 50px; position:relative; overflow:hidden;
+  }
+  @keyframes gradShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+  .hero::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 25% 75%,rgba(255,255,255,.2) 0%,transparent 50%),radial-gradient(circle at 75% 25%,rgba(255,255,255,.2) 0%,transparent 50%); }
+  .hero-badge { background:rgba(255,255,255,.92); color:var(--purple); font-family:'Fredoka One',cursive; font-size:.92rem; padding:7px 20px; border-radius:20px; margin-bottom:18px; display:inline-block; position:relative; z-index:1; }
+  .hero h1 { font-family:'Fredoka One',cursive; font-size:clamp(2rem,6vw,3.4rem); color:#fff; text-shadow:2px 4px 16px rgba(0,0,0,.2); line-height:1.2; max-width:720px; position:relative; z-index:1; }
+  .hero-sub { color:rgba(255,255,255,.94); font-size:1.1rem; font-weight:700; margin-top:14px; max-width:560px; position:relative; z-index:1; }
+  .hero-mascot { font-size:4.5rem; margin-top:18px; position:relative; z-index:1; animation:float 3s ease-in-out infinite; }
+  @keyframes float { 0%,100%{transform:translateY(0) rotate(-3deg)} 50%{transform:translateY(-14px) rotate(3deg)} }
+  .hero-hearts { position:absolute; inset:0; z-index:0; overflow:hidden; }
+  .heart { position:absolute; font-size:1.4rem; opacity:.25; animation:rise linear infinite; }
+  @keyframes rise { 0%{transform:translateY(100vh) scale(0)} 100%{transform:translateY(-100px) scale(1); opacity:0;} }
+
+  /* ── TOPIC STRIP ── */
+  .topic-strip { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; padding:20px; background:#fff; border-bottom:3px solid var(--pink); }
+  .pill { font-family:'Fredoka One',cursive; font-size:.88rem; padding:6px 16px; border-radius:20px; color:#fff; }
+
+  /* ── CONTAINER ── */
+  .container { max-width:880px; margin:0 auto; padding:0 20px; }
+
+  /* ── SECTION TITLES ── */
+  .section-title { font-family:'Fredoka One',cursive; font-size:1.9rem; color:var(--dark); text-align:center; margin:52px 0 6px; position:relative; }
+  .section-title::after { content:''; display:block; width:80px; height:5px; background:var(--pink); border-radius:4px; margin:8px auto 0; }
+  .section-sub { text-align:center; color:#777; font-size:1rem; margin-bottom:36px; font-weight:600; }
+
+  /* ── INTRO BOX ── */
+  .intro-box { background:linear-gradient(135deg,#fff5fb,#f0f0ff); border-left:6px solid var(--pink); border-radius:18px; padding:28px 32px; margin:40px 0; box-shadow:0 4px 24px rgba(199,125,255,.13); display:flex; gap:20px; align-items:flex-start; }
+  .intro-box .gi { font-size:3rem; flex-shrink:0; }
+  .intro-box p { font-size:1.1rem; font-weight:600; line-height:1.75; color:#444; }
+  .intro-box strong { color:var(--purple); }
+
+  /* ── ESTEEM METER (interactive) ── */
+  .meter-section { background:linear-gradient(135deg,#1a0a2e,#3D0066,#6B2FA0); border-radius:28px; padding:44px 28px; margin:50px 0; text-align:center; }
+  .meter-section .section-title { color:#fff; margin-top:0; }
+  .meter-section .section-title::after { background:var(--yellow); }
+  .meter-section .section-sub { color:rgba(255,255,255,.75); }
+  .meter-display { background:rgba(255,255,255,.1); border:2px solid rgba(255,255,255,.2); border-radius:20px; padding:28px; margin:0 auto; max-width:500px; backdrop-filter:blur(10px); }
+  .meter-label { font-family:'Fredoka One',cursive; font-size:1.1rem; color:rgba(255,255,255,.85); margin-bottom:12px; }
+  .meter-bar-wrap { background:rgba(0,0,0,.3); border-radius:50px; height:28px; overflow:hidden; margin-bottom:12px; }
+  .meter-bar { height:100%; border-radius:50px; background:linear-gradient(90deg,var(--red),var(--orange),var(--yellow),var(--green)); transition:width 1s cubic-bezier(.4,0,.2,1); }
+  .meter-score { font-family:'Fredoka One',cursive; font-size:2.5rem; color:#fff; }
+  .meter-message { font-family:'Fredoka One',cursive; font-size:1.05rem; margin-top:8px; }
+
+  /* ── CHECKLIST ── */
+  .checklist-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:0 0 50px; }
+  @media(max-width:600px){ .checklist-grid{grid-template-columns:1fr;} }
+  .check-item {
+    background:#fff; border-radius:16px; padding:18px 20px;
+    display:flex; align-items:flex-start; gap:14px;
+    box-shadow:0 3px 16px rgba(0,0,0,.07); cursor:pointer;
+    border:2px solid transparent; transition:all .3s ease;
+    user-select:none;
+  }
+  .check-item:hover { transform:translateY(-2px); box-shadow:0 6px 22px rgba(0,0,0,.12); }
+  .check-item.checked { background:linear-gradient(135deg,#f0fff4,#e8f5e9); border-color:var(--green); }
+  .check-box { width:28px; height:28px; border-radius:8px; border:2.5px solid #ccc; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:1.1rem; transition:all .3s; background:#f8f8f8; margin-top:2px; }
+  .check-item.checked .check-box { background:var(--green); border-color:var(--green); color:#fff; }
+  .check-num { font-family:'Fredoka One',cursive; font-size:.75rem; color:#bbb; display:block; margin-bottom:3px; }
+  .check-title { font-family:'Fredoka One',cursive; font-size:1rem; color:var(--dark); margin-bottom:4px; }
+  .check-tip { font-size:.86rem; color:#666; font-weight:600; line-height:1.45; }
+  .check-example { font-size:.82rem; color:var(--purple); font-weight:700; margin-top:5px; font-style:italic; }
+
+  /* ── AFFIRMATION FLIP CARDS ── */
+  .affirmations-section { background:linear-gradient(135deg,#fff9f0,#fff0f8); border-radius:28px; padding:44px 20px; margin:50px 0; }
+  .affirmations-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; margin-top:28px; }
+  .flip-card { perspective:1000px; cursor:pointer; height:160px; }
+  .flip-card-inner { position:relative; width:100%; height:100%; transition:transform .6s cubic-bezier(.4,0,.2,1); transform-style:preserve-3d; }
+  .flip-card:hover .flip-card-inner, .flip-card.flipped .flip-card-inner { transform:rotateY(180deg); }
+  .flip-front, .flip-back { position:absolute; inset:0; border-radius:18px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:16px; backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+  .flip-front { background:#fff; box-shadow:0 4px 20px rgba(0,0,0,.08); border:2px dashed var(--pink); }
+  .flip-back { transform:rotateY(180deg); box-shadow:0 4px 20px rgba(199,125,255,.25); }
+  .flip-emoji { font-size:2.5rem; margin-bottom:8px; }
+  .flip-front p { font-family:'Fredoka One',cursive; font-size:.9rem; color:#aaa; }
+  .flip-back p { font-family:'Baloo 2',cursive; font-weight:800; font-size:.95rem; color:#fff; line-height:1.4; }
+  .flip-hint { font-family:'Fredoka One',cursive; font-size:.72rem; color:#ccc; margin-top:8px; }
+
+  /* ── SAY THIS INSTEAD ── */
+  .say-section { margin:50px 0; }
+  .say-grid { display:flex; flex-direction:column; gap:16px; }
+  .say-row {
+    display:grid; grid-template-columns:1fr 60px 1fr; align-items:center; gap:10px;
+    opacity:0; transform:translateX(-20px); transition:opacity .5s ease, transform .5s ease;
+  }
+  .say-row.visible { opacity:1; transform:translateX(0); }
+  .say-box { border-radius:14px; padding:16px 20px; font-weight:700; font-size:.92rem; line-height:1.45; }
+  .say-dont { background:#fff0f0; border-left:5px solid var(--red); color:#c0392b; }
+  .say-do { background:#f0fff4; border-left:5px solid var(--green); color:#1e8449; }
+  .say-dont::before { content:'❌ Instead of…'; display:block; font-family:'Fredoka One',cursive; font-size:.78rem; margin-bottom:6px; color:var(--red); }
+  .say-do::before { content:'✅ Try saying…'; display:block; font-family:'Fredoka One',cursive; font-size:.78rem; margin-bottom:6px; color:var(--green); }
+  .say-arrow { text-align:center; font-size:1.6rem; }
+  @media(max-width:580px){ .say-row{grid-template-columns:1fr; gap:6px;} .say-arrow{display:none;} }
+
+  /* ── AGE GUIDE ── */
+  .age-tabs { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:24px; }
+  .age-tab { font-family:'Fredoka One',cursive; font-size:.95rem; padding:10px 22px; border-radius:50px; border:2.5px solid #ddd; background:#fff; cursor:pointer; transition:all .25s; color:var(--dark); }
+  .age-tab.active { background:var(--purple); border-color:var(--purple); color:#fff; transform:scale(1.05); }
+  .age-panel { display:none; background:#fff; border-radius:18px; padding:28px; box-shadow:0 4px 20px rgba(0,0,0,.08); animation:fadeIn .4s ease; }
+  .age-panel.active { display:block; }
+  @keyframes fadeIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+  .age-panel h3 { font-family:'Fredoka One',cursive; font-size:1.3rem; margin-bottom:14px; }
+  .age-tip-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
+  .age-tip-list li { padding:10px 14px; background:#f8f4ff; border-radius:10px; font-size:.94rem; font-weight:600; color:#444; border-left:4px solid var(--purple); }
+  .age-tip-list li span { font-size:1.2rem; margin-right:8px; }
+
+  /* ── DAILY ROUTINE WHEEL ── */
+  .routine-section { background:linear-gradient(135deg,#e8f9ff,#e8fff0); border-radius:28px; padding:44px 24px; margin:50px 0; }
+  .routine-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-top:28px; }
+  .routine-card { background:#fff; border-radius:18px; padding:22px 18px; text-align:center; box-shadow:0 3px 16px rgba(0,0,0,.07); transition:transform .25s, box-shadow .25s; border-top:5px solid var(--teal); }
+  .routine-card:nth-child(2){border-color:var(--blue);}
+  .routine-card:nth-child(3){border-color:var(--purple);}
+  .routine-card:nth-child(4){border-color:var(--pink);}
+  .routine-card:nth-child(5){border-color:var(--orange);}
+  .routine-card:nth-child(6){border-color:var(--green);}
+  .routine-card:hover { transform:translateY(-5px); box-shadow:0 8px 28px rgba(0,0,0,.12); }
+  .routine-time { font-family:'Fredoka One',cursive; font-size:.78rem; color:#aaa; background:#f5f5f5; padding:3px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; }
+  .routine-icon { font-size:2.4rem; margin-bottom:10px; }
+  .routine-card h4 { font-family:'Fredoka One',cursive; font-size:1.05rem; color:var(--dark); margin-bottom:6px; }
+  .routine-card p { font-size:.84rem; color:#666; font-weight:600; line-height:1.4; }
+
+  /* ── SCORE RESULT ── */
+  .result-banner { display:none; background:linear-gradient(135deg,var(--green),var(--teal)); border-radius:20px; padding:28px; text-align:center; margin:20px 0; animation:popIn .5s cubic-bezier(.34,1.56,.64,1); }
+  @keyframes popIn { from{transform:scale(.8);opacity:0} to{transform:scale(1);opacity:1} }
+  .result-banner.show { display:block; }
+  .result-banner h3 { font-family:'Fredoka One',cursive; font-size:1.6rem; color:#fff; margin-bottom:8px; }
+  .result-banner p { color:rgba(255,255,255,.9); font-weight:700; }
+
+  /* ── CTA ── */
+  .cta-section { background:linear-gradient(135deg,var(--pink),var(--purple)); border-radius:24px; padding:44px 30px; text-align:center; margin:50px 0; }
+  .cta-section h2 { font-family:'Fredoka One',cursive; font-size:2rem; color:#fff; text-shadow:0 2px 10px rgba(0,0,0,.15); margin-bottom:10px; }
+  .cta-section p { color:rgba(255,255,255,.9); font-weight:700; margin-bottom:24px; font-size:1.05rem; }
+  .cta-buttons { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; }
+  .cta-btn { font-family:'Fredoka One',cursive; font-size:1rem; padding:14px 26px; border-radius:50px; text-decoration:none; transition:transform .2s,box-shadow .2s; display:inline-flex; align-items:center; gap:8px; }
+  .cta-btn:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,.2); }
+  .cta-btn.primary { background:#fff; color:var(--purple); }
+  .cta-btn.secondary { background:var(--dark); color:#fff; }
+
+  /* ── TOYS ── */
+  .toys-section { background:#fff; border-radius:24px; padding:36px 32px; margin:40px 0; box-shadow:0 4px 24px rgba(0,0,0,.07); }
+  .toys-grid { display:flex; gap:14px; flex-wrap:wrap; margin-top:20px; }
+  .toy-btn { flex:1; min-width:150px; display:flex; align-items:center; gap:10px; background:linear-gradient(135deg,#f8f8f8,#fff); border:2px solid var(--pink); border-radius:14px; padding:14px 18px; text-decoration:none; color:var(--dark); font-family:'Fredoka One',cursive; font-size:.95rem; transition:transform .2s,box-shadow .2s,border-color .2s; }
+  .toy-btn:hover { transform:translateY(-3px); box-shadow:0 6px 20px rgba(0,0,0,.12); border-color:var(--purple); }
+  .toy-btn .toy-icon { font-size:1.6rem; }
+
+  /* ── SHARE ── */
+  .share-section { text-align:center; margin:50px 0; }
+  .share-section h3 { font-family:'Fredoka One',cursive; font-size:1.4rem; margin-bottom:16px; }
+  .share-buttons { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  .share-btn { font-family:'Fredoka One',cursive; font-size:.95rem; padding:12px 22px; border-radius:50px; border:none; cursor:pointer; display:inline-flex; align-items:center; gap:8px; text-decoration:none; transition:transform .2s,box-shadow .2s; }
+  .share-btn:hover { transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,.15); }
+  .share-btn.whatsapp{background:#25D366;color:#fff;}
+  .share-btn.facebook{background:#1877F2;color:#fff;}
+  .share-btn.copy{background:var(--dark);color:#fff;}
+
+  /* ── FOOTER ── */
+  footer { background:var(--dark); color:#fff; padding:40px 20px; text-align:center; }
+  .footer-logo { font-family:'Fredoka One',cursive; font-size:1.6rem; color:var(--yellow); margin-bottom:16px; }
+  .footer-links { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-bottom:18px; }
+  .footer-links a { color:rgba(255,255,255,.75); text-decoration:none; font-family:'Fredoka One',cursive; font-size:.9rem; padding:6px 14px; border-radius:20px; transition:background .2s; }
+  .footer-links a:hover { background:rgba(255,255,255,.15); }
+  .footer-copy { font-size:.82rem; color:rgba(255,255,255,.4); margin-top:14px; }
+
+  /* ── SCROLL TOP ── */
+  #scrollTop { position:fixed; bottom:28px; right:24px; background:var(--purple); color:#fff; border:none; width:50px; height:50px; border-radius:50%; font-size:1.3rem; cursor:pointer; box-shadow:0 4px 18px rgba(0,0,0,.25); display:none; align-items:center; justify-content:center; transition:transform .2s; z-index:900; }
+  #scrollTop:hover{transform:scale(1.1);}
+  #scrollTop.visible{display:flex;}
+
+  /* ── FADE IN UTIL ── */
+  .fade-in { opacity:0; transform:translateY(24px); transition:opacity .6s ease,transform .6s ease; }
+  .fade-in.visible { opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- Floating hearts -->
+<div class="hero-hearts" id="hearts"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-logo"><span>🐯</span> GigNLearn</a>
+  <ul class="nav-links">
+    <li><a href="../index.html">🏠 Home</a></li>
+    <li><a href="../abc-game.html">🔤 ABC Game</a></li>
+    <li><a href="../math-maze.html">🔢 Math Maze</a></li>
+    <li><a href="index.html">📖 Poems</a></li>
+    <li><a href="../name-labels.html">🏷️ Labels</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">☰</button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">🏠 Home</a>
+  <a href="../abc-game.html">🔤 ABC Game</a>
+  <a href="../math-maze.html">🔢 Math Maze</a>
+  <a href="index.html">📖 Poems</a>
+  <a href="../name-labels.html">🏷️ Labels</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">💛 Parent's Hub by GigNLearn</div>
+  <h1>Building Self-Esteem in Children</h1>
+  <p class="hero-sub">10 Powerful Strategies Every Parent Should Know 🌟</p>
+  <div class="hero-mascot">🐯</div>
+</section>
+
+<!-- TOPIC PILLS -->
+<div class="topic-strip">
+  <span class="pill" style="background:var(--pink)">💛 Self-Esteem</span>
+  <span class="pill" style="background:var(--purple)">🧠 Child Psychology</span>
+  <span class="pill" style="background:var(--green)">🌱 Positive Parenting</span>
+  <span class="pill" style="background:var(--blue)">🎯 Ages 1–10</span>
+  <span class="pill" style="background:var(--orange)">🗣️ Communication</span>
+  <span class="pill" style="background:var(--teal)">🏆 Confidence Building</span>
+</div>
+
+<main class="container">
+
+  <!-- INTRO -->
+  <div class="intro-box fade-in">
+    <span class="gi">🐯</span>
+    <p>Hi friends, I'm <strong>Gigloo</strong>! Self-esteem is like a superpower — it helps kids feel <strong>capable, valued, and brave</strong> enough to face any challenge. When children believe in themselves, they bounce back from setbacks, make friends easily, and love learning. Let's build that superpower together! 💪</p>
+  </div>
+
+  <!-- WHY IT MATTERS STATS -->
+  <div class="fade-in" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin:0 0 50px;">
+    <div style="background:#fff;border-radius:18px;padding:24px 14px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.07);">
+      <div style="font-family:'Fredoka One',cursive;font-size:2.4rem;color:var(--pink)">💛</div>
+      <div style="font-family:'Fredoka One',cursive;font-size:1rem;margin-top:6px;">Ages 1–10</div>
+      <div style="font-size:.84rem;color:#777;font-weight:600;margin-top:4px;">The golden window for building lasting confidence</div>
+    </div>
+    <div style="background:#fff;border-radius:18px;padding:24px 14px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.07);">
+      <div style="font-family:'Fredoka One',cursive;font-size:2.4rem;color:var(--purple)">10</div>
+      <div style="font-family:'Fredoka One',cursive;font-size:1rem;margin-top:6px;">Strategies</div>
+      <div style="font-size:.84rem;color:#777;font-weight:600;margin-top:4px;">Practical, proven, parent-tested approaches</div>
+    </div>
+    <div style="background:#fff;border-radius:18px;padding:24px 14px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.07);">
+      <div style="font-family:'Fredoka One',cursive;font-size:2.4rem;color:var(--green)">5 min</div>
+      <div style="font-family:'Fredoka One',cursive;font-size:1rem;margin-top:6px;">Per Day</div>
+      <div style="font-size:.84rem;color:#777;font-weight:600;margin-top:4px;">Is all it takes to start changing your child's mindset</div>
+    </div>
+    <div style="background:#fff;border-radius:18px;padding:24px 14px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.07);">
+      <div style="font-family:'Fredoka One',cursive;font-size:2.4rem;color:var(--blue)">∞</div>
+      <div style="font-family:'Fredoka One',cursive;font-size:1rem;margin-top:6px;">Lifelong Impact</div>
+      <div style="font-size:.84rem;color:#777;font-weight:600;margin-top:4px;">Confident kids grow into thriving, happy adults</div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE CHECKLIST -->
+  <h2 class="section-title">✅ 10 Strategies — Tap Each One You've Tried!</h2>
+  <p class="section-sub">Tap a strategy to mark it done — watch your score grow! 🎯</p>
+
+  <!-- METER -->
+  <div class="meter-section fade-in">
+    <h2 class="section-title" style="font-size:1.4rem;margin-top:0">🏆 Your Parent Confidence Score</h2>
+    <div class="meter-display">
+      <div class="meter-label">Strategies Tried</div>
+      <div class="meter-bar-wrap"><div class="meter-bar" id="meterBar" style="width:0%"></div></div>
+      <div class="meter-score"><span id="meterCount">0</span>/10</div>
+      <div class="meter-message" id="meterMsg" style="color:var(--yellow)">Start tapping strategies below! 👇</div>
+    </div>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="check-item fade-in" onclick="toggleCheck(this,0)" data-checked="false">
+      <div class="check-box" id="cb0">  </div>
+      <div>
+        <span class="check-num">Strategy #1</span>
+        <div class="check-title">🌟 Praise Effort, Not Results</div>
+        <p class="check-tip">Focus on the process and hard work, not just the outcome or talent.</p>
+        <p class="check-example">"You worked so hard on that puzzle!" instead of "You're so smart!"</p>
+      </div>
+    </div>
+    <div class="check-item fade-in" onclick="toggleCheck(this,1)" data-checked="false">
+      <div class="check-box" id="cb1">  </div>
+      <div>
+        <span class="check-num">Strategy #2</span>
+        <div class="check-title">🎯 Let Kids Make Choices</div>
+        <p class="check-tip">Small decisions build big confidence and decision-making skills.</p>
+        <p class="check-example">"Red shirt or blue shirt today?" — simple choices count!</p>
+      </div>
+    </div>
+    <div class="check-item fade-in" onclick="toggleCheck(this,2)" data-checked="false">
+      <div class="check-box" id="cb2">  </div>
+      <div>
+        <span class="check-num">Strategy #3</span>
+        <div class="check-title">🧹 Assign Age-Appropriate Tasks</div>
+        <p class="check-tip">Chores show children they are trusted, valued, and capable.</p>
+        <p class="check-example">Toddlers: put toys away. Older kids: set the dinner table.</p>
+      </div>
+    </div>
+    <div class="check-item fade-in" onclick="toggleCheck(this,3)" data-checked="false">
+      <div class="check-box" id="cb3">  </div>
+      <div>
+        <span class="check-num">Strategy #4</span>
+        <div class="check-title">🎨 Encourage Trying New Things</div>
+        <p class="check-tip">Celebrate the attempt, not just the result. Trying IS winning!</p>
+        <p class="check-example">"I'm so proud you tried the climbing wall today!" 🧗</p>
+      </div>
+    </div>
+    <div class="check-item fade-in" onclick="toggleCheck(this,4)" data-checked="false">
+      <div class="check-box" id="cb4">  </div>
+      <div>
+        <span class="check-num">Strategy #5</span>
+        <div class="check-title">🗣️ Model Positive Self-Talk</div>
+        <p class="check-tip">Let your child hear you being kind to yourself. They copy everything!</p>
+        <p class="check-example">"I made a mistake, but that's okay — I'll fix it!" 💪</p>
+      </div>
+    </div>
+    <div class="check-item fade-in" onclick="toggleCheck(this,5)" data-checked="false">
+      <div class="check-box" id="cb5">  </div>
+      <div>
+        <span class="check-num">Strategy #6</span>
+        <div class="check-title">🔍 Spot and Name Their Strengths</div>
+        <p class="check-tip">Notice what they do well and say it specifically — not just "good job."</p>
+        <p class="check-example">"I noticed how patient you were waiting your turn — that's amazing!"</p>
+      </div>
+    </div>
+    <div class="check-item fade-in" onclick="toggleCheck(this,6)" data-checked="false">
+      <div class="check-box" id="cb6">  </div>
+      <div>
+        <span class="check-num">Strategy #7</span>
+        <div class="check-title">🚀 Allow Small Risks & Independence</div>
+        <p class="check-tip">Let them dress alone, pack their bag, or solve small problems themselves.</p>
+        <p class="check-example">Resist the urge to jump in! Let them try first. 🙌</p>
+      </div>
+    </div>
+    <div class="check-item fade-in" onclick="toggleCheck(this,7)" data-checked="false">
+      <div class="check-box" id="cb7">  </div>
+      <div>
+        <span class="check-num">Strategy #8</span>
+        <div class="check-title">❤️ Show Unconditional Love</div>
+        <p class="check-tip">Make sure they know your love is NEVER based on performance or behaviour.</p>
+        <p class="check-example">"I love you no matter what, always." — Say it every day. 🥰</p>
+      </div>
+    </div>
+    <div class="check-item fade-in" onclick="toggleCheck(this,8)" data-checked="false">
+      <div class="check-box" id="cb8">  </div>
+      <div>
+        <span class="check-num">Strategy #9</span>
+        <div class="check-title">🚫 Avoid Comparisons</div>
+        <p class="check-tip">Compare them only to their past self — not siblings, classmates, or cousins.</p>
+        <p class="check-example">"Look how far YOU have come since last month!" 📈</p>
+      </div>
+    </div>
+    <div class="check-item fade-in" onclick="toggleCheck(this,9)" data-checked="false">
+      <div class="check-box" id="cb9">  </div>
+      <div>
+        <span class="check-num">Strategy #10</span>
+        <div class="check-title">🎮 Fun Confidence Activities</div>
+        <p class="check-tip">Make affirmation lists, goal charts, or play role games to practice self-kindness.</p>
+        <p class="check-example">Try the "3 things I did great today" bedtime routine! 🌙</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="result-banner" id="resultBanner">
+    <h3>🎉 Amazing! You're a Confidence Champion!</h3>
+    <p>You've explored all 10 strategies! Your child is so lucky to have such a thoughtful parent. Keep going — small, consistent actions create lifelong confidence! 🐯💛</p>
+  </div>
+
+</main>
+
+<!-- AFFIRMATION FLIP CARDS -->
+<section style="padding:0 0 10px;">
+  <div class="container">
+    <section class="affirmations-section fade-in">
+      <h2 class="section-title" style="margin-top:0">🌸 Daily Affirmations for Kids</h2>
+      <p class="section-sub">Tap each card to flip it — read these together every morning! 🌅</p>
+      <div class="affirmations-grid" id="affirmGrid"></div>
+      <p style="text-align:center;color:#aaa;font-size:.82rem;font-weight:600;margin-top:18px;">👆 Tap any card to reveal the affirmation!</p>
+    </section>
+  </div>
+</section>
+
+<main class="container">
+
+  <!-- SAY THIS INSTEAD -->
+  <h2 class="section-title">💬 What to Say Instead</h2>
+  <p class="section-sub">Small word changes make a HUGE difference in how kids see themselves</p>
+  <section class="say-section">
+    <div class="say-grid" id="sayGrid"></div>
+  </section>
+
+  <!-- AGE-BY-AGE GUIDE -->
+  <h2 class="section-title">🎂 Age-by-Age Strategy Guide</h2>
+  <p class="section-sub">The best strategies depend on your child's stage — pick your child's age!</p>
+  <div class="age-tabs">
+    <button class="age-tab active" onclick="showAge('toddler',this)">👶 Toddler (1–3)</button>
+    <button class="age-tab" onclick="showAge('preschool',this)">🌼 Preschool (3–5)</button>
+    <button class="age-tab" onclick="showAge('school',this)">🏫 School Age (5–8)</button>
+    <button class="age-tab" onclick="showAge('older',this)">🧩 Older Kids (8–10)</button>
+  </div>
+  <div class="age-panel active fade-in" id="panel-toddler">
+    <h3 style="color:var(--orange)">👶 Toddlers (Ages 1–3) — Building the Foundation</h3>
+    <ul class="age-tip-list">
+      <li><span>🧸</span>Let them "help" with small tasks — putting spoons away, picking up one toy</li>
+      <li><span>🗣️</span>Narrate their actions positively: "You picked that up all by yourself!"</li>
+      <li><span>❤️</span>Physical affection and warmth is the #1 confidence builder at this age</li>
+      <li><span>🎨</span>Let them choose between 2 options (snack, shirt, toy) — this feels powerful!</li>
+      <li><span>📖</span>Read books with brave, kind child characters they can identify with</li>
+    </ul>
+  </div>
+  <div class="age-panel fade-in" id="panel-preschool">
+    <h3 style="color:var(--green)">🌼 Preschoolers (Ages 3–5) — Exploring Abilities</h3>
+    <ul class="age-tip-list">
+      <li><span>🎭</span>Role-playing games help them practise confidence in safe scenarios</li>
+      <li><span>🎨</span>Create a "My Strengths" drawing — ask "What are you good at?"</li>
+      <li><span>🧹</span>Assign a "special job" that's theirs alone — e.g., watering the plant</li>
+      <li><span>🌟</span>Start a bedtime "3 good things" ritual — what went well today?</li>
+      <li><span>👏</span>Applaud effort loudly and specifically, not just outcomes</li>
+    </ul>
+  </div>
+  <div class="age-panel fade-in" id="panel-school">
+    <h3 style="color:var(--blue)">🏫 School-Age Kids (Ages 5–8) — Navigating the World</h3>
+    <ul class="age-tip-list">
+      <li><span>📝</span>Start a "wins journal" — write or draw one thing they're proud of each day</li>
+      <li><span>🏆</span>Celebrate progress charts — not stars for perfection, but for trying</li>
+      <li><span>🤝</span>Teach them to handle mistakes: "What can we learn from this?"</li>
+      <li><span>🚫</span>Actively avoid comparing them to classmates or siblings</li>
+      <li><span>🗣️</span>Ask their opinion on family decisions — it signals that their voice matters</li>
+    </ul>
+  </div>
+  <div class="age-panel fade-in" id="panel-older">
+    <h3 style="color:var(--purple)">🧩 Older Kids (Ages 8–10) — Building Identity</h3>
+    <ul class="age-tip-list">
+      <li><span>🎯</span>Help them set small achievable goals and celebrate reaching them</li>
+      <li><span>💬</span>Have honest conversations about peer pressure and handling criticism</li>
+      <li><span>🌟</span>Encourage them to mentor younger kids — teaching boosts confidence massively</li>
+      <li><span>📚</span>Share stories of people who failed before succeeding (inventors, athletes)</li>
+      <li><span>❤️</span>Remind them: your worth is not your grades, scores, or wins</li>
+    </ul>
+  </div>
+
+  <!-- DAILY ROUTINE -->
+  <section class="routine-section fade-in">
+    <h2 class="section-title" style="margin-top:0">⏰ A Simple Daily Confidence Routine</h2>
+    <p class="section-sub">6 tiny moments through the day that add up to enormous impact</p>
+    <div class="routine-grid">
+      <div class="routine-card">
+        <div class="routine-time">☀️ Morning</div>
+        <div class="routine-icon">🌅</div>
+        <h4>Morning Affirmation</h4>
+        <p>Say one positive thing about your child before they leave for school</p>
+      </div>
+      <div class="routine-card">
+        <div class="routine-time">🎒 School Drop</div>
+        <div class="routine-icon">💪</div>
+        <h4>Power Words</h4>
+        <p>"You've got this! I believe in you." — 5 seconds that echo all day</p>
+      </div>
+      <div class="routine-card">
+        <div class="routine-time">🏠 After School</div>
+        <div class="routine-icon">🎧</div>
+        <h4>Just Listen First</h4>
+        <p>Ask "What was fun today?" before anything else — listening = love</p>
+      </div>
+      <div class="routine-card">
+        <div class="routine-time">🍽️ Dinner</div>
+        <div class="routine-icon">🌟</div>
+        <h4>Rose & Thorn</h4>
+        <p>Each person shares one highlight and one challenge — models healthy sharing</p>
+      </div>
+      <div class="routine-card">
+        <div class="routine-time">🛁 Bath Time</div>
+        <div class="routine-icon">🎨</div>
+        <h4>Creative Play</h4>
+        <p>Let them lead imaginative play — following their lead says "your ideas matter"</p>
+      </div>
+      <div class="routine-card">
+        <div class="routine-time">🌙 Bedtime</div>
+        <div class="routine-icon">💛</div>
+        <h4>3 Good Things</h4>
+        <p>"Name 3 things you did great today" — ends the day on confidence</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOYS -->
+  <section class="toys-section fade-in">
+    <h2 class="section-title" style="margin-top:0">🧸 Gigloo's Toy Picks for Confidence Building</h2>
+    <p class="section-sub">Toys that build persistence, problem-solving, and a growth mindset</p>
+    <div class="toys-grid">
+      <a href="https://amzn.to/4aGl0q2" target="_blank" rel="noopener" class="toy-btn">
+        <span class="toy-icon">🧩</span> Rubik's Cube
+      </a>
+      <a href="https://amzn.to/4ag6O5C" target="_blank" rel="noopener" class="toy-btn">
+        <span class="toy-icon">🔲</span> Kanoodle Puzzle
+      </a>
+      <a href="https://amzn.to/4rb4DI5" target="_blank" rel="noopener" class="toy-btn">
+        <span class="toy-icon">🦕</span> Wooden Dino Puzzle
+      </a>
+    </div>
+    <p style="margin-top:14px;font-size:.83rem;color:#aaa;font-weight:600;">* Affiliate links. We only recommend toys we believe build confidence and joy in kids.</p>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Keep Learning with Gigloo! 🐯</h2>
+    <p>Confident kids love to learn — explore our free games and poems!</p>
+    <div class="cta-buttons">
+      <a href="../abc-game.html" class="cta-btn primary">🔤 ABC Tap &amp; Play</a>
+      <a href="../math-maze.html" class="cta-btn secondary">🔢 Math Maze</a>
+      <a href="index.html" class="cta-btn primary">📖 Kids Poems</a>
+    </div>
+  </section>
+
+  <!-- SHARE -->
+  <section class="share-section">
+    <h3>💛 Share with Other Parents!</h3>
+    <p style="color:#777;font-weight:600;margin-bottom:16px;">Every parent deserves these tips — spread the love!</p>
+    <div class="share-buttons">
+      <a class="share-btn whatsapp" href="#" onclick="shareWhatsApp();return false;">💬 WhatsApp</a>
+      <a class="share-btn facebook" href="#" onclick="shareFacebook();return false;">📘 Facebook</a>
+      <button class="share-btn copy" onclick="copyLink()">🔗 Copy Link</button>
+    </div>
+    <p id="copy-msg" style="color:var(--green);font-weight:700;margin-top:10px;display:none;">✅ Link copied!</p>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">🐯 Gig N Learn with Gigloo</div>
+  <div class="footer-links">
+    <a href="../index.html">🏠 Home</a>
+    <a href="magic-words.html">✨ Magic Words</a>
+    <a href="one-red-apple.html">🍎 One Red Apple</a>
+    <a href="rainbow-snack-parade.html">🌈 Rainbow Snacks</a>
+    <a href="transport.html">🚗 Transport</a>
+    <a href="baa-baa-black-sheep.html">🐑 Baa Baa</a>
+    <a href="good-morning-sun.html">☀️ Good Morning Sun</a>
+    <a href="days-of-the-week.html">📅 Days of Week</a>
+    <a href="busy-hen.html">🐔 Busy Hen</a>
+    <a href="vowels-worksheet.html">🅐 Vowels</a>
+    <a href="nursery-workbook.html">📖 Workbook</a>
+  </div>
+  <div class="footer-copy">© 2026 GigNLearn · Made with 💛 for kids everywhere</div>
+</footer>
+
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">⬆</button>
+
+<script>
+/* ── DATA ── */
+const affirmations = [
+  { emoji:'⭐', front:'Tap to reveal!', back:'I am BRAVE and I can try new things!' },
+  { emoji:'💪', front:'Tap to reveal!', back:'I am STRONG, even when things are hard!' },
+  { emoji:'🌈', front:'Tap to reveal!', back:'I am KIND to myself and to others!' },
+  { emoji:'🧠', front:'Tap to reveal!', back:'I am SMART — my brain grows every day!' },
+  { emoji:'❤️', front:'Tap to reveal!', back:'I am LOVED exactly as I am!' },
+  { emoji:'🚀', front:'Tap to reveal!', back:'I can do HARD THINGS if I keep trying!' },
+  { emoji:'🌟', front:'Tap to reveal!', back:'I am UNIQUE — there is no one else like me!' },
+  { emoji:'🎨', front:'Tap to reveal!', back:'My ideas and creativity MATTER!' },
+];
+
+const saySwaps = [
+  { dont:"You're so smart!", do:"You worked really hard on that — I'm so proud of your effort!" },
+  { dont:"Why can't you be more like your brother/sister?", do:"Look how much YOU have grown since last month!" },
+  { dont:"Don't cry, it's not a big deal.", do:"I can see you're upset. It's okay to feel that way — want a hug?" },
+  { dont:"You always get it wrong.", do:"That was tricky! Let's figure it out together." },
+  { dont:"Hurry up, let me do it for you!", do:"Take your time — I believe you can do this!" },
+  { dont:"You should have got a higher score.", do:"I'm so proud you gave it your best! How do YOU feel about it?" },
+];
+
+/* ── BUILD AFFIRMATION CARDS ── */
+const grid = document.getElementById('affirmGrid');
+affirmations.forEach((a,i) => {
+  grid.innerHTML += `
+  <div class="flip-card" onclick="this.classList.toggle('flipped')" aria-label="Affirmation card">
+    <div class="flip-card-inner">
+      <div class="flip-front">
+        <div class="flip-emoji">${a.emoji}</div>
+        <p>${a.front}</p>
+        <span class="flip-hint">👆 tap me!</span>
+      </div>
+      <div class="flip-back" style="background:${['linear-gradient(135deg,#FF85A1,#C77DFF)','linear-gradient(135deg,#4D96FF,#00C2CB)','linear-gradient(135deg,#6BCB77,#FFD93D)','linear-gradient(135deg,#FF6B35,#FF85A1)','linear-gradient(135deg,#C77DFF,#4D96FF)','linear-gradient(135deg,#FFD93D,#6BCB77)','linear-gradient(135deg,#FF4757,#FF6B35)','linear-gradient(135deg,#00C2CB,#4D96FF)'][i]}">
+        <div class="flip-emoji">${a.emoji}</div>
+        <p>${a.back}</p>
+      </div>
+    </div>
+  </div>`;
+});
+
+/* ── BUILD SAY SWAPS ── */
+const sayGrid = document.getElementById('sayGrid');
+saySwaps.forEach(s => {
+  const row = document.createElement('div');
+  row.className = 'say-row';
+  row.innerHTML = `<div class="say-box say-dont">${s.dont}</div><div class="say-arrow">➡️</div><div class="say-box say-do">${s.do}</div>`;
+  sayGrid.appendChild(row);
+});
+
+/* ── CHECKLIST LOGIC ── */
+let checked = new Array(10).fill(false);
+function toggleCheck(el, idx){
+  checked[idx] = !checked[idx];
+  el.classList.toggle('checked', checked[idx]);
+  el.querySelector('.check-box').textContent = checked[idx] ? '✓' : ' ';
+  updateMeter();
+}
+function updateMeter(){
+  const count = checked.filter(Boolean).length;
+  const pct = (count/10)*100;
+  document.getElementById('meterBar').style.width = pct + '%';
+  document.getElementById('meterCount').textContent = count;
+  const msgs = ['Start tapping strategies below! 👇','Great start! Keep going! 🌱','You\'re building great habits! 🌟','Halfway there — amazing! 🚀','So close to becoming a Champion! 💪','🎉 PERFECT SCORE! You\'re incredible!'];
+  const msgIdx = count === 10 ? 5 : count >= 8 ? 4 : count >= 6 ? 3 : count >= 4 ? 2 : count >= 2 ? 1 : 0;
+  document.getElementById('meterMsg').textContent = msgs[msgIdx];
+  document.getElementById('resultBanner').classList.toggle('show', count === 10);
+  if(count === 10) document.getElementById('resultBanner').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+/* ── AGE TABS ── */
+function showAge(id, btn){
+  document.querySelectorAll('.age-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.age-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* ── NAV ── */
+function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
+document.addEventListener('click', e => {
+  if(!e.target.closest('nav') && !e.target.closest('#mobileMenu'))
+    document.getElementById('mobileMenu').classList.remove('open');
+});
+
+/* ── PROGRESS BAR + SCROLL TOP ── */
+window.addEventListener('scroll', () => {
+  const d = document.documentElement;
+  document.getElementById('progress-bar').style.width = (d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%';
+  document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+});
+
+/* ── INTERSECTION OBSERVER ── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in, .say-row, .check-item').forEach(el => obs.observe(el));
+
+/* ── FLOATING HEARTS ── */
+const emojis = ['💛','⭐','🌟','💪','❤️','🌸','✨'];
+setInterval(()=>{
+  const h = document.getElementById('hearts');
+  if(!h) return;
+  const el = document.createElement('div');
+  el.className = 'heart';
+  el.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+  el.style.left = Math.random()*100+'vw';
+  el.style.animationDuration = (4+Math.random()*4)+'s';
+  el.style.animationDelay = '0s';
+  h.appendChild(el);
+  setTimeout(()=>el.remove(), 8000);
+}, 1200);
+
+/* ── SHARE ── */
+function shareWhatsApp(){ const u=encodeURIComponent(location.href); window.open('https://wa.me/?text='+encodeURIComponent('💛 Building Self-Esteem in Kids — great guide by GigNLearn! 🐯 ')+u,'_blank'); }
+function shareFacebook(){ window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank'); }
+function copyLink(){ navigator.clipboard.writeText(location.href).then(()=>{ const m=document.getElementById('copy-msg'); m.style.display='block'; setTimeout(()=>m.style.display='none',2500); }); }
+</script>
+</body>
+</html>
