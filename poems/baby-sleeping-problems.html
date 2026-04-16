@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Is My Baby Not Sleeping? Complete Guide | GigNLearn Parent's Hub</title>
+<meta name="description" content="Gigloo answers every baby sleep question parents Google at 2am — cry decoder, safe sleep tips, myth busting, bedtime routine builder & more!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange:#FF6B35; --yellow:#FFD93D; --green:#6BCB77;
+  --blue:#4D96FF;   --purple:#C77DFF; --pink:#FF85A1;
+  --red:#FF4757;    --teal:#00C2CB;   --cream:#FFF9F0;
+  --dark:#2D2D2D;
+  --night:#0a0a1a;  --night2:#0f0f2d; --night3:#1a1040;
+  --moon:#FFE566;   --star:#fff9c4;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Nunito',sans-serif;background:var(--night);color:#e8e0ff;overflow-x:hidden;}
+
+/* ── STARS CANVAS ── */
+#stars-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+
+/* ── PROGRESS BAR ── */
+#prog{position:fixed;top:0;left:0;height:4px;z-index:9999;background:linear-gradient(90deg,var(--moon),var(--teal),var(--purple));width:0;transition:width .1s;}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:999;background:rgba(10,10,26,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px;}
+.nav-logo{font-family:'Fredoka One',cursive;font-size:1.5rem;color:var(--moon);text-decoration:none;display:flex;align-items:center;gap:8px;}
+.nav-links{display:flex;gap:6px;list-style:none;}
+.nav-links a{font-family:'Fredoka One',cursive;font-size:.92rem;color:rgba(255,255,255,.75);text-decoration:none;padding:6px 12px;border-radius:20px;transition:background .2s,color .2s;}
+.nav-links a:hover{background:rgba(255,229,102,.15);color:var(--moon);}
+.hamburger{display:none;font-size:1.6rem;background:none;border:none;cursor:pointer;color:#fff;}
+.mobile-menu{display:none;flex-direction:column;gap:4px;position:absolute;top:64px;left:0;right:0;background:rgba(10,10,26,.98);padding:12px 20px;border-bottom:1px solid rgba(255,255,255,.1);z-index:998;}
+.mobile-menu a{font-family:'Fredoka One',cursive;font-size:1.1rem;color:rgba(255,255,255,.85);text-decoration:none;padding:10px 16px;border-radius:12px;}
+.mobile-menu a:hover{background:rgba(255,229,102,.12);}
+.mobile-menu.open{display:flex;}
+@media(max-width:768px){.nav-links{display:none;}.hamburger{display:block;}}
+
+/* ── HERO ── */
+.hero{position:relative;z-index:1;min-height:440px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 60px;overflow:hidden;}
+.hero-moon{font-size:5rem;position:absolute;top:30px;right:8%;animation:moonGlow 4s ease-in-out infinite;filter:drop-shadow(0 0 30px rgba(255,229,102,.5));}
+@keyframes moonGlow{0%,100%{filter:drop-shadow(0 0 30px rgba(255,229,102,.4))}50%{filter:drop-shadow(0 0 60px rgba(255,229,102,.8));}}
+.hero-badge{background:rgba(255,229,102,.15);border:1px solid rgba(255,229,102,.3);color:var(--moon);font-family:'Fredoka One',cursive;font-size:.92rem;padding:7px 20px;border-radius:20px;margin-bottom:18px;display:inline-block;}
+.hero h1{font-family:'Fredoka One',cursive;font-size:clamp(1.9rem,5.5vw,3.2rem);color:#fff;line-height:1.2;max-width:720px;text-shadow:0 0 40px rgba(199,125,255,.4);}
+.hero h1 span{color:var(--moon);}
+.hero-sub{color:rgba(255,255,255,.7);font-size:1.05rem;font-weight:700;margin-top:14px;max-width:540px;}
+.hero-mascot{font-size:4rem;margin-top:20px;animation:sleepBounce 3s ease-in-out infinite;}
+@keyframes sleepBounce{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+.zzzs{position:absolute;font-family:'Fredoka One',cursive;color:rgba(255,229,102,.6);animation:floatZ linear infinite;pointer-events:none;}
+@keyframes floatZ{0%{opacity:0;transform:translate(0,0) scale(.5)}30%{opacity:1}100%{opacity:0;transform:translate(30px,-80px) scale(1.2)}}
+
+/* ── TOPIC STRIP ── */
+.topic-strip{position:relative;z-index:1;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding:18px 20px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08);}
+.pill{font-family:'Fredoka One',cursive;font-size:.85rem;padding:6px 16px;border-radius:20px;color:#fff;}
+
+/* ── MAIN LAYOUT ── */
+.container{max-width:900px;margin:0 auto;padding:0 20px;position:relative;z-index:1;}
+
+/* ── SECTION TITLES ── */
+.section-title{font-family:'Fredoka One',cursive;font-size:1.85rem;color:#fff;text-align:center;margin:52px 0 6px;}
+.section-title::after{content:'';display:block;width:80px;height:4px;background:linear-gradient(90deg,var(--moon),var(--purple));border-radius:4px;margin:8px auto 0;}
+.section-sub{text-align:center;color:rgba(255,255,255,.55);font-size:.97rem;margin-bottom:34px;font-weight:600;}
+
+/* ── GIGLOO INTRO ── */
+.intro-box{background:rgba(255,255,255,.05);border:1px solid rgba(255,229,102,.2);border-left:5px solid var(--moon);border-radius:18px;padding:28px 30px;margin:40px 0;display:flex;gap:20px;align-items:flex-start;}
+.intro-box .gi{font-size:3rem;flex-shrink:0;}
+.intro-box p{font-size:1.08rem;font-weight:600;line-height:1.75;color:rgba(255,255,255,.85);}
+.intro-box strong{color:var(--moon);}
+
+/* ── STATS ── */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin:0 0 50px;}
+.stat-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:22px 12px;text-align:center;}
+.stat-num{font-family:'Fredoka One',cursive;font-size:2.2rem;}
+.stat-label{font-size:.82rem;color:rgba(255,255,255,.55);font-weight:600;margin-top:5px;line-height:1.35;}
+
+/* ── CRY DECODER (interactive) ── */
+.decoder-section{background:rgba(255,255,255,.04);border:1px solid rgba(199,125,255,.2);border-radius:28px;padding:44px 24px;margin:50px 0;}
+.decoder-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin:28px 0;}
+.cry-btn{background:rgba(255,255,255,.06);border:2px solid rgba(199,125,255,.25);border-radius:18px;padding:18px 12px;text-align:center;cursor:pointer;transition:all .3s;font-family:'Fredoka One',cursive;font-size:.95rem;color:#fff;}
+.cry-btn:hover{background:rgba(199,125,255,.2);border-color:var(--purple);transform:translateY(-3px);}
+.cry-btn.active{background:rgba(199,125,255,.25);border-color:var(--purple);box-shadow:0 0 20px rgba(199,125,255,.3);}
+.cry-icon{font-size:2.2rem;display:block;margin-bottom:8px;}
+.cry-answer{background:rgba(255,255,255,.06);border:1px solid rgba(255,229,102,.2);border-radius:18px;padding:24px;margin-top:6px;display:none;animation:slideDown .4s ease;}
+@keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+.cry-answer.show{display:block;}
+.cry-answer h4{font-family:'Fredoka One',cursive;font-size:1.15rem;color:var(--moon);margin-bottom:10px;}
+.cry-answer p{font-size:.95rem;line-height:1.65;color:rgba(255,255,255,.8);font-weight:600;}
+.cry-answer .fix-list{margin-top:12px;list-style:none;display:flex;flex-direction:column;gap:6px;}
+.cry-answer .fix-list li{padding:8px 12px;background:rgba(255,229,102,.08);border-radius:10px;font-size:.88rem;color:rgba(255,255,255,.75);font-weight:600;}
+.cry-answer .fix-list li::before{content:'✦ ';color:var(--moon);}
+
+/* ── SLEEP MYTH CARDS ── */
+.myths-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:50px;}
+@media(max-width:600px){.myths-grid{grid-template-columns:1fr;}}
+.myth-card{border-radius:18px;padding:24px;opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease;}
+.myth-card.visible{opacity:1;transform:translateY(0);}
+.myth-card.myth-side{background:rgba(255,71,87,.1);border:1px solid rgba(255,71,87,.25);}
+.myth-card.truth-side{background:rgba(107,203,119,.1);border:1px solid rgba(107,203,119,.25);}
+.myth-tag{font-family:'Fredoka One',cursive;font-size:.78rem;padding:4px 12px;border-radius:10px;display:inline-block;margin-bottom:10px;}
+.myth-tag.m{background:var(--red);color:#fff;}
+.myth-tag.t{background:var(--green);color:#fff;}
+.myth-card h4{font-family:'Fredoka One',cursive;font-size:1rem;margin-bottom:8px;color:#fff;}
+.myth-card p{font-size:.88rem;line-height:1.5;color:rgba(255,255,255,.7);font-weight:600;}
+
+/* ── SAFE SLEEP CHECKLIST ── */
+.safe-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:50px;}
+@media(max-width:580px){.safe-grid{grid-template-columns:1fr;}}
+.safe-item{display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,.05);border-radius:14px;padding:16px;border-left:4px solid var(--green);cursor:pointer;transition:background .25s;user-select:none;}
+.safe-item.red-item{border-color:var(--red);}
+.safe-item:hover{background:rgba(255,255,255,.09);}
+.safe-dot{width:22px;height:22px;border-radius:6px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:900;}
+.green-dot{background:rgba(107,203,119,.25);color:var(--green);}
+.red-dot{background:rgba(255,71,87,.2);color:var(--red);}
+.safe-text strong{font-family:'Fredoka One',cursive;font-size:.95rem;color:#fff;display:block;margin-bottom:3px;}
+.safe-text span{font-size:.82rem;color:rgba(255,255,255,.55);font-weight:600;}
+
+/* ── BEDTIME ROUTINE BUILDER ── */
+.routine-builder{background:rgba(255,255,255,.04);border:1px solid rgba(255,229,102,.15);border-radius:28px;padding:40px 24px;margin:50px 0;}
+.routine-steps{display:flex;flex-direction:column;gap:0;position:relative;}
+.routine-steps::before{content:'';position:absolute;left:32px;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--moon),var(--purple),var(--teal));border-radius:4px;}
+.routine-step{display:flex;align-items:flex-start;gap:18px;padding:18px 0;opacity:0;transform:translateX(-20px);transition:opacity .55s ease,transform .55s ease;}
+.routine-step.visible{opacity:1;transform:translateX(0);}
+.step-circle{width:64px;height:64px;border-radius:50%;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:1.6rem;border:3px solid rgba(255,255,255,.1);background:rgba(255,255,255,.06);position:relative;z-index:1;}
+.step-time{font-family:'Fredoka One',cursive;font-size:.68rem;color:rgba(255,255,255,.5);margin-top:2px;}
+.step-content{flex:1;background:rgba(255,255,255,.05);border-radius:16px;padding:18px 20px;}
+.step-content h4{font-family:'Fredoka One',cursive;font-size:1.1rem;color:#fff;margin-bottom:6px;}
+.step-content p{font-size:.88rem;color:rgba(255,255,255,.65);font-weight:600;line-height:1.5;}
+.step-tip{display:inline-block;margin-top:8px;background:rgba(255,229,102,.1);border:1px solid rgba(255,229,102,.2);border-radius:8px;padding:5px 12px;font-size:.78rem;color:var(--moon);font-weight:700;}
+
+/* ── SLEEP BY AGE TABS ── */
+.age-tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:22px;}
+.age-tab{font-family:'Fredoka One',cursive;font-size:.9rem;padding:10px 20px;border-radius:50px;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05);cursor:pointer;transition:all .25s;color:rgba(255,255,255,.75);}
+.age-tab.active{background:var(--moon);border-color:var(--moon);color:var(--night);transform:scale(1.05);}
+.age-panel{display:none;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:28px;animation:fadeIn .4s ease;}
+.age-panel.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.age-panel h3{font-family:'Fredoka One',cursive;font-size:1.2rem;color:var(--moon);margin-bottom:14px;}
+.sleep-stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:16px;}
+.sleep-stat{background:rgba(255,229,102,.08);border-radius:12px;padding:14px;text-align:center;}
+.sleep-stat-num{font-family:'Fredoka One',cursive;font-size:1.6rem;color:var(--moon);}
+.sleep-stat-label{font-size:.78rem;color:rgba(255,255,255,.55);font-weight:600;margin-top:3px;}
+.age-tip-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.age-tip-list li{padding:10px 14px;background:rgba(255,255,255,.05);border-radius:10px;font-size:.9rem;font-weight:600;color:rgba(255,255,255,.8);border-left:3px solid var(--purple);}
+
+/* ── WHEN TO WORRY ── */
+.warning-section{background:rgba(255,71,87,.07);border:1px solid rgba(255,71,87,.2);border-radius:24px;padding:36px 28px;margin:50px 0;}
+.warning-section h2{font-family:'Fredoka One',cursive;font-size:1.5rem;color:#ff8a95;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.warning-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:560px){.warning-grid{grid-template-columns:1fr;}}
+.warning-item{background:rgba(255,71,87,.08);border-radius:12px;padding:14px 16px;display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:rgba(255,255,255,.8);font-weight:600;}
+.warning-item::before{content:'⚠️';flex-shrink:0;}
+.warning-footer{margin-top:18px;background:rgba(107,203,119,.08);border:1px solid rgba(107,203,119,.2);border-radius:14px;padding:16px;font-size:.9rem;color:rgba(255,255,255,.7);font-weight:600;line-height:1.55;}
+.warning-footer strong{color:var(--green);}
+
+/* ── CTA ── */
+.cta-section{background:linear-gradient(135deg,rgba(77,150,255,.2),rgba(199,125,255,.2));border:1px solid rgba(199,125,255,.25);border-radius:24px;padding:44px 30px;text-align:center;margin:50px 0;}
+.cta-section h2{font-family:'Fredoka One',cursive;font-size:2rem;color:#fff;margin-bottom:10px;}
+.cta-section p{color:rgba(255,255,255,.7);font-weight:700;margin-bottom:24px;font-size:1.02rem;}
+.cta-buttons{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.cta-btn{font-family:'Fredoka One',cursive;font-size:.98rem;padding:13px 24px;border-radius:50px;text-decoration:none;transition:transform .2s,box-shadow .2s;display:inline-flex;align-items:center;gap:8px;}
+.cta-btn:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.3);}
+.cta-btn.primary{background:var(--moon);color:var(--night);}
+.cta-btn.secondary{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);}
+
+/* ── SHARE ── */
+.share-section{text-align:center;margin:50px 0;}
+.share-section h3{font-family:'Fredoka One',cursive;font-size:1.35rem;color:#fff;margin-bottom:14px;}
+.share-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.share-btn{font-family:'Fredoka One',cursive;font-size:.92rem;padding:12px 22px;border-radius:50px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:transform .2s,box-shadow .2s;}
+.share-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.3);}
+.share-btn.wa{background:#25D366;color:#fff;}
+.share-btn.fb{background:#1877F2;color:#fff;}
+.share-btn.cp{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.2);}
+
+/* ── FOOTER ── */
+footer{background:rgba(0,0,0,.5);border-top:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.6);padding:40px 20px;text-align:center;position:relative;z-index:1;}
+.footer-logo{font-family:'Fredoka One',cursive;font-size:1.5rem;color:var(--moon);margin-bottom:16px;}
+.footer-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:16px;}
+.footer-links a{color:rgba(255,255,255,.55);text-decoration:none;font-family:'Fredoka One',cursive;font-size:.88rem;padding:5px 12px;border-radius:18px;transition:background .2s,color .2s;}
+.footer-links a:hover{background:rgba(255,255,255,.08);color:#fff;}
+.footer-copy{font-size:.8rem;color:rgba(255,255,255,.3);margin-top:12px;}
+
+/* ── SCROLL TOP ── */
+#scrollTop{position:fixed;bottom:28px;right:24px;background:var(--moon);color:var(--night);border:none;width:48px;height:48px;border-radius:50%;font-size:1.3rem;cursor:pointer;box-shadow:0 4px 20px rgba(255,229,102,.4);display:none;align-items:center;justify-content:center;transition:transform .2s;z-index:900;font-weight:900;}
+#scrollTop:hover{transform:scale(1.12);}
+#scrollTop.visible{display:flex;}
+
+/* ── FADE-IN UTIL ── */
+.fi{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease;}
+.fi.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<canvas id="stars-canvas"></canvas>
+<div id="prog"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-logo">🐯 GigNLearn</a>
+  <ul class="nav-links">
+    <li><a href="../index.html">🏠 Home</a></li>
+    <li><a href="../abc-game.html">🔤 ABC Game</a></li>
+    <li><a href="../math-maze.html">🔢 Math Maze</a></li>
+    <li><a href="index.html">📖 Poems</a></li>
+    <li><a href="../name-labels.html">🏷️ Labels</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">🏠 Home</a>
+  <a href="../abc-game.html">🔤 ABC Game</a>
+  <a href="../math-maze.html">🔢 Math Maze</a>
+  <a href="index.html">📖 Poems</a>
+  <a href="../name-labels.html">🏷️ Labels</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-moon">🌙</div>
+  <!-- Floating ZZZs injected by JS -->
+  <div class="hero-badge">🌙 Parent's Hub · Baby Sleep Guide</div>
+  <h1>Why Is My Baby <span>Not Sleeping?</span></h1>
+  <p class="hero-sub">Everything you Google at 2am — answered by Gigloo 🐯 with calm, expert-backed advice</p>
+  <div class="hero-mascot">🐯💤</div>
+</section>
+
+<!-- TOPIC PILLS -->
+<div class="topic-strip">
+  <span class="pill" style="background:rgba(77,150,255,.5)">😴 Baby Sleep</span>
+  <span class="pill" style="background:rgba(199,125,255,.5)">😢 Cry Decoder</span>
+  <span class="pill" style="background:rgba(107,203,119,.4)">✅ Safe Sleep</span>
+  <span class="pill" style="background:rgba(255,229,102,.35);color:var(--night)">🌙 Bedtime Routine</span>
+  <span class="pill" style="background:rgba(0,194,203,.4)">🧠 Sleep Science</span>
+  <span class="pill" style="background:rgba(255,71,87,.4)">🚫 Myths Busted</span>
+</div>
+
+<main class="container">
+
+  <!-- INTRO -->
+  <div class="intro-box fi">
+    <span class="gi">🐯</span>
+    <p>Hi tired parents — I'm <strong>Gigloo</strong>! 🌙 If you're reading this at 2am with a crying baby in your arms, first: <strong>you are doing amazingly</strong>. Baby sleep is one of the most Googled topics in the world — because it's genuinely hard. Let's decode what's really going on, bust the myths, and build a calm bedtime routine together. You've got this! 💛</p>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-grid fi">
+    <div class="stat-card">
+      <div class="stat-num" style="color:var(--moon)">2am</div>
+      <div class="stat-label">Peak time parents Google baby sleep questions worldwide 🌍</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" style="color:var(--purple)">50%</div>
+      <div class="stat-label">Of baby's total sleep time is light sleep — waking is normal! 💡</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" style="color:var(--teal)">45 min</div>
+      <div class="stat-label">One newborn sleep cycle — that's why naps "end too soon" 🔄</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" style="color:var(--green)">9–12m</div>
+      <div class="stat-label">When most babies naturally start sleeping longer stretches ✨</div>
+    </div>
+  </div>
+
+  <!-- CRY DECODER -->
+  <section class="decoder-section fi">
+    <h2 class="section-title" style="margin-top:0">😢 Gigloo's Cry Decoder</h2>
+    <p class="section-sub">Tap the type of cry — get instant guidance on what it might mean!</p>
+    <div class="decoder-grid" id="cryGrid"></div>
+    <div class="cry-answer" id="cryAnswer">
+      <h4 id="cryTitle"></h4>
+      <p id="cryDesc"></p>
+      <ul class="fix-list" id="cryFixes"></ul>
+    </div>
+  </section>
+
+  <!-- SLEEP SCIENCE STRIP -->
+  <h2 class="section-title">🧠 Why Babies Sleep Differently</h2>
+  <p class="section-sub">Understanding baby sleep architecture makes the 2am wake-up much less scary</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:50px;">
+    <div class="fi" style="background:rgba(255,255,255,.05);border:1px solid rgba(77,150,255,.2);border-radius:18px;padding:24px;">
+      <div style="font-size:2.5rem;margin-bottom:12px;">🔄</div>
+      <h4 style="font-family:'Fredoka One',cursive;font-size:1.05rem;color:var(--blue);margin-bottom:8px;">Short Sleep Cycles</h4>
+      <p style="font-size:.88rem;color:rgba(255,255,255,.65);font-weight:600;line-height:1.5;">Adult sleep cycles are 90 minutes. Newborn cycles are just 45 minutes — so they surface to light sleep more frequently.</p>
+    </div>
+    <div class="fi" style="background:rgba(255,255,255,.05);border:1px solid rgba(199,125,255,.2);border-radius:18px;padding:24px;">
+      <div style="font-size:2.5rem;margin-bottom:12px;">🌊</div>
+      <h4 style="font-family:'Fredoka One',cursive;font-size:1.05rem;color:var(--purple);margin-bottom:8px;">More Active Sleep</h4>
+      <p style="font-size:.88rem;color:rgba(255,255,255,.65);font-weight:600;line-height:1.5;">Babies spend ~50% of sleep in active (REM) sleep vs adults at ~20%. This is crucial for brain development — not a problem to fix!</p>
+    </div>
+    <div class="fi" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,229,102,.2);border-radius:18px;padding:24px;">
+      <div style="font-size:2.5rem;margin-bottom:12px;">🍼</div>
+      <h4 style="font-family:'Fredoka One',cursive;font-size:1.05rem;color:var(--moon);margin-bottom:8px;">Hunger Drives Waking</h4>
+      <p style="font-size:.88rem;color:rgba(255,255,255,.65);font-weight:600;line-height:1.5;">Tiny tummies empty fast. Night feeds aren't bad habits — they're biological necessity, especially under 6 months.</p>
+    </div>
+    <div class="fi" style="background:rgba(255,255,255,.05);border:1px solid rgba(107,203,119,.2);border-radius:18px;padding:24px;">
+      <div style="font-size:2.5rem;margin-bottom:12px;">📅</div>
+      <h4 style="font-family:'Fredoka One',cursive;font-size:1.05rem;color:var(--green);margin-bottom:8px;">It Changes Fast</h4>
+      <p style="font-size:.88rem;color:rgba(255,255,255,.65);font-weight:600;line-height:1.5;">Sleep patterns evolve with every growth spurt, developmental leap, and teething phase. What works today may shift in 4 weeks.</p>
+    </div>
+  </div>
+
+  <!-- SLEEP BY AGE TABS -->
+  <h2 class="section-title">📊 Sleep by Age — What's Actually Normal</h2>
+  <p class="section-sub">Tap your baby's age to see what's typical — no more unnecessary worry!</p>
+  <div class="age-tabs">
+    <button class="age-tab active" onclick="showAge('nb',this)">🍼 Newborn</button>
+    <button class="age-tab" onclick="showAge('m3',this)">👶 3–6 Months</button>
+    <button class="age-tab" onclick="showAge('m6',this)">🌱 6–9 Months</button>
+    <button class="age-tab" onclick="showAge('m12',this)">🎂 9–12 Months</button>
+    <button class="age-tab" onclick="showAge('tod',this)">🚶 Toddler 1–3</button>
+  </div>
+  <div class="age-panel active fi" id="panel-nb">
+    <h3>🍼 Newborn (0–3 Months) — Welcome to the night shift!</h3>
+    <div class="sleep-stat-row">
+      <div class="sleep-stat"><div class="sleep-stat-num">14–17h</div><div class="sleep-stat-label">Total sleep per day</div></div>
+      <div class="sleep-stat"><div class="sleep-stat-num">2–4h</div><div class="sleep-stat-label">Longest stretch expected</div></div>
+      <div class="sleep-stat"><div class="sleep-stat-num">8+</div><div class="sleep-stat-label">Wake-ups per night (normal!)</div></div>
+    </div>
+    <ul class="age-tip-list">
+      <li>🌙 No circadian rhythm yet — they can't tell day from night for weeks</li>
+      <li>🍼 Feed on demand — hunger is the #1 waker at this age, not bad habits</li>
+      <li>🤍 Skin-to-skin, swaddling, and white noise are your best friends</li>
+      <li>🔄 Expecting 5-hour stretches at this age is unrealistic — and that's okay!</li>
+    </ul>
+  </div>
+  <div class="age-panel fi" id="panel-m3">
+    <h3>👶 3–6 Months — Patterns start forming</h3>
+    <div class="sleep-stat-row">
+      <div class="sleep-stat"><div class="sleep-stat-num">12–15h</div><div class="sleep-stat-label">Total sleep per day</div></div>
+      <div class="sleep-stat"><div class="sleep-stat-num">4–6h</div><div class="sleep-stat-label">Longer stretch possible</div></div>
+      <div class="sleep-stat"><div class="sleep-stat-num">3–4</div><div class="sleep-stat-label">Naps per day</div></div>
+    </div>
+    <ul class="age-tip-list">
+      <li>📅 Start a loose routine — bath, feed, sleep at similar times each night</li>
+      <li>🌙 Circadian rhythm kicks in around 3–4 months — mornings help set it!</li>
+      <li>😴 The 4-month sleep regression is REAL — it's developmental, not a disaster</li>
+      <li>🎶 Lullabies and gentle rocking are wonderful sleep associations now</li>
+    </ul>
+  </div>
+  <div class="age-panel fi" id="panel-m6">
+    <h3>🌱 6–9 Months — The golden window</h3>
+    <div class="sleep-stat-row">
+      <div class="sleep-stat"><div class="sleep-stat-num">12–14h</div><div class="sleep-stat-label">Total sleep per day</div></div>
+      <div class="sleep-stat"><div class="sleep-stat-num">6–8h</div><div class="sleep-stat-label">Night stretch becoming possible</div></div>
+      <div class="sleep-stat"><div class="sleep-stat-num">2–3</div><div class="sleep-stat-label">Naps per day</div></div>
+    </div>
+    <ul class="age-tip-list">
+      <li>⏰ A consistent bedtime (7–8pm) makes a huge difference now</li>
+      <li>🍽️ Solids starting at 6 months may help — but aren't a sleep magic fix</li>
+      <li>🧸 Gentle sleep teaching (not cry-it-out necessarily!) can begin if desired</li>
+      <li>😬 Teething begins — watch for extra fussiness and drooling</li>
+    </ul>
+  </div>
+  <div class="age-panel fi" id="panel-m12">
+    <h3>🎂 9–12 Months — Real sleep progress!</h3>
+    <div class="sleep-stat-row">
+      <div class="sleep-stat"><div class="sleep-stat-num">11–14h</div><div class="sleep-stat-label">Total sleep per day</div></div>
+      <div class="sleep-stat"><div class="sleep-stat-num">9–11h</div><div class="sleep-stat-label">Potential night sleep</div></div>
+      <div class="sleep-stat"><div class="sleep-stat-num">2</div><div class="sleep-stat-label">Naps per day</div></div>
+    </div>
+    <ul class="age-tip-list">
+      <li>🚶 Separation anxiety peaks around 9 months — extra reassurance at bedtime helps</li>
+      <li>📚 Books before bed become a powerful, calming routine signal</li>
+      <li>🌙 Many babies sleep 9–11 hours now — but not all, and that's still okay</li>
+      <li>🔄 9-month regression is common — hold steady on your routine!</li>
+    </ul>
+  </div>
+  <div class="age-panel fi" id="panel-tod">
+    <h3>🚶 Toddlers (1–3 Years) — New challenges appear!</h3>
+    <div class="sleep-stat-row">
+      <div class="sleep-stat"><div class="sleep-stat-num">11–14h</div><div class="sleep-stat-label">Total sleep recommended</div></div>
+      <div class="sleep-stat"><div class="sleep-stat-num">10–12h</div><div class="sleep-stat-label">Night sleep</div></div>
+      <div class="sleep-stat"><div class="sleep-stat-num">1</div><div class="sleep-stat-label">Afternoon nap</div></div>
+    </div>
+    <ul class="age-tip-list">
+      <li>🎭 "One more story" and bedtime stalling is developmentally normal — set firm, kind limits</li>
+      <li>😨 Night fears and nightmares increase — a nightlight and comfort object help</li>
+      <li>🏃 More physical activity during the day = better sleep at night</li>
+      <li>📵 No screens 1 hour before bed — blue light disrupts melatonin</li>
+    </ul>
+  </div>
+
+</main>
+
+<!-- MYTHS SECTION (full-width dark) -->
+<section style="background:rgba(255,71,87,.04);border-top:1px solid rgba(255,71,87,.1);border-bottom:1px solid rgba(255,71,87,.1);padding:50px 20px;position:relative;z-index:1;margin:50px 0;">
+  <div class="container" style="padding:0 20px;">
+    <h2 class="section-title" style="margin-top:0">🚫 Sleep Myths Busted by Gigloo</h2>
+    <p class="section-sub">Don't let these common myths rob you of peaceful nights</p>
+    <div class="myths-grid">
+      <div class="myth-card myth-side">
+        <span class="myth-tag m">❌ Myth</span>
+        <h4>All babies should sleep through the night by 3 months</h4>
+        <p>Social media and some older books set this unrealistic expectation. Most pediatric experts say it's not biologically typical until 6–12 months.</p>
+      </div>
+      <div class="myth-card truth-side">
+        <span class="myth-tag t">✅ Reality</span>
+        <h4>Night waking before 6 months is completely normal</h4>
+        <p>Babies' brains and stomachs are simply not ready for long unbroken sleep. Waking isn't failure — it's biology working correctly.</p>
+      </div>
+      <div class="myth-card myth-side">
+        <span class="myth-tag m">❌ Myth</span>
+        <h4>Sleep training always means letting baby "cry it out"</h4>
+        <p>Many parents fear sleep training because of this misconception. In reality, there are many gentle approaches with minimal crying involved.</p>
+      </div>
+      <div class="myth-card truth-side">
+        <span class="myth-tag t">✅ Reality</span>
+        <h4>Many gentle sleep teaching methods exist</h4>
+        <p>Chair method, pick-up-put-down, fading — all help babies learn to settle without prolonged distress. The best method is one that fits YOUR family.</p>
+      </div>
+      <div class="myth-card myth-side">
+        <span class="myth-tag m">❌ Myth</span>
+        <h4>Keeping baby awake during the day helps them sleep better at night</h4>
+        <p>Many parents skip naps thinking it'll tire baby out for night — it actually causes overtiredness which makes night sleep WORSE.</p>
+      </div>
+      <div class="myth-card truth-side">
+        <span class="myth-tag t">✅ Reality</span>
+        <h4>"Sleep begets sleep" — good naps improve night sleep</h4>
+        <p>An overtired baby produces more cortisol, making it harder to settle. Protecting naps actually leads to better nights, not the opposite!</p>
+      </div>
+      <div class="myth-card myth-side">
+        <span class="myth-tag m">❌ Myth</span>
+        <h4>Adding cereal to a bottle helps babies sleep longer</h4>
+        <p>A surprisingly common piece of advice — but there's no evidence it improves sleep duration and it carries choking and digestive risks.</p>
+      </div>
+      <div class="myth-card truth-side">
+        <span class="myth-tag t">✅ Reality</span>
+        <h4>Night waking is usually not about hunger after 6 months</h4>
+        <p>After 6 months most healthy babies don't need night feeds for nutrition. Waking is more often habit, developmental, or comfort-seeking.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+
+  <!-- SAFE SLEEP -->
+  <h2 class="section-title">🛏️ Safe Sleep — Know the Rules</h2>
+  <p class="section-sub">Evidence-based guidelines that protect your baby every single night</p>
+  <div class="safe-grid fi">
+    <div class="safe-item">
+      <div class="safe-dot green-dot">✓</div>
+      <div class="safe-text"><strong>Always place baby on their back</strong><span>Every sleep, every time — front and side sleeping increases risk</span></div>
+    </div>
+    <div class="safe-item red-item">
+      <div class="safe-dot red-dot">✗</div>
+      <div class="safe-text"><strong>No soft bedding in the crib</strong><span>No pillows, loose blankets, bumpers, or soft toys until age 1+</span></div>
+    </div>
+    <div class="safe-item">
+      <div class="safe-dot green-dot">✓</div>
+      <div class="safe-text"><strong>Firm, flat sleep surface</strong><span>A firm mattress with a fitted sheet is all that's needed</span></div>
+    </div>
+    <div class="safe-item red-item">
+      <div class="safe-dot red-dot">✗</div>
+      <div class="safe-text"><strong>No sleeping on sofas or armchairs</strong><span>Especially dangerous — even for brief supervised naps</span></div>
+    </div>
+    <div class="safe-item">
+      <div class="safe-dot green-dot">✓</div>
+      <div class="safe-text"><strong>Room sharing (not bed sharing) first year</strong><span>Same room, separate surface reduces SIDS risk significantly</span></div>
+    </div>
+    <div class="safe-item red-item">
+      <div class="safe-dot red-dot">✗</div>
+      <div class="safe-text"><strong>Avoid overheating</strong><span>Keep the room at 16–20°C. No thick hats indoors during sleep</span></div>
+    </div>
+    <div class="safe-item">
+      <div class="safe-dot green-dot">✓</div>
+      <div class="safe-text"><strong>Pacifier at sleep time (after breastfeeding is established)</strong><span>Research shows pacifiers reduce SIDS risk — don't force if rejected</span></div>
+    </div>
+    <div class="safe-item red-item">
+      <div class="safe-dot red-dot">✗</div>
+      <div class="safe-text"><strong>Never leave baby in car seat to sleep unsupervised</strong><span>Car seats are for travel — not regular sleep surfaces</span></div>
+    </div>
+  </div>
+
+  <!-- BEDTIME ROUTINE BUILDER -->
+  <section class="routine-builder fi">
+    <h2 class="section-title" style="margin-top:0">🌙 The Perfect Bedtime Routine</h2>
+    <p class="section-sub">A consistent 30–45 minute wind-down sequence is the single most powerful sleep tool</p>
+    <div class="routine-steps" id="routineSteps"></div>
+    <div style="margin-top:28px;background:rgba(255,229,102,.08);border:1px solid rgba(255,229,102,.2);border-radius:16px;padding:20px;text-align:center;">
+      <div style="font-size:1.5rem;margin-bottom:8px;">💡</div>
+      <p style="font-family:'Fredoka One',cursive;font-size:1rem;color:var(--moon);margin-bottom:6px;">Gigloo's Golden Rule</p>
+      <p style="font-size:.9rem;color:rgba(255,255,255,.7);font-weight:600;line-height:1.55;">Consistency matters more than perfection. The same sequence — even if short — tells your baby's brain "sleep is coming." After 2–3 weeks, you'll see a dramatic difference! 🌟</p>
+    </div>
+  </section>
+
+  <!-- WHEN TO WORRY -->
+  <section class="warning-section fi">
+    <h2>🚨 When to See a Paediatrician</h2>
+    <p style="font-size:.92rem;color:rgba(255,255,255,.65);font-weight:600;margin-bottom:18px;line-height:1.55;">Most sleep issues are normal and resolve with time. But do consult a doctor if you notice:</p>
+    <div class="warning-grid">
+      <div class="warning-item">Persistent high-pitched or unusual crying that doesn't stop</div>
+      <div class="warning-item">Feeding refusal alongside sleep difficulties</div>
+      <div class="warning-item">Signs of pain, arching back, or possible reflux</div>
+      <div class="warning-item">Baby stops breathing, pauses breathing, or snores loudly</div>
+      <div class="warning-item">No improvement at all after 12 months with consistent routines</div>
+      <div class="warning-item">Parent exhaustion so severe it impacts safety — your wellbeing matters too!</div>
+    </div>
+    <div class="warning-footer">
+      <strong>Remember:</strong> No article — including this one — replaces a personalised consultation with your paediatrician or a certified paediatric sleep specialist. Your instincts as a parent are valuable. If something feels wrong, trust that feeling and seek help. 💛
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section fi">
+    <h2>Keep Learning with Gigloo 🐯</h2>
+    <p>While baby sleeps — help your little ones learn and grow with our free games!</p>
+    <div class="cta-buttons">
+      <a href="../abc-game.html" class="cta-btn primary">🔤 ABC Tap &amp; Play</a>
+      <a href="../math-maze.html" class="cta-btn secondary">🔢 Math Maze</a>
+      <a href="index.html" class="cta-btn secondary">📖 Kids Poems</a>
+      <a href="../name-labels.html" class="cta-btn secondary">🏷️ Name Labels</a>
+    </div>
+  </section>
+
+  <!-- SHARE -->
+  <section class="share-section">
+    <h3>🌙 Share with a Tired Parent!</h3>
+    <p style="color:rgba(255,255,255,.5);font-weight:600;margin-bottom:14px;">Every exhausted parent deserves these answers</p>
+    <div class="share-buttons">
+      <a class="share-btn wa" href="#" onclick="shareWA();return false;">💬 WhatsApp</a>
+      <a class="share-btn fb" href="#" onclick="shareFB();return false;">📘 Facebook</a>
+      <button class="share-btn cp" onclick="copyLink()">🔗 Copy Link</button>
+    </div>
+    <p id="copy-msg" style="color:var(--green);font-weight:700;margin-top:10px;display:none;">✅ Link copied!</p>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">🐯 Gig N Learn with Gigloo</div>
+  <div class="footer-links">
+    <a href="../index.html">🏠 Home</a>
+    <a href="magic-words.html">✨ Magic Words</a>
+    <a href="one-red-apple.html">🍎 One Red Apple</a>
+    <a href="rainbow-snack-parade.html">🌈 Rainbow Snacks</a>
+    <a href="transport.html">🚗 Transport</a>
+    <a href="baa-baa-black-sheep.html">🐑 Baa Baa</a>
+    <a href="good-morning-sun.html">☀️ Good Morning Sun</a>
+    <a href="days-of-the-week.html">📅 Days of Week</a>
+    <a href="busy-hen.html">🐔 Busy Hen</a>
+    <a href="vowels-worksheet.html">🅐 Vowels</a>
+    <a href="nursery-workbook.html">📖 Workbook</a>
+  </div>
+  <div class="footer-copy">© 2026 GigNLearn · Made with 💛 for parents everywhere</div>
+</footer>
+
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆</button>
+
+<script>
+/* ─────────────────────────────────────────
+   STAR FIELD
+───────────────────────────────────────── */
+(function(){
+  const c=document.getElementById('stars-canvas');
+  const ctx=c.getContext('2d');
+  let stars=[];
+  function resize(){ c.width=window.innerWidth; c.height=window.innerHeight; init(); }
+  function init(){
+    stars=[];
+    for(let i=0;i<220;i++){
+      stars.push({ x:Math.random()*c.width, y:Math.random()*c.height,
+        r:Math.random()*1.5+.3, a:Math.random(), d:Math.random()*.004+.001 });
+    }
+  }
+  function draw(){
+    ctx.clearRect(0,0,c.width,c.height);
+    stars.forEach(s=>{
+      s.a+=s.d; if(s.a>1||s.a<0) s.d*=-1;
+      ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(255,249,196,${s.a})`; ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize',resize); resize(); draw();
+})();
+
+/* ─────────────────────────────────────────
+   FLOATING ZZZs in HERO
+───────────────────────────────────────── */
+const hero = document.querySelector('.hero');
+['💤','z','z','Z'].forEach((ch,i)=>{
+  const el=document.createElement('div');
+  el.className='zzzs'; el.textContent=ch;
+  el.style.cssText=`left:${55+i*8}%;bottom:${28+i*12}%;font-size:${1+i*.3}rem;animation-duration:${2.5+i*.8}s;animation-delay:${i*.4}s;`;
+  hero.appendChild(el);
+});
+
+/* ─────────────────────────────────────────
+   CRY DECODER DATA
+───────────────────────────────────────── */
+const cries = [
+  { icon:'😭', label:'Hunger Cry', color:'rgba(255,107,53,.3)',
+    title:'🍼 This sounds like a hunger cry',
+    desc:'A hunger cry usually starts rhythmically and gets more intense. In the first months, hunger is the #1 reason babies wake and cry — their tiny stomachs empty every 2–3 hours.',
+    fixes:['Offer a feed even if "it\'s not time" — baby tummies don\'t watch clocks','Look for hunger cues: rooting, sucking fists, turning head','After 6 months, consider if cluster feeding in evening might help nights'] },
+  { icon:'😤', label:'Overtired Cry', color:'rgba(199,125,255,.3)',
+    title:'😴 Baby is probably overtired',
+    desc:'Missed the sleep window! An overtired baby releases cortisol which actually makes it HARDER to fall asleep — this is why keeping baby awake to tire them out backfires.',
+    fixes:['Create instant calm: dark room, white noise, gentle rocking','Next time, watch for tired cues: yawning, eye rubbing, staring','Aim for "drowsy but awake" — put down before fully asleep if possible'] },
+  { icon:'💩', label:'Discomfort Cry', color:'rgba(255,215,0,.25)',
+    title:'😣 Something is uncomfortable',
+    desc:'Check the basics — a wet or dirty nappy, clothes tag rubbing, a hair tourniquet (baby\'s finger wrapped in hair), being too hot or too cold, or wind/gas pain.',
+    fixes:['Do a full body check: nappy, temperature, clothing, fingers/toes','Gentle tummy massage in clockwise circles for gas relief','Try bicycle legs to help move trapped wind'] },
+  { icon:'😰', label:'Overstimulated', color:'rgba(77,150,255,.3)',
+    title:'🌊 Baby is overstimulated',
+    desc:'Too much noise, light, activity, or visitors earlier in the day can leave babies in a state of sensory overload — they cry to release the overwhelm, not because of a specific need.',
+    fixes:['Move to a calm, dark, quiet space immediately','Reduce eye contact and talking — sometimes less stimulation helps settle faster','Swaddle snugly — the pressure is deeply calming for overstimulated babies'] },
+  { icon:'👐', label:'Needs Closeness', color:'rgba(255,133,161,.35)',
+    title:'🤱 Baby just wants YOU',
+    desc:'Some cries aren\'t about hunger, pain, or discomfort — they\'re about connection. Babies are wired to seek closeness to their caregiver. This is healthy attachment, not "spoiling."',
+    fixes:['Holding and responding promptly builds security — you cannot spoil a baby','Babywearing during fussy periods keeps hands free and baby calm','Your heartbeat and smell are the most soothing things on earth to your baby'] },
+  { icon:'🦷', label:'Teething Pain', color:'rgba(0,194,203,.3)',
+    title:'🦷 Teething might be the culprit',
+    desc:'Teething usually starts around 4–7 months and can cause significant discomfort, especially at night when there\'s nothing to distract from the pain.',
+    fixes:['Check gums for redness or swelling','Chilled (not frozen) teething rings can soothe','Consult your pharmacist about age-appropriate teething gels or pain relief'] },
+];
+
+const cryGrid = document.getElementById('cryGrid');
+const cryAnswer = document.getElementById('cryAnswer');
+cries.forEach((c,i)=>{
+  const btn=document.createElement('div');
+  btn.className='cry-btn'; btn.setAttribute('role','button');
+  btn.innerHTML=`<span class="cry-icon">${c.icon}</span>${c.label}`;
+  btn.style.background=c.color;
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.cry-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('cryTitle').textContent=c.title;
+    document.getElementById('cryDesc').textContent=c.desc;
+    const ul=document.getElementById('cryFixes'); ul.innerHTML='';
+    c.fixes.forEach(f=>{ const li=document.createElement('li'); li.textContent=f; ul.appendChild(li); });
+    cryAnswer.classList.remove('show');
+    void cryAnswer.offsetWidth;
+    cryAnswer.classList.add('show');
+    setTimeout(()=>cryAnswer.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
+  });
+  cryGrid.appendChild(btn);
+});
+
+/* ─────────────────────────────────────────
+   BEDTIME ROUTINE STEPS
+───────────────────────────────────────── */
+const steps=[
+  { time:'5:30pm', icon:'🌅', title:'Wind Down Activities Begin', tip:'Switch off screens. Move to quieter play.', desc:'Start slowing the energy level — puzzles, colouring, reading instead of running and high-energy play. This signals the brain to begin lowering cortisol.' },
+  { time:'6:30pm', icon:'🛁', title:'Warm Bath Time', tip:'Even 10 minutes works wonders.', desc:'Warm water raises body temperature — and the subsequent cool-down triggers natural sleepiness. Use lavender baby wash for extra calming effect.' },
+  { time:'6:45pm', icon:'👕', title:'Pyjamas & Massage', tip:'A minute of gentle massage does magic.', desc:'Dress baby in comfortable sleepwear. A gentle massage with baby lotion activates the parasympathetic nervous system — the body\'s rest-and-digest mode.' },
+  { time:'7:00pm', icon:'🍼', title:'Final Feed of the Evening', tip:'Top up that tummy before lights out.', desc:'A full feed here reduces the chance of hunger waking later. For older babies, this can be a warm milk drink. Keep lighting dim during this feed.' },
+  { time:'7:15pm', icon:'📖', title:'Quiet Story or Lullaby', tip:'Same book or song every night = powerful cue!', desc:'A predictable story or lullaby becomes a powerful sleep trigger. The repetition itself signals "sleep is moments away." Our GigNLearn poems work beautifully here! 🐯' },
+  { time:'7:30pm', icon:'🌙', title:'Into the Cot Drowsy but Awake', tip:'The magic phrase: "drowsy but awake"', desc:'Place baby down when they\'re calm and drowsy but not fully asleep. This teaches them to complete the journey to sleep independently — the single biggest sleep skill to develop.' },
+];
+const rs=document.getElementById('routineSteps');
+steps.forEach(s=>{
+  rs.innerHTML+=`<div class="routine-step fi">
+    <div class="step-circle">${s.icon}<span class="step-time">${s.time}</span></div>
+    <div class="step-content">
+      <h4>${s.title}</h4>
+      <p>${s.desc}</p>
+      <span class="step-tip">💡 ${s.tip}</span>
+    </div>
+  </div>`;
+});
+
+/* ─────────────────────────────────────────
+   AGE TABS
+───────────────────────────────────────── */
+function showAge(id,btn){
+  document.querySelectorAll('.age-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.age-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* ─────────────────────────────────────────
+   NAV
+───────────────────────────────────────── */
+function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
+document.addEventListener('click',e=>{ if(!e.target.closest('nav')&&!e.target.closest('#mobileMenu')) document.getElementById('mobileMenu').classList.remove('open'); });
+
+/* ─────────────────────────────────────────
+   PROGRESS + SCROLL TOP
+───────────────────────────────────────── */
+window.addEventListener('scroll',()=>{
+  const d=document.documentElement;
+  document.getElementById('prog').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%';
+  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400);
+});
+
+/* ─────────────────────────────────────────
+   INTERSECTION OBSERVER
+───────────────────────────────────────── */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:0.1});
+document.querySelectorAll('.fi,.myth-card,.routine-step').forEach(el=>obs.observe(el));
+
+/* ─────────────────────────────────────────
+   SHARE
+───────────────────────────────────────── */
+function shareWA(){ window.open('https://wa.me/?text='+encodeURIComponent('🌙 Why is my baby not sleeping? Gigloo\'s complete guide — for tired parents everywhere! 🐯 ')+encodeURIComponent(location.href),'_blank'); }
+function shareFB(){ window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank'); }
+function copyLink(){ navigator.clipboard.writeText(location.href).then(()=>{ const m=document.getElementById('copy-msg'); m.style.display='block'; setTimeout(()=>m.style.display='none',2500); }); }
+</script>
+</body>
+</html>
