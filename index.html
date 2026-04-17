@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gig N Learn with Gigloo 🐯 – Free Kids Games, Poems & Printables</title>
 <meta name="description" content="Free kids learning website with ABC games, math maze, nursery rhymes, printable worksheets and poems. Made for ages 2–8 by Gig N Learn with Gigloo the Tiger!">
+<meta name="keywords" content="free kids learning, nursery rhymes, abc game for kids, math game kids, printable worksheets, toddler activities, gig n learn, gigloo">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -13,7 +14,7 @@
     --orange:#FF6B35;--yellow:#FFD93D;--green:#6BCB77;
     --blue:#4D96FF;--purple:#C77DFF;--pink:#FF85A1;
     --red:#FF4757;--teal:#00C2CB;--cream:#FFF9F0;
-    --dark:#2D2D2D;--mid:#555;
+    --dark:#2D2D2D;--mid:#555;--forest:#2D4A3E;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -30,286 +31,170 @@
   .nav-logo{font-family:'Fredoka One',cursive;font-size:1.4rem;color:var(--orange)}
   .nav-logo span{color:var(--blue)}
   .nav-links{display:flex;gap:4px;list-style:none;align-items:center}
-  .nav-links a{
-    font-weight:700;font-size:.82rem;color:var(--dark);
-    padding:6px 12px;border-radius:20px;transition:background .2s;
-  }
+  .nav-links a{font-weight:700;font-size:.8rem;color:var(--dark);padding:6px 10px;border-radius:20px;transition:background .2s}
   .nav-links a:hover{background:var(--yellow);color:var(--dark)}
-  .nav-yt{
-    background:var(--red);color:#fff !important;
-    border-radius:20px;padding:6px 14px;font-weight:700;
-    display:flex;align-items:center;gap:5px;font-size:.82rem;
-    transition:opacity .2s;
-  }
-  .nav-yt:hover{opacity:.88;background:var(--red) !important}
+  .nav-yt{background:var(--red);color:#fff !important;border-radius:20px;padding:6px 13px;font-weight:700;display:flex;align-items:center;gap:5px;font-size:.8rem;transition:opacity .2s}
+  .nav-yt:hover{opacity:.88 !important;background:var(--red) !important}
   .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px}
   .hamburger span{width:24px;height:3px;background:var(--dark);border-radius:2px}
   .mobile-menu{
     display:none;position:fixed;top:62px;left:0;right:0;bottom:0;
     background:rgba(255,255,255,.98);z-index:99;
-    flex-direction:column;align-items:center;justify-content:center;gap:18px;
+    flex-direction:column;align-items:center;justify-content:center;gap:10px;
+    overflow-y:auto;padding:20px;
   }
   .mobile-menu.open{display:flex}
-  .mobile-menu a{
-    font-family:'Fredoka One',cursive;font-size:1.4rem;color:var(--dark);
-    padding:10px 30px;border-radius:30px;transition:background .2s;
-  }
+  .mobile-menu a{font-family:'Fredoka One',cursive;font-size:1.3rem;color:var(--dark);padding:9px 28px;border-radius:28px;transition:background .2s;width:100%;text-align:center;max-width:300px}
   .mobile-menu a:hover{background:var(--yellow)}
   .mobile-menu .mm-yt{background:var(--red);color:#fff}
-  @media(max-width:740px){.nav-links{display:none}.hamburger{display:flex}}
+  .mobile-menu .mm-divider{width:80%;height:1px;background:#eee;margin:6px 0}
+  .mobile-menu .mm-small{font-size:1.05rem !important;color:var(--mid)}
+  @media(max-width:860px){.nav-links{display:none}.hamburger{display:flex}}
 
   /* ===== HERO ===== */
   .hero{
     background:linear-gradient(135deg,#1a1a4e 0%,#2e3b8e 25%,#4D96FF 55%,#6BCB77 80%,#FFD93D 100%);
-    padding:70px 20px 60px;
-    text-align:center;position:relative;overflow:hidden;
+    padding:70px 20px 60px;text-align:center;position:relative;overflow:hidden;
     min-height:520px;display:flex;align-items:center;justify-content:center;
   }
-  .hero::before{
-    content:'🌟 ⭐ ✨ 💫 🌟 ⭐ ✨ 💫 🌟';
-    position:absolute;top:10px;left:0;right:0;
-    font-size:1rem;opacity:.3;letter-spacing:18px;white-space:nowrap;
-  }
-  .hero::after{
-    content:'🌸 🌻 🎈 🦋 🌈 🎵 🌺 🎮 🌸 🌻';
-    position:absolute;bottom:6px;left:0;right:0;
-    font-size:1rem;letter-spacing:10px;opacity:.35;white-space:nowrap;
-  }
+  .hero::before{content:'🌟 ⭐ ✨ 💫 🌟 ⭐ ✨ 💫 🌟';position:absolute;top:10px;left:0;right:0;font-size:1rem;opacity:.3;letter-spacing:18px;white-space:nowrap}
+  .hero::after{content:'🌸 🌻 🎈 🦋 🌈 🎵 🌺 🎮 🌸 🌻';position:absolute;bottom:6px;left:0;right:0;font-size:1rem;letter-spacing:10px;opacity:.35;white-space:nowrap}
   .hero-inner{position:relative;z-index:2;max-width:680px;margin:0 auto}
-  .gigloo-mascot{
-    font-size:5.5rem;margin-bottom:12px;display:block;
-    animation:bounce-hero 3s ease-in-out infinite;
-  }
+  .gigloo-mascot{font-size:5.5rem;margin-bottom:12px;display:block;animation:bounce-hero 3s ease-in-out infinite}
   @keyframes bounce-hero{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-14px) rotate(3deg)}}
-  .hero h1{
-    font-family:'Fredoka One',cursive;
-    font-size:clamp(2rem,6vw,3.6rem);
-    color:#fff;text-shadow:3px 4px 12px rgba(0,0,0,.25);
-    line-height:1.15;margin-bottom:12px;
-  }
-  .hero-sub{
-    font-size:1.05rem;font-weight:700;color:rgba(255,255,255,.88);
-    margin-bottom:32px;
-  }
+  .hero h1{font-family:'Fredoka One',cursive;font-size:clamp(2rem,6vw,3.6rem);color:#fff;text-shadow:3px 4px 12px rgba(0,0,0,.25);line-height:1.15;margin-bottom:12px}
+  .hero-sub{font-size:1.05rem;font-weight:700;color:rgba(255,255,255,.88);margin-bottom:32px}
   .hero-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
-  .hero-btn{
-    display:inline-flex;align-items:center;gap:9px;
-    font-family:'Fredoka One',cursive;font-size:1.1rem;
-    padding:14px 30px;border-radius:50px;
-    box-shadow:0 6px 0 rgba(0,0,0,.15);
-    transition:transform .15s,box-shadow .15s;
-  }
+  .hero-btn{display:inline-flex;align-items:center;gap:9px;font-family:'Fredoka One',cursive;font-size:1.1rem;padding:14px 30px;border-radius:50px;box-shadow:0 6px 0 rgba(0,0,0,.15);transition:transform .15s,box-shadow .15s}
   .hero-btn:hover{transform:translateY(-3px);box-shadow:0 9px 0 rgba(0,0,0,.15)}
   .hero-btn.primary{background:var(--yellow);color:var(--dark)}
   .hero-btn.secondary{background:#fff;color:var(--orange)}
   .hero-btn.yt{background:var(--red);color:#fff}
 
-  /* ===== STAT BAR ===== */
-  .stat-bar{
-    background:#fff;
-    border-bottom:3px solid var(--yellow);
-    padding:16px 20px;
-    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
-  }
-  .stat-item{
-    display:flex;align-items:center;gap:8px;
-    font-weight:800;font-size:.88rem;color:var(--dark);
-    padding:0 18px;border-right:2px solid #eee;
-  }
+  /* STAT BAR */
+  .stat-bar{background:#fff;border-bottom:3px solid var(--yellow);padding:14px 20px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .stat-item{display:flex;align-items:center;gap:8px;font-weight:800;font-size:.88rem;color:var(--dark);padding:0 16px;border-right:2px solid #eee}
   .stat-item:last-child{border-right:none}
   .stat-num{font-family:'Fredoka One',cursive;font-size:1.3rem;color:var(--orange)}
 
-  /* ===== SECTIONS ===== */
+  /* SECTIONS */
   .section{padding:56px 20px}
   .container{max-width:1000px;margin:0 auto}
   .section-header{text-align:center;margin-bottom:36px}
-  .section-tag{
-    display:inline-block;
-    font-weight:800;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;
-    color:var(--orange);margin-bottom:8px;
-  }
-  .section-title{
-    font-family:'Fredoka One',cursive;
-    font-size:clamp(1.6rem,4vw,2.4rem);color:var(--dark);
-    line-height:1.2;
-  }
+  .section-tag{display:inline-block;font-weight:800;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+  .section-title{font-family:'Fredoka One',cursive;font-size:clamp(1.6rem,4vw,2.4rem);color:var(--dark);line-height:1.2}
   .section-sub{color:var(--mid);font-weight:600;font-size:.95rem;margin-top:8px}
 
-  /* ===== GAMES GRID ===== */
+  /* GAMES */
   .games-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
-  .game-card{
-    background:#fff;border-radius:24px;
-    padding:28px 20px;text-align:center;
-    box-shadow:0 4px 20px rgba(0,0,0,.08);
-    border-top:5px solid var(--bc,var(--orange));
-    transition:transform .2s,box-shadow .2s;
-    display:block;color:var(--dark);
-  }
+  .game-card{background:#fff;border-radius:24px;padding:28px 20px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.08);border-top:5px solid var(--bc,var(--orange));transition:transform .2s,box-shadow .2s;display:block;color:var(--dark)}
   .game-card:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(0,0,0,.12)}
   .game-card .gc-icon{font-size:3rem;margin-bottom:14px;display:block}
   .game-card h3{font-family:'Fredoka One',cursive;font-size:1.2rem;margin-bottom:8px}
   .game-card p{font-size:.85rem;color:var(--mid);font-weight:600;line-height:1.5;margin-bottom:14px}
-  .game-badge{
-    display:inline-block;
-    font-size:.72rem;font-weight:800;
-    padding:4px 12px;border-radius:20px;
-    background:var(--bc,var(--orange));color:#fff;
-    opacity:.85;
-  }
+  .game-badge{display:inline-block;font-size:.72rem;font-weight:800;padding:4px 12px;border-radius:20px;background:var(--bc,var(--orange));color:#fff;opacity:.85}
 
-  /* ===== POEMS PREVIEW ===== */
-  .poems-scroll{
-    display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;
-  }
-  .poem-card{
-    background:#fff;border-radius:20px;overflow:hidden;
-    box-shadow:0 3px 14px rgba(0,0,0,.07);
-    transition:transform .2s,box-shadow .2s;display:block;color:var(--dark);
-  }
+  /* POEMS */
+  .poems-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+  .poem-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.07);transition:transform .2s,box-shadow .2s;display:block;color:var(--dark)}
   .poem-card:hover{transform:translateY(-5px);box-shadow:0 10px 28px rgba(0,0,0,.11)}
-  .poem-card-header{
-    height:90px;display:flex;align-items:center;justify-content:center;font-size:2.6rem;
-  }
+  .poem-card-header{height:90px;display:flex;align-items:center;justify-content:center;font-size:2.6rem}
   .poem-card-body{padding:14px 14px 16px}
   .poem-card-body h4{font-family:'Fredoka One',cursive;font-size:1rem;margin-bottom:4px}
   .poem-card-body p{font-size:.78rem;color:var(--mid);font-weight:600;line-height:1.4}
-  .poem-tag{
-    display:inline-block;font-size:.7rem;font-weight:800;
-    padding:3px 9px;border-radius:10px;margin-top:7px;
-  }
-  .see-all-btn{
-    display:block;text-align:center;
-    font-family:'Fredoka One',cursive;font-size:1.1rem;
-    color:#fff;background:var(--orange);
-    padding:14px;border-radius:16px;
-    box-shadow:0 4px 0 rgba(0,0,0,.12);
-    transition:transform .15s,box-shadow .15s;
-    margin-top:24px;
-  }
+  .poem-tag{display:inline-block;font-size:.7rem;font-weight:800;padding:3px 9px;border-radius:10px;margin-top:7px}
+  .see-all-btn{display:block;text-align:center;font-family:'Fredoka One',cursive;font-size:1.1rem;color:#fff;background:var(--orange);padding:14px;border-radius:16px;box-shadow:0 4px 0 rgba(0,0,0,.12);transition:transform .15s,box-shadow .15s;margin-top:24px}
   .see-all-btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 rgba(0,0,0,.12)}
 
-  /* ===== PARENTS HUB ===== */
-  .hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-  .hub-card{
-    background:#fff;border-radius:20px;
-    padding:24px 20px;
-    box-shadow:0 3px 14px rgba(0,0,0,.07);
-    border-left:5px solid var(--bc,var(--green));
-    transition:transform .2s;display:block;color:var(--dark);
-  }
+  /* YT */
+  .yt-section{background:linear-gradient(135deg,var(--red),#C0392B);border-radius:28px;padding:44px 28px;text-align:center;box-shadow:0 8px 30px rgba(255,71,87,.3)}
+  .yt-section h2{font-family:'Fredoka One',cursive;font-size:2rem;color:#fff;margin-bottom:10px}
+  .yt-section p{color:rgba(255,255,255,.88);font-weight:700;margin-bottom:28px}
+  .yt-btn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--red);font-family:'Fredoka One',cursive;font-size:1.3rem;padding:16px 40px;border-radius:50px;box-shadow:0 6px 0 rgba(0,0,0,.15);transition:transform .15s,box-shadow .15s}
+  .yt-btn:hover{transform:translateY(-3px);box-shadow:0 9px 0 rgba(0,0,0,.15)}
+  .yt-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+  .yt-chip{background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.3);color:#fff;font-weight:700;font-size:.85rem;padding:7px 16px;border-radius:30px}
+
+  /* PARENTS HUB */
+  .hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+  .hub-card{background:#fff;border-radius:20px;padding:24px 20px;box-shadow:0 3px 14px rgba(0,0,0,.07);border-left:5px solid var(--bc,var(--green));transition:transform .2s;display:block;color:var(--dark)}
   .hub-card:hover{transform:translateY(-4px)}
   .hub-card .hc-icon{font-size:2rem;margin-bottom:10px;display:block}
   .hub-card h4{font-family:'Fredoka One',cursive;font-size:1.05rem;margin-bottom:6px}
   .hub-card p{font-size:.85rem;color:var(--mid);font-weight:600;line-height:1.5}
-  .hub-card .read-link{
-    display:inline-block;margin-top:12px;
-    font-size:.8rem;font-weight:800;color:var(--green);
-  }
-  .coming-soon{opacity:.55;cursor:default}
-  .coming-soon:hover{transform:none}
-  .cs-badge{
-    display:inline-block;background:#eee;color:#888;
-    font-size:.68rem;font-weight:800;letter-spacing:.05em;
-    padding:3px 10px;border-radius:10px;margin-top:8px;
-  }
+  .hub-card .read-link{display:inline-block;margin-top:12px;font-size:.8rem;font-weight:800;color:var(--green)}
 
-  /* ===== YT SECTION ===== */
-  .yt-section{
-    background:linear-gradient(135deg,var(--red),#C0392B);
-    border-radius:28px;padding:44px 28px;text-align:center;
-    box-shadow:0 8px 30px rgba(255,71,87,.3);
-  }
-  .yt-section h2{font-family:'Fredoka One',cursive;font-size:2rem;color:#fff;margin-bottom:10px}
-  .yt-section p{color:rgba(255,255,255,.88);font-weight:700;margin-bottom:28px;font-size:1rem}
-  .yt-btn{
-    display:inline-flex;align-items:center;gap:10px;
-    background:#fff;color:var(--red);
-    font-family:'Fredoka One',cursive;font-size:1.3rem;
-    padding:16px 40px;border-radius:50px;
-    box-shadow:0 6px 0 rgba(0,0,0,.15);
-    transition:transform .15s,box-shadow .15s;
-  }
-  .yt-btn:hover{transform:translateY(-3px);box-shadow:0 9px 0 rgba(0,0,0,.15)}
-  .yt-videos-row{
-    display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:28px;
-  }
-  .yt-chip{
-    background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.3);
-    color:#fff;font-weight:700;font-size:.85rem;
-    padding:8px 18px;border-radius:30px;
-  }
-
-  /* ===== PRINTABLES ===== */
-  .print-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
-  .print-card{
-    background:#fff;border-radius:18px;
-    padding:22px 16px;text-align:center;
-    box-shadow:0 3px 12px rgba(0,0,0,.07);
-    border-top:4px solid var(--bc,var(--blue));
-    transition:transform .2s;display:block;color:var(--dark);
-  }
+  /* PRINTABLES */
+  .print-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:16px}
+  .print-card{background:#fff;border-radius:18px;padding:22px 16px;text-align:center;box-shadow:0 3px 12px rgba(0,0,0,.07);border-top:4px solid var(--bc,var(--blue));transition:transform .2s;display:block;color:var(--dark)}
   .print-card:hover{transform:translateY(-4px)}
   .print-card .pi{font-size:2.2rem;margin-bottom:10px;display:block}
   .print-card h4{font-family:'Fredoka One',cursive;font-size:.95rem;margin-bottom:5px}
   .print-card p{font-size:.78rem;color:var(--mid);font-weight:600}
-  .print-card .dl-tag{
-    display:inline-block;margin-top:10px;
-    background:var(--bc,var(--blue));color:#fff;
-    font-size:.72rem;font-weight:800;
-    padding:4px 12px;border-radius:12px;
-  }
+  .print-card .dl-tag{display:inline-block;margin-top:10px;background:var(--bc,var(--blue));color:#fff;font-size:.72rem;font-weight:800;padding:4px 12px;border-radius:12px}
 
-  /* ===== SOCIAL ===== */
+  /* ABOUT STRIP */
+  .about-strip{background:var(--forest);border-radius:28px;padding:44px 32px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+  @media(max-width:640px){.about-strip{grid-template-columns:1fr;text-align:center}}
+  .about-strip h2{font-family:'Fredoka One',cursive;font-size:1.8rem;color:var(--yellow);margin-bottom:12px}
+  .about-strip p{color:rgba(255,255,255,.82);font-weight:600;font-size:.95rem;line-height:1.7;margin-bottom:18px}
+  .about-link{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:var(--dark);font-family:'Fredoka One',cursive;font-size:1rem;padding:11px 24px;border-radius:30px;box-shadow:0 4px 0 rgba(0,0,0,.12);transition:transform .15s}
+  .about-link:hover{transform:translateY(-2px)}
+  .as-right{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .as-stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:18px 14px;text-align:center}
+  .as-stat .asn{font-family:'Fredoka One',cursive;font-size:1.8rem;color:var(--yellow)}
+  .as-stat .asl{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.7);margin-top:4px}
+
+  /* SOCIAL */
   .social-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
-  .social-card{
-    border-radius:20px;padding:24px 18px;text-align:center;
-    box-shadow:0 4px 16px rgba(0,0,0,.1);
-    transition:transform .2s;display:block;color:#fff;
-  }
+  .social-card{border-radius:20px;padding:24px 18px;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.1);transition:transform .2s;display:block;color:#fff}
   .social-card:hover{transform:translateY(-4px)}
   .social-card .si{font-size:2.2rem;margin-bottom:10px;display:block}
   .social-card h4{font-family:'Fredoka One',cursive;font-size:1.1rem;margin-bottom:4px}
   .social-card p{font-size:.82rem;opacity:.88;font-weight:600}
 
-  /* ===== FOOTER ===== */
-  footer{background:var(--dark);color:rgba(255,255,255,.75);padding:44px 20px 28px}
-  .footer-inner{max-width:1000px;margin:0 auto}
-  .footer-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;margin-bottom:32px}
-  @media(max-width:640px){.footer-top{grid-template-columns:1fr 1fr}}
-  .footer-logo{font-family:'Fredoka One',cursive;font-size:1.5rem;color:var(--yellow);margin-bottom:8px}
-  .footer-tagline{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.6}
-  .footer-col h4{font-family:'Fredoka One',cursive;font-size:.95rem;color:#fff;margin-bottom:12px}
-  .footer-col ul{list-style:none;padding:0}
-  .footer-col ul li{margin-bottom:8px}
-  .footer-col ul li a{
-    font-size:.82rem;color:rgba(255,255,255,.6);
-    transition:color .2s;
-  }
-  .footer-col ul li a:hover{color:#fff}
-  .footer-bottom{
-    border-top:1px solid rgba(255,255,255,.1);
-    padding-top:20px;text-align:center;
-    font-size:.78rem;color:rgba(255,255,255,.4);
-  }
+  /* CONTACT STRIP */
+  .contact-strip{background:linear-gradient(135deg,#4D96FF,#C77DFF);border-radius:28px;padding:44px 32px;text-align:center;box-shadow:0 8px 30px rgba(77,150,255,.25)}
+  .contact-strip h2{font-family:'Fredoka One',cursive;font-size:1.8rem;color:#fff;margin-bottom:8px}
+  .contact-strip p{color:rgba(255,255,255,.88);font-weight:700;margin-bottom:26px}
+  .contact-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .c-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Fredoka One',cursive;font-size:1rem;padding:12px 24px;border-radius:40px;box-shadow:0 5px 0 rgba(0,0,0,.12);transition:transform .15s,box-shadow .15s}
+  .c-btn:hover{transform:translateY(-2px);box-shadow:0 7px 0 rgba(0,0,0,.12)}
+  .c-btn.email{background:#fff;color:var(--blue)}
+  .c-btn.wa{background:#25D366;color:#fff}
+  .c-btn.page{background:rgba(255,255,255,.15);color:#fff;border:2px solid rgba(255,255,255,.35)}
 
-  /* ===== SCROLL TOP ===== */
-  #scrollTop{
-    position:fixed;bottom:24px;right:24px;z-index:99;
-    background:var(--orange);color:#fff;
-    width:46px;height:46px;border-radius:50%;border:none;
-    font-size:1.3rem;cursor:pointer;
-    box-shadow:0 4px 16px rgba(255,107,53,.4);
-    display:none;align-items:center;justify-content:center;
-    transition:transform .2s;
-  }
+  /* ===== FOOTER ===== */
+  footer{background:var(--dark);color:rgba(255,255,255,.75);padding:50px 20px 28px}
+  .footer-inner{max-width:1000px;margin:0 auto}
+  .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;margin-bottom:36px}
+  @media(max-width:760px){.footer-top{grid-template-columns:1fr 1fr}}
+  @media(max-width:420px){.footer-top{grid-template-columns:1fr}}
+  .f-logo{font-family:'Fredoka One',cursive;font-size:1.55rem;color:var(--yellow);margin-bottom:10px;display:block}
+  .f-tagline{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:16px}
+  .f-social-row{display:flex;flex-wrap:wrap;gap:8px}
+  .f-social-row a{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:background .2s}
+  .f-social-row a:hover{background:rgba(255,255,255,.2)}
+  .footer-col h4{font-family:'Fredoka One',cursive;font-size:.95rem;color:#fff;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .footer-col ul{list-style:none;padding:0}
+  .footer-col ul li{margin-bottom:9px}
+  .footer-col ul li a{font-size:.83rem;color:rgba(255,255,255,.6);transition:color .2s;display:flex;align-items:center;gap:6px}
+  .footer-col ul li a:hover{color:#fff}
+  .footer-divider{height:1px;background:rgba(255,255,255,.1);margin-bottom:22px}
+  .footer-bottom{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+  .f-copy{font-size:.78rem;color:rgba(255,255,255,.4)}
+  .f-legal{display:flex;flex-wrap:wrap;gap:14px}
+  .f-legal a{font-size:.78rem;color:rgba(255,255,255,.45);transition:color .2s}
+  .f-legal a:hover{color:rgba(255,255,255,.85)}
+
+  /* SCROLL TOP */
+  #scrollTop{position:fixed;bottom:24px;right:24px;z-index:99;background:var(--orange);color:#fff;width:46px;height:46px;border-radius:50%;border:none;font-size:1.3rem;cursor:pointer;box-shadow:0 4px 16px rgba(255,107,53,.4);display:none;align-items:center;justify-content:center;transition:transform .2s}
   #scrollTop:hover{transform:translateY(-3px)}
   #scrollTop.visible{display:flex}
 
-  /* ===== FADE IN ===== */
+  /* FADE IN */
   .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
   .fade-in.visible{opacity:1;transform:translateY(0)}
-
-  /* ===== SECTION ALTERNATING BG ===== */
   .bg-white{background:#fff}
   .bg-cream{background:var(--cream)}
   .bg-sage{background:#EEF4F0}
@@ -326,6 +211,8 @@
     <li><a href="math-maze.html">Math Maze</a></li>
     <li><a href="poems/index.html">Poems</a></li>
     <li><a href="name-labels.html">Labels</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
     <li><a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank" class="nav-yt">▶ YouTube</a></li>
   </ul>
   <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -337,9 +224,15 @@
   <a href="index.html" onclick="closeMenu()">🏠 Home</a>
   <a href="abc-game.html" onclick="closeMenu()">🔤 ABC Game</a>
   <a href="math-maze.html" onclick="closeMenu()">🔢 Math Maze</a>
-  <a href="poems/index.html" onclick="closeMenu()">🎵 Poems & Books</a>
+  <a href="poems/index.html" onclick="closeMenu()">🎵 Poems &amp; Books</a>
   <a href="name-labels.html" onclick="closeMenu()">🏷️ Name Labels</a>
-  <a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank" class="mm-yt" onclick="closeMenu()">▶ YouTube</a>
+  <div class="mm-divider"></div>
+  <a href="about.html" onclick="closeMenu()" class="mm-small">ℹ️ About Us</a>
+  <a href="contact.html" onclick="closeMenu()" class="mm-small">📧 Contact Us</a>
+  <a href="privacy.html" onclick="closeMenu()" class="mm-small">🔒 Privacy Policy</a>
+  <a href="terms.html" onclick="closeMenu()" class="mm-small">📜 Terms &amp; Conditions</a>
+  <div class="mm-divider"></div>
+  <a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank" class="mm-yt" onclick="closeMenu()">▶ YouTube Channel</a>
 </div>
 
 <!-- HERO -->
@@ -351,7 +244,7 @@
     <div class="hero-btns">
       <a href="abc-game.html" class="hero-btn primary">🔤 Play ABC Game</a>
       <a href="poems/index.html" class="hero-btn secondary">🎵 Poems &amp; Books</a>
-      <a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank" class="hero-btn yt">▶ Watch on YouTube</a>
+      <a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank" class="hero-btn yt">▶ YouTube</a>
     </div>
   </div>
 </section>
@@ -362,6 +255,7 @@
   <div class="stat-item"><span class="stat-num">15+</span> Poems &amp; Books</div>
   <div class="stat-item"><span class="stat-num">10+</span> Free PDFs</div>
   <div class="stat-item"><span class="stat-num">100%</span> Child Safe</div>
+  <div class="stat-item"><span class="stat-num">0</span> Signup Needed</div>
 </div>
 
 <!-- GAMES -->
@@ -374,34 +268,30 @@
     </div>
     <div class="games-grid">
       <a href="abc-game.html" class="game-card" style="--bc:var(--orange)">
-        <span class="gc-icon">🔤</span>
-        <h3>ABC Tap &amp; Play</h3>
+        <span class="gc-icon">🔤</span><h3>ABC Tap &amp; Play</h3>
         <p>Tap each letter to hear its name and see it light up!</p>
         <span class="game-badge">Ages 2–5 · Free</span>
       </a>
       <a href="math-maze.html" class="game-card" style="--bc:var(--purple)">
-        <span class="gc-icon">🔢</span>
-        <h3>Math Maze</h3>
+        <span class="gc-icon">🔢</span><h3>Math Maze</h3>
         <p>Help Gigloo reach his den by solving fun number puzzles!</p>
         <span class="game-badge" style="background:var(--purple)">3 Levels · Free</span>
       </a>
       <a href="name-labels.html" class="game-card" style="--bc:var(--teal)">
-        <span class="gc-icon">🏷️</span>
-        <h3>Name Label Maker</h3>
+        <span class="gc-icon">🏷️</span><h3>Name Label Maker</h3>
         <p>Make cute custom name labels for school bags &amp; books!</p>
         <span class="game-badge" style="background:var(--teal)">Print Ready · Free</span>
       </a>
       <a href="poems/alphabet-number-tracing-book.html" class="game-card" style="--bc:var(--blue)">
-        <span class="gc-icon">✏️</span>
-        <h3>Tracing Book</h3>
+        <span class="gc-icon">✏️</span><h3>Tracing Book</h3>
         <p>Trace A–Z capitals, small letters and numbers 1–10!</p>
-        <span class="game-badge" style="background:var(--blue)">PDF Download · Free</span>
+        <span class="game-badge" style="background:var(--blue)">PDF · Free</span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- POEMS PREVIEW -->
+<!-- POEMS -->
 <section class="section bg-cream fade-in">
   <div class="container">
     <div class="section-header">
@@ -409,70 +299,38 @@
       <h2 class="section-title">Poems, Songs &amp; Worksheets</h2>
       <p class="section-sub">Sing along, read aloud &amp; download free PDFs — new content every week!</p>
     </div>
-    <div class="poems-scroll">
+    <div class="poems-grid">
       <a href="poems/magic-words.html" class="poem-card">
         <div class="poem-card-header" style="background:linear-gradient(135deg,#FF6B35,#FFD93D,#6BCB77)">✨</div>
-        <div class="poem-card-body">
-          <h4>Magic Words</h4>
-          <p>Please, thank you &amp; sorry — manners made fun!</p>
-          <span class="poem-tag" style="background:#FF6B3522;color:var(--orange)">🎵 Poem + PDF</span>
-        </div>
+        <div class="poem-card-body"><h4>Magic Words</h4><p>Please, thank you &amp; sorry — manners made fun!</p><span class="poem-tag" style="background:#FF6B3522;color:var(--orange)">🎵 Poem + PDF</span></div>
       </a>
       <a href="poems/wiggle-wiggle-worm.html" class="poem-card">
         <div class="poem-card-header" style="background:linear-gradient(180deg,#87CEEB,#6BCB77,#5C3A1E)">🐛</div>
-        <div class="poem-card-body">
-          <h4>Wiggle Wiggle Worm</h4>
-          <p>Original dance poem — wiggle along!</p>
-          <span class="poem-tag" style="background:#E8734A22;color:#E8734A">⭐ Original</span>
-        </div>
+        <div class="poem-card-body"><h4>Wiggle Wiggle Worm</h4><p>Original dance poem — wiggle along!</p><span class="poem-tag" style="background:#E8734A22;color:#E8734A">⭐ Original</span></div>
       </a>
       <a href="poems/one-red-apple.html" class="poem-card">
         <div class="poem-card-header" style="background:linear-gradient(135deg,#FF4757,#FFD93D)">🍎</div>
-        <div class="poem-card-body">
-          <h4>One Red Apple</h4>
-          <p>Count fruits 1–10 with this fun rhyme!</p>
-          <span class="poem-tag" style="background:#FF475722;color:var(--red)">🔢 Counting</span>
-        </div>
+        <div class="poem-card-body"><h4>One Red Apple</h4><p>Count fruits 1–10 with this fun rhyme!</p><span class="poem-tag" style="background:#FF475722;color:var(--red)">🔢 Counting</span></div>
       </a>
       <a href="poems/baa-baa-black-sheep.html" class="poem-card">
         <div class="poem-card-header" style="background:linear-gradient(180deg,#1a1a4e,#2d3561,#6BCB77)">🐑</div>
-        <div class="poem-card-body">
-          <h4>Baa Baa Black Sheep</h4>
-          <p>Classic nursery rhyme with Gigloo!</p>
-          <span class="poem-tag" style="background:#4D96FF22;color:var(--blue)">🎵 Classic</span>
-        </div>
+        <div class="poem-card-body"><h4>Baa Baa Black Sheep</h4><p>Classic nursery rhyme with Gigloo!</p><span class="poem-tag" style="background:#4D96FF22;color:var(--blue)">🎵 Classic</span></div>
       </a>
       <a href="poems/all-things-bright-and-beautiful.html" class="poem-card">
         <div class="poem-card-header" style="background:linear-gradient(180deg,#1a1a4e,#4D96FF,#6BCB77,#4CAF50)">🌸</div>
-        <div class="poem-card-body">
-          <h4>All Things Bright &amp; Beautiful</h4>
-          <p>Classic nature poem — a timeless favourite!</p>
-          <span class="poem-tag" style="background:#6BCB7722;color:var(--green)">🌿 Nature</span>
-        </div>
+        <div class="poem-card-body"><h4>All Things Bright &amp; Beautiful</h4><p>Classic nature poem — a timeless favourite!</p><span class="poem-tag" style="background:#6BCB7722;color:var(--green)">🌿 Nature</span></div>
       </a>
       <a href="poems/good-morning-sun.html" class="poem-card">
         <div class="poem-card-header" style="background:linear-gradient(180deg,#FF6B35,#FFD93D,#87CEEB)">☀️</div>
-        <div class="poem-card-body">
-          <h4>Good Morning Sun</h4>
-          <p>Bright &amp; cheerful morning rhyme for kids!</p>
-          <span class="poem-tag" style="background:#FFD93D22;color:#CC8800">🌅 Morning</span>
-        </div>
+        <div class="poem-card-body"><h4>Good Morning Sun</h4><p>Bright &amp; cheerful morning rhyme!</p><span class="poem-tag" style="background:#FFD93D22;color:#CC8800">🌅 Morning</span></div>
       </a>
       <a href="poems/days-of-the-week.html" class="poem-card">
         <div class="poem-card-header" style="background:linear-gradient(180deg,#0d0d1a,#3D0066,#7B2FBE)">📅</div>
-        <div class="poem-card-body">
-          <h4>Days of the Week</h4>
-          <p>Learn all 7 days with a catchy beat!</p>
-          <span class="poem-tag" style="background:#C77DFF22;color:var(--purple)">📅 Days</span>
-        </div>
+        <div class="poem-card-body"><h4>Days of the Week</h4><p>Learn all 7 days with a catchy beat!</p><span class="poem-tag" style="background:#C77DFF22;color:var(--purple)">📅 Days</span></div>
       </a>
       <a href="poems/index.html" class="poem-card" style="background:linear-gradient(135deg,var(--orange),var(--yellow))">
         <div class="poem-card-header" style="background:transparent;font-size:2rem">+8 More</div>
-        <div class="poem-card-body">
-          <h4 style="color:#fff">See All Poems &amp; Books</h4>
-          <p style="color:rgba(255,255,255,.85)">15+ poems, worksheets &amp; parent guides</p>
-          <span class="poem-tag" style="background:rgba(255,255,255,.25);color:#fff">View All →</span>
-        </div>
+        <div class="poem-card-body"><h4 style="color:#fff">See All Poems &amp; Books</h4><p style="color:rgba(255,255,255,.85)">15+ poems, worksheets &amp; parent guides</p><span class="poem-tag" style="background:rgba(255,255,255,.25);color:#fff">View All →</span></div>
       </a>
     </div>
     <a href="poems/index.html" class="see-all-btn">📚 Browse All Poems, Books &amp; Parent Guides →</a>
@@ -485,15 +343,14 @@
     <div class="yt-section">
       <h2>🎵 Watch &amp; Sing Along!</h2>
       <p>Fun nursery rhymes and learning videos — new videos every week with Gigloo the Tiger!</p>
-      <a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank" class="yt-btn">
-        ▶ Visit our YouTube Channel
-      </a>
-      <div class="yt-videos-row">
+      <a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank" class="yt-btn">▶ Visit our YouTube Channel</a>
+      <div class="yt-chips">
         <span class="yt-chip">🐛 Wiggle Wiggle Worm</span>
         <span class="yt-chip">✨ Magic Words</span>
         <span class="yt-chip">🍎 One Red Apple</span>
         <span class="yt-chip">🌸 All Things Bright</span>
         <span class="yt-chip">🚌 Transport Song</span>
+        <span class="yt-chip">🐔 Busy Hen</span>
       </div>
     </div>
   </div>
@@ -509,26 +366,22 @@
     </div>
     <div class="hub-grid">
       <a href="poems/toddler-tantrums-guide.html" class="hub-card" style="--bc:#7B9E87">
-        <span class="hc-icon">😤➡️😊</span>
-        <h4>Handle Tantrums Without Yelling</h4>
+        <span class="hc-icon">😤➡️😊</span><h4>Handle Tantrums Without Yelling</h4>
         <p>Evidence-based calm parenting strategies for toddler meltdowns. Ages 1–4.</p>
         <span class="read-link">Read guide →</span>
       </a>
       <a href="poems/when-should-child-start-reading.html" class="hub-card" style="--bc:var(--blue)">
-        <span class="hc-icon">📖</span>
-        <h4>When Should My Child Start Reading?</h4>
+        <span class="hc-icon">📖</span><h4>When Should My Child Start Reading?</h4>
         <p>Signs of reading readiness and how to support early literacy at home.</p>
         <span class="read-link" style="color:var(--blue)">Read guide →</span>
       </a>
       <a href="poems/building-self-esteem-in-children.html" class="hub-card" style="--bc:var(--orange)">
-        <span class="hc-icon">💪</span>
-        <h4>Building Self-Esteem in Children</h4>
+        <span class="hc-icon">💪</span><h4>Building Self-Esteem in Children</h4>
         <p>Simple daily habits that help children develop confidence and resilience.</p>
         <span class="read-link" style="color:var(--orange)">Read guide →</span>
       </a>
       <a href="poems/baby-sleeping-problems.html" class="hub-card" style="--bc:var(--purple)">
-        <span class="hc-icon">😴</span>
-        <h4>Baby &amp; Toddler Sleep Problems</h4>
+        <span class="hc-icon">😴</span><h4>Baby &amp; Toddler Sleep Problems</h4>
         <p>Practical, gentle solutions for common sleep challenges in little ones.</p>
         <span class="read-link" style="color:var(--purple)">Read guide →</span>
       </a>
@@ -536,7 +389,7 @@
   </div>
 </section>
 
-<!-- FREE PRINTABLES -->
+<!-- PRINTABLES -->
 <section class="section bg-white fade-in">
   <div class="container">
     <div class="section-header">
@@ -546,47 +399,54 @@
     </div>
     <div class="print-grid">
       <a href="poems/alphabet-number-tracing-book.html" class="print-card" style="--bc:var(--orange)">
-        <span class="pi">✏️</span>
-        <h4>A–Z Tracing Book</h4>
-        <p>Capital + small letters + numbers 1–10</p>
+        <span class="pi">✏️</span><h4>A–Z Tracing Book</h4><p>Capital + small letters + numbers 1–10</p>
         <span class="dl-tag">📥 Free PDF</span>
       </a>
       <a href="poems/vowels-worksheet.html" class="print-card" style="--bc:var(--blue)">
-        <span class="pi">🅐</span>
-        <h4>Vowels Worksheet</h4>
-        <p>A E I O U — learn vowels with fun activities</p>
+        <span class="pi">🅐</span><h4>Vowels Worksheet</h4><p>A E I O U — fun rainbow activities</p>
         <span class="dl-tag" style="background:var(--blue)">📥 Free PDF</span>
       </a>
       <a href="poems/nursery-workbook.html" class="print-card" style="--bc:var(--green)">
-        <span class="pi">📖</span>
-        <h4>Nursery Workbook</h4>
-        <p>Complete nursery learning activity bundle</p>
+        <span class="pi">📖</span><h4>Nursery Workbook</h4><p>Complete nursery learning bundle</p>
         <span class="dl-tag" style="background:var(--green)">📥 Free PDF</span>
       </a>
       <a href="poems/magic-words.html" class="print-card" style="--bc:var(--purple)">
-        <span class="pi">✨</span>
-        <h4>Magic Words Poster</h4>
-        <p>Please, Thank You &amp; Sorry — printable poster</p>
+        <span class="pi">✨</span><h4>Magic Words Poster</h4><p>Please, Thank You &amp; Sorry printable</p>
         <span class="dl-tag" style="background:var(--purple)">📥 Free PDF</span>
       </a>
       <a href="poems/one-red-apple.html" class="print-card" style="--bc:var(--red)">
-        <span class="pi">🍎</span>
-        <h4>Counting Worksheet</h4>
-        <p>Count fruits 1–10 with colouring activity</p>
+        <span class="pi">🍎</span><h4>Counting Worksheet</h4><p>Count fruits 1–10 + colouring activity</p>
         <span class="dl-tag" style="background:var(--red)">📥 Free PDF</span>
       </a>
       <a href="poems/kids-coloring-book.html" class="print-card" style="--bc:var(--teal)">
-        <span class="pi">🎨</span>
-        <h4>Kids Colouring Book</h4>
-        <p>Fun printable colouring pages for kids</p>
+        <span class="pi">🎨</span><h4>Kids Colouring Book</h4><p>Fun printable colouring pages</p>
         <span class="dl-tag" style="background:var(--teal)">📥 Free PDF</span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- SOCIAL -->
+<!-- ABOUT STRIP -->
 <section class="section bg-cream fade-in">
+  <div class="container">
+    <div class="about-strip">
+      <div>
+        <h2>🐯 About Gig N Learn</h2>
+        <p>We're a free, child-safe educational platform for kids aged 2–8. From original nursery rhymes to interactive games and parenting guides — everything is made with love and available at zero cost, no signup, no fuss.</p>
+        <a href="about.html" class="about-link">ℹ️ Read Our Full Story →</a>
+      </div>
+      <div class="as-right">
+        <div class="as-stat"><div class="asn">100%</div><div class="asl">Free Forever</div></div>
+        <div class="as-stat"><div class="asn">0</div><div class="asl">Signup Required</div></div>
+        <div class="as-stat"><div class="asn">15+</div><div class="asl">Resources</div></div>
+        <div class="as-stat"><div class="asn">2–8</div><div class="asl">Age Range</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="section bg-white fade-in">
   <div class="container">
     <div class="section-header">
       <div class="section-tag">🌐 Community</div>
@@ -595,63 +455,102 @@
     </div>
     <div class="social-grid">
       <a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank" class="social-card" style="background:linear-gradient(135deg,#FF0000,#CC0000)">
-        <span class="si">▶️</span>
-        <h4>YouTube</h4>
-        <p>Nursery rhymes &amp; learning videos</p>
+        <span class="si">▶️</span><h4>YouTube</h4><p>Nursery rhymes &amp; learning videos</p>
       </a>
       <a href="https://www.facebook.com/share/1S3EP51djD/" target="_blank" class="social-card" style="background:linear-gradient(135deg,#1877F2,#0d5fcc)">
-        <span class="si">📘</span>
-        <h4>Facebook</h4>
-        <p>Updates, tips &amp; community</p>
+        <span class="si">📘</span><h4>Facebook</h4><p>Updates, tips &amp; community</p>
       </a>
-      <a href="https://www.instagram.com/gignlearn" target="_blank" class="social-card" style="background:linear-gradient(135deg,#E1306C,#C13584,#833AB4)">
-        <span class="si">📸</span>
-        <h4>Instagram</h4>
-        <p>Fun reels &amp; activity ideas</p>
+      <a href="https://www.instagram.com/gignlearn" target="_blank" class="social-card" style="background:linear-gradient(135deg,#E1306C,#833AB4)">
+        <span class="si">📸</span><h4>Instagram</h4><p>Fun reels &amp; activity ideas</p>
       </a>
       <a href="https://pin.it/7hxmrmCe2" target="_blank" class="social-card" style="background:linear-gradient(135deg,#E60023,#AD081B)">
-        <span class="si">📌</span>
-        <h4>Pinterest</h4>
-        <p>Printables, worksheets &amp; ideas</p>
+        <span class="si">📌</span><h4>Pinterest</h4><p>Printables, worksheets &amp; ideas</p>
       </a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- CONTACT STRIP -->
+<section class="section bg-cream fade-in">
+  <div class="container">
+    <div class="contact-strip">
+      <h2>👋 Get in Touch with Gigloo!</h2>
+      <p>Questions, poem requests, collaboration ideas, or just want to say hello? We'd love to hear from you!</p>
+      <div class="contact-btns">
+        <a href="mailto:gignlearn@gmail.com" class="c-btn email">📧 gignlearn@gmail.com</a>
+        <a href="https://wa.me/919899550279" target="_blank" class="c-btn wa">💬 WhatsApp Us</a>
+        <a href="contact.html" class="c-btn page">📋 Full Contact Page →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
+
       <div>
-        <div class="footer-logo">🐯 Gig N Learn</div>
-        <p class="footer-tagline">A free, safe &amp; child-friendly learning space for kids aged 2–8. Made with love by educators and parents.</p>
+        <span class="f-logo">🐯 Gig N Learn</span>
+        <p class="f-tagline">A free, safe &amp; child-friendly learning space for kids aged 2–8. Made with love by educators and parents.</p>
+        <div class="f-social-row">
+          <a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank" title="YouTube">▶</a>
+          <a href="https://www.facebook.com/share/1S3EP51djD/" target="_blank" title="Facebook">📘</a>
+          <a href="https://www.instagram.com/gignlearn" target="_blank" title="Instagram">📸</a>
+          <a href="https://pin.it/7hxmrmCe2" target="_blank" title="Pinterest">📌</a>
+        </div>
       </div>
+
       <div class="footer-col">
         <h4>🎮 Games &amp; Tools</h4>
         <ul>
-          <li><a href="abc-game.html">ABC Tap &amp; Play</a></li>
-          <li><a href="math-maze.html">Math Maze</a></li>
-          <li><a href="name-labels.html">Name Label Maker</a></li>
-          <li><a href="poems/alphabet-number-tracing-book.html">Tracing Book</a></li>
+          <li><a href="abc-game.html">🔤 ABC Tap &amp; Play</a></li>
+          <li><a href="math-maze.html">🔢 Math Maze</a></li>
+          <li><a href="name-labels.html">🏷️ Name Label Maker</a></li>
+          <li><a href="poems/alphabet-number-tracing-book.html">✏️ Tracing Book</a></li>
         </ul>
       </div>
+
       <div class="footer-col">
-        <h4>📚 Poems &amp; Books</h4>
+        <h4>🎵 Poems &amp; Books</h4>
         <ul>
-          <li><a href="poems/magic-words.html">Magic Words</a></li>
-          <li><a href="poems/wiggle-wiggle-worm.html">Wiggle Wiggle Worm</a></li>
-          <li><a href="poems/one-red-apple.html">One Red Apple</a></li>
-          <li><a href="poems/index.html">See All Poems →</a></li>
+          <li><a href="poems/magic-words.html">✨ Magic Words</a></li>
+          <li><a href="poems/wiggle-wiggle-worm.html">🐛 Wiggle Worm</a></li>
+          <li><a href="poems/busy-hen.html">🐔 Busy Hen</a></li>
+          <li><a href="poems/one-red-apple.html">🍎 One Red Apple</a></li>
+          <li><a href="poems/index.html">📚 See All Poems →</a></li>
         </ul>
       </div>
+
+      <div class="footer-col">
+        <h4>ℹ️ Information</h4>
+        <ul>
+          <li><a href="about.html">👋 About Us</a></li>
+          <li><a href="contact.html">📧 Contact Us</a></li>
+          <li><a href="privacy.html">🔒 Privacy Policy</a></li>
+          <li><a href="terms.html">📜 Terms &amp; Conditions</a></li>
+          <li><a href="poems/toddler-tantrums-guide.html">👨‍👩‍👧 Parents Hub</a></li>
+        </ul>
+      </div>
+
     </div>
+
+    <div class="footer-divider"></div>
+
     <div class="footer-bottom">
-      <p>© 2026 Gig N Learn · <a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank" style="color:rgba(255,255,255,.5)">YouTube</a> · <a href="https://www.facebook.com/share/1S3EP51djD/" target="_blank" style="color:rgba(255,255,255,.5)">Facebook</a> · <a href="https://www.instagram.com/gignlearn" target="_blank" style="color:rgba(255,255,255,.5)">Instagram</a> · Made with ♥ for little learners</p>
+      <p class="f-copy">© 2026 Gig N Learn · gignlearn.fun · Made with ♥ for little learners everywhere</p>
+      <div class="f-legal">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
     </div>
+
   </div>
 </footer>
 
-<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Top">↑</button>
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
 <script>
   function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
