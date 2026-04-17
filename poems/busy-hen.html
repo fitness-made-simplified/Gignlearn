@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Busy Hen – 4 Line Kids Poem | Gig N Learn 🐯</title>
+<meta name="description" content="The Busy Hen – a cute 4 line farm poem for kids by Gig N Learn! Sing along with Gigloo, read the lyrics and download the free PDF worksheet. Ages 2–6.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#FF6B35;--yellow:#FFD93D;--green:#6BCB77;
+    --blue:#4D96FF;--purple:#C77DFF;--pink:#FF85A1;
+    --red:#FF4757;--teal:#00C2CB;--cream:#FFF9F0;
+    --dark:#2D2D2D;--mid:#555;
+    --farm-sky:#87CEEB;--farm-sun:#FFC107;--farm-hay:#FFE4B5;
+    --farm-soil:#8B6914;--farm-grass:#6B8E23;--farm-brown:#5C3A1E;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 3px 15px rgba(0,0,0,.1);padding:0 20px;height:60px;display:flex;align-items:center;justify-content:space-between}
+  .nav-logo{font-family:'Fredoka One',cursive;font-size:1.4rem;color:var(--orange);text-decoration:none;white-space:nowrap}
+  .nav-logo span{color:var(--blue)}
+  .nav-links{display:flex;gap:6px;list-style:none;align-items:center}
+  .nav-links a{font-family:'Nunito',sans-serif;font-weight:700;font-size:.82rem;color:var(--dark);text-decoration:none;padding:5px 10px;border-radius:20px;transition:background .2s}
+  .nav-links a:hover{background:var(--yellow)}
+  .nav-links a.active{background:var(--farm-grass);color:#fff}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px}
+  .hamburger span{width:24px;height:3px;background:var(--dark);border-radius:2px}
+  .mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:20px}
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{font-family:'Fredoka One',cursive;font-size:1.4rem;color:var(--dark);text-decoration:none;padding:10px 30px;border-radius:30px;transition:background .2s}
+  .mobile-menu a:hover{background:var(--yellow)}
+  @media(max-width:700px){.nav-links{display:none}.hamburger{display:flex}}
+
+  /* FARM STRIP */
+  .farm-strip{background:linear-gradient(90deg,var(--farm-grass),#4CAF50,var(--farm-grass));padding:10px 20px;text-align:center;font-family:'Fredoka One',cursive;font-size:.9rem;color:#fff;letter-spacing:2px;text-shadow:1px 1px 0 rgba(0,0,0,.1)}
+
+  /* HERO — sunrise farm */
+  .hero{
+    background:linear-gradient(180deg,
+      var(--farm-sky) 0%,
+      #B0D9F0 20%,
+      var(--farm-hay) 45%,
+      var(--farm-soil) 68%,
+      var(--farm-grass) 82%,
+      var(--farm-brown) 100%
+    );
+    padding:55px 20px 50px;text-align:center;position:relative;overflow:hidden;min-height:480px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+  }
+  /* Sun */
+  .hero-sun{position:absolute;top:18px;left:50%;transform:translateX(-50%);font-size:3.5rem;opacity:.75;animation:rise 8s ease-out forwards}
+  @keyframes rise{from{transform:translateX(-50%) translateY(30px);opacity:.3}to{transform:translateX(-50%) translateY(0);opacity:.8}}
+  /* Clouds */
+  .hero::before{content:'☁️   ☁️      ☁️';position:absolute;top:20px;left:0;right:0;font-size:1.8rem;opacity:.5;letter-spacing:40px;white-space:nowrap}
+  /* Ground elements */
+  .hero::after{content:'🌾 🌻 🐄 🌾 🌽 🐔 🌾 🌿 🐓 🌾';position:absolute;bottom:6px;left:0;right:0;font-size:.95rem;letter-spacing:5px;white-space:nowrap;opacity:.65}
+
+  /* Hen mascot */
+  .hero-hen{font-size:5.5rem;margin-bottom:14px;display:block;position:relative;z-index:2;animation:cluck 2s ease-in-out infinite}
+  @keyframes cluck{0%,100%{transform:rotate(-5deg) translateY(0)}25%{transform:rotate(5deg) translateY(-8px)}50%{transform:rotate(-3deg) translateY(0)}75%{transform:rotate(4deg) translateY(-5px)}}
+
+  .hero-badge{display:inline-block;background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.4);color:#fff;font-family:'Fredoka One',cursive;font-size:.9rem;padding:5px 18px;border-radius:30px;margin-bottom:14px;backdrop-filter:blur(6px);position:relative;z-index:2}
+  .hero h1{font-family:'Fredoka One',cursive;font-size:clamp(1.9rem,6vw,3.2rem);color:#fff;text-shadow:3px 4px 12px rgba(0,0,0,.3);line-height:1.15;margin-bottom:8px;position:relative;z-index:2}
+  .hero-sub{font-size:1rem;font-weight:700;color:rgba(255,255,255,.92);margin-bottom:22px;position:relative;z-index:2}
+  .hero-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:26px;position:relative;z-index:2}
+  .pill{background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.4);color:#fff;font-weight:800;font-size:.82rem;padding:5px 14px;border-radius:30px;backdrop-filter:blur(4px)}
+  .hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;position:relative;z-index:2}
+  .btn-hero{display:inline-flex;align-items:center;gap:8px;font-family:'Fredoka One',cursive;font-size:1.05rem;padding:12px 26px;border-radius:50px;text-decoration:none;box-shadow:0 6px 0 rgba(0,0,0,.15);transition:transform .15s,box-shadow .15s}
+  .btn-hero:hover{transform:translateY(-3px);box-shadow:0 9px 0 rgba(0,0,0,.15)}
+  .btn-hero.watch{background:var(--yellow);color:var(--dark)}
+  .btn-hero.dl{background:#fff;color:var(--farm-grass)}
+
+  /* SECTIONS */
+  .section{padding:48px 20px}
+  .container{max-width:880px;margin:0 auto}
+  .section-title{font-family:'Fredoka One',cursive;font-size:clamp(1.4rem,4vw,2rem);text-align:center;margin-bottom:26px}
+
+  /* POEM CARD — big featured */
+  .poem-feature{
+    background:linear-gradient(135deg,var(--farm-sky),var(--farm-hay),#fff);
+    border-radius:28px;padding:40px 32px;text-align:center;
+    box-shadow:0 8px 32px rgba(0,0,0,.1);
+    border:3px solid rgba(255,255,255,.6);
+    position:relative;overflow:hidden;
+    max-width:560px;margin:0 auto;
+  }
+  .poem-feature::before{content:'🌾';position:absolute;right:-10px;top:-10px;font-size:8rem;opacity:.08;pointer-events:none}
+  .poem-feature::after{content:'🌾';position:absolute;left:-10px;bottom:-10px;font-size:8rem;opacity:.08;pointer-events:none;transform:scaleX(-1)}
+  .poem-feature .pf-label{font-family:'Fredoka One',cursive;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--farm-grass);margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:8px}
+  .poem-feature .pf-hen{font-size:3rem;margin-bottom:16px;display:block;animation:cluck 2s infinite}
+  .poem-text{font-family:'Baloo 2',cursive;font-size:1.4rem;font-weight:800;line-height:2.1;color:var(--dark)}
+  .poem-text em{color:var(--farm-grass);font-style:normal}
+  .poem-text .cluck{color:var(--orange);font-size:1.5rem}
+  .poem-attribution{margin-top:18px;font-size:.8rem;font-weight:700;color:#888;letter-spacing:.05em}
+
+  /* FARM FACTS GRID */
+  .farm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}
+  .farm-card{background:#fff;border-radius:20px;padding:22px 14px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.07);border-top:5px solid var(--bc,var(--farm-grass));transition:transform .2s}
+  .farm-card:hover{transform:translateY(-4px)}
+  .farm-card .fi{font-size:2.4rem;margin-bottom:8px;display:block}
+  .farm-card h3{font-family:'Fredoka One',cursive;font-size:1rem;margin-bottom:4px}
+  .farm-card p{font-size:.8rem;color:var(--mid);font-weight:600}
+
+  /* LYRICS / READ ALOUD */
+  .lyrics-wrap{background:#fff;border-radius:24px;box-shadow:0 6px 24px rgba(0,0,0,.09);overflow:hidden}
+  .lyrics-header{background:linear-gradient(135deg,var(--farm-grass),var(--farm-soil));padding:18px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .lyrics-header h2{font-family:'Fredoka One',cursive;font-size:1.3rem;color:#fff}
+  .btn-read{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--farm-grass);font-family:'Fredoka One',cursive;font-size:.95rem;padding:9px 20px;border-radius:30px;border:none;cursor:pointer;box-shadow:0 3px 0 rgba(0,0,0,.1);transition:transform .15s}
+  .btn-read:hover{transform:translateY(-2px)}
+  .btn-read.speaking{background:var(--red);color:#fff}
+  .lyrics-body{padding:28px 24px}
+  .stanza{margin-bottom:20px;padding:20px 22px;border-radius:16px;background:var(--cream);border-left:5px solid var(--farm-grass);transition:background .3s,transform .2s}
+  .stanza.highlight{background:linear-gradient(135deg,#6B8E2318,#FFE4B522);border-color:var(--farm-sun);transform:scale(1.02)}
+  .stanza-label{font-size:.72rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:8px}
+  .stanza p{font-family:'Baloo 2',cursive;font-size:1.1rem;font-weight:700;line-height:1.9;color:var(--dark)}
+  .stanza p em{color:var(--farm-grass);font-style:normal;font-weight:800}
+
+  /* VIDEO */
+  .video-wrap{background:#fff;border-radius:24px;box-shadow:0 6px 24px rgba(0,0,0,.09);overflow:hidden}
+  .video-container{position:relative;padding-bottom:56.25%;height:0}
+  .video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+  .video-caption{padding:14px 20px;text-align:center;font-family:'Fredoka One',cursive;font-size:1rem;background:linear-gradient(135deg,#6B8E2322,#FFE4B522)}
+
+  /* PDF CARD */
+  .pdf-card{background:linear-gradient(135deg,var(--farm-soil),var(--farm-grass),#4CAF50);border-radius:28px;padding:36px 28px;text-align:center;box-shadow:0 8px 30px rgba(107,142,35,.3);position:relative;overflow:hidden}
+  .pdf-card::before{content:'🐔';position:absolute;right:-10px;top:-10px;font-size:9rem;opacity:.12}
+  .pdf-card h2{font-family:'Fredoka One',cursive;font-size:1.8rem;color:#fff;text-shadow:2px 2px 0 rgba(0,0,0,.1);margin-bottom:10px}
+  .pdf-card p{color:rgba(255,255,255,.9);font-weight:700;margin-bottom:22px}
+  .pdf-feats{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:26px}
+  .pdf-feat{background:rgba(255,255,255,.25);border:2px solid rgba(255,255,255,.4);color:#fff;font-weight:800;font-size:.82rem;padding:5px 14px;border-radius:20px}
+  .btn-dl{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--farm-grass);font-family:'Fredoka One',cursive;font-size:1.3rem;padding:15px 38px;border-radius:50px;text-decoration:none;box-shadow:0 6px 0 rgba(0,0,0,.12);transition:transform .15s,box-shadow .15s}
+  .btn-dl:hover{transform:translateY(-3px);box-shadow:0 9px 0 rgba(0,0,0,.12)}
+  .free-tag{display:inline-block;background:var(--orange);color:#fff;font-family:'Fredoka One',cursive;font-size:.8rem;padding:4px 14px;border-radius:20px;margin-top:14px}
+
+  /* PARENTS */
+  .parents-wrap{background:#fff;border-radius:28px;padding:36px 28px;box-shadow:0 4px 20px rgba(0,0,0,.07)}
+  .parents-wrap h2{font-family:'Fredoka One',cursive;font-size:1.8rem;margin-bottom:6px}
+  .parents-wrap .sub{color:#666;font-weight:600;margin-bottom:26px}
+  .parents-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+  .p-card{background:var(--cream);border-radius:18px;padding:20px;border-left:5px solid var(--bc,var(--farm-grass))}
+  .p-card h3{font-family:'Fredoka One',cursive;font-size:1.05rem;margin-bottom:10px}
+  .p-card ul{list-style:none;padding:0}
+  .p-card ul li{font-size:.88rem;font-weight:600;padding:3px 0;padding-left:22px;position:relative}
+  .p-card ul li::before{content:'🐔';position:absolute;left:0;font-size:.7rem;top:2px}
+
+  /* MORE POEMS */
+  .more-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+  .more-card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.07);text-decoration:none;color:var(--dark);transition:transform .2s,box-shadow .2s;display:block}
+  .more-card:hover{transform:translateY(-5px);box-shadow:0 10px 28px rgba(0,0,0,.12)}
+  .more-header{height:90px;display:flex;align-items:center;justify-content:center;font-size:2.5rem}
+  .more-body{padding:14px}
+  .more-body h3{font-family:'Fredoka One',cursive;font-size:1rem;margin-bottom:4px}
+  .more-body p{font-size:.8rem;color:#666;font-weight:600}
+  .more-tag{display:inline-block;font-size:.72rem;font-weight:800;padding:3px 10px;border-radius:10px;margin-top:8px}
+
+  /* GAMES CTA */
+  .games-cta{background:linear-gradient(135deg,var(--farm-grass),var(--teal));border-radius:28px;padding:36px 28px;text-align:center;box-shadow:0 8px 28px rgba(107,203,119,.25)}
+  .games-cta h2{font-family:'Fredoka One',cursive;font-size:1.8rem;color:#fff;margin-bottom:10px}
+  .games-cta p{color:rgba(255,255,255,.9);font-weight:700;margin-bottom:22px}
+  .games-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+  .g-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;font-family:'Fredoka One',cursive;font-size:1rem;padding:11px 22px;border-radius:40px;text-decoration:none;box-shadow:0 5px 0 rgba(0,0,0,.12);transition:transform .15s,box-shadow .15s}
+  .g-btn:hover{transform:translateY(-2px);box-shadow:0 7px 0 rgba(0,0,0,.12)}
+  .g-btn.abc{color:var(--orange)}
+  .g-btn.math{color:var(--purple)}
+  .g-btn.labels{color:var(--teal)}
+
+  /* SHARE */
+  .share-wrap{text-align:center}
+  .share-title{font-family:'Fredoka One',cursive;font-size:1.4rem;margin-bottom:16px}
+  .share-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .s-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Fredoka One',cursive;font-size:1rem;padding:10px 22px;border-radius:40px;border:none;cursor:pointer;text-decoration:none;box-shadow:0 4px 0 rgba(0,0,0,.1);transition:transform .15s}
+  .s-btn:hover{transform:translateY(-2px)}
+  .s-btn.wa{background:#25D366;color:#fff}
+  .s-btn.fb{background:#1877F2;color:#fff}
+  .s-btn.copy{background:var(--dark);color:#fff}
+  .copy-toast{display:none;position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--dark);color:#fff;font-family:'Fredoka One',cursive;font-size:1rem;padding:12px 28px;border-radius:30px;z-index:999;box-shadow:0 4px 20px rgba(0,0,0,.2)}
+  .copy-toast.show{display:block;animation:fiu .3s ease}
+  @keyframes fiu{from{opacity:0;transform:translate(-50%,16px)}to{opacity:1;transform:translate(-50%,0)}}
+
+  /* FOOTER */
+  footer{background:var(--dark);color:rgba(255,255,255,.75);padding:36px 20px;text-align:center}
+  .f-logo{font-family:'Fredoka One',cursive;font-size:1.5rem;color:var(--yellow);margin-bottom:16px}
+  .f-links{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:20px}
+  .f-links a{color:rgba(255,255,255,.6);text-decoration:none;font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:16px;transition:background .2s}
+  .f-links a:hover{background:rgba(255,255,255,.1)}
+  .f-copy{color:rgba(255,255,255,.4);font-size:.76rem}
+
+  #scrollTop{position:fixed;bottom:24px;right:24px;z-index:99;background:var(--farm-grass);color:#fff;width:46px;height:46px;border-radius:50%;border:none;font-size:1.3rem;cursor:pointer;box-shadow:0 4px 14px rgba(107,142,35,.4);display:none;align-items:center;justify-content:center;transition:transform .2s}
+  #scrollTop:hover{transform:translateY(-3px)}
+  #scrollTop.visible{display:flex}
+  .fade-in{opacity:0;transform:translateY(28px);transition:opacity .6s,transform .6s}
+  .fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo">Gig N <span>Learn</span> 🐯</a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../abc-game.html">ABC Game</a></li>
+    <li><a href="../math-maze.html">Math Maze</a></li>
+    <li><a href="index.html" class="active">Poems</a></li>
+    <li><a href="../name-labels.html">Labels</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" onclick="closeMenu()">🏠 Home</a>
+  <a href="../abc-game.html" onclick="closeMenu()">🔤 ABC Game</a>
+  <a href="../math-maze.html" onclick="closeMenu()">🔢 Math Maze</a>
+  <a href="index.html" onclick="closeMenu()">🎵 Poems</a>
+  <a href="../name-labels.html" onclick="closeMenu()">🏷️ Labels</a>
+</div>
+
+<div class="farm-strip">🌾 Farm Fun · Cluck Cluck · Learn with Gigloo 🐯</div>
+
+<section class="hero">
+  <div class="hero-sun">☀️</div>
+  <span class="hero-hen">🐔</span>
+  <div class="hero-badge">🌾 ORIGINAL FARM POEM</div>
+  <h1>The Busy Hen</h1>
+  <p class="hero-sub">A cheerful 4-line farm poem for little ones! 🥚</p>
+  <div class="hero-pills">
+    <span class="pill">🐔 Farm Theme</span>
+    <span class="pill">🎵 Sing Along</span>
+    <span class="pill">📄 Free PDF</span>
+    <span class="pill">👶 Ages 2–6</span>
+  </div>
+  <div class="hero-btns">
+    <a href="https://www.youtube.com/watch?v=rvvAX0LgXaw" target="_blank" class="btn-hero watch">▶️ Watch &amp; Sing</a>
+    <a href="https://drive.google.com/uc?export=download&id=1HAu8rwTn20gPBivGPfeAJ0-25Vi3ZHYV" class="btn-hero dl" download>📥 Free PDF</a>
+  </div>
+</section>
+
+<!-- FEATURED POEM CARD -->
+<section class="section" style="background:#fff">
+  <div class="container">
+    <h2 class="section-title" style="color:var(--farm-grass)">🌾 The Poem</h2>
+    <div class="poem-feature">
+      <div class="pf-label">⭐ Original Poem · Gig N Learn</div>
+      <span class="pf-hen">🐔</span>
+      <div class="poem-text">
+        <span class="cluck">Cluck, cluck, cluck</span> goes the hen,<br>
+        Lays her eggs in the <em>farmer's pen</em>,<br>
+        Wakes up early <em>with the sun</em>,<br>
+        Her <em>busy day</em> has just begun!
+      </div>
+      <div class="poem-attribution">— Original poem by Gig N Learn 🐯</div>
+    </div>
+  </div>
+</section>
+
+<!-- FARM FACTS -->
+<section class="section fade-in">
+  <div class="container">
+    <h2 class="section-title" style="color:var(--orange)">🌻 Learn About the Farm!</h2>
+    <div class="farm-grid">
+      <div class="farm-card" style="--bc:var(--orange)"><span class="fi">🐔</span><h3>The Hen</h3><p>A female chicken who lays eggs for us!</p></div>
+      <div class="farm-card" style="--bc:var(--yellow)"><span class="fi">🥚</span><h3>The Eggs</h3><p>Hens lay eggs in a nest called a pen!</p></div>
+      <div class="farm-card" style="--bc:var(--farm-grass)"><span class="fi">☀️</span><h3>Early Bird</h3><p>Hens wake up at sunrise every day!</p></div>
+      <div class="farm-card" style="--bc:var(--blue)"><span class="fi">👨‍🌾</span><h3>The Farmer</h3><p>The farmer takes care of the hens!</p></div>
+      <div class="farm-card" style="--bc:var(--pink)"><span class="fi">🐣</span><h3>Baby Chick</h3><p>Baby hens hatch from the eggs! 🐥</p></div>
+      <div class="farm-card" style="--bc:var(--brown,#8B6914)"><span class="fi">🌾</span><h3>The Farm</h3><p>A busy, happy place full of animals!</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LYRICS / READ ALOUD -->
+<section class="section fade-in" style="background:#fff">
+  <div class="container">
+    <h2 class="section-title" style="color:var(--farm-grass)">🎵 Read Along!</h2>
+    <div class="lyrics-wrap">
+      <div class="lyrics-header">
+        <h2>🐔 Busy Hen Poem Lyrics</h2>
+        <button class="btn-read" id="readBtn" onclick="toggleRead()">🔊 Read Aloud</button>
+      </div>
+      <div class="lyrics-body">
+        <div class="stanza" id="s0">
+          <div class="stanza-label">🐔 Line 1–2</div>
+          <p><em>Cluck, cluck, cluck</em> goes the hen,<br>Lays her eggs in the farmer's pen,</p>
+        </div>
+        <div class="stanza" id="s1">
+          <div class="stanza-label">☀️ Line 3–4</div>
+          <p>Wakes up early <em>with the sun</em>,<br>Her <em>busy day</em> has just begun!</p>
+        </div>
+        <div class="stanza" id="s2">
+          <div class="stanza-label">🌟 Full Poem</div>
+          <p><em>Cluck, cluck, cluck</em> goes the hen,<br>Lays her eggs in the farmer's pen,<br>Wakes up early <em>with the sun</em>,<br>Her <em>busy day</em> has just begun! 🐔</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="section fade-in">
+  <div class="container">
+    <h2 class="section-title" style="color:var(--purple)">🎬 Watch &amp; Sing Along!</h2>
+    <div class="video-wrap">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/rvvAX0LgXaw?rel=0&modestbranding=1" title="The Busy Hen – Gig N Learn" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-caption">🐔 Cluck along with Gigloo on the farm! 🌾</div>
+    </div>
+  </div>
+</section>
+
+<!-- PDF -->
+<section class="section fade-in">
+  <div class="container">
+    <div class="pdf-card">
+      <h2>🌾 Download the Free Worksheet!</h2>
+      <p>Print the poem, colour the hen &amp; farm animals — totally free! 🐔</p>
+      <div class="pdf-feats">
+        <span class="pdf-feat">📝 Poem Lyrics</span>
+        <span class="pdf-feat">🎨 Colour the Hen</span>
+        <span class="pdf-feat">🥚 Farm Activities</span>
+        <span class="pdf-feat">🖨️ Print Ready</span>
+      </div>
+      <a href="https://drive.google.com/uc?export=download&id=1HAu8rwTn20gPBivGPfeAJ0-25Vi3ZHYV" class="btn-dl" download>📥 Download Free PDF</a>
+      <div><span class="free-tag">✅ 100% FREE — No Signup!</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARENTS CORNER -->
+<section class="section fade-in" style="background:#fff">
+  <div class="container">
+    <div class="parents-wrap">
+      <h2>👨‍👩‍👧 Parents' Corner</h2>
+      <p class="sub">Why this little poem is big for learning!</p>
+      <div class="parents-grid">
+        <div class="p-card" style="--bc:var(--farm-grass)">
+          <h3>🧠 Skills Developed</h3>
+          <ul>
+            <li>Phonics — rhyming words (hen/pen, sun/begun)</li>
+            <li>Nature &amp; farm awareness</li>
+            <li>Sequencing — morning routine</li>
+            <li>Memory through repetition</li>
+            <li>Rhythm &amp; beat recognition</li>
+          </ul>
+        </div>
+        <div class="p-card" style="--bc:var(--orange)">
+          <h3>🌟 Key Words to Learn</h3>
+          <ul>
+            <li>Cluck · Hen · Eggs</li>
+            <li>Farmer · Pen · Lays</li>
+            <li>Wakes · Early · Sunrise</li>
+            <li>Busy · Day · Begun</li>
+          </ul>
+        </div>
+        <div class="p-card" style="--bc:var(--blue)">
+          <h3>💡 Activity Ideas</h3>
+          <ul>
+            <li>Draw a hen and decorate her eggs</li>
+            <li>Make clucking sounds together!</li>
+            <li>Talk about morning routines</li>
+            <li>Visit a farm or watch farm videos</li>
+            <li>Make up a 2nd verse together!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MORE POEMS -->
+<section class="section fade-in">
+  <div class="container">
+    <h2 class="section-title" style="color:var(--teal)">🎵 More Poems to Enjoy</h2>
+    <div class="more-grid">
+      <a href="wiggle-wiggle-worm.html" class="more-card">
+        <div class="more-header" style="background:linear-gradient(180deg,#87CEEB,#6BCB77,#5C3A1E)">🐛</div>
+        <div class="more-body"><h3>Wiggle Wiggle Worm</h3><p>Dance &amp; wiggle with the worm!</p><span class="more-tag" style="background:#E8734A22;color:#E8734A">⭐ Original</span></div>
+      </a>
+      <a href="baa-baa-black-sheep.html" class="more-card">
+        <div class="more-header" style="background:linear-gradient(180deg,#1a1a4e,#2d3561,#6BCB77)">🐑</div>
+        <div class="more-body"><h3>Baa Baa Black Sheep</h3><p>Classic woolly nursery rhyme!</p><span class="more-tag" style="background:#4D96FF22;color:var(--blue)">🎵 Classic</span></div>
+      </a>
+      <a href="good-morning-sun.html" class="more-card">
+        <div class="more-header" style="background:linear-gradient(180deg,#FF6B35,#FFD93D,#87CEEB)">☀️</div>
+        <div class="more-body"><h3>Good Morning Sun</h3><p>Rise and shine with Gigloo!</p><span class="more-tag" style="background:#FFD93D22;color:#CC8800">🌅 Morning</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- GAMES CTA -->
+<section class="section fade-in">
+  <div class="container">
+    <div class="games-cta">
+      <h2>🎮 Keep Learning with Gigloo!</h2>
+      <p>After the farm, play some fun learning games! 🐯</p>
+      <div class="games-btns">
+        <a href="../abc-game.html" class="g-btn abc">🔤 ABC Game</a>
+        <a href="../math-maze.html" class="g-btn math">🔢 Math Maze</a>
+        <a href="../name-labels.html" class="g-btn labels">🏷️ Name Labels</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHARE -->
+<section class="section fade-in" style="background:#fff">
+  <div class="container">
+    <div class="share-wrap">
+      <p class="share-title">🐔 Share the Cluck fun!</p>
+      <div class="share-btns">
+        <a class="s-btn wa" href="https://wa.me/?text=The%20Busy%20Hen%20-%20fun%20farm%20poem%20for%20kids%20by%20Gig%20N%20Learn!%20Free%20PDF%20included!%20https%3A%2F%2Fwww.gignlearn.fun%2Fpoems%2Fbusy-hen.html" target="_blank">📱 WhatsApp</a>
+        <a class="s-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.gignlearn.fun%2Fpoems%2Fbusy-hen.html" target="_blank">👍 Facebook</a>
+        <button class="s-btn copy" onclick="copyLink()">🔗 Copy Link</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo">🐯 Gig N Learn</div>
+  <div class="f-links">
+    <a href="../index.html">Home</a>
+    <a href="magic-words.html">Magic Words</a>
+    <a href="wiggle-wiggle-worm.html">Wiggle Worm</a>
+    <a href="one-red-apple.html">One Red Apple</a>
+    <a href="baa-baa-black-sheep.html">Baa Baa</a>
+    <a href="good-morning-sun.html">Good Morning</a>
+    <a href="days-of-the-week.html">Days of Week</a>
+    <a href="transport.html">Transport</a>
+    <a href="all-things-bright-and-beautiful.html">All Things Bright</a>
+    <a href="vowels-worksheet.html">Vowels</a>
+    <a href="nursery-workbook.html">Workbook</a>
+    <a href="alphabet-number-tracing-book.html">Tracing Book</a>
+    <a href="index.html">All Poems →</a>
+  </div>
+  <p class="f-copy">© 2026 Gig N Learn | Free kids learning by Gigloo 🐯</p>
+</footer>
+
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<div class="copy-toast" id="copyToast">✅ Link copied!</div>
+
+<script>
+  function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+  function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
+  window.addEventListener('scroll',()=>document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300))
+  function copyLink(){const t=document.getElementById('copyToast');navigator.clipboard.writeText(window.location.href).then(()=>{t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)})}
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.1})
+  document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el))
+  let synth=window.speechSynthesis,speaking=false
+  const stanzas=[
+    {id:'s0',text:"Cluck, cluck, cluck goes the hen. Lays her eggs in the farmer's pen."},
+    {id:'s1',text:"Wakes up early with the sun. Her busy day has just begun!"},
+    {id:'s2',text:"Cluck, cluck, cluck goes the hen. Lays her eggs in the farmer's pen. Wakes up early with the sun. Her busy day has just begun!"}
+  ]
+  function toggleRead(){
+    const btn=document.getElementById('readBtn')
+    if(speaking){synth.cancel();speaking=false;btn.textContent='🔊 Read Aloud';btn.classList.remove('speaking');document.querySelectorAll('.stanza').forEach(s=>s.classList.remove('highlight'));return}
+    speaking=true;btn.textContent='⏹️ Stop';btn.classList.add('speaking');readStanza(0)
+  }
+  function readStanza(i){
+    if(i>=stanzas.length||!speaking){speaking=false;document.getElementById('readBtn').textContent='🔊 Read Aloud';document.getElementById('readBtn').classList.remove('speaking');document.querySelectorAll('.stanza').forEach(s=>s.classList.remove('highlight'));return}
+    document.querySelectorAll('.stanza').forEach(s=>s.classList.remove('highlight'))
+    const el=document.getElementById(stanzas[i].id)
+    if(el){el.classList.add('highlight');el.scrollIntoView({behavior:'smooth',block:'center'})}
+    const u=new SpeechSynthesisUtterance(stanzas[i].text)
+    u.rate=0.85;u.pitch=1.15;u.lang='en-GB';u.onend=()=>readStanza(i+1);synth.speak(u)
+  }
+</script>
+</body>
+</html>
