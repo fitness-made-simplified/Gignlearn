@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us – Gig N Learn 🐯</title>
+<meta name="description" content="Get in touch with the Gig N Learn team. We'd love to hear from you! Email us or message on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--orange:#FF6B35;--yellow:#FFD93D;--green:#6BCB77;--blue:#4D96FF;--purple:#C77DFF;--red:#FF4757;--teal:#00C2CB;--cream:#FFF9F0;--dark:#2D2D2D;--mid:#555}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+  a{text-decoration:none;color:inherit}
+  nav{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 3px 15px rgba(0,0,0,.1);padding:0 20px;height:60px;display:flex;align-items:center;justify-content:space-between}
+  .nav-logo{font-family:'Fredoka One',cursive;font-size:1.4rem;color:var(--orange)}
+  .nav-logo span{color:var(--blue)}
+  .nav-links{display:flex;gap:6px;list-style:none;align-items:center}
+  .nav-links a{font-weight:700;font-size:.82rem;color:var(--dark);padding:5px 10px;border-radius:20px;transition:background .2s}
+  .nav-links a:hover{background:var(--yellow)}
+  .nav-links a.active{background:var(--orange);color:#fff}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px}
+  .hamburger span{width:24px;height:3px;background:var(--dark);border-radius:2px}
+  .mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:20px}
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{font-family:'Fredoka One',cursive;font-size:1.4rem;color:var(--dark);padding:10px 30px;border-radius:30px;transition:background .2s}
+  .mobile-menu a:hover{background:var(--yellow)}
+  @media(max-width:700px){.nav-links{display:none}.hamburger{display:flex}}
+
+  .hero{background:linear-gradient(135deg,#4D96FF,#C77DFF,#FF85A1);padding:60px 20px;text-align:center;position:relative;overflow:hidden}
+  .hero::before{content:'📧 💬 🐯 📧 💬 🐯 📧 💬';position:absolute;bottom:8px;left:0;right:0;font-size:.9rem;opacity:.2;letter-spacing:18px;white-space:nowrap}
+  .hero h1{font-family:'Fredoka One',cursive;font-size:clamp(2rem,5vw,3rem);color:#fff;text-shadow:2px 4px 12px rgba(0,0,0,.2);margin-bottom:10px}
+  .hero p{font-size:1rem;font-weight:700;color:rgba(255,255,255,.9)}
+
+  .main{max-width:760px;margin:0 auto;padding:56px 20px}
+
+  /* Contact cards */
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-bottom:48px}
+  .contact-card{background:#fff;border-radius:24px;padding:32px 24px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.08);border-top:5px solid var(--bc,var(--orange));transition:transform .2s}
+  .contact-card:hover{transform:translateY(-5px)}
+  .contact-card .cc-icon{font-size:3rem;margin-bottom:14px;display:block}
+  .contact-card h3{font-family:'Fredoka One',cursive;font-size:1.2rem;margin-bottom:6px}
+  .contact-card p{font-size:.88rem;color:var(--mid);font-weight:600;margin-bottom:16px;line-height:1.5}
+  .contact-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Fredoka One',cursive;font-size:1rem;padding:11px 24px;border-radius:40px;border:none;cursor:pointer;text-decoration:none;box-shadow:0 4px 0 rgba(0,0,0,.1);transition:transform .15s,box-shadow .15s;color:#fff}
+  .contact-btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 rgba(0,0,0,.1)}
+  .contact-btn.email{background:var(--blue)}
+  .contact-btn.wa{background:#25D366}
+
+  /* Hours / info */
+  .info-card{background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 4px 16px rgba(0,0,0,.07);margin-bottom:32px}
+  .info-card h2{font-family:'Fredoka One',cursive;font-size:1.4rem;margin-bottom:16px;color:var(--dark)}
+  .info-row{display:flex;align-items:flex-start;gap:14px;padding:12px 0;border-bottom:1px solid #eee}
+  .info-row:last-child{border-bottom:none}
+  .info-row .ir-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px}
+  .info-row .ir-text h4{font-family:'Fredoka One',cursive;font-size:.95rem;margin-bottom:3px}
+  .info-row .ir-text p{font-size:.85rem;color:var(--mid);font-weight:600;line-height:1.5}
+  .info-row .ir-text a{color:var(--blue);font-weight:700}
+
+  /* Social */
+  .social-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:24px}
+  .social-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Fredoka One',cursive;font-size:.95rem;padding:10px 22px;border-radius:30px;color:#fff;transition:opacity .2s,transform .15s}
+  .social-btn:hover{opacity:.88;transform:translateY(-2px)}
+  .social-btn.yt{background:var(--red)}
+  .social-btn.fb{background:#1877F2}
+  .social-btn.ig{background:linear-gradient(135deg,#E1306C,#833AB4)}
+  .social-btn.pt{background:#E60023}
+
+  /* Gigloo message */
+  .gigloo-msg{background:linear-gradient(135deg,var(--orange),var(--yellow));border-radius:24px;padding:32px 28px;text-align:center;margin-top:32px}
+  .gigloo-msg .gm-tiger{font-size:3.5rem;display:block;margin-bottom:12px}
+  .gigloo-msg h2{font-family:'Fredoka One',cursive;font-size:1.5rem;color:#fff;margin-bottom:8px;text-shadow:1px 2px 0 rgba(0,0,0,.1)}
+  .gigloo-msg p{color:rgba(255,255,255,.92);font-weight:700;font-size:.95rem}
+
+  footer{background:var(--dark);color:rgba(255,255,255,.7);padding:32px 20px;text-align:center;margin-top:0}
+  .f-logo{font-family:'Fredoka One',cursive;font-size:1.4rem;color:var(--yellow);margin-bottom:14px}
+  .f-links{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px}
+  .f-links a{color:rgba(255,255,255,.6);font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:14px;transition:background .2s}
+  .f-links a:hover{background:rgba(255,255,255,.1)}
+  .f-copy{color:rgba(255,255,255,.4);font-size:.75rem}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Gig N <span>Learn</span> 🐯</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="abc-game.html">ABC Game</a></li>
+    <li><a href="math-maze.html">Math Maze</a></li>
+    <li><a href="poems/index.html">Poems</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">🏠 Home</a>
+  <a href="abc-game.html">🔤 ABC Game</a>
+  <a href="poems/index.html">🎵 Poems</a>
+  <a href="contact.html">📧 Contact</a>
+</div>
+
+<section class="hero">
+  <h1>👋 Say Hello to Gigloo!</h1>
+  <p>We'd love to hear from you — questions, suggestions, or just a big hello! 🐯</p>
+</section>
+
+<main class="main">
+
+  <div class="contact-grid">
+    <div class="contact-card" style="--bc:var(--blue)">
+      <span class="cc-icon">📧</span>
+      <h3>Send an Email</h3>
+      <p>Have a question or suggestion? Drop us an email — we reply within 24–48 hours!</p>
+      <a href="mailto:gignlearn@gmail.com" class="contact-btn email">📧 gignlearn@gmail.com</a>
+    </div>
+    <div class="contact-card" style="--bc:#25D366">
+      <span class="cc-icon">💬</span>
+      <h3>WhatsApp Us</h3>
+      <p>Quick message? Reach us directly on WhatsApp — we're happy to help!</p>
+      <a href="https://wa.me/919899550279" target="_blank" class="contact-btn wa">💬 Chat on WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h2>📋 Contact Details</h2>
+    <div class="info-row">
+      <span class="ir-icon">🐯</span>
+      <div class="ir-text"><h4>Brand Name</h4><p>Gig N Learn with Gigloo</p></div>
+    </div>
+    <div class="info-row">
+      <span class="ir-icon">📧</span>
+      <div class="ir-text"><h4>Email</h4><p><a href="mailto:gignlearn@gmail.com">gignlearn@gmail.com</a></p></div>
+    </div>
+    <div class="info-row">
+      <span class="ir-icon">💬</span>
+      <div class="ir-text"><h4>WhatsApp</h4><p><a href="https://wa.me/919899550279" target="_blank">+91 98995 50279</a></p></div>
+    </div>
+    <div class="info-row">
+      <span class="ir-icon">🌐</span>
+      <div class="ir-text"><h4>Website</h4><p><a href="https://www.gignlearn.fun">www.gignlearn.fun</a></p></div>
+    </div>
+    <div class="info-row">
+      <span class="ir-icon">⏰</span>
+      <div class="ir-text"><h4>Response Time</h4><p>We typically reply within 24–48 hours</p></div>
+    </div>
+    <div class="info-row">
+      <span class="ir-icon">🎯</span>
+      <div class="ir-text"><h4>We Can Help With</h4><p>Poem requests · Worksheet suggestions · Collaboration · Feedback · Technical issues</p></div>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h2>🌐 Follow Us on Social Media</h2>
+    <p style="font-size:.88rem;color:var(--mid);font-weight:600;margin-bottom:4px">Stay updated with new poems, games &amp; activity sheets every week!</p>
+    <div class="social-row">
+      <a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank" class="social-btn yt">▶ YouTube</a>
+      <a href="https://www.facebook.com/share/1S3EP51djD/" target="_blank" class="social-btn fb">📘 Facebook</a>
+      <a href="https://www.instagram.com/gignlearn" target="_blank" class="social-btn ig">📸 Instagram</a>
+      <a href="https://pin.it/7hxmrmCe2" target="_blank" class="social-btn pt">📌 Pinterest</a>
+    </div>
+  </div>
+
+  <div class="gigloo-msg">
+    <span class="gm-tiger">🐯</span>
+    <h2>Gigloo loves hearing from you!</h2>
+    <p>Whether you're a parent, teacher, or a little learner — your feedback helps us make Gig N Learn better every day. Thank you for being part of our learning family! 🌈</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="f-logo">🐯 Gig N Learn</div>
+  <div class="f-links">
+    <a href="index.html">Home</a>
+    <a href="poems/index.html">Poems</a>
+    <a href="abc-game.html">ABC Game</a>
+    <a href="about.html">About Us</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <p class="f-copy">© 2026 Gig N Learn · Made with ♥ for little learners</p>
+</footer>
+</body>
+</html>
