@@ -3,475 +3,526 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kids Poems – Free Poems with Videos & PDFs | GigNLearn 🐯</title>
-<meta name="description" content="Free kids poems with YouTube videos and downloadable PDF activity sheets! Magic Words, One Red Apple, Rainbow Snack Parade, Transport and more. By GigNLearn with Gigloo!">
+<title>All Poems, Books & Parent Guides – Gig N Learn 🐯</title>
+<meta name="description" content="Browse all nursery rhymes, original poems, printable worksheets, coloring books and parenting guides from Gig N Learn with Gigloo. All free!">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --orange:#FF6B35;--yellow:#FFD93D;--green:#6BCB77;--blue:#4D96FF;
-  --purple:#C77DFF;--pink:#FF85A1;--red:#FF4757;--teal:#00C2CB;
-  --cream:#FFF9F0;--dark:#2D2D2D;
-  --shadow:0 8px 30px rgba(0,0,0,0.11);
-  --shadow-lg:0 16px 50px rgba(0,0,0,0.18);
-  --radius:22px;--radius-sm:14px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;}
-a{text-decoration:none;color:inherit;}
+  :root{
+    --orange:#FF6B35;--yellow:#FFD93D;--green:#6BCB77;
+    --blue:#4D96FF;--purple:#C77DFF;--pink:#FF85A1;
+    --red:#FF4757;--teal:#00C2CB;--cream:#FFF9F0;
+    --dark:#2D2D2D;--mid:#555;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+  a{text-decoration:none;color:inherit}
 
-/* NAV */
-nav{background:#fff;box-shadow:0 4px 20px rgba(0,0,0,0.08);position:sticky;top:0;z-index:1000;padding:0 24px;}
-.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;}
-.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Fredoka One',cursive;font-size:1.55rem;color:var(--orange);}
-.nav-logo .t{font-size:1.9rem;animation:wiggle 3s ease-in-out infinite;}
-@keyframes wiggle{0%,100%{transform:rotate(-5deg);}50%{transform:rotate(5deg);}}
-.nav-links{display:flex;gap:4px;list-style:none;}
-.nav-links a{font-weight:700;font-size:0.88rem;padding:7px 13px;border-radius:50px;transition:all 0.2s;color:var(--dark);}
-.nav-links a:hover,.nav-links a.active{background:var(--orange);color:#fff;transform:translateY(-2px);}
-.hamburger{display:none;font-size:1.8rem;cursor:pointer;background:none;border:none;}
-.mob-menu{display:none;flex-direction:column;background:#fff;padding:16px;gap:8px;border-top:2px solid var(--cream);}
-.mob-menu a{font-weight:700;padding:10px 16px;border-radius:var(--radius-sm);display:block;}
-.mob-menu a:hover{background:var(--cream);}
-.mob-menu.open{display:flex;}
+  /* ===== NAV ===== */
+  nav{
+    position:sticky;top:0;z-index:100;
+    background:#fff;box-shadow:0 3px 16px rgba(0,0,0,.1);
+    padding:0 20px;height:62px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .nav-logo{font-family:'Fredoka One',cursive;font-size:1.4rem;color:var(--orange)}
+  .nav-logo span{color:var(--blue)}
+  .nav-links{display:flex;gap:4px;list-style:none;align-items:center}
+  .nav-links a{font-weight:700;font-size:.82rem;color:var(--dark);padding:6px 12px;border-radius:20px;transition:background .2s}
+  .nav-links a:hover{background:var(--yellow)}
+  .nav-links a.active{background:var(--orange);color:#fff}
+  .nav-yt{background:var(--red);color:#fff !important;border-radius:20px;padding:6px 14px;font-weight:700;display:flex;align-items:center;gap:5px;font-size:.82rem}
+  .nav-yt:hover{opacity:.88;background:var(--red) !important}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px}
+  .hamburger span{width:24px;height:3px;background:var(--dark);border-radius:2px}
+  .mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:18px}
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{font-family:'Fredoka One',cursive;font-size:1.4rem;color:var(--dark);padding:10px 30px;border-radius:30px;transition:background .2s}
+  .mobile-menu a:hover{background:var(--yellow)}
+  .mobile-menu .mm-yt{background:var(--red);color:#fff}
+  @media(max-width:740px){.nav-links{display:none}.hamburger{display:flex}}
 
-/* HERO */
-.hero{
-  background:linear-gradient(135deg,#FF6B35 0%,#FFD93D 40%,#6BCB77 70%,#4D96FF 100%);
-  padding:56px 24px 80px;text-align:center;
-  clip-path:ellipse(100% 88% at 50% 12%);
-  position:relative;overflow:hidden;
-}
-.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.07'%3E%3Ccircle cx='25' cy='25' r='3'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none;}
-.hero-gigloo{font-size:5rem;display:block;animation:bounce 2s ease-in-out infinite;margin-bottom:12px;}
-@keyframes bounce{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-14px) scale(1.05);}}
-.hero h1{font-family:'Fredoka One',cursive;font-size:clamp(2.2rem,6vw,3.8rem);color:#fff;text-shadow:0 4px 20px rgba(0,0,0,0.2);margin-bottom:12px;line-height:1.1;}
-.hero h1 em{font-style:normal;color:var(--dark);}
-.hero p{color:rgba(255,255,255,0.92);font-weight:700;font-size:1.05rem;max-width:560px;margin:0 auto 28px;}
-.hero-stats{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
-.hstat{background:rgba(255,255,255,0.25);border-radius:50px;padding:8px 20px;color:#fff;font-family:'Fredoka One',cursive;font-size:1rem;}
+  /* ===== HERO ===== */
+  .hero{
+    background:linear-gradient(135deg,#FF6B35 0%,#FFD93D 30%,#6BCB77 60%,#4D96FF 85%,#C77DFF 100%);
+    padding:52px 20px 44px;text-align:center;position:relative;overflow:hidden;
+  }
+  .hero::before{content:'🎵 📚 ✏️ 🎨 🎵 📚 ✏️ 🎨 🎵 📚';position:absolute;top:8px;left:0;right:0;font-size:1rem;opacity:.2;letter-spacing:12px;white-space:nowrap}
+  .hero h1{font-family:'Fredoka One',cursive;font-size:clamp(1.8rem,5vw,3rem);color:#fff;text-shadow:2px 4px 12px rgba(0,0,0,.2);margin-bottom:10px;position:relative;z-index:1}
+  .hero-sub{font-size:1rem;font-weight:700;color:rgba(255,255,255,.9);margin-bottom:20px;position:relative;z-index:1}
+  .hero-count{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.35);color:#fff;font-family:'Fredoka One',cursive;font-size:.95rem;padding:8px 20px;border-radius:30px;backdrop-filter:blur(4px);position:relative;z-index:1}
 
-/* FILTER BAR */
-.filter-bar{background:#fff;padding:20px 24px;border-bottom:2px solid var(--cream);position:sticky;top:68px;z-index:99;}
-.filter-inner{max-width:1100px;margin:0 auto;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
-.filter-btn{padding:8px 20px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:0.92rem;cursor:pointer;border:2px solid #ddd;background:#fff;transition:all 0.2s;color:var(--dark);}
-.filter-btn:hover{border-color:var(--orange);transform:translateY(-2px);}
-.filter-btn.active{background:var(--orange);color:#fff;border-color:var(--orange);}
+  /* ===== FILTER TABS ===== */
+  .filter-wrap{background:#fff;border-bottom:3px solid var(--yellow);padding:14px 20px;position:sticky;top:62px;z-index:90;overflow-x:auto}
+  .filter-tabs{display:flex;gap:8px;min-width:max-content;max-width:1000px;margin:0 auto}
+  .f-tab{
+    font-family:'Fredoka One',cursive;font-size:.9rem;
+    padding:8px 18px;border-radius:30px;border:2px solid transparent;
+    cursor:pointer;transition:all .2s;white-space:nowrap;background:none;
+    color:var(--mid);
+  }
+  .f-tab:hover{background:var(--cream)}
+  .f-tab.active{background:var(--orange);color:#fff;border-color:var(--orange)}
 
-/* MAIN */
-.main-wrap{max-width:1100px;margin:0 auto;padding:48px 24px 80px;}
+  /* ===== SECTIONS ===== */
+  .section{padding:44px 20px}
+  .container{max-width:1000px;margin:0 auto}
+  .cat-title{
+    font-family:'Fredoka One',cursive;
+    font-size:1.5rem;color:var(--dark);
+    margin-bottom:20px;
+    display:flex;align-items:center;gap:10px;
+    padding-bottom:12px;
+    border-bottom:3px solid var(--bc,var(--orange));
+  }
+  .cat-title span{font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:700;color:var(--mid);background:var(--cream);padding:3px 10px;border-radius:10px}
 
-/* SEARCH */
-.search-wrap{margin-bottom:36px;position:relative;}
-.search-input{width:100%;padding:16px 20px 16px 52px;border-radius:50px;border:2px solid #eee;font-family:'Nunito',sans-serif;font-size:1rem;font-weight:700;outline:none;transition:border-color 0.2s;background:#fff;box-shadow:var(--shadow);}
-.search-input:focus{border-color:var(--orange);}
-.search-icon{position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:1.3rem;pointer-events:none;}
-.search-clear{position:absolute;right:16px;top:50%;transform:translateY(-50%);background:none;border:none;font-size:1.3rem;cursor:pointer;display:none;}
+  /* ===== CARD GRID ===== */
+  .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;margin-bottom:48px}
 
-/* SECTION TITLE */
-.sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:10px;}
-.sec-head h2{font-family:'Fredoka One',cursive;font-size:1.5rem;}
-.sec-count{background:var(--cream);border-radius:50px;padding:5px 14px;font-weight:800;font-size:0.85rem;color:#888;}
+  /* STANDARD CARD */
+  .card{
+    background:#fff;border-radius:22px;overflow:hidden;
+    box-shadow:0 4px 16px rgba(0,0,0,.08);
+    transition:transform .2s,box-shadow .2s;display:block;color:var(--dark);
+    position:relative;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(0,0,0,.12)}
+  .card-header{height:100px;display:flex;align-items:center;justify-content:center;font-size:2.8rem;position:relative}
+  .card-body{padding:16px 16px 18px}
+  .card-body h3{font-family:'Fredoka One',cursive;font-size:1.05rem;margin-bottom:5px;line-height:1.3}
+  .card-body p{font-size:.8rem;color:var(--mid);font-weight:600;line-height:1.5;margin-bottom:10px}
+  .card-tags{display:flex;flex-wrap:wrap;gap:6px}
+  .ctag{font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:10px}
+  .original-badge{
+    position:absolute;top:8px;right:8px;
+    background:var(--yellow);color:var(--dark);
+    font-family:'Fredoka One',cursive;font-size:.65rem;
+    padding:3px 8px;border-radius:10px;
+    box-shadow:0 2px 6px rgba(0,0,0,.15);
+  }
+  .new-badge{
+    position:absolute;top:8px;right:8px;
+    background:var(--green);color:#fff;
+    font-family:'Fredoka One',cursive;font-size:.65rem;
+    padding:3px 8px;border-radius:10px;
+  }
 
-/* POEM CARDS */
-.poems-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;}
+  /* WIDE CARD — for parents hub articles */
+  .wide-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-bottom:48px}
+  .wide-card{
+    background:#fff;border-radius:20px;
+    padding:24px 20px;
+    box-shadow:0 4px 16px rgba(0,0,0,.07);
+    border-left:5px solid var(--bc,#7B9E87);
+    transition:transform .2s,box-shadow .2s;display:block;color:var(--dark);
+  }
+  .wide-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,.1)}
+  .wide-card .wc-icon{font-size:2rem;margin-bottom:10px;display:block}
+  .wide-card h3{font-family:'Fredoka One',cursive;font-size:1.1rem;margin-bottom:6px}
+  .wide-card p{font-size:.85rem;color:var(--mid);font-weight:600;line-height:1.5;margin-bottom:12px}
+  .wide-card .read-link{font-size:.82rem;font-weight:800;color:var(--bc,#7B9E87)}
 
-.poem-card{
-  background:#fff;border-radius:var(--radius);overflow:hidden;
-  box-shadow:var(--shadow);transition:transform 0.3s,box-shadow 0.3s;
-  display:flex;flex-direction:column;
-}
-.poem-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);}
+  /* ===== YT BANNER ===== */
+  .yt-banner{
+    background:linear-gradient(135deg,var(--red),#B71C1C);
+    border-radius:24px;padding:32px 24px;text-align:center;
+    box-shadow:0 6px 24px rgba(255,71,87,.25);margin-bottom:48px;
+  }
+  .yt-banner h2{font-family:'Fredoka One',cursive;font-size:1.6rem;color:#fff;margin-bottom:8px}
+  .yt-banner p{color:rgba(255,255,255,.88);font-weight:700;margin-bottom:20px;font-size:.95rem}
+  .yt-banner-btn{
+    display:inline-flex;align-items:center;gap:10px;
+    background:#fff;color:var(--red);
+    font-family:'Fredoka One',cursive;font-size:1.1rem;
+    padding:13px 32px;border-radius:50px;
+    box-shadow:0 5px 0 rgba(0,0,0,.12);
+    transition:transform .15s,box-shadow .15s;
+  }
+  .yt-banner-btn:hover{transform:translateY(-2px);box-shadow:0 7px 0 rgba(0,0,0,.12)}
 
-.card-thumb{
-  height:180px;display:flex;align-items:center;justify-content:center;
-  position:relative;overflow:hidden;
-}
-.card-thumb-emoji{font-size:5rem;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.2));animation:thumbFloat 3s ease-in-out infinite;}
-@keyframes thumbFloat{0%,100%{transform:scale(1);}50%{transform:scale(1.1);}}
-.card-thumb::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,0.1);}
-.card-badge{position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.9);border-radius:50px;padding:4px 12px;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;}
+  /* ===== FOOTER ===== */
+  footer{background:var(--dark);color:rgba(255,255,255,.7);padding:36px 20px;text-align:center}
+  .f-logo{font-family:'Fredoka One',cursive;font-size:1.5rem;color:var(--yellow);margin-bottom:16px}
+  .f-links{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:20px}
+  .f-links a{color:rgba(255,255,255,.6);font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:16px;transition:background .2s}
+  .f-links a:hover{background:rgba(255,255,255,.1)}
+  .f-copy{color:rgba(255,255,255,.4);font-size:.76rem}
 
-/* thumb colours */
-.thumb-manners{background:linear-gradient(135deg,#FF6B35,#FFD93D);}
-.thumb-numbers{background:linear-gradient(135deg,#FF4757,#FF9B6B);}
-.thumb-colours{background:linear-gradient(135deg,#FF4757,#FFD93D,#6BCB77,#4D96FF,#C77DFF);}
-.thumb-transport{background:linear-gradient(135deg,#FF6B35,#4D96FF,#00C2CB);}
+  /* ===== SCROLL TOP ===== */
+  #scrollTop{position:fixed;bottom:24px;right:24px;z-index:99;background:var(--orange);color:#fff;width:46px;height:46px;border-radius:50%;border:none;font-size:1.3rem;cursor:pointer;box-shadow:0 4px 16px rgba(255,107,53,.4);display:none;align-items:center;justify-content:center;transition:transform .2s}
+  #scrollTop:hover{transform:translateY(-3px)}
+  #scrollTop.visible{display:flex}
 
-.card-body{padding:20px;flex:1;display:flex;flex-direction:column;}
-.card-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
-.card-tag{padding:3px 10px;border-radius:50px;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.4px;}
-.card-body h3{font-family:'Fredoka One',cursive;font-size:1.2rem;margin-bottom:6px;line-height:1.3;color:var(--dark);}
-.card-body p{font-size:0.88rem;font-weight:600;color:#777;line-height:1.5;margin-bottom:16px;flex:1;}
-.card-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
-.card-meta-item{background:var(--cream);border-radius:50px;padding:4px 12px;font-size:0.78rem;font-weight:800;color:#888;display:flex;align-items:center;gap:4px;}
-.card-actions{display:flex;gap:10px;}
-.btn-read{flex:1;padding:11px 16px;background:var(--orange);color:#fff;border:none;border-radius:50px;font-family:'Fredoka One',cursive;font-size:0.95rem;cursor:pointer;transition:all 0.2s;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px;}
-.btn-read:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,107,53,0.4);}
-.btn-pdf{padding:11px 14px;background:var(--cream);color:var(--dark);border:2px solid #ddd;border-radius:50px;font-family:'Fredoka One',cursive;font-size:0.92rem;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:5px;}
-.btn-pdf:hover{background:var(--green);color:#fff;border-color:var(--green);}
-
-/* NO RESULTS */
-.no-results{text-align:center;padding:60px 20px;display:none;}
-.no-results .emoji{font-size:4rem;margin-bottom:16px;display:block;}
-.no-results h3{font-family:'Fredoka One',cursive;font-size:1.4rem;margin-bottom:8px;}
-.no-results p{color:#888;font-weight:600;}
-
-/* MORE COMING */
-.coming-soon{background:linear-gradient(135deg,var(--purple),var(--blue));border-radius:var(--radius);padding:40px;text-align:center;color:#fff;margin-top:36px;}
-.coming-soon h2{font-family:'Fredoka One',cursive;font-size:1.6rem;margin-bottom:10px;}
-.coming-soon p{font-weight:700;opacity:0.9;margin-bottom:20px;}
-.coming-emojis{font-size:2rem;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;}
-.notify-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
-.notify-btn{padding:11px 22px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:0.95rem;border:none;cursor:pointer;transition:all 0.2s;}
-.notify-btn.yt{background:#FF0000;color:#fff;}
-.notify-btn.wa{background:#25D366;color:#fff;}
-.notify-btn:hover{transform:translateY(-3px);}
-
-/* BOTTOM CTA */
-.games-cta{background:var(--dark);border-radius:var(--radius);padding:40px;text-align:center;margin-top:36px;}
-.games-cta h2{font-family:'Fredoka One',cursive;font-size:1.5rem;color:var(--yellow);margin-bottom:10px;}
-.games-cta p{color:rgba(255,255,255,0.8);font-weight:700;margin-bottom:24px;}
-.games-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-.game-btn{padding:12px 22px;border-radius:50px;font-family:'Fredoka One',cursive;font-size:0.95rem;border:none;cursor:pointer;transition:all 0.2s;}
-.gb1{background:var(--orange);color:#fff;}
-.gb2{background:var(--blue);color:#fff;}
-.gb3{background:var(--green);color:#fff;}
-.game-btn:hover{transform:translateY(-3px);}
-
-/* FOOTER */
-footer{background:var(--dark);color:#fff;padding:40px 24px 24px;}
-.footer-inner{max-width:1100px;margin:0 auto;}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:32px;}
-.footer-logo{font-family:'Fredoka One',cursive;font-size:1.7rem;color:var(--orange);margin-bottom:10px;display:block;}
-.footer-brand p{color:rgba(255,255,255,0.55);font-size:0.88rem;font-weight:600;line-height:1.7;max-width:260px;}
-.footer-col h4{font-family:'Fredoka One',cursive;font-size:1.05rem;color:var(--yellow);margin-bottom:12px;}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
-.footer-col ul li a{color:rgba(255,255,255,0.55);font-size:0.88rem;font-weight:600;transition:color 0.2s;}
-.footer-col ul li a:hover{color:#fff;}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
-.footer-bottom p{color:rgba(255,255,255,0.35);font-size:0.82rem;font-weight:600;}
-
-#scrollTop{position:fixed;bottom:24px;right:24px;width:50px;height:50px;background:var(--orange);color:#fff;border:none;border-radius:50%;font-size:1.2rem;cursor:pointer;box-shadow:var(--shadow);display:none;align-items:center;justify-content:center;z-index:999;transition:all 0.2s;}
-#scrollTop.visible{display:flex;}
-#scrollTop:hover{background:var(--dark);transform:translateY(-3px);}
-.fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease;}
-.fade-in.visible{opacity:1;transform:translateY(0);}
-
-@media(max-width:768px){
-  .nav-links{display:none;}.hamburger{display:block;}
-  .hero{clip-path:ellipse(120% 90% at 50% 10%);padding-bottom:60px;}
-  .footer-top{grid-template-columns:1fr 1fr;}
-  .poems-grid{grid-template-columns:1fr;}
-}
-@media(max-width:500px){
-  .footer-top{grid-template-columns:1fr;}
-  .card-actions{flex-direction:column;}
-  .btn-pdf{justify-content:center;}
-}
+  /* ===== FADE IN ===== */
+  .fade-in{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+  .fade-in.visible{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <div class="nav-inner">
-    <a href="../index.html" class="nav-logo">
-      <span class="t">🐯</span><span>GigNLearn</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../abc-game.html">ABC Game</a></li>
-      <li><a href="../math-maze.html">Math Maze</a></li>
-      <li><a href="index.html" class="active">📝 Poems</a></li>
-      <li><a href="../name-labels.html">Labels</a></li>
-    </ul>
-    <button class="hamburger" onclick="document.getElementById('mm').classList.toggle('open')">☰</button>
-  </div>
-  <div class="mob-menu" id="mm">
-    <a href="../index.html">🏠 Home</a>
-    <a href="../abc-game.html">🔤 ABC Game</a>
-    <a href="../math-maze.html">🔢 Math Maze</a>
-    <a href="index.html">📝 All Poems</a>
-    <a href="../name-labels.html">🏷️ Name Labels</a>
-  </div>
+  <a href="../index.html" class="nav-logo">Gig N <span>Learn</span> 🐯</a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../abc-game.html">ABC Game</a></li>
+    <li><a href="../math-maze.html">Math Maze</a></li>
+    <li><a href="index.html" class="active">Poems</a></li>
+    <li><a href="../name-labels.html">Labels</a></li>
+    <li><a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank" class="nav-yt">▶ YouTube</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
 
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" onclick="closeMenu()">🏠 Home</a>
+  <a href="../abc-game.html" onclick="closeMenu()">🔤 ABC Game</a>
+  <a href="../math-maze.html" onclick="closeMenu()">🔢 Math Maze</a>
+  <a href="index.html" onclick="closeMenu()">🎵 Poems</a>
+  <a href="../name-labels.html" onclick="closeMenu()">🏷️ Labels</a>
+  <a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank" class="mm-yt" onclick="closeMenu()">▶ YouTube</a>
+</div>
+
 <!-- HERO -->
-<div class="hero">
-  <span class="hero-gigloo">🐯</span>
-  <h1>Kids Poems by <em>Gigloo!</em> 🎵</h1>
-  <p>Free poems with YouTube videos + downloadable PDF activity sheets. Read along, sing along, learn along!</p>
-  <div class="hero-stats">
-    <div class="hstat">🎵 4 Poems</div>
-    <div class="hstat">▶ 4 Videos</div>
-    <div class="hstat">📄 4 Free PDFs</div>
-    <div class="hstat">🆓 100% Free</div>
+<section class="hero">
+  <h1>📚 Poems, Books &amp; Parent Guides</h1>
+  <p class="hero-sub">Sing along · Read aloud · Download free PDFs · Learn together with Gigloo 🐯</p>
+  <div class="hero-count">🎵 15+ Resources · All 100% Free!</div>
+</section>
+
+<!-- FILTER TABS -->
+<div class="filter-wrap">
+  <div class="filter-tabs">
+    <button class="f-tab active" onclick="filterCards('all',this)">🌈 All</button>
+    <button class="f-tab" onclick="filterCards('poems',this)">🎵 Poems</button>
+    <button class="f-tab" onclick="filterCards('worksheets',this)">✏️ Worksheets</button>
+    <button class="f-tab" onclick="filterCards('parents',this)">👨‍👩‍👧 Parents Hub</button>
+    <button class="f-tab" onclick="filterCards('original',this)">⭐ Originals</button>
   </div>
 </div>
 
-<!-- FILTER BAR -->
-<div class="filter-bar">
-  <div class="filter-inner">
-    <button class="filter-btn active" onclick="filterPoems('all',this)">🌟 All Poems</button>
-    <button class="filter-btn" onclick="filterPoems('manners',this)">✨ Manners</button>
-    <button class="filter-btn" onclick="filterPoems('numbers',this)">🔢 Numbers</button>
-    <button class="filter-btn" onclick="filterPoems('colours',this)">🌈 Colours</button>
-    <button class="filter-btn" onclick="filterPoems('transport',this)">🚗 Transport</button>
-  </div>
-</div>
+<div class="container" style="padding:44px 20px">
 
-<!-- MAIN -->
-<div class="main-wrap">
+  <!-- ===== SECTION: ORIGINAL POEMS ===== -->
+  <div class="section-block" data-category="poems original">
+    <div class="cat-title" style="--bc:var(--worm,#E8734A)">⭐ Original Poems by Gig N Learn <span>3 poems</span></div>
+    <div class="card-grid">
 
-  <!-- SEARCH -->
-  <div class="search-wrap">
-    <span class="search-icon">🔍</span>
-    <input type="text" class="search-input" id="searchInput" placeholder="Search poems... (e.g. 'apple', 'transport', 'magic')" oninput="searchPoems(this.value)">
-    <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
-  </div>
+      <a href="wiggle-wiggle-worm.html" class="card" data-cat="poems original">
+        <div class="original-badge">⭐ Original</div>
+        <div class="card-header" style="background:linear-gradient(180deg,#87CEEB,#6BCB77,#5C3A1E)">🐛</div>
+        <div class="card-body">
+          <h3>Wiggle Wiggle Worm</h3>
+          <p>Fun dance poem — wiggle, slide left, slide right! With polka dots &amp; tiny glasses!</p>
+          <div class="card-tags">
+            <span class="ctag" style="background:#E8734A22;color:#E8734A">🕺 Dance</span>
+            <span class="ctag" style="background:#6BCB7722;color:var(--green)">📥 PDF</span>
+          </div>
+        </div>
+      </a>
 
-  <!-- POEMS COUNT -->
-  <div class="sec-head fade-in">
-    <h2>📚 All Poems</h2>
-    <div class="sec-count" id="poemCount">4 poems</div>
-  </div>
+      <a href="magic-words.html" class="card" data-cat="poems original">
+        <div class="original-badge">⭐ Original</div>
+        <div class="card-header" style="background:linear-gradient(135deg,#FF6B35,#FFD93D,#6BCB77)">✨</div>
+        <div class="card-body">
+          <h3>Magic Words</h3>
+          <p>Please, Thank You &amp; Sorry — learn manners with this upbeat original poem!</p>
+          <div class="card-tags">
+            <span class="ctag" style="background:#FF6B3522;color:var(--orange)">🎵 Poem</span>
+            <span class="ctag" style="background:#6BCB7722;color:var(--green)">📥 PDF</span>
+          </div>
+        </div>
+      </a>
 
-  <!-- POEMS GRID -->
-  <div class="poems-grid" id="poemsGrid">
+      <a href="rainbow-snack-parade.html" class="card" data-cat="poems original">
+        <div class="original-badge">⭐ Original</div>
+        <div class="card-header" style="background:linear-gradient(135deg,#FF4757,#FF6B35,#FFD93D,#6BCB77,#4D96FF,#C77DFF)">🌈</div>
+        <div class="card-body">
+          <h3>Rainbow Snack Parade</h3>
+          <p>Colourful fruits &amp; veggies marching in a rainbow parade!</p>
+          <div class="card-tags">
+            <span class="ctag" style="background:#C77DFF22;color:var(--purple)">🌈 Colours</span>
+            <span class="ctag" style="background:#6BCB7722;color:var(--green)">📥 PDF</span>
+          </div>
+        </div>
+      </a>
 
-    <!-- MAGIC WORDS -->
-    <div class="poem-card fade-in" data-tags="manners magic please sorry thank you hello">
-      <div class="card-thumb thumb-manners">
-        <span class="card-thumb-emoji">✨</span>
-        <span class="card-badge" style="color:var(--orange);">✨ Manners</span>
-      </div>
-      <div class="card-body">
-        <div class="card-tags">
-          <span class="card-tag" style="background:#FFF0EA;color:var(--orange);">Manners</span>
-          <span class="card-tag" style="background:#EAFBEE;color:var(--green);">Social Skills</span>
-        </div>
-        <h3>The Magic Words Poem</h3>
-        <p>Hello, Please, Sorry & Thank You — learn the magic words that open every heart! Sing along with Gigloo.</p>
-        <div class="card-meta">
-          <div class="card-meta-item">👶 Ages 2–6</div>
-          <div class="card-meta-item">▶ Video</div>
-          <div class="card-meta-item">📄 7-page PDF</div>
-        </div>
-        <div class="card-actions">
-          <a href="magic-words.html" class="btn-read">📖 Read Poem</a>
-          <a href="https://drive.google.com/uc?export=download&id=1Pks28Ttg1EdMKScGujMTa-FjH3k7ujIn" class="btn-pdf" download>⬇ PDF</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ONE RED APPLE -->
-    <div class="poem-card fade-in" data-tags="numbers counting one apple shapes colours fruits">
-      <div class="card-thumb thumb-numbers">
-        <span class="card-thumb-emoji">🍎</span>
-        <span class="card-badge" style="color:var(--red);">🔢 Numbers</span>
-      </div>
-      <div class="card-body">
-        <div class="card-tags">
-          <span class="card-tag" style="background:#FFF0F1;color:var(--red);">Numbers</span>
-          <span class="card-tag" style="background:#EAF5FF;color:var(--blue);">Shapes</span>
-        </div>
-        <h3>One Red Apple</h3>
-        <p>Count from 1 to 10 with Gigloo! Each number brings a new animal or object — perfect for early counting.</p>
-        <div class="card-meta">
-          <div class="card-meta-item">👶 Ages 2–7</div>
-          <div class="card-meta-item">▶ Video</div>
-          <div class="card-meta-item">📄 10-page PDF</div>
-        </div>
-        <div class="card-actions">
-          <a href="one-red-apple.html" class="btn-read">📖 Read Poem</a>
-          <a href="https://drive.google.com/uc?export=download&id=1Gj_lSiX1pd0z8hDRm0X41Tohu30r-1zq" class="btn-pdf" download>⬇ PDF</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- RAINBOW SNACK PARADE -->
-    <div class="poem-card fade-in" data-tags="colours rainbow red orange yellow green blue fruits vegetables healthy food snack">
-      <div class="card-thumb thumb-colours">
-        <span class="card-thumb-emoji">🌈</span>
-        <span class="card-badge" style="color:var(--purple);">🌈 Colours</span>
-      </div>
-      <div class="card-body">
-        <div class="card-tags">
-          <span class="card-tag" style="background:#F5EAFF;color:var(--purple);">Colours</span>
-          <span class="card-tag" style="background:#EAFBEE;color:var(--green);">Healthy Food</span>
-        </div>
-        <h3>The Rainbow Snack Parade</h3>
-        <p>March through all 7 rainbow colours with fruits and vegetables! Red apple, orange carrot, yellow banana and more!</p>
-        <div class="card-meta">
-          <div class="card-meta-item">👶 Ages 2–7</div>
-          <div class="card-meta-item">▶ Video</div>
-          <div class="card-meta-item">📄 Free PDF</div>
-        </div>
-        <div class="card-actions">
-          <a href="rainbow-snack-parade.html" class="btn-read">📖 Read Poem</a>
-          <a href="https://drive.google.com/uc?export=download&id=182mg9StRWT0VP6-U_ykHcoHuSdzFaDnT" class="btn-pdf" download>⬇ PDF</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- TRANSPORT -->
-    <div class="poem-card fade-in" data-tags="transport land air water car train plane boat bus bike truck helicopter">
-      <div class="card-thumb thumb-transport">
-        <span class="card-thumb-emoji">🚗</span>
-        <span class="card-badge" style="color:#FF6B35;">🚗 Transport</span>
-      </div>
-      <div class="card-body">
-        <div class="card-tags">
-          <span class="card-tag" style="background:#FFF0EA;color:var(--orange);">Land</span>
-          <span class="card-tag" style="background:#EAF5FF;color:var(--blue);">Air</span>
-          <span class="card-tag" style="background:#E0FDFF;color:var(--teal);">Water</span>
-        </div>
-        <h3>Transport Poem</h3>
-        <p>Vroom, zoom and splash! 3 poems in 1 — Land, Air and Water transport. Cars, trains, planes, boats and more!</p>
-        <div class="card-meta">
-          <div class="card-meta-item">👶 Ages 3–8</div>
-          <div class="card-meta-item">▶ Video</div>
-          <div class="card-meta-item">📄 20-page PDF</div>
-        </div>
-        <div class="card-actions">
-          <a href="transport.html" class="btn-read">📖 Read Poem</a>
-          <a href="https://drive.google.com/uc?export=download&id=15RjTaDruLLaKG3cw6m5gYYvyQd_p2J-b" class="btn-pdf" download>⬇ PDF</a>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- end poems-grid -->
-
-  <!-- NO RESULTS -->
-  <div class="no-results" id="noResults">
-    <span class="emoji">🔍</span>
-    <h3>No poems found!</h3>
-    <p>Try searching for: magic, apple, rainbow, transport, colours, numbers</p>
-  </div>
-
-  <!-- MORE COMING SOON -->
-  <div class="coming-soon fade-in">
-    <h2>🎵 More Poems Coming Soon!</h2>
-    <p>New poems with videos and activity sheets every week. Subscribe to stay updated!</p>
-    <div class="coming-emojis">
-      <span>🦁</span><span>🌿</span><span>⭐</span><span>🐝</span><span>🌊</span><span>🎃</span>
-    </div>
-    <div class="notify-row">
-      <a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank" class="notify-btn yt">▶ Subscribe on YouTube</a>
-      <button class="notify-btn wa" onclick="window.open('https://wa.me/?text='+encodeURIComponent('🐯 Check out free kids poems on GigNLearn! https://fitness-made-simplified.github.io/Gignlearn/poems/index.html'),'_blank')">💬 Share on WhatsApp</button>
     </div>
   </div>
 
-  <!-- GAMES CTA -->
-  <div class="games-cta fade-in">
-    <h2>🎮 Done Reading? Time to Play!</h2>
-    <p>Put your learning to the test with Gigloo's free interactive games!</p>
-    <div class="games-row">
-      <a href="../abc-game.html" class="game-btn gb1">🔤 ABC Tap & Play</a>
-      <a href="../math-maze.html" class="game-btn gb2">🔢 Math Maze</a>
-      <a href="../name-labels.html" class="game-btn gb3">🏷️ Name Labels</a>
+  <!-- ===== SECTION: CLASSIC NURSERY RHYMES ===== -->
+  <div class="section-block" data-category="poems">
+    <div class="cat-title" style="--bc:var(--blue)">🎵 Classic Nursery Rhymes <span>5 poems</span></div>
+    <div class="card-grid">
+
+      <a href="baa-baa-black-sheep.html" class="card" data-cat="poems">
+        <div class="card-header" style="background:linear-gradient(180deg,#1a1a4e,#2d3561,#6BCB77)">🐑</div>
+        <div class="card-body">
+          <h3>Baa Baa Black Sheep</h3>
+          <p>Classic woolly nursery rhyme with a night sky &amp; cosy farm feel!</p>
+          <div class="card-tags">
+            <span class="ctag" style="background:#4D96FF22;color:var(--blue)">🎵 Classic</span>
+            <span class="ctag" style="background:#6BCB7722;color:var(--green)">📥 PDF</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="good-morning-sun.html" class="card" data-cat="poems">
+        <div class="card-header" style="background:linear-gradient(180deg,#FF6B35,#FFD93D,#87CEEB)">☀️</div>
+        <div class="card-body">
+          <h3>Good Morning Sun</h3>
+          <p>A bright sunrise rhyme — perfect to start every morning with!</p>
+          <div class="card-tags">
+            <span class="ctag" style="background:#FFD93D22;color:#CC8800">🌅 Morning</span>
+            <span class="ctag" style="background:#6BCB7722;color:var(--green)">📥 PDF</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="one-red-apple.html" class="card" data-cat="poems">
+        <div class="card-header" style="background:linear-gradient(135deg,#FF4757,#FFD93D)">🍎</div>
+        <div class="card-body">
+          <h3>One Red Apple</h3>
+          <p>Count fruits from 1 to 10 with this fruity, fun counting rhyme!</p>
+          <div class="card-tags">
+            <span class="ctag" style="background:#FF475722;color:var(--red)">🔢 Counting</span>
+            <span class="ctag" style="background:#6BCB7722;color:var(--green)">📥 PDF</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="transport.html" class="card" data-cat="poems">
+        <div class="card-header" style="background:linear-gradient(135deg,#FF6B35,#4D96FF,#00C2CB)">🚌</div>
+        <div class="card-body">
+          <h3>Transport Song</h3>
+          <p>Buses, trains, planes &amp; boats — all aboard the transport rhyme!</p>
+          <div class="card-tags">
+            <span class="ctag" style="background:#4D96FF22;color:var(--blue)">🚂 Vehicles</span>
+            <span class="ctag" style="background:#6BCB7722;color:var(--green)">📥 PDF</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="all-things-bright-and-beautiful.html" class="card" data-cat="poems">
+        <div class="card-header" style="background:linear-gradient(180deg,#1a1a4e,#4D96FF,#87CEEB,#6BCB77,#4CAF50)">🌸</div>
+        <div class="card-body">
+          <h3>All Things Bright &amp; Beautiful</h3>
+          <p>Timeless nature hymn — flowers, birds, mountains &amp; rivers!</p>
+          <div class="card-tags">
+            <span class="ctag" style="background:#6BCB7722;color:var(--green)">🌿 Nature</span>
+            <span class="ctag" style="background:#6BCB7722;color:var(--green)">📥 PDF</span>
+          </div>
+        </div>
+      </a>
+
     </div>
   </div>
 
-</div><!-- end main-wrap -->
+  <!-- ===== SECTION: DAYS & LEARNING ===== -->
+  <div class="section-block" data-category="poems">
+    <div class="cat-title" style="--bc:var(--purple)">📅 Days &amp; Learning Rhymes <span>2 poems</span></div>
+    <div class="card-grid">
+
+      <a href="days-of-the-week.html" class="card" data-cat="poems">
+        <div class="card-header" style="background:linear-gradient(180deg,#0d0d1a,#1a0a2e,#3D0066,#7B2FBE)">🌙</div>
+        <div class="card-body">
+          <h3>Days of the Week</h3>
+          <p>Learn all 7 days with a punchy, spooky-fun dark beat!</p>
+          <div class="card-tags">
+            <span class="ctag" style="background:#C77DFF22;color:var(--purple)">📅 Days</span>
+            <span class="ctag" style="background:#6BCB7722;color:var(--green)">📥 PDF</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="busy-hen.html" class="card" data-cat="poems">
+        <div class="card-header" style="background:linear-gradient(180deg,#87CEEB,#FFE4B5,#8B6914,#6B8E23)">🐔</div>
+        <div class="card-body">
+          <h3>Busy Hen</h3>
+          <p>A cheerful farm poem about a hardworking hen and her chicks!</p>
+          <div class="card-tags">
+            <span class="ctag" style="background:#FFD93D22;color:#CC8800">🐾 Farm</span>
+            <span class="ctag" style="background:#6BCB7722;color:var(--green)">📥 PDF</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ===== SECTION: WORKSHEETS & BOOKS ===== -->
+  <div class="section-block" data-category="worksheets">
+    <div class="cat-title" style="--bc:var(--orange)">✏️ Worksheets &amp; Printable Books <span>4 resources</span></div>
+    <div class="card-grid">
+
+      <a href="alphabet-number-tracing-book.html" class="card" data-cat="worksheets">
+        <div class="new-badge">✨ NEW</div>
+        <div class="card-header" style="background:linear-gradient(135deg,#FFD93D,#FF6B35,#FF85A1,#C77DFF,#4D96FF)">✏️</div>
+        <div class="card-body">
+          <h3>A–Z Tracing Book</h3>
+          <p>Trace capital &amp; small letters plus numbers 1–10. Ages 2–5.</p>
+          <div class="card-tags">
+            <span class="ctag" style="background:#FF6B3522;color:var(--orange)">✏️ Tracing</span>
+            <span class="ctag" style="background:#6BCB7722;color:var(--green)">📥 Free PDF</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="vowels-worksheet.html" class="card" data-cat="worksheets">
+        <div class="card-header" style="background:linear-gradient(135deg,#FF4757,#FF6B35,#FFD93D,#6BCB77,#4D96FF,#C77DFF)">🅐</div>
+        <div class="card-body">
+          <h3>Vowels Worksheet</h3>
+          <p>A E I O U — learn vowels with fun rainbow activities!</p>
+          <div class="card-tags">
+            <span class="ctag" style="background:#4D96FF22;color:var(--blue)">🔤 Vowels</span>
+            <span class="ctag" style="background:#6BCB7722;color:var(--green)">📥 Free PDF</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="nursery-workbook.html" class="card" data-cat="worksheets">
+        <div class="card-header" style="background:linear-gradient(135deg,#FF6B35,#FFD93D,#6BCB77,#4D96FF)">📖</div>
+        <div class="card-body">
+          <h3>Nursery Workbook</h3>
+          <p>Complete nursery learning activity bundle — all in one PDF!</p>
+          <div class="card-tags">
+            <span class="ctag" style="background:#4D96FF22;color:var(--blue)">📚 Workbook</span>
+            <span class="ctag" style="background:#6BCB7722;color:var(--green)">📥 Free PDF</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="kids-coloring-book.html" class="card" data-cat="worksheets">
+        <div class="new-badge">✨ NEW</div>
+        <div class="card-header" style="background:linear-gradient(135deg,#FF85A1,#C77DFF,#4D96FF)">🎨</div>
+        <div class="card-body">
+          <h3>Kids Colouring Book</h3>
+          <p>Fun printable colouring pages — animals, shapes &amp; more!</p>
+          <div class="card-tags">
+            <span class="ctag" style="background:#FF85A122;color:var(--pink)">🎨 Colouring</span>
+            <span class="ctag" style="background:#6BCB7722;color:var(--green)">📥 Free PDF</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ===== YT BANNER ===== -->
+  <div class="yt-banner fade-in">
+    <h2>🎵 Watch All Poems on YouTube!</h2>
+    <p>Animated nursery rhymes &amp; original songs — subscribe for new videos every week!</p>
+    <a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank" class="yt-banner-btn">▶ Open YouTube Channel</a>
+  </div>
+
+  <!-- ===== SECTION: PARENTS HUB ===== -->
+  <div class="section-block" data-category="parents">
+    <div class="cat-title" style="--bc:#7B9E87">👨‍👩‍👧 Parents' Hub — Guides &amp; Articles <span>4 guides</span></div>
+    <div class="wide-grid">
+
+      <a href="toddler-tantrums-guide.html" class="wide-card" style="--bc:#7B9E87">
+        <span class="wc-icon">😤➡️😊</span>
+        <h3>Handle Toddler Tantrums Without Yelling</h3>
+        <p>Evidence-based strategies for navigating toddler meltdowns with calm &amp; connection. Ages 1–4.</p>
+        <span class="read-link">Read guide → <small style="color:#999;font-weight:600">8 min read</small></span>
+      </a>
+
+      <a href="when-should-child-start-reading.html" class="wide-card" style="--bc:var(--blue)">
+        <span class="wc-icon">📖</span>
+        <h3>When Should My Child Start Reading?</h3>
+        <p>Signs of reading readiness and how to build early literacy skills at home, step by step.</p>
+        <span class="read-link" style="color:var(--blue)">Read guide →</span>
+      </a>
+
+      <a href="building-self-esteem-in-children.html" class="wide-card" style="--bc:var(--orange)">
+        <span class="wc-icon">💪</span>
+        <h3>Building Self-Esteem in Children</h3>
+        <p>Simple daily habits and phrases that help children develop genuine confidence and resilience.</p>
+        <span class="read-link" style="color:var(--orange)">Read guide →</span>
+      </a>
+
+      <a href="baby-sleeping-problems.html" class="wide-card" style="--bc:var(--purple)">
+        <span class="wc-icon">😴</span>
+        <h3>Baby &amp; Toddler Sleep Problems — Solved</h3>
+        <p>Practical, gentle solutions for night waking, sleep regressions and bedtime battles.</p>
+        <span class="read-link" style="color:var(--purple)">Read guide →</span>
+      </a>
+
+    </div>
+  </div>
+
+</div><!-- /container -->
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <span class="footer-logo">🐯 GigNLearn</span>
-        <p>Free, safe and ad-light learning for kids aged 2–8. Made with love by educators and parents.</p>
-      </div>
-      <div class="footer-col">
-        <h4>🎮 Games</h4>
-        <ul>
-          <li><a href="../abc-game.html">ABC Tap & Play</a></li>
-          <li><a href="../math-maze.html">Math Maze</a></li>
-          <li><a href="../name-labels.html">Name Labels</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>📝 Poems</h4>
-        <ul>
-          <li><a href="magic-words.html">✨ Magic Words</a></li>
-          <li><a href="one-red-apple.html">🍎 One Red Apple</a></li>
-          <li><a href="rainbow-snack-parade.html">🌈 Rainbow Snacks</a></li>
-          <li><a href="transport.html">🚗 Transport</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 GigNLearn. Made with ♥ for little learners everywhere.</p>
-      <p>🐯 Gigloo says: Keep learning every day!</p>
-    </div>
+  <div class="f-logo">🐯 Gig N Learn</div>
+  <div class="f-links">
+    <a href="../index.html">Home</a>
+    <a href="magic-words.html">Magic Words</a>
+    <a href="wiggle-wiggle-worm.html">Wiggle Worm</a>
+    <a href="one-red-apple.html">One Red Apple</a>
+    <a href="rainbow-snack-parade.html">Rainbow Snack</a>
+    <a href="transport.html">Transport</a>
+    <a href="baa-baa-black-sheep.html">Baa Baa</a>
+    <a href="good-morning-sun.html">Good Morning</a>
+    <a href="days-of-the-week.html">Days of Week</a>
+    <a href="busy-hen.html">Busy Hen</a>
+    <a href="all-things-bright-and-beautiful.html">All Things Bright</a>
+    <a href="vowels-worksheet.html">Vowels</a>
+    <a href="nursery-workbook.html">Workbook</a>
+    <a href="alphabet-number-tracing-book.html">Tracing Book</a>
+    <a href="kids-coloring-book.html">Colouring Book</a>
+    <a href="toddler-tantrums-guide.html">Tantrums Guide</a>
+    <a href="when-should-child-start-reading.html">Start Reading</a>
+    <a href="building-self-esteem-in-children.html">Self Esteem</a>
+    <a href="baby-sleeping-problems.html">Sleep Problems</a>
+    <a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank">YouTube ▶</a>
   </div>
+  <p class="f-copy">© 2026 Gig N Learn · Free kids learning by Gigloo 🐯</p>
 </footer>
 
-<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Top">↑</button>
 
 <script>
-// SCROLL TOP
-window.addEventListener('scroll',()=>{
-  document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400);
-});
+  function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+  function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
+  window.addEventListener('scroll',()=>{
+    document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300)
+  })
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})
+  },{threshold:.08})
+  document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el))
 
-// FADE IN
-document.querySelectorAll('.fade-in').forEach(el=>{
-  new IntersectionObserver((entries)=>{
-    entries.forEach((e,i)=>{
-      if(e.isIntersecting){
-        setTimeout(()=>e.target.classList.add('visible'),i*100);
+  // Filter tabs
+  function filterCards(cat, btn){
+    document.querySelectorAll('.f-tab').forEach(t=>t.classList.remove('active'))
+    btn.classList.add('active')
+    const blocks = document.querySelectorAll('.section-block, .wide-grid, .yt-banner')
+    document.querySelectorAll('.card').forEach(c=>{
+      const cardCat = c.getAttribute('data-cat') || ''
+      if(cat==='all'){
+        c.style.display='block'
+      } else {
+        c.style.display = cardCat.includes(cat) ? 'block' : 'none'
       }
-    });
-  },{threshold:0.1}).observe(el);
-});
-
-// FILTER
-function filterPoems(tag, btn){
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  const cards = document.querySelectorAll('.poem-card');
-  let visible = 0;
-  cards.forEach(card=>{
-    const tags = card.dataset.tags || '';
-    const show = tag === 'all' || tags.includes(tag);
-    card.style.display = show ? 'flex' : 'none';
-    if(show) visible++;
-  });
-  document.getElementById('poemCount').textContent = visible + ' poem' + (visible!==1?'s':'');
-  document.getElementById('noResults').style.display = visible===0 ? 'block' : 'none';
-  // clear search
-  document.getElementById('searchInput').value = '';
-  document.getElementById('searchClear').style.display = 'none';
-}
-
-// SEARCH
-function searchPoems(val){
-  const q = val.toLowerCase().trim();
-  document.getElementById('searchClear').style.display = q ? 'block' : 'none';
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  document.querySelector('.filter-btn').classList.add('active');
-  const cards = document.querySelectorAll('.poem-card');
-  let visible = 0;
-  cards.forEach(card=>{
-    const tags = card.dataset.tags || '';
-    const title = card.querySelector('h3').textContent.toLowerCase();
-    const desc = card.querySelector('p').textContent.toLowerCase();
-    const show = !q || tags.includes(q) || title.includes(q) || desc.includes(q);
-    card.style.display = show ? 'flex' : 'none';
-    if(show) visible++;
-  });
-  document.getElementById('poemCount').textContent = visible + ' poem' + (visible!==1?'s':'') + (q ? ` for "${val}"` : '');
-  document.getElementById('noResults').style.display = visible===0 ? 'block' : 'none';
-}
-
-function clearSearch(){
-  document.getElementById('searchInput').value = '';
-  document.getElementById('searchClear').style.display = 'none';
-  searchPoems('');
-}
+    })
+    // Show/hide section blocks
+    document.querySelectorAll('.section-block').forEach(b=>{
+      if(cat==='all'){b.style.display='block';return}
+      const bcat = b.getAttribute('data-category') || ''
+      const hasVisible = [...b.querySelectorAll('.card')].some(c=>c.style.display!=='none')
+      b.style.display = (bcat.includes(cat)||hasVisible) ? 'block' : 'none'
+    })
+    // Wide cards (parents hub)
+    const wideSection = document.querySelector('[data-category="parents"]')
+    if(wideSection){
+      wideSection.style.display = (cat==='all'||cat==='parents') ? 'block' : 'none'
+    }
+  }
 </script>
 </body>
 </html>
