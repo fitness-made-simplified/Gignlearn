@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found – Gig N Learn 🐯</title>
+<meta name="description" content="Oops! This page doesn't exist. Go back to Gig N Learn and find free kids games, poems and worksheets!">
+<meta name="robots" content="noindex, follow">
+<script src="/ga.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--orange:#FF6B35;--yellow:#FFD93D;--green:#6BCB77;--blue:#4D96FF;--purple:#C77DFF;--red:#FF4757;--cream:#FFF9F0;--dark:#2D2D2D;--mid:#555}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
+
+  /* NAV */
+  nav{background:#fff;box-shadow:0 3px 16px rgba(0,0,0,.1);padding:0 20px;height:62px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+  .nav-logo{font-family:'Fredoka One',cursive;font-size:1.4rem;color:var(--orange);text-decoration:none}
+  .nav-logo span{color:var(--blue)}
+  .nav-links{display:flex;gap:6px;list-style:none}
+  .nav-links a{font-weight:700;font-size:.82rem;color:var(--dark);text-decoration:none;padding:5px 10px;border-radius:20px;transition:background .2s}
+  .nav-links a:hover{background:var(--yellow)}
+  @media(max-width:600px){.nav-links{display:none}}
+
+  /* MAIN 404 CONTENT */
+  .main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center}
+
+  /* Animated Gigloo */
+  .gigloo-404{font-size:6rem;display:block;margin-bottom:8px;animation:confused 2s ease-in-out infinite}
+  @keyframes confused{
+    0%{transform:rotate(-10deg)}
+    25%{transform:rotate(10deg)}
+    50%{transform:rotate(-5deg) translateY(-10px)}
+    75%{transform:rotate(5deg)}
+    100%{transform:rotate(-10deg)}
+  }
+
+  /* 404 number */
+  .num-404{
+    font-family:'Fredoka One',cursive;
+    font-size:clamp(5rem,20vw,10rem);
+    line-height:1;
+    margin-bottom:10px;
+    background:linear-gradient(135deg,var(--orange),var(--yellow),var(--green),var(--blue));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    filter:drop-shadow(3px 3px 0 rgba(0,0,0,.08));
+  }
+
+  .err-title{
+    font-family:'Fredoka One',cursive;
+    font-size:clamp(1.4rem,4vw,2rem);
+    color:var(--dark);margin-bottom:10px;
+  }
+  .err-sub{
+    font-size:1rem;font-weight:600;color:var(--mid);
+    margin-bottom:36px;max-width:420px;line-height:1.6;
+  }
+
+  /* Buttons */
+  .btn-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:48px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Fredoka One',cursive;font-size:1rem;
+    padding:12px 26px;border-radius:40px;text-decoration:none;
+    box-shadow:0 5px 0 rgba(0,0,0,.1);transition:transform .15s,box-shadow .15s;
+  }
+  .btn:hover{transform:translateY(-3px);box-shadow:0 8px 0 rgba(0,0,0,.1)}
+  .btn.primary{background:var(--orange);color:#fff}
+  .btn.secondary{background:#fff;color:var(--blue);border:2px solid var(--blue)}
+  .btn.green{background:var(--green);color:#fff}
+
+  /* Quick links */
+  .quick-title{font-family:'Fredoka One',cursive;font-size:1.1rem;color:var(--mid);margin-bottom:16px}
+  .quick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;max-width:560px;width:100%}
+  .quick-card{
+    background:#fff;border-radius:18px;padding:16px 12px;text-align:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.07);text-decoration:none;color:var(--dark);
+    border-top:4px solid var(--bc,var(--orange));
+    transition:transform .2s;
+  }
+  .quick-card:hover{transform:translateY(-4px)}
+  .quick-card .qi{font-size:1.8rem;margin-bottom:6px;display:block}
+  .quick-card h3{font-family:'Fredoka One',cursive;font-size:.9rem}
+
+  /* Fun message */
+  .fun-msg{
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    border-radius:20px;padding:20px 24px;
+    max-width:420px;width:100%;
+    margin-top:32px;
+  }
+  .fun-msg p{
+    font-family:'Fredoka One',cursive;font-size:1rem;
+    color:#fff;line-height:1.5;
+  }
+
+  /* FOOTER */
+  footer{background:var(--dark);color:rgba(255,255,255,.6);padding:24px 20px;text-align:center;flex-shrink:0}
+  .f-logo{font-family:'Fredoka One',cursive;font-size:1.3rem;color:var(--yellow);margin-bottom:12px;display:block}
+  .f-links{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:12px}
+  .f-links a{color:rgba(255,255,255,.55);text-decoration:none;font-weight:700;font-size:.8rem;padding:4px 10px;border-radius:14px;transition:background .2s}
+  .f-links a:hover{background:rgba(255,255,255,.1);color:#fff}
+  .f-copy{color:rgba(255,255,255,.35);font-size:.75rem}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/index.html" class="nav-logo">Gig N <span>Learn</span> 🐯</a>
+  <ul class="nav-links">
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/poems/index.html">Poems</a></li>
+    <li><a href="/abc-game.html">ABC Game</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="main">
+
+  <span class="gigloo-404">🐯</span>
+  <div class="num-404">404</div>
+
+  <h1 class="err-title">Oops! Gigloo got lost! 🗺️</h1>
+  <p class="err-sub">
+    This page doesn't exist — maybe it moved, or the link was a little wiggly! 🐛<br>
+    Let's get you back to the learning fun!
+  </p>
+
+  <div class="btn-row">
+    <a href="/index.html" class="btn primary">🏠 Back to Home</a>
+    <a href="/poems/index.html" class="btn secondary">🎵 Browse Poems</a>
+    <a href="/abc-game.html" class="btn green">🔤 Play ABC Game</a>
+  </div>
+
+  <p class="quick-title">Or jump to a favourite:</p>
+
+  <div class="quick-grid">
+    <a href="/poems/wiggle-wiggle-worm.html" class="quick-card" style="--bc:var(--orange)">
+      <span class="qi">🐛</span><h3>Wiggle Worm</h3>
+    </a>
+    <a href="/poems/magic-words.html" class="quick-card" style="--bc:var(--purple)">
+      <span class="qi">✨</span><h3>Magic Words</h3>
+    </a>
+    <a href="/math-maze.html" class="quick-card" style="--bc:var(--blue)">
+      <span class="qi">🔢</span><h3>Math Maze</h3>
+    </a>
+    <a href="/poems/alphabet-number-tracing-book.html" class="quick-card" style="--bc:var(--green)">
+      <span class="qi">✏️</span><h3>Tracing Book</h3>
+    </a>
+  </div>
+
+  <div class="fun-msg">
+    <p>💡 If you typed a URL, double-check it!<br>
+    If you clicked a link, let us know: <br>
+    📧 gignlearn@gmail.com</p>
+  </div>
+
+</main>
+
+<footer>
+  <span class="f-logo">🐯 Gig N Learn</span>
+  <div class="f-links">
+    <a href="/index.html">Home</a>
+    <a href="/poems/index.html">Poems</a>
+    <a href="/abc-game.html">ABC Game</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms</a>
+  </div>
+  <p class="f-copy">© 2026 Gig N Learn · gignlearn.fun</p>
+</footer>
+
+<script src="/cookie-consent.js"></script>
+</body>
+</html>
