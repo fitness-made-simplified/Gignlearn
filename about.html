@@ -3,298 +3,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us – GigNLearn & Gigloo the Tiger 🐯 | Free Kids Learning</title>
-<meta name="description" content="Meet Sushant and Gigloo the Tiger — the team behind GigNLearn. A free kids educational platform with poems, games, worksheets and parenting guides for ages 2–8.">
+<title>About Us – Gig N Learn 🐯 | Free Kids Learning</title>
+<meta name="description" content="Learn about Gig N Learn — a free educational website for kids aged 2–8 with nursery rhymes, games, worksheets and parenting guides. Meet Gigloo the Tiger!">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--orange:#FF6B35;--yellow:#FFD93D;--green:#6BCB77;--blue:#4D96FF;--purple:#C77DFF;--pink:#FF85A1;--red:#FF4757;--teal:#00C2CB;--cream:#FFF9F0;--dark:#2D2D2D;}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;}
+  :root{--orange:#FF6B35;--yellow:#FFD93D;--green:#6BCB77;--blue:#4D96FF;--purple:#C77DFF;--red:#FF4757;--teal:#00C2CB;--cream:#FFF9F0;--dark:#2D2D2D;--mid:#555}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+  a{text-decoration:none;color:inherit}
+  nav{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 3px 15px rgba(0,0,0,.1);padding:0 20px;height:60px;display:flex;align-items:center;justify-content:space-between}
+  .nav-logo{font-family:'Fredoka One',cursive;font-size:1.4rem;color:var(--orange)}
+  .nav-logo span{color:var(--blue)}
+  .nav-links{display:flex;gap:6px;list-style:none}
+  .nav-links a{font-weight:700;font-size:.82rem;color:var(--dark);padding:5px 10px;border-radius:20px;transition:background .2s}
+  .nav-links a:hover{background:var(--yellow)}
+  .nav-links a.active{background:var(--orange);color:#fff}
+  @media(max-width:700px){.nav-links{display:none}}
 
-nav{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 3px 15px rgba(0,0,0,.1);padding:0 20px;height:62px;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{font-family:'Fredoka One',cursive;font-size:1.4rem;color:var(--orange);text-decoration:none;}
-.nav-logo span{color:var(--blue);}
-.nav-links{display:flex;gap:6px;list-style:none;}
-.nav-links a{font-weight:700;font-size:.82rem;color:var(--dark);text-decoration:none;padding:5px 10px;border-radius:20px;transition:background .2s;}
-.nav-links a:hover{background:var(--yellow);}
-.nav-links a.active{background:var(--orange);color:#fff;}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px;}
-.hamburger span{width:24px;height:3px;background:var(--dark);border-radius:2px;}
-.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:20px;}
-.mobile-menu.open{display:flex;}
-.mobile-menu a{font-family:'Fredoka One',cursive;font-size:1.4rem;color:var(--dark);text-decoration:none;padding:10px 30px;border-radius:30px;transition:background .2s;}
-.mobile-menu a:hover{background:var(--yellow);}
-@media(max-width:700px){.nav-links{display:none;}.hamburger{display:flex;}}
+  .hero{background:linear-gradient(135deg,#FF6B35,#FFD93D,#6BCB77,#4D96FF);padding:64px 20px;text-align:center;position:relative;overflow:hidden}
+  .hero .mascot{font-size:5rem;display:block;margin-bottom:14px;animation:bounce 3s ease-in-out infinite}
+  @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  .hero h1{font-family:'Fredoka One',cursive;font-size:clamp(2rem,5vw,3rem);color:#fff;text-shadow:2px 4px 12px rgba(0,0,0,.2);margin-bottom:10px}
+  .hero p{font-size:1rem;font-weight:700;color:rgba(255,255,255,.92);max-width:520px;margin:0 auto}
 
-.hero{background:linear-gradient(135deg,#FF6B35,#FFD93D,#6BCB77,#4D96FF);padding:60px 20px 50px;text-align:center;position:relative;overflow:hidden;}
-.hero h1{font-family:'Fredoka One',cursive;font-size:clamp(2rem,6vw,3rem);color:#fff;text-shadow:2px 3px 0 rgba(0,0,0,.15);margin-bottom:10px;}
-.hero p{color:rgba(255,255,255,.92);font-size:1.05rem;font-weight:700;max-width:560px;margin:0 auto;}
-.hero-mascot{font-size:5rem;margin-bottom:16px;display:block;animation:bounce 2s ease-in-out infinite;}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  .main{max-width:820px;margin:0 auto;padding:52px 20px}
+  h2{font-family:'Fredoka One',cursive;font-size:1.5rem;color:var(--dark);margin:36px 0 14px}
+  p{margin-bottom:16px;line-height:1.75;font-size:.95rem;color:var(--dark);font-weight:500}
+  strong{color:#2D4A3E;font-weight:700}
 
-.container{max-width:860px;margin:0 auto;padding:0 20px;}
-.section{padding:50px 20px;}
+  /* Mission cards */
+  .mission-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:24px 0}
+  .mission-card{background:#fff;border-radius:20px;padding:24px 16px;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.07);border-top:5px solid var(--bc,var(--orange))}
+  .mission-card .mi{font-size:2.2rem;margin-bottom:10px;display:block}
+  .mission-card h3{font-family:'Fredoka One',cursive;font-size:1rem;margin-bottom:5px}
+  .mission-card p{font-size:.8rem;color:var(--mid);margin:0}
 
-/* FOUNDER CARD */
-.founder-card{background:#fff;border-radius:28px;padding:40px 36px;box-shadow:0 6px 30px rgba(0,0,0,.08);display:grid;grid-template-columns:160px 1fr;gap:32px;align-items:start;margin-bottom:40px;}
-@media(max-width:600px){.founder-card{grid-template-columns:1fr;text-align:center;}}
-.founder-avatar{width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--yellow));display:flex;align-items:center;justify-content:center;font-size:4.5rem;box-shadow:0 6px 20px rgba(255,107,53,.3);flex-shrink:0;}
-@media(max-width:600px){.founder-avatar{margin:0 auto;}}
-.founder-name{font-family:'Fredoka One',cursive;font-size:1.8rem;color:var(--dark);margin-bottom:4px;}
-.founder-title{font-family:'Fredoka One',cursive;font-size:.95rem;color:var(--orange);margin-bottom:14px;}
-.founder-bio{font-size:.95rem;line-height:1.75;color:#555;font-weight:600;}
-.founder-bio strong{color:var(--dark);}
-.credential-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
-.cred-chip{font-family:'Fredoka One',cursive;font-size:.78rem;padding:5px 14px;border-radius:20px;background:var(--cream);border:2px solid var(--yellow);color:var(--dark);}
+  /* What we offer */
+  .offer-list{list-style:none;padding:0;margin:16px 0}
+  .offer-list li{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid #eee;font-size:.92rem;font-weight:600}
+  .offer-list li:last-child{border-bottom:none}
+  .offer-list li .ol-icon{font-size:1.3rem;flex-shrink:0}
 
-/* MISSION */
-.mission-card{background:linear-gradient(135deg,#FF6B35,#FFD93D);border-radius:24px;padding:36px 32px;text-align:center;margin-bottom:40px;color:#fff;}
-.mission-card h2{font-family:'Fredoka One',cursive;font-size:2rem;margin-bottom:12px;text-shadow:1px 2px 0 rgba(0,0,0,.1);}
-.mission-card p{font-size:1rem;font-weight:700;opacity:.95;line-height:1.7;max-width:580px;margin:0 auto;}
+  /* Values */
+  .values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:20px 0}
+  .value-card{background:#fff;border-radius:16px;padding:20px 16px;box-shadow:0 3px 12px rgba(0,0,0,.06);border-left:4px solid var(--bc,var(--green))}
+  .value-card h4{font-family:'Fredoka One',cursive;font-size:1rem;margin-bottom:6px}
+  .value-card p{font-size:.82rem;color:var(--mid);margin:0;line-height:1.5}
 
-/* WHAT WE OFFER */
-.offer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-bottom:50px;}
-.offer-card{background:#fff;border-radius:20px;padding:24px 18px;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.07);border-top:5px solid var(--yellow);transition:transform .2s;}
-.offer-card:hover{transform:translateY(-4px);}
-.offer-card:nth-child(1){border-color:var(--orange);}
-.offer-card:nth-child(2){border-color:var(--blue);}
-.offer-card:nth-child(3){border-color:var(--green);}
-.offer-card:nth-child(4){border-color:var(--purple);}
-.offer-card:nth-child(5){border-color:var(--pink);}
-.offer-card:nth-child(6){border-color:var(--teal);}
-.offer-icon{font-size:2.5rem;margin-bottom:10px;}
-.offer-card h3{font-family:'Fredoka One',cursive;font-size:1.05rem;margin-bottom:6px;}
-.offer-card p{font-size:.83rem;color:#666;font-weight:600;line-height:1.4;}
+  /* CTA */
+  .cta-box{background:linear-gradient(135deg,var(--orange),var(--yellow));border-radius:24px;padding:36px 28px;text-align:center;margin:36px 0}
+  .cta-box h2{font-family:'Fredoka One',cursive;font-size:1.6rem;color:#fff;margin:0 0 10px}
+  .cta-box p{color:rgba(255,255,255,.92);font-weight:700;margin-bottom:20px;font-size:.95rem}
+  .cta-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;font-family:'Fredoka One',cursive;font-size:1rem;padding:11px 24px;border-radius:40px;box-shadow:0 4px 0 rgba(0,0,0,.1);transition:transform .15s}
+  .cta-btn:hover{transform:translateY(-2px)}
+  .cta-btn.orange{color:var(--orange)}
+  .cta-btn.blue{color:var(--blue)}
 
-/* VALUES */
-.values-section{background:#fff;border-radius:24px;padding:36px 32px;box-shadow:0 4px 20px rgba(0,0,0,.07);margin-bottom:40px;}
-.values-section h2{font-family:'Fredoka One',cursive;font-size:1.8rem;text-align:center;margin-bottom:24px;color:var(--dark);}
-.values-list{display:flex;flex-direction:column;gap:14px;}
-.value-item{display:flex;align-items:flex-start;gap:14px;padding:14px;background:var(--cream);border-radius:14px;}
-.value-icon{font-size:1.8rem;flex-shrink:0;}
-.value-item h4{font-family:'Fredoka One',cursive;font-size:1rem;color:var(--dark);margin-bottom:4px;}
-.value-item p{font-size:.85rem;color:#666;font-weight:600;line-height:1.45;}
-
-/* GIGLOO */
-.gigloo-section{background:linear-gradient(135deg,#4D96FF,#C77DFF);border-radius:24px;padding:36px 32px;text-align:center;margin-bottom:40px;color:#fff;}
-.gigloo-section h2{font-family:'Fredoka One',cursive;font-size:1.8rem;margin-bottom:12px;}
-.gigloo-section p{font-size:.95rem;font-weight:700;opacity:.92;line-height:1.7;max-width:560px;margin:0 auto 20px;}
-.gigloo-big{font-size:5rem;display:block;margin:0 auto 12px;animation:bounce 2s ease-in-out infinite;}
-
-/* STATS */
-.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;margin-bottom:40px;}
-.stat-box{background:#fff;border-radius:18px;padding:22px 12px;text-align:center;box-shadow:0 3px 14px rgba(0,0,0,.06);}
-.stat-num{font-family:'Fredoka One',cursive;font-size:2rem;color:var(--orange);}
-.stat-label{font-size:.8rem;color:#888;font-weight:700;margin-top:4px;}
-
-/* CTA */
-.cta-section{background:linear-gradient(135deg,var(--green),var(--teal));border-radius:24px;padding:36px 28px;text-align:center;margin-bottom:20px;}
-.cta-section h2{font-family:'Fredoka One',cursive;font-size:1.8rem;color:#fff;margin-bottom:10px;}
-.cta-section p{color:rgba(255,255,255,.9);font-weight:700;margin-bottom:22px;}
-.cta-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
-.cta-btn{font-family:'Fredoka One',cursive;font-size:1rem;padding:13px 26px;border-radius:50px;text-decoration:none;transition:transform .2s,box-shadow .2s;display:inline-flex;align-items:center;gap:8px;}
-.cta-btn:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.2);}
-.cta-btn.primary{background:#fff;color:var(--green);}
-.cta-btn.secondary{background:rgba(0,0,0,.15);color:#fff;border:2px solid rgba(255,255,255,.3);}
-
-footer{background:var(--dark);color:#fff;padding:36px 20px;text-align:center;}
-.f-logo{font-family:'Fredoka One',cursive;font-size:1.5rem;color:var(--yellow);margin-bottom:16px;}
-.f-links{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;}
-.f-links a{color:rgba(255,255,255,.7);text-decoration:none;font-weight:700;font-size:.83rem;padding:4px 12px;border-radius:16px;transition:background .2s;}
-.f-links a:hover{background:rgba(255,255,255,.1);}
-.f-copy{color:rgba(255,255,255,.4);font-size:.78rem;}
+  footer{background:var(--dark);color:rgba(255,255,255,.7);padding:32px 20px;text-align:center}
+  .f-logo{font-family:'Fredoka One',cursive;font-size:1.4rem;color:var(--yellow);margin-bottom:14px}
+  .f-links{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px}
+  .f-links a{color:rgba(255,255,255,.6);font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:14px;transition:background .2s}
+  .f-links a:hover{background:rgba(255,255,255,.1)}
+  .f-copy{color:rgba(255,255,255,.4);font-size:.75rem}
 </style>
 </head>
 <body>
-
 <nav>
   <a href="index.html" class="nav-logo">Gig N <span>Learn</span> 🐯</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="abc-game.html">ABC Game</a></li>
-    <li><a href="math-maze.html">Math Maze</a></li>
     <li><a href="poems/index.html">Poems</a></li>
-    <li><a href="name-labels.html">Labels</a></li>
+    <li><a href="contact.html">Contact</a></li>
     <li><a href="about.html" class="active">About</a></li>
   </ul>
-  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html" onclick="closeMenu()">🏠 Home</a>
-  <a href="abc-game.html" onclick="closeMenu()">🔤 ABC Game</a>
-  <a href="math-maze.html" onclick="closeMenu()">🔢 Math Maze</a>
-  <a href="poems/index.html" onclick="closeMenu()">📖 Poems</a>
-  <a href="about.html" onclick="closeMenu()">👋 About</a>
-</div>
 
 <section class="hero">
-  <span class="hero-mascot">🐯</span>
-  <h1>About GigNLearn</h1>
-  <p>A free, joyful learning space for little ones — built by a parent, for parents and kids everywhere 💛</p>
+  <span class="mascot">🐯</span>
+  <h1>About Gig N Learn</h1>
+  <p>Free, joyful, child-safe learning for every little one aged 2–8 🌈</p>
 </section>
 
-<section class="section">
-  <div class="container">
+<main class="main">
 
-    <!-- FOUNDER -->
-    <div class="founder-card">
-      <div class="founder-avatar">👨‍💻</div>
-      <div>
-        <div class="founder-name">Sushant</div>
-        <div class="founder-title">Founder & Creator · GigNLearn</div>
-        <p class="founder-bio">
-          Hi! I'm <strong>Sushant</strong>, the creator of GigNLearn and the human behind Gigloo the Tiger 🐯. As a <strong>parent and lifelong learner</strong>, I started GigNLearn because I wanted my child — and children everywhere — to have access to <strong>genuinely fun, high-quality, free learning resources</strong>.
-          <br><br>
-          I built every poem page, every interactive game, and every parenting guide on this site with care and intention. The content is informed by <strong>child development research, parenting literature, and the real-world experience of raising a young child</strong>. I work closely with educator communities and parent groups to ensure the material is both developmentally appropriate and genuinely engaging.
-          <br><br>
-          GigNLearn is my way of giving back — making the kind of resource I wish existed when I started my parenting journey.
-        </p>
-        <div class="credential-chips">
-          <span class="cred-chip">👨‍👧 Parent</span>
-          <span class="cred-chip">📚 Early Learning Enthusiast</span>
-          <span class="cred-chip">💻 Web Developer</span>
-          <span class="cred-chip">🧒 Kids Education Advocate</span>
-          <span class="cred-chip">🇮🇳 Based in India</span>
-        </div>
-      </div>
-    </div>
+  <h2>🌟 Who We Are</h2>
+  <p><strong>Gig N Learn</strong> is a free educational website designed for children aged 2–8. We create original nursery rhymes, fun interactive games, printable worksheets, and parenting guides — all completely free and without any registration needed.</p>
+  <p>Our friendly mascot <strong>Gigloo the Tiger 🐯</strong> guides children through every activity, making learning feel like an adventure rather than a chore.</p>
 
-    <!-- MISSION -->
-    <div class="mission-card">
-      <h2>🎯 Our Mission</h2>
-      <p>To make high-quality early childhood education freely accessible to every family — regardless of location, language, or financial background. Every child deserves to learn, play, and grow with joy.</p>
-    </div>
-
-    <!-- STATS -->
-    <div class="stats-row">
-      <div class="stat-box"><div class="stat-num">20+</div><div class="stat-label">Free Pages & Activities</div></div>
-      <div class="stat-box"><div class="stat-num">3</div><div class="stat-label">Interactive Games</div></div>
-      <div class="stat-box"><div class="stat-num">4</div><div class="stat-label">Parenting Guides</div></div>
-      <div class="stat-box"><div class="stat-num">100%</div><div class="stat-label">Free Forever</div></div>
-      <div class="stat-box"><div class="stat-num">Ages 2–8</div><div class="stat-label">Target Audience</div></div>
-    </div>
-
-    <!-- WHAT WE OFFER -->
-    <h2 style="font-family:'Fredoka One',cursive;font-size:1.8rem;text-align:center;margin-bottom:24px;">📦 What GigNLearn Offers</h2>
-    <div class="offer-grid">
-      <div class="offer-card">
-        <div class="offer-icon">🎵</div>
-        <h3>Nursery Poems</h3>
-        <p>Original and classic nursery rhymes with karaoke-style lyrics and read-aloud feature</p>
-      </div>
-      <div class="offer-card">
-        <div class="offer-icon">🎮</div>
-        <h3>Interactive Games</h3>
-        <p>ABC Tap & Play, Math Maze, and Name Label Maker — all free, no login needed</p>
-      </div>
-      <div class="offer-card">
-        <div class="offer-icon">📄</div>
-        <h3>Free Worksheets</h3>
-        <p>Printable PDF worksheets for tracing, vowels, coloring, and nursery activities</p>
-      </div>
-      <div class="offer-card">
-        <div class="offer-icon">👨‍👩‍👧</div>
-        <h3>Parenting Guides</h3>
-        <p>Research-informed articles on child development, sleep, self-esteem, and reading</p>
-      </div>
-      <div class="offer-card">
-        <div class="offer-icon">🎬</div>
-        <h3>YouTube Videos</h3>
-        <p>Sing-along nursery rhyme videos on our YouTube channel with Gigloo the Tiger</p>
-      </div>
-      <div class="offer-card">
-        <div class="offer-icon">🏷️</div>
-        <h3>Name Labels</h3>
-        <p>Free printable name labels for school bags, water bottles, and stationery</p>
-      </div>
-    </div>
-
-    <!-- GIGLOO -->
-    <div class="gigloo-section">
-      <span class="gigloo-big">🐯</span>
-      <h2>Meet Gigloo the Tiger!</h2>
-      <p>Gigloo is GigNLearn's friendly mascot — a curious, cheerful tiger cub who loves learning, singing, and making friends. Gigloo represents the spirit of joyful education: brave enough to try new things, kind enough to help others, and always ready for an adventure!</p>
-      <p style="margin-top:8px;font-size:.85rem;opacity:.8;">Every poem, game, and guide on this site comes with a little bit of Gigloo's magic 🌟</p>
-    </div>
-
-    <!-- VALUES -->
-    <div class="values-section">
-      <h2>💛 Our Values</h2>
-      <div class="values-list">
-        <div class="value-item">
-          <div class="value-icon">🆓</div>
-          <div>
-            <h4>Free & Accessible</h4>
-            <p>All core content on GigNLearn is and always will be freely accessible. We believe cost should never be a barrier to quality early education. The site is supported through advertising and optional affiliate links, which allow us to keep everything free.</p>
-          </div>
-        </div>
-        <div class="value-item">
-          <div class="value-icon">🔒</div>
-          <div>
-            <h4>Child-Safe First</h4>
-            <p>Every page, game, and link on this site is curated to be 100% appropriate for young children. We do not feature violent, adult, or inappropriate content of any kind.</p>
-          </div>
-        </div>
-        <div class="value-item">
-          <div class="value-icon">📚</div>
-          <div>
-            <h4>Evidence-Informed</h4>
-            <p>Our parenting guides and learning activities are informed by child development research, phonics education principles, and guidance from the early learning community.</p>
-          </div>
-        </div>
-        <div class="value-item">
-          <div class="value-icon">🌍</div>
-          <div>
-            <h4>For Every Family</h4>
-            <p>GigNLearn is designed for families everywhere — India, the US, the UK, and beyond. We celebrate diverse cultures and create content that any family can enjoy together.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- DISCLOSURE -->
-    <div style="background:#fff;border-radius:18px;padding:24px 28px;margin-bottom:40px;border:2px solid var(--yellow);box-shadow:0 3px 14px rgba(0,0,0,.05);">
-      <h3 style="font-family:'Fredoka One',cursive;font-size:1.1rem;margin-bottom:10px;">📢 Transparency & Disclosures</h3>
-      <p style="font-size:.88rem;color:#555;font-weight:600;line-height:1.7;">
-        GigNLearn is a free educational website supported by advertising (including Google AdSense) and affiliate partnerships (including Amazon Associates). When you click on affiliate product links, we may earn a small commission at no extra cost to you. This helps us maintain the site and continue creating free content for children and families. All content recommendations are made independently — we only recommend products and resources we genuinely believe are safe and beneficial for kids.
-      </p>
-    </div>
-
-    <!-- CTA -->
-    <div class="cta-section">
-      <h2>Start Exploring with Gigloo! 🐯</h2>
-      <p>Free games, poems, worksheets and parenting guides — all in one place</p>
-      <div class="cta-btns">
-        <a href="abc-game.html" class="cta-btn primary">🔤 ABC Game</a>
-        <a href="poems/index.html" class="cta-btn primary">📖 Poems</a>
-        <a href="contact.html" class="cta-btn secondary">📬 Contact Us</a>
-      </div>
-    </div>
-
+  <div class="mission-grid">
+    <div class="mission-card" style="--bc:var(--orange)"><span class="mi">🎯</span><h3>Our Mission</h3><p>Make quality early learning free and accessible to every family</p></div>
+    <div class="mission-card" style="--bc:var(--blue)"><span class="mi">👶</span><h3>Our Audience</h3><p>Children aged 2–8, parents, teachers &amp; nursery educators</p></div>
+    <div class="mission-card" style="--bc:var(--green)"><span class="mi">💚</span><h3>Our Promise</h3><p>Always free, always safe, always child-first</p></div>
+    <div class="mission-card" style="--bc:var(--purple)"><span class="mi">⭐</span><h3>Original Content</h3><p>Many of our poems and songs are 100% original — created just for Gigloo!</p></div>
   </div>
-</section>
+
+  <h2>📚 What Gig N Learn Offers</h2>
+  <ul class="offer-list">
+    <li><span class="ol-icon">🎵</span><span><strong>Nursery Rhymes &amp; Original Poems</strong> — Sing-along videos, karaoke-style lyrics, and free PDF worksheets for every poem</span></li>
+    <li><span class="ol-icon">🎮</span><span><strong>Interactive Learning Games</strong> — ABC Tap &amp; Play, Math Maze, and Name Label Maker — all browser-based and free</span></li>
+    <li><span class="ol-icon">✏️</span><span><strong>Free Printable Worksheets</strong> — Tracing books, vowels worksheets, colouring pages and more — no signup required</span></li>
+    <li><span class="ol-icon">👨‍👩‍👧</span><span><strong>Parents' Hub</strong> — Evidence-based articles on gentle parenting, early literacy, child development and sleep</span></li>
+    <li><span class="ol-icon">▶️</span><span><strong>YouTube Channel</strong> — Animated nursery rhyme videos updated regularly at <a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank" style="color:var(--blue)">@Gignlearnwithgigloo</a></span></li>
+  </ul>
+
+  <h2>💛 Our Values</h2>
+  <div class="values-grid">
+    <div class="value-card" style="--bc:var(--orange)"><h4>🆓 Always Free</h4><p>Every resource on Gig N Learn is and always will be free</p></div>
+    <div class="value-card" style="--bc:var(--green)"><h4>🛡️ Child Safe</h4><p>No ads on children's content, no data collection from kids</p></div>
+    <div class="value-card" style="--bc:var(--blue)"><h4>🎓 Evidence-Based</h4><p>Our content is grounded in child development research</p></div>
+    <div class="value-card" style="--bc:var(--purple)"><h4>🌍 Inclusive</h4><p>Designed for every family, everywhere, in every home</p></div>
+  </div>
+
+  <h2>📧 Get in Touch</h2>
+  <p>We love hearing from parents, teachers, and caregivers. Have a poem request? A suggestion? Or just want to say hello to Gigloo? We'd love to hear from you!</p>
+  <p>📧 Email: <a href="mailto:gignlearn@gmail.com" style="color:var(--blue);font-weight:700">gignlearn@gmail.com</a><br>
+  💬 WhatsApp: <a href="https://wa.me/919899550279" target="_blank" style="color:var(--green);font-weight:700">+91 98995 50279</a></p>
+
+  <div class="cta-box">
+    <h2>🐯 Start Learning with Gigloo!</h2>
+    <p>Jump in — everything is free, no signup needed!</p>
+    <div class="cta-btns">
+      <a href="abc-game.html" class="cta-btn orange">🔤 Play ABC Game</a>
+      <a href="poems/index.html" class="cta-btn blue">🎵 Read Poems</a>
+    </div>
+  </div>
+
+</main>
 
 <footer>
-  <div class="f-logo">🐯 Gig N Learn with Gigloo</div>
+  <div class="f-logo">🐯 Gig N Learn</div>
   <div class="f-links">
     <a href="index.html">Home</a>
-    <a href="poems/index.html">All Poems</a>
+    <a href="poems/index.html">Poems</a>
     <a href="abc-game.html">ABC Game</a>
-    <a href="math-maze.html">Math Maze</a>
-    <a href="about.html">About</a>
+    <a href="about.html">About Us</a>
     <a href="contact.html">Contact</a>
     <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms</a>
+    <a href="terms.html">Terms &amp; Conditions</a>
   </div>
-  <p class="f-copy">© 2026 GigNLearn · Made with 💛 for kids and families everywhere</p>
+  <p class="f-copy">© 2026 Gig N Learn · gignlearn.fun · Made with ♥ for little learners</p>
 </footer>
-
-<script>
-function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
-function closeMenu(){document.getElementById('mobileMenu').classList.remove('open');}
-document.addEventListener('click',e=>{if(!e.target.closest('nav')&&!e.target.closest('#mobileMenu'))closeMenu();});
-</script>
 </body>
 </html>
