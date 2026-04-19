@@ -169,7 +169,6 @@
   .fade-in{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
   .fade-in.visible{opacity:1;transform:translateY(0)}
 </style>
-<script src="../ga.js"></script>
 </head>
 <body>
 
@@ -198,7 +197,7 @@
 <section class="hero">
   <h1>📚 Poems, Books &amp; Parent Guides</h1>
   <p class="hero-sub">Sing along · Read aloud · Download free PDFs · Learn together with Gigloo 🐯</p>
-  <div class="hero-count">🎵 15+ Resources · All 100% Free!</div>
+  <div class="hero-count">🎵 22+ Resources · All 100% Free!</div>
 </section>
 
 <div class="filter-wrap">
@@ -206,6 +205,7 @@
     <button class="f-tab active" onclick="filterCards('all',this)">🌈 All</button>
     <button class="f-tab" onclick="filterCards('poems',this)">🎵 Poems</button>
     <button class="f-tab" onclick="filterCards('worksheets',this)">✏️ Worksheets</button>
+    <button class="f-tab" onclick="filterCards('stories',this)">📖 Stories</button>
     <button class="f-tab" onclick="filterCards('parents',this)">👨‍👩‍👧 Parents Hub</button>
     <button class="f-tab" onclick="filterCards('original',this)">⭐ Originals</button>
   </div>
@@ -260,7 +260,7 @@
   </div>
 
   <div class="section-block" data-category="poems">
-    <div class="cat-title" style="--bc:var(--blue)">🎵 Classic Nursery Rhymes <span>5 poems</span></div>
+    <div class="cat-title" style="--bc:var(--blue)">🎵 Classic Nursery Rhymes <span>6 poems</span></div>
     <div class="card-grid">
 
       <a href="baa-baa-black-sheep.html" class="card" data-cat="poems">
@@ -318,6 +318,19 @@
           <p>Timeless nature hymn — flowers, birds, mountains &amp; rivers!</p>
           <div class="card-tags">
             <span class="ctag" style="background:#6BCB7722;color:var(--green)">🌿 Nature</span>
+            <span class="ctag" style="background:#6BCB7722;color:var(--green)">📥 PDF</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="animals-poem.html" class="card" data-cat="poems">
+        <div class="new-badge">✨ NEW</div>
+        <div class="card-header" style="background:linear-gradient(160deg,#1a3a0a,#2d6a1a,#6BCB77,#FFD93D)">🦁</div>
+        <div class="card-body">
+          <h3>Animals Poem</h3>
+          <p>Wild &amp; domestic animals — roar, moo, bark and baa! With animal sound quiz!</p>
+          <div class="card-tags">
+            <span class="ctag" style="background:#6BCB7722;color:var(--green)">🐄 Animals</span>
             <span class="ctag" style="background:#6BCB7722;color:var(--green)">📥 PDF</span>
           </div>
         </div>
@@ -414,6 +427,26 @@
     </div>
   </div>
 
+  <div class="section-block" data-category="stories">
+    <div class="cat-title" style="--bc:var(--teal)">📖 Moral Stories for Kids <span>1 story</span></div>
+    <div class="card-grid">
+
+      <a href="moral-stories-for-kids.html" class="card" data-cat="stories">
+        <div class="new-badge">✨ NEW</div>
+        <div class="card-header" style="background:linear-gradient(135deg,#00C2CB,#4D96FF,#6BCB77)">🌟</div>
+        <div class="card-body">
+          <h3>Moral Stories for Kids</h3>
+          <p>Short, engaging moral stories that teach values like kindness, honesty and sharing. Ages 3–8.</p>
+          <div class="card-tags">
+            <span class="ctag" style="background:#00C2CB22;color:var(--teal)">📖 Stories</span>
+            <span class="ctag" style="background:#C77DFF22;color:var(--purple)">💛 Values</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
   <div class="yt-banner fade-in">
     <h2>🎵 Watch All Poems on YouTube!</h2>
     <p>Animated nursery rhymes &amp; original songs — subscribe for new videos every week!</p>
@@ -477,6 +510,8 @@
     <a href="when-should-child-start-reading.html">Start Reading</a>
     <a href="building-self-esteem-in-children.html">Self Esteem</a>
     <a href="baby-sleeping-problems.html">Sleep Problems</a>
+    <a href="animals-poem.html">Animals Poem</a>
+    <a href="moral-stories-for-kids.html">Moral Stories</a>
     <a href="https://www.youtube.com/@Gignlearnwithgigloo" target="_blank">YouTube ▶</a>
   </div>
   <p class="f-copy">© 2026 Gig N Learn · Free kids learning by Gigloo 🐯</p>
@@ -495,33 +530,51 @@
   },{threshold:.08})
   document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el))
 
-  // Filter tabs
   function filterCards(cat, btn){
     document.querySelectorAll('.f-tab').forEach(t=>t.classList.remove('active'))
     btn.classList.add('active')
-    const blocks = document.querySelectorAll('.section-block, .wide-grid, .yt-banner')
     document.querySelectorAll('.card').forEach(c=>{
       const cardCat = c.getAttribute('data-cat') || ''
-      if(cat==='all'){
-        c.style.display='block'
-      } else {
-        c.style.display = cardCat.includes(cat) ? 'block' : 'none'
-      }
+      c.style.display = (cat==='all' || cardCat.includes(cat)) ? 'block' : 'none'
     })
-    // Show/hide section blocks
     document.querySelectorAll('.section-block').forEach(b=>{
       if(cat==='all'){b.style.display='block';return}
       const bcat = b.getAttribute('data-category') || ''
       const hasVisible = [...b.querySelectorAll('.card')].some(c=>c.style.display!=='none')
       b.style.display = (bcat.includes(cat)||hasVisible) ? 'block' : 'none'
     })
-    // Wide cards (parents hub)
     const wideSection = document.querySelector('[data-category="parents"]')
     if(wideSection){
       wideSection.style.display = (cat==='all'||cat==='parents') ? 'block' : 'none'
     }
+    const ytBanner = document.querySelector('.yt-banner')
+    if(ytBanner){ ytBanner.style.display = (cat==='all') ? 'block' : 'none' }
   }
 </script>
-<script src="../cookie-consent.js"></script>
+
+<!-- COOKIE BANNER -->
+<style>
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#2D2D2D;color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;box-shadow:0 -4px 20px rgba(0,0,0,.25);transform:translateY(100%);transition:transform .4s ease;}
+#cookie-banner.show{transform:translateY(0);}
+.cookie-text{font-size:.8rem;font-weight:600;line-height:1.5;flex:1;min-width:180px;color:rgba(255,255,255,.85);}
+.cookie-text a{color:#FFD93D;font-weight:700;}
+.cookie-btns{display:flex;gap:8px;flex-shrink:0;}
+.cookie-btn{font-family:'Fredoka One',cursive;font-size:.82rem;padding:8px 18px;border-radius:30px;border:none;cursor:pointer;transition:transform .15s;}
+.cookie-btn:hover{transform:scale(1.05);}
+.cookie-accept{background:#6BCB77;color:#fff;}
+.cookie-decline{background:rgba(255,255,255,.12);color:rgba(255,255,255,.8);}
+</style>
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <div class="cookie-text">🍪 We use cookies for Google Analytics &amp; Google AdSense to keep this site free. <a href="../privacy.html">Learn more</a></div>
+  <div class="cookie-btns">
+    <button class="cookie-btn cookie-decline" onclick="cookieDecline()">Decline</button>
+    <button class="cookie-btn cookie-accept" onclick="cookieAccept()">✅ Accept</button>
+  </div>
+</div>
+<script>
+(function(){if(!localStorage.getItem('gignlearn_cookie_consent')){setTimeout(()=>document.getElementById('cookie-banner').classList.add('show'),900);}})();
+function cookieAccept(){localStorage.setItem('gignlearn_cookie_consent','accepted');document.getElementById('cookie-banner').classList.remove('show');if(typeof gtag==='function'){gtag('consent','update',{'analytics_storage':'granted','ad_storage':'granted'});}}
+function cookieDecline(){localStorage.setItem('gignlearn_cookie_consent','declined');document.getElementById('cookie-banner').classList.remove('show');if(typeof gtag==='function'){gtag('consent','update',{'analytics_storage':'denied','ad_storage':'denied'});}}
+</script>
 </body>
 </html>
